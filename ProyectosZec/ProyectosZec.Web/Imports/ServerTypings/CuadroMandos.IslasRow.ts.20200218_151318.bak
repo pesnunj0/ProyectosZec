@@ -1,0 +1,29 @@
+﻿namespace ProyectosZec.CuadroMandos {
+    export interface IslasRow {
+        Id?: number;
+        IslaId?: string;
+        Isla?: string;
+    }
+
+    export namespace IslasRow {
+        export const idProperty = 'Id';
+        export const nameProperty = 'IslaId';
+        export const localTextPrefix = 'CuadroMandos.Islas';
+        export const lookupKey = 'CuadroMandos.Islas';
+
+        export function getLookup(): Q.Lookup<IslasRow> {
+            return Q.getLookup<IslasRow>('CuadroMandos.Islas');
+        }
+        export const deletePermission = 'Administration:General';
+        export const insertPermission = 'Administration:General';
+        export const readPermission = 'Administration:General';
+        export const updatePermission = 'Administration:General';
+
+        export declare const enum Fields {
+            Id = "Id",
+            IslaId = "IslaId",
+            Isla = "Isla"
+        }
+    }
+}
+

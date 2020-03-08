@@ -1,0 +1,30 @@
+﻿
+namespace ProyectosZec.CuadroMandos {
+    export interface TecnicosRow {
+        TecnicoId?: number;
+        NombreTecnico?: string;
+        Tecnico?: string;
+    }
+
+    export namespace TecnicosRow {
+        export const idProperty = 'TecnicoId';
+        export const nameProperty = 'NombreTecnico';
+        export const localTextPrefix = 'CuadroMandos.Tecnicos';
+        export const deletePermission = 'Administration:General';
+        export const insertPermission = 'Administration:General';
+        export const readPermission = 'Administration:General';
+        export const updatePermission = 'Administration:General';
+
+        export namespace Fields {
+            export declare const TecnicoId;
+            export declare const NombreTecnico;
+            export declare const Tecnico;
+        }
+
+        [
+            'TecnicoId',
+            'NombreTecnico',
+            'Tecnico'
+        ].forEach(x => (<any>Fields)[x] = x);
+    }
+}

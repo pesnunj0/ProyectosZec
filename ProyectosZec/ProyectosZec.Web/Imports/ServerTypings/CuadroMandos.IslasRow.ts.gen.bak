@@ -1,0 +1,30 @@
+﻿
+namespace ProyectosZec.CuadroMandos {
+    export interface IslasRow {
+        IslaId?: number;
+        NombreIsla?: string;
+        Isla?: string;
+    }
+
+    export namespace IslasRow {
+        export const idProperty = 'IslaId';
+        export const nameProperty = 'NombreIsla';
+        export const localTextPrefix = 'CuadroMandos.Islas';
+        export const deletePermission = 'Administration:General';
+        export const insertPermission = 'Administration:General';
+        export const readPermission = 'Administration:General';
+        export const updatePermission = 'Administration:General';
+
+        export namespace Fields {
+            export declare const IslaId;
+            export declare const NombreIsla;
+            export declare const Isla;
+        }
+
+        [
+            'IslaId',
+            'NombreIsla',
+            'Isla'
+        ].forEach(x => (<any>Fields)[x] = x);
+    }
+}

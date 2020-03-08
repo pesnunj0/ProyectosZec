@@ -1,0 +1,22 @@
+﻿
+namespace ProyectosZec.CuadroMandos {
+    export class IslasForm extends Serenity.PrefixedContext {
+        static formKey = 'CuadroMandos.Islas';
+    }
+
+    export interface IslasForm {
+        NombreIsla: Serenity.StringEditor;
+        Isla: Serenity.StringEditor;
+    }
+
+    [,
+        ['NombreIsla', () => Serenity.StringEditor],
+        ['Isla', () => Serenity.StringEditor]
+    ].forEach(x => Object.defineProperty(IslasForm.prototype, <string>x[0], {
+        get: function () {
+            return this.w(x[0], (x[1] as any)());
+        },
+        enumerable: true,
+        configurable: true
+    }));
+}

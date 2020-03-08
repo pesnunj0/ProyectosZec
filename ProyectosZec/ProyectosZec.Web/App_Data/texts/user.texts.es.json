@@ -1,0 +1,23 @@
+{
+  "Controls.EntityDialog.NewRecordTitle": "Añadir {0}",
+  "Controls.EntityGrid.NewButton": "Añadir {0}",
+  "Db.Default.Proyectos.IdEstadoEstado": "Estado",
+  "Db.Default.Proyectos.IdInversorPrecriptorInversorPrescriptor": "Presc/Inversor",
+  "Db.Default.Proyectos.IdIslaIsla": "Isla",
+  "Db.Default.Proyectos.IdIslaNombre": "Nombre Isla",
+  "Db.Default.Proyectos.IdSubsectorIdSector": "Subsector",
+  "Db.Default.Proyectos.IdSubsectorSubsector": "Subsector",
+  "Db.Default.Proyectos.IdTecnicoNombre": "Nombre",
+  "Db.Default.Proyectos.IdTecnicoTecnico": "Técnico",
+  "Db.Default.Sector.EntityPlural": "Sectores",
+  "Db.Default.Subsector.EntityPlural": "Subsectores",
+  "Forms.Membership.Login.FormTitle": "BIENVENIDOS A LA APLICACION ZEC",
+  "Navigation.Administration/User Management": "Usuarios",
+  "Navigation.Dashboard": "Cuadro Mandos",
+  "Navigation.Default/Sector": "Sectores",
+  "Navigation.Default/Subsector": "Subsectores",
+  "Navigation.SiteTitle": "CanariasZec",
+  "Site.Dashboard.WelcomeMessage": "Bienvenido a la página principal de registro empresas ZEC",
+  "Site.Layout.FooterCopyright": "Copyright (c) 2020",
+  "Site.Layout.FooterInfo": "Plataforma Zec"
+}
