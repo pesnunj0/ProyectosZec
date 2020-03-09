@@ -59,6 +59,31 @@ namespace ProyectosZec.Migrations.DefaultDB
                 Departamento = "Informática"
             });
 
+            Insert.IntoTable("Departamentos").Row(new
+            {
+                Departamento = "Informática"
+            });
+
+            Insert.IntoTable("Departamentos").Row(new
+            {
+                Departamento = "Técnicos"
+            });
+
+            Insert.IntoTable("Departamentos").Row(new
+            {
+                Departamento = "Salas"
+            });
+
+            Insert.IntoTable("Departamentos").Row(new
+            {
+                Departamento = "Becarios"
+            });
+
+            Insert.IntoTable("Departamentos").Row(new
+            {
+                Departamento = "Comunicación"
+            });
+
             this.CreateTableWithId32("Telefonos", "TelefonoId", s => s
                  .WithColumn("SedeId").AsInt32().NotNullable()
                  .ForeignKey("FK_SedeId","Sedes","SedeId")
