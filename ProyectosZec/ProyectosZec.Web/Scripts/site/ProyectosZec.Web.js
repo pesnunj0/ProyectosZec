@@ -638,6 +638,77 @@ var ProyectosZec;
 (function (ProyectosZec) {
     var CuadroMandos;
     (function (CuadroMandos) {
+        var PresentadasForm = /** @class */ (function (_super) {
+            __extends(PresentadasForm, _super);
+            function PresentadasForm(prefix) {
+                var _this = _super.call(this, prefix) || this;
+                if (!PresentadasForm.init) {
+                    PresentadasForm.init = true;
+                    var s = Serenity;
+                    var w0 = s.StringEditor;
+                    var w1 = s.LookupEditor;
+                    var w2 = s.DateEditor;
+                    var w3 = s.IntegerEditor;
+                    Q.initFormType(PresentadasForm, [
+                        'Denominacion', w0,
+                        'TecnicoId', w1,
+                        'SubsectorId', w1,
+                        'IslaId', w1,
+                        'CapitalId', w1,
+                        'Captacion', w0,
+                        'PrescriptorInversorId', w1,
+                        'Descripcion', w0,
+                        'Contacto', w0,
+                        'Telefono', w0,
+                        'Email', w0,
+                        'EstadoId', w1,
+                        'FechaInicio', w2,
+                        'FechaPresentacion', w2,
+                        'FechaInscripcion', w2,
+                        'FechaAutorizacion', w2,
+                        'FechaAmpliacion', w2,
+                        'FechaBaja', w2,
+                        'Empleos', w3,
+                        'Inversion', w3,
+                        'EmpleoReal', w3,
+                        'Expediente', w0,
+                        'Nace', w0,
+                        'InversionReal', w3
+                    ]);
+                }
+                return _this;
+            }
+            PresentadasForm.formKey = 'CuadroMandos.Presentadas';
+            return PresentadasForm;
+        }(Serenity.PrefixedContext));
+        CuadroMandos.PresentadasForm = PresentadasForm;
+    })(CuadroMandos = ProyectosZec.CuadroMandos || (ProyectosZec.CuadroMandos = {}));
+})(ProyectosZec || (ProyectosZec = {}));
+var ProyectosZec;
+(function (ProyectosZec) {
+    var CuadroMandos;
+    (function (CuadroMandos) {
+        var PresentadasService;
+        (function (PresentadasService) {
+            PresentadasService.baseUrl = 'CuadroMandos/Presentadas';
+            [
+                'Create',
+                'Update',
+                'Delete',
+                'Retrieve',
+                'List'
+            ].forEach(function (x) {
+                PresentadasService[x] = function (r, s, o) {
+                    return Q.serviceRequest(PresentadasService.baseUrl + '/' + x, r, s, o);
+                };
+            });
+        })(PresentadasService = CuadroMandos.PresentadasService || (CuadroMandos.PresentadasService = {}));
+    })(CuadroMandos = ProyectosZec.CuadroMandos || (ProyectosZec.CuadroMandos = {}));
+})(ProyectosZec || (ProyectosZec = {}));
+var ProyectosZec;
+(function (ProyectosZec) {
+    var CuadroMandos;
+    (function (CuadroMandos) {
         var ProyectosForm = /** @class */ (function (_super) {
             __extends(ProyectosForm, _super);
             function ProyectosForm(prefix) {
@@ -962,10 +1033,15 @@ var ProyectosZec;
             DepartamentosRow.idProperty = 'DepartamentoId';
             DepartamentosRow.nameProperty = 'Departamento';
             DepartamentosRow.localTextPrefix = 'Intranet.Departamentos';
-            DepartamentosRow.deletePermission = 'Telefonos:General';
-            DepartamentosRow.insertPermission = 'Telefonos:General';
-            DepartamentosRow.readPermission = 'Telefonos:General';
-            DepartamentosRow.updatePermission = 'Telefonos:General';
+            DepartamentosRow.lookupKey = 'Intranet.Departamentos';
+            function getLookup() {
+                return Q.getLookup('Intranet.Departamentos');
+            }
+            DepartamentosRow.getLookup = getLookup;
+            DepartamentosRow.deletePermission = 'Telefonos:Modify';
+            DepartamentosRow.insertPermission = 'Telefonos:Modify';
+            DepartamentosRow.readPermission = 'Telefonos:Read';
+            DepartamentosRow.updatePermission = 'Telefonos:Modify';
         })(DepartamentosRow = Intranet.DepartamentosRow || (Intranet.DepartamentosRow = {}));
     })(Intranet = ProyectosZec.Intranet || (ProyectosZec.Intranet = {}));
 })(ProyectosZec || (ProyectosZec = {}));
@@ -1023,10 +1099,15 @@ var ProyectosZec;
             SedesRow.idProperty = 'SedeId';
             SedesRow.nameProperty = 'Sede';
             SedesRow.localTextPrefix = 'Intranet.Sedes';
-            SedesRow.deletePermission = 'Telefonos:General';
-            SedesRow.insertPermission = 'Telefonos:General';
-            SedesRow.readPermission = 'Telefonos:General';
-            SedesRow.updatePermission = 'Telefonos:General';
+            SedesRow.lookupKey = 'Intranet.Sedes';
+            function getLookup() {
+                return Q.getLookup('Intranet.Sedes');
+            }
+            SedesRow.getLookup = getLookup;
+            SedesRow.deletePermission = 'Telefonos:Modify';
+            SedesRow.insertPermission = 'Telefonos:Modify';
+            SedesRow.readPermission = 'Telefonos:Read';
+            SedesRow.updatePermission = 'Telefonos:Modify';
         })(SedesRow = Intranet.SedesRow || (Intranet.SedesRow = {}));
     })(Intranet = ProyectosZec.Intranet || (ProyectosZec.Intranet = {}));
 })(ProyectosZec || (ProyectosZec = {}));
@@ -1062,7 +1143,7 @@ var ProyectosZec;
                 if (!TelefonosForm.init) {
                     TelefonosForm.init = true;
                     var s = Serenity;
-                    var w0 = s.IntegerEditor;
+                    var w0 = s.LookupEditor;
                     var w1 = s.StringEditor;
                     Q.initFormType(TelefonosForm, [
                         'SedeId', w0,
@@ -1090,10 +1171,15 @@ var ProyectosZec;
             TelefonosRow.idProperty = 'TelefonoId';
             TelefonosRow.nameProperty = 'Nombre';
             TelefonosRow.localTextPrefix = 'Intranet.Telefonos';
-            TelefonosRow.deletePermission = 'Telefonos:General';
-            TelefonosRow.insertPermission = 'Telefonos:General';
-            TelefonosRow.readPermission = 'Telefonos:General';
-            TelefonosRow.updatePermission = 'Telefonos:General';
+            TelefonosRow.lookupKey = 'Telefonos.Telefonos';
+            function getLookup() {
+                return Q.getLookup('Telefonos.Telefonos');
+            }
+            TelefonosRow.getLookup = getLookup;
+            TelefonosRow.deletePermission = 'Telefonos:Delete';
+            TelefonosRow.insertPermission = 'Telefonos:Insert';
+            TelefonosRow.readPermission = 'Telefonos:Read';
+            TelefonosRow.updatePermission = 'Telefonos:Modify';
         })(TelefonosRow = Intranet.TelefonosRow || (Intranet.TelefonosRow = {}));
     })(Intranet = ProyectosZec.Intranet || (ProyectosZec.Intranet = {}));
 })(ProyectosZec || (ProyectosZec = {}));
@@ -1253,7 +1339,7 @@ var ProyectosZec;
 (function (ProyectosZec) {
     var Texts;
     (function (Texts) {
-        ProyectosZec['Texts'] = Q.proxyTexts(Texts, '', { Db: { Administration: { Language: { Id: 1, LanguageId: 1, LanguageName: 1 }, Role: { RoleId: 1, RoleName: 1 }, RolePermission: { PermissionKey: 1, RoleId: 1, RolePermissionId: 1, RoleRoleName: 1 }, Translation: { CustomText: 1, EntityPlural: 1, Key: 1, OverrideConfirmation: 1, SaveChangesButton: 1, SourceLanguage: 1, SourceText: 1, TargetLanguage: 1, TargetText: 1 }, User: { DisplayName: 1, Email: 1, InsertDate: 1, InsertUserId: 1, IsActive: 1, LastDirectoryUpdate: 1, Password: 1, PasswordConfirm: 1, PasswordHash: 1, PasswordSalt: 1, Source: 1, UpdateDate: 1, UpdateUserId: 1, UserId: 1, UserImage: 1, Username: 1 }, UserPermission: { Granted: 1, PermissionKey: 1, User: 1, UserId: 1, UserPermissionId: 1, Username: 1 }, UserRole: { RoleId: 1, User: 1, UserId: 1, UserRoleId: 1, Username: 1 } }, Common: { UserPreference: { Name: 1, PreferenceType: 1, UserId: 1, UserPreferenceId: 1, Value: 1 } }, CuadroMandos: { Capital: { Capital: 1, CapitalId: 1 }, Estados: { Estado: 1, EstadoId: 1 }, Islas: { Isla: 1, IslaId: 1, NombreIsla: 1 }, Prescriptorinversor: { PrescriptorInversor: 1, PrescriptorInversorId: 1 }, Proyectos: { Capital: 1, CapitalId: 1, Captacion: 1, Contacto: 1, Denominacion: 1, Descripcion: 1, Email: 1, EmpleoReal: 1, Empleos: 1, Estado: 1, EstadoId: 1, Expediente: 1, FechaAmpliacion: 1, FechaAutorizacion: 1, FechaBaja: 1, FechaInicio: 1, FechaInscripcion: 1, FechaPresentacion: 1, Inversion: 1, InversionReal: 1, Isla: 1, IslaId: 1, Nace: 1, PrescriptorInversor: 1, PrescriptorInversorId: 1, ProyectoId: 1, Sector: 1, SectorId: 1, Subsector: 1, SubsectorId: 1, SubsectorSectorId: 1, Tecnico: 1, TecnicoId: 1, Telefono: 1 }, Sectores: { Sector: 1, SectorId: 1 }, Subsectores: { Sector: 1, SectorId: 1, Subsector: 1, SubsectorId: 1 }, Tecnicos: { NombreTecnico: 1, Tecnico: 1, TecnicoId: 1 } }, Intranet: { Departamentos: { Departamento: 1, DepartamentoId: 1 }, Sedes: { Sede: 1, SedeId: 1 }, Telefonos: { DepartamentDepartamento: 1, DepartamentoId: 1, ExtCorta: 1, Fijo: 1, Movil: 1, Nombre: 1, Sede: 1, SedeId: 1, TelefonoId: 1 } } }, Forms: { Membership: { ChangePassword: { FormTitle: 1, SubmitButton: 1, Success: 1 }, ForgotPassword: { BackToLogin: 1, FormInfo: 1, FormTitle: 1, SubmitButton: 1, Success: 1 }, Login: { FacebookButton: 1, ForgotPassword: 1, FormTitle: 1, GoogleButton: 1, OR: 1, RememberMe: 1, SignInButton: 1, SignUpButton: 1 }, ResetPassword: { BackToLogin: 1, EmailSubject: 1, FormTitle: 1, SubmitButton: 1, Success: 1 }, SignUp: { AcceptTerms: 1, ActivateEmailSubject: 1, ActivationCompleteMessage: 1, BackToLogin: 1, ConfirmEmail: 1, ConfirmPassword: 1, DisplayName: 1, Email: 1, FormInfo: 1, FormTitle: 1, Password: 1, SubmitButton: 1, Success: 1 } } }, Site: { AccessDenied: { ClickToChangeUser: 1, ClickToLogin: 1, LackPermissions: 1, NotLoggedIn: 1, PageTitle: 1 }, BasicProgressDialog: { CancelTitle: 1, PleaseWait: 1 }, BulkServiceAction: { AllHadErrorsFormat: 1, AllSuccessFormat: 1, ConfirmationFormat: 1, ErrorCount: 1, NothingToProcess: 1, SomeHadErrorsFormat: 1, SuccessCount: 1 }, Dashboard: { ContentDescription: 1 }, Layout: { FooterCopyright: 1, FooterInfo: 1, FooterRights: 1, GeneralSettings: 1, Language: 1, Theme: 1, ThemeBlack: 1, ThemeBlackLight: 1, ThemeBlue: 1, ThemeBlueLight: 1, ThemeGreen: 1, ThemeGreenLight: 1, ThemePurple: 1, ThemePurpleLight: 1, ThemeRed: 1, ThemeRedLight: 1, ThemeYellow: 1, ThemeYellowLight: 1 }, RolePermissionDialog: { DialogTitle: 1, EditButton: 1, SaveSuccess: 1 }, UserDialog: { EditPermissionsButton: 1, EditRolesButton: 1 }, UserPermissionDialog: { DialogTitle: 1, Grant: 1, Permission: 1, Revoke: 1, SaveSuccess: 1 }, UserRoleDialog: { DialogTitle: 1, SaveSuccess: 1 }, ValidationError: { Title: 1 } }, Validation: { AuthenticationError: 1, CantFindUserWithEmail: 1, CurrentPasswordMismatch: 1, DeleteForeignKeyError: 1, EmailConfirm: 1, EmailInUse: 1, InvalidActivateToken: 1, InvalidResetToken: 1, MinRequiredPasswordLength: 1, SavePrimaryKeyError: 1 } });
+        ProyectosZec['Texts'] = Q.proxyTexts(Texts, '', { Db: { Administration: { Language: { Id: 1, LanguageId: 1, LanguageName: 1 }, Role: { RoleId: 1, RoleName: 1 }, RolePermission: { PermissionKey: 1, RoleId: 1, RolePermissionId: 1, RoleRoleName: 1 }, Translation: { CustomText: 1, EntityPlural: 1, Key: 1, OverrideConfirmation: 1, SaveChangesButton: 1, SourceLanguage: 1, SourceText: 1, TargetLanguage: 1, TargetText: 1 }, User: { DisplayName: 1, Email: 1, InsertDate: 1, InsertUserId: 1, IsActive: 1, LastDirectoryUpdate: 1, Password: 1, PasswordConfirm: 1, PasswordHash: 1, PasswordSalt: 1, Source: 1, UpdateDate: 1, UpdateUserId: 1, UserId: 1, UserImage: 1, Username: 1 }, UserPermission: { Granted: 1, PermissionKey: 1, User: 1, UserId: 1, UserPermissionId: 1, Username: 1 }, UserRole: { RoleId: 1, User: 1, UserId: 1, UserRoleId: 1, Username: 1 } }, Common: { UserPreference: { Name: 1, PreferenceType: 1, UserId: 1, UserPreferenceId: 1, Value: 1 } }, CuadroMandos: { Capital: { Capital: 1, CapitalId: 1 }, Estados: { Estado: 1, EstadoId: 1 }, Islas: { Isla: 1, IslaId: 1, NombreIsla: 1 }, Prescriptorinversor: { PrescriptorInversor: 1, PrescriptorInversorId: 1 }, Proyectos: { Capital: 1, CapitalId: 1, Captacion: 1, Contacto: 1, Denominacion: 1, Descripcion: 1, Email: 1, EmpleoReal: 1, Empleos: 1, Estado: 1, EstadoId: 1, Expediente: 1, FechaAmpliacion: 1, FechaAutorizacion: 1, FechaBaja: 1, FechaInicio: 1, FechaInscripcion: 1, FechaPresentacion: 1, Inversion: 1, InversionReal: 1, Isla: 1, IslaId: 1, Nace: 1, PrescriptorInversor: 1, PrescriptorInversorId: 1, ProyectoId: 1, Sector: 1, SectorId: 1, Subsector: 1, SubsectorId: 1, SubsectorSectorId: 1, Tecnico: 1, TecnicoId: 1, Telefono: 1 }, Sectores: { Sector: 1, SectorId: 1 }, Subsectores: { Sector: 1, SectorId: 1, Subsector: 1, SubsectorId: 1 }, Tecnicos: { NombreTecnico: 1, Tecnico: 1, TecnicoId: 1 } }, Intranet: { Departamentos: { Departamento: 1, DepartamentoId: 1 }, Sedes: { Sede: 1, SedeId: 1 }, Telefonos: { Departamento: 1, DepartamentoId: 1, ExtCorta: 1, Fijo: 1, Movil: 1, Nombre: 1, Sede: 1, SedeId: 1, TelefonoId: 1 } } }, Forms: { Membership: { ChangePassword: { FormTitle: 1, SubmitButton: 1, Success: 1 }, ForgotPassword: { BackToLogin: 1, FormInfo: 1, FormTitle: 1, SubmitButton: 1, Success: 1 }, Login: { FacebookButton: 1, ForgotPassword: 1, FormTitle: 1, GoogleButton: 1, OR: 1, RememberMe: 1, SignInButton: 1, SignUpButton: 1 }, ResetPassword: { BackToLogin: 1, EmailSubject: 1, FormTitle: 1, SubmitButton: 1, Success: 1 }, SignUp: { AcceptTerms: 1, ActivateEmailSubject: 1, ActivationCompleteMessage: 1, BackToLogin: 1, ConfirmEmail: 1, ConfirmPassword: 1, DisplayName: 1, Email: 1, FormInfo: 1, FormTitle: 1, Password: 1, SubmitButton: 1, Success: 1 } } }, Site: { AccessDenied: { ClickToChangeUser: 1, ClickToLogin: 1, LackPermissions: 1, NotLoggedIn: 1, PageTitle: 1 }, BasicProgressDialog: { CancelTitle: 1, PleaseWait: 1 }, BulkServiceAction: { AllHadErrorsFormat: 1, AllSuccessFormat: 1, ConfirmationFormat: 1, ErrorCount: 1, NothingToProcess: 1, SomeHadErrorsFormat: 1, SuccessCount: 1 }, Dashboard: { ContentDescription: 1 }, Layout: { FooterCopyright: 1, FooterInfo: 1, FooterRights: 1, GeneralSettings: 1, Language: 1, Theme: 1, ThemeBlack: 1, ThemeBlackLight: 1, ThemeBlue: 1, ThemeBlueLight: 1, ThemeGreen: 1, ThemeGreenLight: 1, ThemePurple: 1, ThemePurpleLight: 1, ThemeRed: 1, ThemeRedLight: 1, ThemeYellow: 1, ThemeYellowLight: 1 }, RolePermissionDialog: { DialogTitle: 1, EditButton: 1, SaveSuccess: 1 }, UserDialog: { EditPermissionsButton: 1, EditRolesButton: 1 }, UserPermissionDialog: { DialogTitle: 1, Grant: 1, Permission: 1, Revoke: 1, SaveSuccess: 1 }, UserRoleDialog: { DialogTitle: 1, SaveSuccess: 1 }, ValidationError: { Title: 1 } }, Validation: { AuthenticationError: 1, CantFindUserWithEmail: 1, CurrentPasswordMismatch: 1, DeleteForeignKeyError: 1, EmailConfirm: 1, EmailInUse: 1, InvalidActivateToken: 1, InvalidResetToken: 1, MinRequiredPasswordLength: 1, SavePrimaryKeyError: 1 } });
     })(Texts = ProyectosZec.Texts || (ProyectosZec.Texts = {}));
 })(ProyectosZec || (ProyectosZec = {}));
 var ProyectosZec;
@@ -3586,6 +3672,77 @@ var ProyectosZec;
             return PrescriptorinversorGrid;
         }(Serenity.EntityGrid));
         CuadroMandos.PrescriptorinversorGrid = PrescriptorinversorGrid;
+    })(CuadroMandos = ProyectosZec.CuadroMandos || (ProyectosZec.CuadroMandos = {}));
+})(ProyectosZec || (ProyectosZec = {}));
+var ProyectosZec;
+(function (ProyectosZec) {
+    var CuadroMandos;
+    (function (CuadroMandos) {
+        var PresentadasDialog = /** @class */ (function (_super) {
+            __extends(PresentadasDialog, _super);
+            function PresentadasDialog() {
+                var _this = _super !== null && _super.apply(this, arguments) || this;
+                _this.form = new CuadroMandos.ProyectosForm(_this.idPrefix);
+                return _this;
+            }
+            PresentadasDialog.prototype.getFormKey = function () { return CuadroMandos.ProyectosForm.formKey; };
+            PresentadasDialog.prototype.getIdProperty = function () { return CuadroMandos.ProyectosRow.idProperty; };
+            PresentadasDialog.prototype.getLocalTextPrefix = function () { return CuadroMandos.ProyectosRow.localTextPrefix; };
+            PresentadasDialog.prototype.getNameProperty = function () { return CuadroMandos.ProyectosRow.nameProperty; };
+            PresentadasDialog.prototype.getService = function () { return CuadroMandos.PresentadasService.baseUrl; };
+            PresentadasDialog.prototype.getDeletePermission = function () { return CuadroMandos.ProyectosRow.deletePermission; };
+            PresentadasDialog.prototype.getInsertPermission = function () { return CuadroMandos.ProyectosRow.insertPermission; };
+            PresentadasDialog.prototype.getUpdatePermission = function () { return CuadroMandos.ProyectosRow.updatePermission; };
+            PresentadasDialog = __decorate([
+                Serenity.Decorators.registerClass()
+            ], PresentadasDialog);
+            return PresentadasDialog;
+        }(Serenity.EntityDialog));
+        CuadroMandos.PresentadasDialog = PresentadasDialog;
+    })(CuadroMandos = ProyectosZec.CuadroMandos || (ProyectosZec.CuadroMandos = {}));
+})(ProyectosZec || (ProyectosZec = {}));
+var ProyectosZec;
+(function (ProyectosZec) {
+    var CuadroMandos;
+    (function (CuadroMandos) {
+        var PresentadasGrid = /** @class */ (function (_super) {
+            __extends(PresentadasGrid, _super);
+            function PresentadasGrid(container) {
+                return _super.call(this, container) || this;
+            }
+            PresentadasGrid.prototype.getColumnsKey = function () { return 'CuadroMandos.Presentadas'; };
+            PresentadasGrid.prototype.getDialogType = function () { return CuadroMandos.PresentadasDialog; };
+            PresentadasGrid.prototype.getIdProperty = function () { return CuadroMandos.ProyectosRow.idProperty; };
+            PresentadasGrid.prototype.getInsertPermission = function () { return CuadroMandos.ProyectosRow.insertPermission; };
+            PresentadasGrid.prototype.getLocalTextPrefix = function () { return CuadroMandos.ProyectosRow.localTextPrefix; };
+            PresentadasGrid.prototype.getService = function () { return CuadroMandos.PresentadasService.baseUrl; };
+            PresentadasGrid.prototype.onViewSubmit = function () {
+                // only continue if base class returns true (didn't cancel request)
+                if (!_super.prototype.onViewSubmit.call(this)) {
+                    return false;
+                }
+                // view object is the data source for grid (SlickRemoteView)
+                // this is an EntityGrid so its Params object is a ListRequest
+                var request = this.view.params;
+                // list request has a Criteria parameter
+                // we AND criteria here to existing one because 
+                // otherwise we might clear filter set by 
+                // an edit filter dialog if any.
+                request.Criteria = Serenity.Criteria.and(request.Criteria, [['FechaPresentacion'], '>', '1900-01-01']);
+                // TypeScript doesn't support operator overloading
+                // so we had to use array syntax above to build criteria.
+                // Make sure you write
+                // [['Field'], '>', 10] (which means field A is greater than 10)
+                // not 
+                // ['A', '>', 10] (which means string 'A' is greater than 10
+                return true;
+            };
+            PresentadasGrid = __decorate([
+                Serenity.Decorators.registerClass()
+            ], PresentadasGrid);
+            return PresentadasGrid;
+        }(Serenity.EntityGrid));
+        CuadroMandos.PresentadasGrid = PresentadasGrid;
     })(CuadroMandos = ProyectosZec.CuadroMandos || (ProyectosZec.CuadroMandos = {}));
 })(ProyectosZec || (ProyectosZec = {}));
 var ProyectosZec;

@@ -8,17 +8,22 @@
         Fijo?: string;
         Movil?: string;
         Sede?: string;
-        DepartamentDepartamento?: string;
+        Departamento?: string;
     }
 
     export namespace TelefonosRow {
         export const idProperty = 'TelefonoId';
         export const nameProperty = 'Nombre';
         export const localTextPrefix = 'Intranet.Telefonos';
-        export const deletePermission = 'Telefonos:General';
-        export const insertPermission = 'Telefonos:General';
-        export const readPermission = 'Telefonos:General';
-        export const updatePermission = 'Telefonos:General';
+        export const lookupKey = 'Telefonos.Telefonos';
+
+        export function getLookup(): Q.Lookup<TelefonosRow> {
+            return Q.getLookup<TelefonosRow>('Telefonos.Telefonos');
+        }
+        export const deletePermission = 'Telefonos:Delete';
+        export const insertPermission = 'Telefonos:Insert';
+        export const readPermission = 'Telefonos:Read';
+        export const updatePermission = 'Telefonos:Modify';
 
         export declare const enum Fields {
             TelefonoId = "TelefonoId",
@@ -29,7 +34,7 @@
             Fijo = "Fijo",
             Movil = "Movil",
             Sede = "Sede",
-            DepartamentDepartamento = "DepartamentDepartamento"
+            Departamento = "Departamento"
         }
     }
 }

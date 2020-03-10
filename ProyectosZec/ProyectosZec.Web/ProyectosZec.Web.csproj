@@ -836,7 +836,9 @@
     <Content Include="wkhtmltopdf-license.txt" />
     <Content Include="Modules\CuadroMandos\_ViewStart.cshtml" />
     <Content Include="Content\site\site.cuadromandos.less" />
+    <Content Include="Modules\CuadroMandos\Presentadas\PresentadasIndex.cshtml" />
     <None Include="Properties\PublishProfiles\CustomProfile.pubxml" />
+    <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <None Include="Properties\PublishProfiles\ProyectosZecWeb - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
@@ -1046,6 +1048,15 @@
     <TypeScriptCompile Include="Imports\ServerTypings\CuadroMandos.PrescriptorinversorColumns.ts">
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\CuadroMandos.PresentadasColumns.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\CuadroMandos.PresentadasForm.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\CuadroMandos.PresentadasService.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
     <TypeScriptCompile Include="Imports\ServerTypings\CuadroMandos.ProyectosColumns.ts">
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
@@ -1070,6 +1081,8 @@
     <TypeScriptCompile Include="Imports\ServerTypings\Texts.ts">
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
+    <TypeScriptCompile Include="Modules\CuadroMandos\Presentadas\PresentadasDialog.ts" />
+    <TypeScriptCompile Include="Modules\CuadroMandos\Presentadas\PresentadasGrid.ts" />
     <TypeScriptCompile Include="node_modules\%40types\jquery\index.d.ts" />
     <TypeScriptCompile Include="node_modules\%40types\jqueryui\index.d.ts" />
     <TypeScriptCompile Include="node_modules\%40types\jquery.blockui\index.d.ts" />
@@ -1859,6 +1872,11 @@
     <Compile Include="Modules\Common\UserPreference\UserPreferenceModels.cs" />
     <Compile Include="Modules\Common\UserPreference\UserPreferenceEndpoint.cs" />
     <Compile Include="Modules\Common\UserPreference\UserPreferenceRepository.cs" />
+    <Compile Include="Modules\CuadroMandos\Presentadas\PresentadasColumns.cs" />
+    <Compile Include="Modules\CuadroMandos\Presentadas\PresentadasEndpoint.cs" />
+    <Compile Include="Modules\CuadroMandos\Presentadas\PresentadasForm.cs" />
+    <Compile Include="Modules\CuadroMandos\Presentadas\PresentadasPage.cs" />
+    <Compile Include="Modules\CuadroMandos\Presentadas\PresentadasRepository.cs" />
     <Compile Include="Modules\Membership\Account\ChangePassword\AccountPage.ChangePassword.cs" />
     <Compile Include="Modules\Membership\Account\EnvironmentSettings.cs" />
     <Compile Include="Modules\Membership\Account\ForgotPassword\AccountPage.ForgotPassword.cs" />
@@ -1983,7 +2001,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Modules\CuadroMandos\Inscritas\" />
     <Folder Include="Modules\CuadroMandos\Scripts\" />
   </ItemGroup>
   <ItemGroup>

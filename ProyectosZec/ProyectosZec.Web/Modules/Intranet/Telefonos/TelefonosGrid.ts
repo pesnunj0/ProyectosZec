@@ -17,31 +17,33 @@ namespace ProyectosZec.Intranet {
         constructor(container: JQuery) {
             super(container);
         }
-    
+
         // Añadidos
         // Primero campo de ordenación por defecto
         // No olvidarse Cambiar el Row y el Id
         protected getDefaultSortBy() {
-        return [TelefonosRow.Fields.TelefonoId];
+            return [TelefonosRow.Fields.TelefonoId];
+        }
+
+        // Botones Excel y Pdf
+        getButtons() {
+            var buttons = super.getButtons();
+
+            buttons.push(ProyectosZec.Common.ExcelExportHelper.createToolButton({
+                grid: this,
+                onViewSubmit: () => this.onViewSubmit(),
+                service: 'Intranet/Telefonos/ListExcel',
+                separator: true
+            }));
+
+            buttons.push(ProyectosZec.Common.PdfExportHelper.createToolButton({
+                grid: this,
+                onViewSubmit: () => this.onViewSubmit()
+            }));
+
+            return buttons;
+            // Fin añadidos
+
+        }
     }
-
-    // Botones Excel y Pdf
-    getButtons() {
-        var buttons = super.getButtons();
-
-        buttons.push(ProyectosZec.Common.ExcelExportHelper.createToolButton({
-            grid: this,
-            onViewSubmit: () => this.onViewSubmit(),
-            service: 'Intranet/Telefonos/ListExcel',
-            separator: true
-        }));
-
-        buttons.push(ProyectosZec.Common.PdfExportHelper.createToolButton({
-            grid: this,
-            onViewSubmit: () => this.onViewSubmit()
-        }));
-
-        return buttons;
-        // Fin añadidos
-
 }

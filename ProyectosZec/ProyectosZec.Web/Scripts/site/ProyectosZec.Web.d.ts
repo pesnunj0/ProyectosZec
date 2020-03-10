@@ -645,6 +645,58 @@ declare namespace ProyectosZec.CuadroMandos {
 declare namespace ProyectosZec.CuadroMandos {
 }
 declare namespace ProyectosZec.CuadroMandos {
+    interface PresentadasForm {
+        Denominacion: Serenity.StringEditor;
+        TecnicoId: Serenity.LookupEditor;
+        SubsectorId: Serenity.LookupEditor;
+        IslaId: Serenity.LookupEditor;
+        CapitalId: Serenity.LookupEditor;
+        Captacion: Serenity.StringEditor;
+        PrescriptorInversorId: Serenity.LookupEditor;
+        Descripcion: Serenity.StringEditor;
+        Contacto: Serenity.StringEditor;
+        Telefono: Serenity.StringEditor;
+        Email: Serenity.StringEditor;
+        EstadoId: Serenity.LookupEditor;
+        FechaInicio: Serenity.DateEditor;
+        FechaPresentacion: Serenity.DateEditor;
+        FechaInscripcion: Serenity.DateEditor;
+        FechaAutorizacion: Serenity.DateEditor;
+        FechaAmpliacion: Serenity.DateEditor;
+        FechaBaja: Serenity.DateEditor;
+        Empleos: Serenity.IntegerEditor;
+        Inversion: Serenity.IntegerEditor;
+        EmpleoReal: Serenity.IntegerEditor;
+        Expediente: Serenity.StringEditor;
+        Nace: Serenity.StringEditor;
+        InversionReal: Serenity.IntegerEditor;
+    }
+    class PresentadasForm extends Serenity.PrefixedContext {
+        static formKey: string;
+        private static init;
+        constructor(prefix: string);
+    }
+}
+declare namespace ProyectosZec.CuadroMandos {
+    namespace PresentadasService {
+        const baseUrl = "CuadroMandos/Presentadas";
+        function Create(request: Serenity.SaveRequest<ProyectosRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Update(request: Serenity.SaveRequest<ProyectosRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<ProyectosRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<ProyectosRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        const enum Methods {
+            Create = "CuadroMandos/Presentadas/Create",
+            Update = "CuadroMandos/Presentadas/Update",
+            Delete = "CuadroMandos/Presentadas/Delete",
+            Retrieve = "CuadroMandos/Presentadas/Retrieve",
+            List = "CuadroMandos/Presentadas/List"
+        }
+    }
+}
+declare namespace ProyectosZec.CuadroMandos {
+}
+declare namespace ProyectosZec.CuadroMandos {
     interface ProyectosForm {
         Denominacion: Serenity.StringEditor;
         TecnicoId: Serenity.LookupEditor;
@@ -983,10 +1035,12 @@ declare namespace ProyectosZec.Intranet {
         const idProperty = "DepartamentoId";
         const nameProperty = "Departamento";
         const localTextPrefix = "Intranet.Departamentos";
-        const deletePermission = "Telefonos:General";
-        const insertPermission = "Telefonos:General";
-        const readPermission = "Telefonos:General";
-        const updatePermission = "Telefonos:General";
+        const lookupKey = "Intranet.Departamentos";
+        function getLookup(): Q.Lookup<DepartamentosRow>;
+        const deletePermission = "Telefonos:Modify";
+        const insertPermission = "Telefonos:Modify";
+        const readPermission = "Telefonos:Read";
+        const updatePermission = "Telefonos:Modify";
         const enum Fields {
             DepartamentoId = "DepartamentoId",
             Departamento = "Departamento"
@@ -1031,10 +1085,12 @@ declare namespace ProyectosZec.Intranet {
         const idProperty = "SedeId";
         const nameProperty = "Sede";
         const localTextPrefix = "Intranet.Sedes";
-        const deletePermission = "Telefonos:General";
-        const insertPermission = "Telefonos:General";
-        const readPermission = "Telefonos:General";
-        const updatePermission = "Telefonos:General";
+        const lookupKey = "Intranet.Sedes";
+        function getLookup(): Q.Lookup<SedesRow>;
+        const deletePermission = "Telefonos:Modify";
+        const insertPermission = "Telefonos:Modify";
+        const readPermission = "Telefonos:Read";
+        const updatePermission = "Telefonos:Modify";
         const enum Fields {
             SedeId = "SedeId",
             Sede = "Sede"
@@ -1062,8 +1118,8 @@ declare namespace ProyectosZec.Intranet {
 }
 declare namespace ProyectosZec.Intranet {
     interface TelefonosForm {
-        SedeId: Serenity.IntegerEditor;
-        DepartamentoId: Serenity.IntegerEditor;
+        SedeId: Serenity.LookupEditor;
+        DepartamentoId: Serenity.LookupEditor;
         Nombre: Serenity.StringEditor;
         ExtCorta: Serenity.StringEditor;
         Fijo: Serenity.StringEditor;
@@ -1085,16 +1141,18 @@ declare namespace ProyectosZec.Intranet {
         Fijo?: string;
         Movil?: string;
         Sede?: string;
-        DepartamentDepartamento?: string;
+        Departamento?: string;
     }
     namespace TelefonosRow {
         const idProperty = "TelefonoId";
         const nameProperty = "Nombre";
         const localTextPrefix = "Intranet.Telefonos";
-        const deletePermission = "Telefonos:General";
-        const insertPermission = "Telefonos:General";
-        const readPermission = "Telefonos:General";
-        const updatePermission = "Telefonos:General";
+        const lookupKey = "Telefonos.Telefonos";
+        function getLookup(): Q.Lookup<TelefonosRow>;
+        const deletePermission = "Telefonos:Delete";
+        const insertPermission = "Telefonos:Insert";
+        const readPermission = "Telefonos:Read";
+        const updatePermission = "Telefonos:Modify";
         const enum Fields {
             TelefonoId = "TelefonoId",
             SedeId = "SedeId",
@@ -1104,7 +1162,7 @@ declare namespace ProyectosZec.Intranet {
             Fijo = "Fijo",
             Movil = "Movil",
             Sede = "Sede",
-            DepartamentDepartamento = "DepartamentDepartamento"
+            Departamento = "Departamento"
         }
     }
 }
@@ -1743,6 +1801,31 @@ declare namespace ProyectosZec.CuadroMandos {
         protected getLocalTextPrefix(): string;
         protected getService(): string;
         constructor(container: JQuery);
+    }
+}
+declare namespace ProyectosZec.CuadroMandos {
+    class PresentadasDialog extends Serenity.EntityDialog<ProyectosRow, any> {
+        protected getFormKey(): string;
+        protected getIdProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected getNameProperty(): string;
+        protected getService(): string;
+        protected getDeletePermission(): string;
+        protected getInsertPermission(): string;
+        protected getUpdatePermission(): string;
+        protected form: ProyectosForm;
+    }
+}
+declare namespace ProyectosZec.CuadroMandos {
+    class PresentadasGrid extends Serenity.EntityGrid<ProyectosRow, any> {
+        protected getColumnsKey(): string;
+        protected getDialogType(): typeof PresentadasDialog;
+        protected getIdProperty(): string;
+        protected getInsertPermission(): string;
+        protected getLocalTextPrefix(): string;
+        protected getService(): string;
+        constructor(container: JQuery);
+        protected onViewSubmit(): boolean;
     }
 }
 declare namespace ProyectosZec.CuadroMandos {

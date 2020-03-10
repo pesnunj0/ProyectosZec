@@ -1,7 +1,7 @@
 ﻿namespace ProyectosZec.Intranet {
     export interface TelefonosForm {
-        SedeId: Serenity.IntegerEditor;
-        DepartamentoId: Serenity.IntegerEditor;
+        SedeId: Serenity.LookupEditor;
+        DepartamentoId: Serenity.LookupEditor;
         Nombre: Serenity.StringEditor;
         ExtCorta: Serenity.StringEditor;
         Fijo: Serenity.StringEditor;
@@ -19,7 +19,7 @@
                 TelefonosForm.init = true;
 
                 var s = Serenity;
-                var w0 = s.IntegerEditor;
+                var w0 = s.LookupEditor;
                 var w1 = s.StringEditor;
 
                 Q.initFormType(TelefonosForm, [

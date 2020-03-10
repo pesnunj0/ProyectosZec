@@ -64,6 +64,11 @@ namespace MVC
                 public const string PrescriptorinversorIndex = "~/Modules/CuadroMandos/Prescriptorinversor/PrescriptorinversorIndex.cshtml";
             }
 
+            public static class Presentadas
+            {
+                public const string PresentadasIndex = "~/Modules/CuadroMandos/Presentadas/PresentadasIndex.cshtml";
+            }
+
             public static class Proyectos
             {
                 public const string ProyectosIndex = "~/Modules/CuadroMandos/Proyectos/ProyectosIndex.cshtml";

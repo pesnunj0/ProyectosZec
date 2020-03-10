@@ -39,6 +39,7 @@ namespace ProyectosZec.CuadroMandos {
             }));
 
             return buttons;
-        // Fin añadidos
+            // Fin añadidos
+        }
     }
 }
