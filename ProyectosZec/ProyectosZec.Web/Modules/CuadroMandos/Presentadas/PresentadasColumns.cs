@@ -17,6 +17,8 @@ namespace ProyectosZec.CuadroMandos.Columns
         public Int32 ProyectoId { get; set; }
         [EditLink]
         public String Denominacion { get; set; }
+        [Hidden]
+        public String NombreTecnico { get; set; }
         public String Tecnico { get; set; }
         public String Subsector { get; set; }
         public String Isla { get; set; }

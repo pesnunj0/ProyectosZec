@@ -757,6 +757,7 @@ declare namespace ProyectosZec.CuadroMandos {
         EmpleoReal?: number;
         InversionReal?: number;
         Tecnico?: string;
+        NombreTecnico?: string;
         Nace?: string;
         Expediente?: string;
         SubsectorSectorId?: number;
@@ -803,6 +804,7 @@ declare namespace ProyectosZec.CuadroMandos {
             EmpleoReal = "EmpleoReal",
             InversionReal = "InversionReal",
             Tecnico = "Tecnico",
+            NombreTecnico = "NombreTecnico",
             Nace = "Nace",
             Expediente = "Expediente",
             SubsectorSectorId = "SubsectorSectorId",

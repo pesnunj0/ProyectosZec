@@ -223,6 +223,13 @@ namespace ProyectosZec.CuadroMandos.Entities
             set { Fields.Tecnico[this] = value; }
         }
 
+        [DisplayName("Nombre Técnico"), Expression("jTecnico.[NombreTecnico]")]
+        public String NombreTecnico
+        {
+            get { return Fields.NombreTecnico[this]; }
+            set { Fields.NombreTecnico[this] = value; }
+        }
+
         [DisplayName("Subsector Sector Id"), Expression("jSubsector.[SectorId]")]
         public Int32? SubsectorSectorId
         {
@@ -311,6 +318,7 @@ namespace ProyectosZec.CuadroMandos.Entities
             public Int32Field InversionReal;
 
             public StringField Tecnico;
+            public StringField NombreTecnico;
             public StringField Nace;
             public StringField Expediente;
 

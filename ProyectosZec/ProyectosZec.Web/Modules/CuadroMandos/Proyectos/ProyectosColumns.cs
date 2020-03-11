@@ -24,6 +24,8 @@ namespace ProyectosZec.CuadroMandos.Columns
         public String Subsector { get; set; }
         [Width(60),QuickFilter]
         public String Tecnico { get; set; }
+        [Hidden]
+        public String NombreTecnico { get; set; }
         [Width(90)]
         public String Nace { get; set; }
         [Width(90)]

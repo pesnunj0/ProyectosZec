@@ -25,6 +25,7 @@
         EmpleoReal?: number;
         InversionReal?: number;
         Tecnico?: string;
+        NombreTecnico?: string;
         Nace?: string;
         Expediente?: string;
         SubsectorSectorId?: number;
@@ -76,6 +77,7 @@
             EmpleoReal = "EmpleoReal",
             InversionReal = "InversionReal",
             Tecnico = "Tecnico",
+            NombreTecnico = "NombreTecnico",
             Nace = "Nace",
             Expediente = "Expediente",
             SubsectorSectorId = "SubsectorSectorId",
