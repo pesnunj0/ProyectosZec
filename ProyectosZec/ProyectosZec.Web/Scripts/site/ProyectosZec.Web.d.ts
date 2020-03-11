@@ -1825,6 +1825,11 @@ declare namespace ProyectosZec.CuadroMandos {
         protected getLocalTextPrefix(): string;
         protected getService(): string;
         constructor(container: JQuery);
+        protected getDefaultSortBy(): ProyectosRow.Fields[];
+        protected createSlickGrid(): Slick.Grid;
+        protected getSlickOptions(): Slick.GridOptions;
+        protected usePager(): boolean;
+        protected getButtons(): Serenity.ToolButton[];
         protected onViewSubmit(): boolean;
     }
 }

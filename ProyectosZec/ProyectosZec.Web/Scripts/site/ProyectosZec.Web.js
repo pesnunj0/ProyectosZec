@@ -3716,6 +3716,72 @@ var ProyectosZec;
             PresentadasGrid.prototype.getInsertPermission = function () { return CuadroMandos.ProyectosRow.insertPermission; };
             PresentadasGrid.prototype.getLocalTextPrefix = function () { return CuadroMandos.ProyectosRow.localTextPrefix; };
             PresentadasGrid.prototype.getService = function () { return CuadroMandos.PresentadasService.baseUrl; };
+            // Añadidos
+            // Primero campo de ordenación por defecto en este caso, fecha de presentación
+            PresentadasGrid.prototype.getDefaultSortBy = function () {
+                return ["FechaPresentacion" /* FechaPresentacion */];
+            };
+            // Agrupar y sumar 
+            PresentadasGrid.prototype.createSlickGrid = function () {
+                var grid = _super.prototype.createSlickGrid.call(this);
+                // need to register this plugin for grouping or you'll have errors
+                grid.registerPlugin(new Slick.Data.GroupItemMetadataProvider());
+                this.view.setSummaryOptions({
+                    aggregators: [
+                        new Slick.Aggregators.Sum("Empleos" /* Empleos */),
+                        new Slick.Aggregators.Sum("EmpleoReal" /* EmpleoReal */),
+                        new Slick.Aggregators.Sum("Inversion" /* Inversion */),
+                        new Slick.Aggregators.Sum("InversionReal" /* InversionReal */)
+                    ]
+                });
+                return grid;
+            };
+            // Añadimos la fila de pie para los totales
+            PresentadasGrid.prototype.getSlickOptions = function () {
+                var opt = _super.prototype.getSlickOptions.call(this);
+                opt.showFooterRow = true;
+                return opt;
+            };
+            PresentadasGrid.prototype.usePager = function () {
+                return false;
+            };
+            // Ahora los botones. Quitamos el botón de añadir y ponemos los de Excel, Pdf y Agrupar por técnico
+            PresentadasGrid.prototype.getButtons = function () {
+                var _this = this;
+                // call base method to get list of buttons
+                // by default, base entity grid adds a few buttons, 
+                // add, refresh, column selection in order.
+                var buttons = _super.prototype.getButtons.call(this);
+                // METHOD 3 - recommended
+                // remove by splicing, but this time find button index
+                // by its css class. it is the best and safer method
+                buttons.splice(Q.indexOf(buttons, function (x) { return x.cssClass == "add-button"; }), 1);
+                // Ahora añadimos el resto de botones
+                buttons.push(ProyectosZec.Common.ExcelExportHelper.createToolButton({
+                    grid: this,
+                    onViewSubmit: function () { return _this.onViewSubmit(); },
+                    service: 'CuadroMandos/Proyectos/ListExcel',
+                    separator: true
+                }));
+                buttons.push(ProyectosZec.Common.PdfExportHelper.createToolButton({
+                    grid: this,
+                    onViewSubmit: function () { return _this.onViewSubmit(); }
+                }));
+                buttons.push({
+                    title: 'Técnico',
+                    cssClass: 'expand-all-button',
+                    onClick: function () { return _this.view.setGrouping([{
+                            formatter: function (x) { return 'Técnico: ' + x.value + ' (' + x.count + ' Proyectos)'; },
+                            getter: "Tecnico" /* Tecnico */
+                        }]); }
+                });
+                buttons.push({
+                    title: 'Desagrupar',
+                    cssClass: 'collapse-all-button',
+                    onClick: function () { return _this.view.setGrouping([]); }
+                });
+                return buttons;
+            };
             PresentadasGrid.prototype.onViewSubmit = function () {
                 // only continue if base class returns true (didn't cancel request)
                 if (!_super.prototype.onViewSubmit.call(this)) {
@@ -3739,6 +3805,10 @@ var ProyectosZec;
             };
             PresentadasGrid = __decorate([
                 Serenity.Decorators.registerClass()
+                // Añadido para los filtros multiples
+                ,
+                Serenity.Decorators.filterable()
+                // Fin Añadido
             ], PresentadasGrid);
             return PresentadasGrid;
         }(Serenity.EntityGrid));
