@@ -1016,6 +1016,222 @@ declare namespace ProyectosZec {
         Serial?: string;
     }
 }
+declare namespace ProyectosZec.Inmovilizado {
+    class InmovilizadosForm extends Serenity.PrefixedContext {
+        static formKey: string;
+    }
+    interface InmovilizadosForm {
+        Descripcion: Serenity.StringEditor;
+        SubTipoInmovilizadoId: Serenity.IntegerEditor;
+        SedeId: Serenity.IntegerEditor;
+        ProveedorId: Serenity.IntegerEditor;
+        FechaCompra: Serenity.DateEditor;
+        FechaBaja: Serenity.DateEditor;
+        Valor: Serenity.DecimalEditor;
+        Amortizacion: Serenity.IntegerEditor;
+        Garantia: Serenity.IntegerEditor;
+        Factura: Serenity.StringEditor;
+    }
+}
+declare namespace ProyectosZec.Inmovilizado {
+    interface InmovilizadosRow {
+        InmovilizadoId?: number;
+        Descripcion?: string;
+        SubTipoInmovilizadoId?: number;
+        SedeId?: number;
+        ProveedorId?: number;
+        FechaCompra?: string;
+        FechaBaja?: string;
+        Valor?: number;
+        Amortizacion?: number;
+        Garantia?: number;
+        Factura?: string;
+        SubTipoInmovilizadoTipoInmovilizadoId?: number;
+        SubTipoInmovilizadoSubTipo?: string;
+        Sede?: string;
+        Proveedor?: string;
+    }
+    namespace InmovilizadosRow {
+        const idProperty = "InmovilizadoId";
+        const nameProperty = "Descripcion";
+        const localTextPrefix = "Inmovilizado.Inmovilizados";
+        const deletePermission = "Inmovilizado:General";
+        const insertPermission = "Inmovilizado:General";
+        const readPermission = "Inmovilizado:General";
+        const updatePermission = "Inmovilizado:General";
+        namespace Fields {
+            const InmovilizadoId: any;
+            const Descripcion: any;
+            const SubTipoInmovilizadoId: any;
+            const SedeId: any;
+            const ProveedorId: any;
+            const FechaCompra: any;
+            const FechaBaja: any;
+            const Valor: any;
+            const Amortizacion: any;
+            const Garantia: any;
+            const Factura: any;
+            const SubTipoInmovilizadoTipoInmovilizadoId: any;
+            const SubTipoInmovilizadoSubTipo: any;
+            const Sede: any;
+            const Proveedor: any;
+        }
+    }
+}
+declare namespace ProyectosZec.Inmovilizado {
+    namespace InmovilizadosService {
+        const baseUrl = "Inmovilizado/Inmovilizados";
+        function Create(request: Serenity.SaveRequest<InmovilizadosRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Update(request: Serenity.SaveRequest<InmovilizadosRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<InmovilizadosRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<InmovilizadosRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        namespace Methods {
+            const Create: string;
+            const Update: string;
+            const Delete: string;
+            const Retrieve: string;
+            const List: string;
+        }
+    }
+}
+declare namespace ProyectosZec.Inmovilizado {
+    class ProveedoresForm extends Serenity.PrefixedContext {
+        static formKey: string;
+    }
+    interface ProveedoresForm {
+        Proveedor: Serenity.StringEditor;
+    }
+}
+declare namespace ProyectosZec.Inmovilizado {
+    interface ProveedoresRow {
+        ProveedorId?: number;
+        Proveedor?: string;
+    }
+    namespace ProveedoresRow {
+        const idProperty = "ProveedorId";
+        const nameProperty = "Proveedor";
+        const localTextPrefix = "Inmovilizado.Proveedores";
+        const deletePermission = "Inmovilizado:General";
+        const insertPermission = "Inmovilizado:General";
+        const readPermission = "Inmovilizado:General";
+        const updatePermission = "Inmovilizado:General";
+        namespace Fields {
+            const ProveedorId: any;
+            const Proveedor: any;
+        }
+    }
+}
+declare namespace ProyectosZec.Inmovilizado {
+    namespace ProveedoresService {
+        const baseUrl = "Inmovilizado/Proveedores";
+        function Create(request: Serenity.SaveRequest<ProveedoresRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Update(request: Serenity.SaveRequest<ProveedoresRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<ProveedoresRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<ProveedoresRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        namespace Methods {
+            const Create: string;
+            const Update: string;
+            const Delete: string;
+            const Retrieve: string;
+            const List: string;
+        }
+    }
+}
+declare namespace ProyectosZec.Inmovilizado {
+    class SubtiposinmovilizadoForm extends Serenity.PrefixedContext {
+        static formKey: string;
+    }
+    interface SubtiposinmovilizadoForm {
+        TipoInmovilizadoId: Serenity.IntegerEditor;
+        SubTipo: Serenity.StringEditor;
+    }
+}
+declare namespace ProyectosZec.Inmovilizado {
+    interface SubtiposinmovilizadoRow {
+        SubTipoInmovilizadoId?: number;
+        TipoInmovilizadoId?: number;
+        SubTipo?: string;
+        TipoInmovilizadoTipo?: string;
+    }
+    namespace SubtiposinmovilizadoRow {
+        const idProperty = "SubTipoInmovilizadoId";
+        const nameProperty = "SubTipo";
+        const localTextPrefix = "Inmovilizado.Subtiposinmovilizado";
+        const deletePermission = "Inmovilizado:General";
+        const insertPermission = "Inmovilizado:General";
+        const readPermission = "Inmovilizado:General";
+        const updatePermission = "Inmovilizado:General";
+        namespace Fields {
+            const SubTipoInmovilizadoId: any;
+            const TipoInmovilizadoId: any;
+            const SubTipo: any;
+            const TipoInmovilizadoTipo: any;
+        }
+    }
+}
+declare namespace ProyectosZec.Inmovilizado {
+    namespace SubtiposinmovilizadoService {
+        const baseUrl = "Inmovilizado/Subtiposinmovilizado";
+        function Create(request: Serenity.SaveRequest<SubtiposinmovilizadoRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Update(request: Serenity.SaveRequest<SubtiposinmovilizadoRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<SubtiposinmovilizadoRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<SubtiposinmovilizadoRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        namespace Methods {
+            const Create: string;
+            const Update: string;
+            const Delete: string;
+            const Retrieve: string;
+            const List: string;
+        }
+    }
+}
+declare namespace ProyectosZec.Inmovilizado {
+    class TiposinmovilizadoForm extends Serenity.PrefixedContext {
+        static formKey: string;
+    }
+    interface TiposinmovilizadoForm {
+        Tipo: Serenity.StringEditor;
+    }
+}
+declare namespace ProyectosZec.Inmovilizado {
+    interface TiposinmovilizadoRow {
+        TipoInmovilizadoId?: number;
+        Tipo?: string;
+    }
+    namespace TiposinmovilizadoRow {
+        const idProperty = "TipoInmovilizadoId";
+        const nameProperty = "Tipo";
+        const localTextPrefix = "Inmovilizado.Tiposinmovilizado";
+        const deletePermission = "Inmovilizado:General";
+        const insertPermission = "Inmovilizado:General";
+        const readPermission = "Inmovilizado:General";
+        const updatePermission = "Inmovilizado:General";
+        namespace Fields {
+            const TipoInmovilizadoId: any;
+            const Tipo: any;
+        }
+    }
+}
+declare namespace ProyectosZec.Inmovilizado {
+    namespace TiposinmovilizadoService {
+        const baseUrl = "Inmovilizado/Tiposinmovilizado";
+        function Create(request: Serenity.SaveRequest<TiposinmovilizadoRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Update(request: Serenity.SaveRequest<TiposinmovilizadoRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<TiposinmovilizadoRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<TiposinmovilizadoRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        namespace Methods {
+            const Create: string;
+            const Update: string;
+            const Delete: string;
+            const Retrieve: string;
+            const List: string;
+        }
+    }
+}
 declare namespace ProyectosZec.Intranet {
 }
 declare namespace ProyectosZec.Intranet {
@@ -1286,6 +1502,85 @@ declare namespace ProyectosZec {
     }
 }
 declare namespace ProyectosZec.Texts {
+}
+declare namespace ProyectosZec.Inmovilizado {
+    class InmovilizadosForm extends Serenity.PrefixedContext {
+        static formKey: string;
+    }
+    interface InmovilizadosForm {
+        Descripcion: Serenity.StringEditor;
+        SubTipoInmovilizadoId: Serenity.IntegerEditor;
+        SedeId: Serenity.IntegerEditor;
+        ProveedorId: Serenity.IntegerEditor;
+        FechaCompra: Serenity.DateEditor;
+        FechaBaja: Serenity.DateEditor;
+        Valor: Serenity.DecimalEditor;
+        Amortizacion: Serenity.IntegerEditor;
+        Garantia: Serenity.IntegerEditor;
+        Factura: Serenity.StringEditor;
+    }
+}
+declare namespace ProyectosZec.Inmovilizado {
+    interface InmovilizadosRow {
+        InmovilizadoId?: number;
+        Descripcion?: string;
+        SubTipoInmovilizadoId?: number;
+        SedeId?: number;
+        ProveedorId?: number;
+        FechaCompra?: string;
+        FechaBaja?: string;
+        Valor?: number;
+        Amortizacion?: number;
+        Garantia?: number;
+        Factura?: string;
+        SubTipoInmovilizadoTipoInmovilizadoId?: number;
+        SubTipoInmovilizadoSubTipo?: string;
+        Sede?: string;
+        Proveedor?: string;
+    }
+    namespace InmovilizadosRow {
+        const idProperty = "InmovilizadoId";
+        const nameProperty = "Descripcion";
+        const localTextPrefix = "Inmovilizado.Inmovilizados";
+        const deletePermission = "Inmovilizado:General";
+        const insertPermission = "Inmovilizado:General";
+        const readPermission = "Inmovilizado:General";
+        const updatePermission = "Inmovilizado:General";
+        namespace Fields {
+            const InmovilizadoId: any;
+            const Descripcion: any;
+            const SubTipoInmovilizadoId: any;
+            const SedeId: any;
+            const ProveedorId: any;
+            const FechaCompra: any;
+            const FechaBaja: any;
+            const Valor: any;
+            const Amortizacion: any;
+            const Garantia: any;
+            const Factura: any;
+            const SubTipoInmovilizadoTipoInmovilizadoId: any;
+            const SubTipoInmovilizadoSubTipo: any;
+            const Sede: any;
+            const Proveedor: any;
+        }
+    }
+}
+declare namespace ProyectosZec.Inmovilizado {
+    namespace InmovilizadosService {
+        const baseUrl = "Inmovilizado/Inmovilizados";
+        function Create(request: Serenity.SaveRequest<InmovilizadosRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Update(request: Serenity.SaveRequest<InmovilizadosRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<InmovilizadosRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<InmovilizadosRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        namespace Methods {
+            const Create: string;
+            const Update: string;
+            const Delete: string;
+            const Retrieve: string;
+            const List: string;
+        }
+    }
 }
 declare namespace ProyectosZec.Administration {
     class LanguageDialog extends Serenity.EntityDialog<LanguageRow, any> {
@@ -1933,6 +2228,102 @@ declare namespace ProyectosZec.CuadroMandos {
     class TecnicosGrid extends Serenity.EntityGrid<TecnicosRow, any> {
         protected getColumnsKey(): string;
         protected getDialogType(): typeof TecnicosDialog;
+        protected getIdProperty(): string;
+        protected getInsertPermission(): string;
+        protected getLocalTextPrefix(): string;
+        protected getService(): string;
+        constructor(container: JQuery);
+    }
+}
+declare namespace ProyectosZec.Inmovilizado {
+    class InmovilizadosDialog extends Serenity.EntityDialog<InmovilizadosRow, any> {
+        protected getFormKey(): string;
+        protected getIdProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected getNameProperty(): string;
+        protected getService(): string;
+        protected getDeletePermission(): string;
+        protected getInsertPermission(): string;
+        protected getUpdatePermission(): string;
+        protected form: InmovilizadosForm;
+    }
+}
+declare namespace ProyectosZec.Inmovilizado {
+    class InmovilizadosGrid extends Serenity.EntityGrid<InmovilizadosRow, any> {
+        protected getColumnsKey(): string;
+        protected getDialogType(): typeof InmovilizadosDialog;
+        protected getIdProperty(): string;
+        protected getInsertPermission(): string;
+        protected getLocalTextPrefix(): string;
+        protected getService(): string;
+        constructor(container: JQuery);
+    }
+}
+declare namespace ProyectosZec.Inmovilizado {
+    class ProveedoresDialog extends Serenity.EntityDialog<ProveedoresRow, any> {
+        protected getFormKey(): string;
+        protected getIdProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected getNameProperty(): string;
+        protected getService(): string;
+        protected getDeletePermission(): string;
+        protected getInsertPermission(): string;
+        protected getUpdatePermission(): string;
+        protected form: ProveedoresForm;
+    }
+}
+declare namespace ProyectosZec.Inmovilizado {
+    class ProveedoresGrid extends Serenity.EntityGrid<ProveedoresRow, any> {
+        protected getColumnsKey(): string;
+        protected getDialogType(): typeof ProveedoresDialog;
+        protected getIdProperty(): string;
+        protected getInsertPermission(): string;
+        protected getLocalTextPrefix(): string;
+        protected getService(): string;
+        constructor(container: JQuery);
+    }
+}
+declare namespace ProyectosZec.Inmovilizado {
+    class SubtiposinmovilizadoDialog extends Serenity.EntityDialog<SubtiposinmovilizadoRow, any> {
+        protected getFormKey(): string;
+        protected getIdProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected getNameProperty(): string;
+        protected getService(): string;
+        protected getDeletePermission(): string;
+        protected getInsertPermission(): string;
+        protected getUpdatePermission(): string;
+        protected form: SubtiposinmovilizadoForm;
+    }
+}
+declare namespace ProyectosZec.Inmovilizado {
+    class SubtiposinmovilizadoGrid extends Serenity.EntityGrid<SubtiposinmovilizadoRow, any> {
+        protected getColumnsKey(): string;
+        protected getDialogType(): typeof SubtiposinmovilizadoDialog;
+        protected getIdProperty(): string;
+        protected getInsertPermission(): string;
+        protected getLocalTextPrefix(): string;
+        protected getService(): string;
+        constructor(container: JQuery);
+    }
+}
+declare namespace ProyectosZec.Inmovilizado {
+    class TiposinmovilizadoDialog extends Serenity.EntityDialog<TiposinmovilizadoRow, any> {
+        protected getFormKey(): string;
+        protected getIdProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected getNameProperty(): string;
+        protected getService(): string;
+        protected getDeletePermission(): string;
+        protected getInsertPermission(): string;
+        protected getUpdatePermission(): string;
+        protected form: TiposinmovilizadoForm;
+    }
+}
+declare namespace ProyectosZec.Inmovilizado {
+    class TiposinmovilizadoGrid extends Serenity.EntityGrid<TiposinmovilizadoRow, any> {
+        protected getColumnsKey(): string;
+        protected getDialogType(): typeof TiposinmovilizadoDialog;
         protected getIdProperty(): string;
         protected getInsertPermission(): string;
         protected getLocalTextPrefix(): string;

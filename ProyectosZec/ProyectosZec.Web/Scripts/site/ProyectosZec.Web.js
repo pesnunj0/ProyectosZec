@@ -1002,6 +1002,319 @@ var ProyectosZec;
 })(ProyectosZec || (ProyectosZec = {}));
 var ProyectosZec;
 (function (ProyectosZec) {
+    var Inmovilizado;
+    (function (Inmovilizado) {
+        var InmovilizadosForm = /** @class */ (function (_super) {
+            __extends(InmovilizadosForm, _super);
+            function InmovilizadosForm() {
+                return _super !== null && _super.apply(this, arguments) || this;
+            }
+            InmovilizadosForm.formKey = 'Inmovilizado.Inmovilizados';
+            return InmovilizadosForm;
+        }(Serenity.PrefixedContext));
+        Inmovilizado.InmovilizadosForm = InmovilizadosForm;
+        [,
+            ['Descripcion', function () { return Serenity.StringEditor; }],
+            ['SubTipoInmovilizadoId', function () { return Serenity.IntegerEditor; }],
+            ['SedeId', function () { return Serenity.IntegerEditor; }],
+            ['ProveedorId', function () { return Serenity.IntegerEditor; }],
+            ['FechaCompra', function () { return Serenity.DateEditor; }],
+            ['FechaBaja', function () { return Serenity.DateEditor; }],
+            ['Valor', function () { return Serenity.DecimalEditor; }],
+            ['Amortizacion', function () { return Serenity.IntegerEditor; }],
+            ['Garantia', function () { return Serenity.IntegerEditor; }],
+            ['Factura', function () { return Serenity.StringEditor; }]
+        ].forEach(function (x) { return Object.defineProperty(InmovilizadosForm.prototype, x[0], {
+            get: function () {
+                return this.w(x[0], x[1]());
+            },
+            enumerable: true,
+            configurable: true
+        }); });
+    })(Inmovilizado = ProyectosZec.Inmovilizado || (ProyectosZec.Inmovilizado = {}));
+})(ProyectosZec || (ProyectosZec = {}));
+var ProyectosZec;
+(function (ProyectosZec) {
+    var Inmovilizado;
+    (function (Inmovilizado) {
+        var InmovilizadosRow;
+        (function (InmovilizadosRow) {
+            InmovilizadosRow.idProperty = 'InmovilizadoId';
+            InmovilizadosRow.nameProperty = 'Descripcion';
+            InmovilizadosRow.localTextPrefix = 'Inmovilizado.Inmovilizados';
+            InmovilizadosRow.deletePermission = 'Inmovilizado:General';
+            InmovilizadosRow.insertPermission = 'Inmovilizado:General';
+            InmovilizadosRow.readPermission = 'Inmovilizado:General';
+            InmovilizadosRow.updatePermission = 'Inmovilizado:General';
+            var Fields;
+            (function (Fields) {
+            })(Fields = InmovilizadosRow.Fields || (InmovilizadosRow.Fields = {}));
+            [
+                'InmovilizadoId',
+                'Descripcion',
+                'SubTipoInmovilizadoId',
+                'SedeId',
+                'ProveedorId',
+                'FechaCompra',
+                'FechaBaja',
+                'Valor',
+                'Amortizacion',
+                'Garantia',
+                'Factura',
+                'SubTipoInmovilizadoTipoInmovilizadoId',
+                'SubTipoInmovilizadoSubTipo',
+                'Sede',
+                'Proveedor'
+            ].forEach(function (x) { return Fields[x] = x; });
+        })(InmovilizadosRow = Inmovilizado.InmovilizadosRow || (Inmovilizado.InmovilizadosRow = {}));
+    })(Inmovilizado = ProyectosZec.Inmovilizado || (ProyectosZec.Inmovilizado = {}));
+})(ProyectosZec || (ProyectosZec = {}));
+var ProyectosZec;
+(function (ProyectosZec) {
+    var Inmovilizado;
+    (function (Inmovilizado) {
+        var InmovilizadosService;
+        (function (InmovilizadosService) {
+            InmovilizadosService.baseUrl = 'Inmovilizado/Inmovilizados';
+            var Methods;
+            (function (Methods) {
+            })(Methods = InmovilizadosService.Methods || (InmovilizadosService.Methods = {}));
+            [
+                'Create',
+                'Update',
+                'Delete',
+                'Retrieve',
+                'List'
+            ].forEach(function (x) {
+                InmovilizadosService[x] = function (r, s, o) {
+                    return Q.serviceRequest(InmovilizadosService.baseUrl + '/' + x, r, s, o);
+                };
+                Methods[x] = InmovilizadosService.baseUrl + '/' + x;
+            });
+        })(InmovilizadosService = Inmovilizado.InmovilizadosService || (Inmovilizado.InmovilizadosService = {}));
+    })(Inmovilizado = ProyectosZec.Inmovilizado || (ProyectosZec.Inmovilizado = {}));
+})(ProyectosZec || (ProyectosZec = {}));
+var ProyectosZec;
+(function (ProyectosZec) {
+    var Inmovilizado;
+    (function (Inmovilizado) {
+        var ProveedoresForm = /** @class */ (function (_super) {
+            __extends(ProveedoresForm, _super);
+            function ProveedoresForm() {
+                return _super !== null && _super.apply(this, arguments) || this;
+            }
+            ProveedoresForm.formKey = 'Inmovilizado.Proveedores';
+            return ProveedoresForm;
+        }(Serenity.PrefixedContext));
+        Inmovilizado.ProveedoresForm = ProveedoresForm;
+        [,
+            ['Proveedor', function () { return Serenity.StringEditor; }]
+        ].forEach(function (x) { return Object.defineProperty(ProveedoresForm.prototype, x[0], {
+            get: function () {
+                return this.w(x[0], x[1]());
+            },
+            enumerable: true,
+            configurable: true
+        }); });
+    })(Inmovilizado = ProyectosZec.Inmovilizado || (ProyectosZec.Inmovilizado = {}));
+})(ProyectosZec || (ProyectosZec = {}));
+var ProyectosZec;
+(function (ProyectosZec) {
+    var Inmovilizado;
+    (function (Inmovilizado) {
+        var ProveedoresRow;
+        (function (ProveedoresRow) {
+            ProveedoresRow.idProperty = 'ProveedorId';
+            ProveedoresRow.nameProperty = 'Proveedor';
+            ProveedoresRow.localTextPrefix = 'Inmovilizado.Proveedores';
+            ProveedoresRow.deletePermission = 'Inmovilizado:General';
+            ProveedoresRow.insertPermission = 'Inmovilizado:General';
+            ProveedoresRow.readPermission = 'Inmovilizado:General';
+            ProveedoresRow.updatePermission = 'Inmovilizado:General';
+            var Fields;
+            (function (Fields) {
+            })(Fields = ProveedoresRow.Fields || (ProveedoresRow.Fields = {}));
+            [
+                'ProveedorId',
+                'Proveedor'
+            ].forEach(function (x) { return Fields[x] = x; });
+        })(ProveedoresRow = Inmovilizado.ProveedoresRow || (Inmovilizado.ProveedoresRow = {}));
+    })(Inmovilizado = ProyectosZec.Inmovilizado || (ProyectosZec.Inmovilizado = {}));
+})(ProyectosZec || (ProyectosZec = {}));
+var ProyectosZec;
+(function (ProyectosZec) {
+    var Inmovilizado;
+    (function (Inmovilizado) {
+        var ProveedoresService;
+        (function (ProveedoresService) {
+            ProveedoresService.baseUrl = 'Inmovilizado/Proveedores';
+            var Methods;
+            (function (Methods) {
+            })(Methods = ProveedoresService.Methods || (ProveedoresService.Methods = {}));
+            [
+                'Create',
+                'Update',
+                'Delete',
+                'Retrieve',
+                'List'
+            ].forEach(function (x) {
+                ProveedoresService[x] = function (r, s, o) {
+                    return Q.serviceRequest(ProveedoresService.baseUrl + '/' + x, r, s, o);
+                };
+                Methods[x] = ProveedoresService.baseUrl + '/' + x;
+            });
+        })(ProveedoresService = Inmovilizado.ProveedoresService || (Inmovilizado.ProveedoresService = {}));
+    })(Inmovilizado = ProyectosZec.Inmovilizado || (ProyectosZec.Inmovilizado = {}));
+})(ProyectosZec || (ProyectosZec = {}));
+var ProyectosZec;
+(function (ProyectosZec) {
+    var Inmovilizado;
+    (function (Inmovilizado) {
+        var SubtiposinmovilizadoForm = /** @class */ (function (_super) {
+            __extends(SubtiposinmovilizadoForm, _super);
+            function SubtiposinmovilizadoForm() {
+                return _super !== null && _super.apply(this, arguments) || this;
+            }
+            SubtiposinmovilizadoForm.formKey = 'Inmovilizado.Subtiposinmovilizado';
+            return SubtiposinmovilizadoForm;
+        }(Serenity.PrefixedContext));
+        Inmovilizado.SubtiposinmovilizadoForm = SubtiposinmovilizadoForm;
+        [,
+            ['TipoInmovilizadoId', function () { return Serenity.IntegerEditor; }],
+            ['SubTipo', function () { return Serenity.StringEditor; }]
+        ].forEach(function (x) { return Object.defineProperty(SubtiposinmovilizadoForm.prototype, x[0], {
+            get: function () {
+                return this.w(x[0], x[1]());
+            },
+            enumerable: true,
+            configurable: true
+        }); });
+    })(Inmovilizado = ProyectosZec.Inmovilizado || (ProyectosZec.Inmovilizado = {}));
+})(ProyectosZec || (ProyectosZec = {}));
+var ProyectosZec;
+(function (ProyectosZec) {
+    var Inmovilizado;
+    (function (Inmovilizado) {
+        var SubtiposinmovilizadoRow;
+        (function (SubtiposinmovilizadoRow) {
+            SubtiposinmovilizadoRow.idProperty = 'SubTipoInmovilizadoId';
+            SubtiposinmovilizadoRow.nameProperty = 'SubTipo';
+            SubtiposinmovilizadoRow.localTextPrefix = 'Inmovilizado.Subtiposinmovilizado';
+            SubtiposinmovilizadoRow.deletePermission = 'Inmovilizado:General';
+            SubtiposinmovilizadoRow.insertPermission = 'Inmovilizado:General';
+            SubtiposinmovilizadoRow.readPermission = 'Inmovilizado:General';
+            SubtiposinmovilizadoRow.updatePermission = 'Inmovilizado:General';
+            var Fields;
+            (function (Fields) {
+            })(Fields = SubtiposinmovilizadoRow.Fields || (SubtiposinmovilizadoRow.Fields = {}));
+            [
+                'SubTipoInmovilizadoId',
+                'TipoInmovilizadoId',
+                'SubTipo',
+                'TipoInmovilizadoTipo'
+            ].forEach(function (x) { return Fields[x] = x; });
+        })(SubtiposinmovilizadoRow = Inmovilizado.SubtiposinmovilizadoRow || (Inmovilizado.SubtiposinmovilizadoRow = {}));
+    })(Inmovilizado = ProyectosZec.Inmovilizado || (ProyectosZec.Inmovilizado = {}));
+})(ProyectosZec || (ProyectosZec = {}));
+var ProyectosZec;
+(function (ProyectosZec) {
+    var Inmovilizado;
+    (function (Inmovilizado) {
+        var SubtiposinmovilizadoService;
+        (function (SubtiposinmovilizadoService) {
+            SubtiposinmovilizadoService.baseUrl = 'Inmovilizado/Subtiposinmovilizado';
+            var Methods;
+            (function (Methods) {
+            })(Methods = SubtiposinmovilizadoService.Methods || (SubtiposinmovilizadoService.Methods = {}));
+            [
+                'Create',
+                'Update',
+                'Delete',
+                'Retrieve',
+                'List'
+            ].forEach(function (x) {
+                SubtiposinmovilizadoService[x] = function (r, s, o) {
+                    return Q.serviceRequest(SubtiposinmovilizadoService.baseUrl + '/' + x, r, s, o);
+                };
+                Methods[x] = SubtiposinmovilizadoService.baseUrl + '/' + x;
+            });
+        })(SubtiposinmovilizadoService = Inmovilizado.SubtiposinmovilizadoService || (Inmovilizado.SubtiposinmovilizadoService = {}));
+    })(Inmovilizado = ProyectosZec.Inmovilizado || (ProyectosZec.Inmovilizado = {}));
+})(ProyectosZec || (ProyectosZec = {}));
+var ProyectosZec;
+(function (ProyectosZec) {
+    var Inmovilizado;
+    (function (Inmovilizado) {
+        var TiposinmovilizadoForm = /** @class */ (function (_super) {
+            __extends(TiposinmovilizadoForm, _super);
+            function TiposinmovilizadoForm() {
+                return _super !== null && _super.apply(this, arguments) || this;
+            }
+            TiposinmovilizadoForm.formKey = 'Inmovilizado.Tiposinmovilizado';
+            return TiposinmovilizadoForm;
+        }(Serenity.PrefixedContext));
+        Inmovilizado.TiposinmovilizadoForm = TiposinmovilizadoForm;
+        [,
+            ['Tipo', function () { return Serenity.StringEditor; }]
+        ].forEach(function (x) { return Object.defineProperty(TiposinmovilizadoForm.prototype, x[0], {
+            get: function () {
+                return this.w(x[0], x[1]());
+            },
+            enumerable: true,
+            configurable: true
+        }); });
+    })(Inmovilizado = ProyectosZec.Inmovilizado || (ProyectosZec.Inmovilizado = {}));
+})(ProyectosZec || (ProyectosZec = {}));
+var ProyectosZec;
+(function (ProyectosZec) {
+    var Inmovilizado;
+    (function (Inmovilizado) {
+        var TiposinmovilizadoRow;
+        (function (TiposinmovilizadoRow) {
+            TiposinmovilizadoRow.idProperty = 'TipoInmovilizadoId';
+            TiposinmovilizadoRow.nameProperty = 'Tipo';
+            TiposinmovilizadoRow.localTextPrefix = 'Inmovilizado.Tiposinmovilizado';
+            TiposinmovilizadoRow.deletePermission = 'Inmovilizado:General';
+            TiposinmovilizadoRow.insertPermission = 'Inmovilizado:General';
+            TiposinmovilizadoRow.readPermission = 'Inmovilizado:General';
+            TiposinmovilizadoRow.updatePermission = 'Inmovilizado:General';
+            var Fields;
+            (function (Fields) {
+            })(Fields = TiposinmovilizadoRow.Fields || (TiposinmovilizadoRow.Fields = {}));
+            [
+                'TipoInmovilizadoId',
+                'Tipo'
+            ].forEach(function (x) { return Fields[x] = x; });
+        })(TiposinmovilizadoRow = Inmovilizado.TiposinmovilizadoRow || (Inmovilizado.TiposinmovilizadoRow = {}));
+    })(Inmovilizado = ProyectosZec.Inmovilizado || (ProyectosZec.Inmovilizado = {}));
+})(ProyectosZec || (ProyectosZec = {}));
+var ProyectosZec;
+(function (ProyectosZec) {
+    var Inmovilizado;
+    (function (Inmovilizado) {
+        var TiposinmovilizadoService;
+        (function (TiposinmovilizadoService) {
+            TiposinmovilizadoService.baseUrl = 'Inmovilizado/Tiposinmovilizado';
+            var Methods;
+            (function (Methods) {
+            })(Methods = TiposinmovilizadoService.Methods || (TiposinmovilizadoService.Methods = {}));
+            [
+                'Create',
+                'Update',
+                'Delete',
+                'Retrieve',
+                'List'
+            ].forEach(function (x) {
+                TiposinmovilizadoService[x] = function (r, s, o) {
+                    return Q.serviceRequest(TiposinmovilizadoService.baseUrl + '/' + x, r, s, o);
+                };
+                Methods[x] = TiposinmovilizadoService.baseUrl + '/' + x;
+            });
+        })(TiposinmovilizadoService = Inmovilizado.TiposinmovilizadoService || (Inmovilizado.TiposinmovilizadoService = {}));
+    })(Inmovilizado = ProyectosZec.Inmovilizado || (ProyectosZec.Inmovilizado = {}));
+})(ProyectosZec || (ProyectosZec = {}));
+var ProyectosZec;
+(function (ProyectosZec) {
     var Intranet;
     (function (Intranet) {
         var DepartamentosForm = /** @class */ (function (_super) {
@@ -1341,6 +1654,100 @@ var ProyectosZec;
     (function (Texts) {
         ProyectosZec['Texts'] = Q.proxyTexts(Texts, '', { Db: { Administration: { Language: { Id: 1, LanguageId: 1, LanguageName: 1 }, Role: { RoleId: 1, RoleName: 1 }, RolePermission: { PermissionKey: 1, RoleId: 1, RolePermissionId: 1, RoleRoleName: 1 }, Translation: { CustomText: 1, EntityPlural: 1, Key: 1, OverrideConfirmation: 1, SaveChangesButton: 1, SourceLanguage: 1, SourceText: 1, TargetLanguage: 1, TargetText: 1 }, User: { DisplayName: 1, Email: 1, InsertDate: 1, InsertUserId: 1, IsActive: 1, LastDirectoryUpdate: 1, Password: 1, PasswordConfirm: 1, PasswordHash: 1, PasswordSalt: 1, Source: 1, UpdateDate: 1, UpdateUserId: 1, UserId: 1, UserImage: 1, Username: 1 }, UserPermission: { Granted: 1, PermissionKey: 1, User: 1, UserId: 1, UserPermissionId: 1, Username: 1 }, UserRole: { RoleId: 1, User: 1, UserId: 1, UserRoleId: 1, Username: 1 } }, Common: { UserPreference: { Name: 1, PreferenceType: 1, UserId: 1, UserPreferenceId: 1, Value: 1 } }, CuadroMandos: { Capital: { Capital: 1, CapitalId: 1 }, Estados: { Estado: 1, EstadoId: 1 }, Islas: { Isla: 1, IslaId: 1, NombreIsla: 1 }, Prescriptorinversor: { PrescriptorInversor: 1, PrescriptorInversorId: 1 }, Proyectos: { Capital: 1, CapitalId: 1, Captacion: 1, Contacto: 1, Denominacion: 1, Descripcion: 1, Email: 1, EmpleoReal: 1, Empleos: 1, Estado: 1, EstadoId: 1, Expediente: 1, FechaAmpliacion: 1, FechaAutorizacion: 1, FechaBaja: 1, FechaInicio: 1, FechaInscripcion: 1, FechaPresentacion: 1, Inversion: 1, InversionReal: 1, Isla: 1, IslaId: 1, Nace: 1, NombreTecnico: 1, PrescriptorInversor: 1, PrescriptorInversorId: 1, ProyectoId: 1, Sector: 1, SectorId: 1, Subsector: 1, SubsectorId: 1, SubsectorSectorId: 1, Tecnico: 1, TecnicoId: 1, Telefono: 1 }, Sectores: { Sector: 1, SectorId: 1 }, Subsectores: { Sector: 1, SectorId: 1, Subsector: 1, SubsectorId: 1 }, Tecnicos: { NombreTecnico: 1, Tecnico: 1, TecnicoId: 1 } }, Intranet: { Departamentos: { Departamento: 1, DepartamentoId: 1 }, Sedes: { Sede: 1, SedeId: 1 }, Telefonos: { Departamento: 1, DepartamentoId: 1, ExtCorta: 1, Fijo: 1, Movil: 1, Nombre: 1, Sede: 1, SedeId: 1, TelefonoId: 1 } } }, Forms: { Membership: { ChangePassword: { FormTitle: 1, SubmitButton: 1, Success: 1 }, ForgotPassword: { BackToLogin: 1, FormInfo: 1, FormTitle: 1, SubmitButton: 1, Success: 1 }, Login: { FacebookButton: 1, ForgotPassword: 1, FormTitle: 1, GoogleButton: 1, OR: 1, RememberMe: 1, SignInButton: 1, SignUpButton: 1 }, ResetPassword: { BackToLogin: 1, EmailSubject: 1, FormTitle: 1, SubmitButton: 1, Success: 1 }, SignUp: { AcceptTerms: 1, ActivateEmailSubject: 1, ActivationCompleteMessage: 1, BackToLogin: 1, ConfirmEmail: 1, ConfirmPassword: 1, DisplayName: 1, Email: 1, FormInfo: 1, FormTitle: 1, Password: 1, SubmitButton: 1, Success: 1 } } }, Site: { AccessDenied: { ClickToChangeUser: 1, ClickToLogin: 1, LackPermissions: 1, NotLoggedIn: 1, PageTitle: 1 }, BasicProgressDialog: { CancelTitle: 1, PleaseWait: 1 }, BulkServiceAction: { AllHadErrorsFormat: 1, AllSuccessFormat: 1, ConfirmationFormat: 1, ErrorCount: 1, NothingToProcess: 1, SomeHadErrorsFormat: 1, SuccessCount: 1 }, Dashboard: { ContentDescription: 1 }, Layout: { FooterCopyright: 1, FooterInfo: 1, FooterRights: 1, GeneralSettings: 1, Language: 1, Theme: 1, ThemeBlack: 1, ThemeBlackLight: 1, ThemeBlue: 1, ThemeBlueLight: 1, ThemeGreen: 1, ThemeGreenLight: 1, ThemePurple: 1, ThemePurpleLight: 1, ThemeRed: 1, ThemeRedLight: 1, ThemeYellow: 1, ThemeYellowLight: 1 }, RolePermissionDialog: { DialogTitle: 1, EditButton: 1, SaveSuccess: 1 }, UserDialog: { EditPermissionsButton: 1, EditRolesButton: 1 }, UserPermissionDialog: { DialogTitle: 1, Grant: 1, Permission: 1, Revoke: 1, SaveSuccess: 1 }, UserRoleDialog: { DialogTitle: 1, SaveSuccess: 1 }, ValidationError: { Title: 1 } }, Validation: { AuthenticationError: 1, CantFindUserWithEmail: 1, CurrentPasswordMismatch: 1, DeleteForeignKeyError: 1, EmailConfirm: 1, EmailInUse: 1, InvalidActivateToken: 1, InvalidResetToken: 1, MinRequiredPasswordLength: 1, SavePrimaryKeyError: 1 } });
     })(Texts = ProyectosZec.Texts || (ProyectosZec.Texts = {}));
+})(ProyectosZec || (ProyectosZec = {}));
+var ProyectosZec;
+(function (ProyectosZec) {
+    var Inmovilizado;
+    (function (Inmovilizado) {
+        var InmovilizadosForm = /** @class */ (function (_super) {
+            __extends(InmovilizadosForm, _super);
+            function InmovilizadosForm() {
+                return _super !== null && _super.apply(this, arguments) || this;
+            }
+            InmovilizadosForm.formKey = 'Inmovilizado.Inmovilizados';
+            return InmovilizadosForm;
+        }(Serenity.PrefixedContext));
+        Inmovilizado.InmovilizadosForm = InmovilizadosForm;
+        [,
+            ['Descripcion', function () { return Serenity.StringEditor; }],
+            ['SubTipoInmovilizadoId', function () { return Serenity.IntegerEditor; }],
+            ['SedeId', function () { return Serenity.IntegerEditor; }],
+            ['ProveedorId', function () { return Serenity.IntegerEditor; }],
+            ['FechaCompra', function () { return Serenity.DateEditor; }],
+            ['FechaBaja', function () { return Serenity.DateEditor; }],
+            ['Valor', function () { return Serenity.DecimalEditor; }],
+            ['Amortizacion', function () { return Serenity.IntegerEditor; }],
+            ['Garantia', function () { return Serenity.IntegerEditor; }],
+            ['Factura', function () { return Serenity.StringEditor; }]
+        ].forEach(function (x) { return Object.defineProperty(InmovilizadosForm.prototype, x[0], {
+            get: function () {
+                return this.w(x[0], x[1]());
+            },
+            enumerable: true,
+            configurable: true
+        }); });
+    })(Inmovilizado = ProyectosZec.Inmovilizado || (ProyectosZec.Inmovilizado = {}));
+})(ProyectosZec || (ProyectosZec = {}));
+var ProyectosZec;
+(function (ProyectosZec) {
+    var Inmovilizado;
+    (function (Inmovilizado) {
+        var InmovilizadosRow;
+        (function (InmovilizadosRow) {
+            InmovilizadosRow.idProperty = 'InmovilizadoId';
+            InmovilizadosRow.nameProperty = 'Descripcion';
+            InmovilizadosRow.localTextPrefix = 'Inmovilizado.Inmovilizados';
+            InmovilizadosRow.deletePermission = 'Inmovilizado:General';
+            InmovilizadosRow.insertPermission = 'Inmovilizado:General';
+            InmovilizadosRow.readPermission = 'Inmovilizado:General';
+            InmovilizadosRow.updatePermission = 'Inmovilizado:General';
+            var Fields;
+            (function (Fields) {
+            })(Fields = InmovilizadosRow.Fields || (InmovilizadosRow.Fields = {}));
+            [
+                'InmovilizadoId',
+                'Descripcion',
+                'SubTipoInmovilizadoId',
+                'SedeId',
+                'ProveedorId',
+                'FechaCompra',
+                'FechaBaja',
+                'Valor',
+                'Amortizacion',
+                'Garantia',
+                'Factura',
+                'SubTipoInmovilizadoTipoInmovilizadoId',
+                'SubTipoInmovilizadoSubTipo',
+                'Sede',
+                'Proveedor'
+            ].forEach(function (x) { return Fields[x] = x; });
+        })(InmovilizadosRow = Inmovilizado.InmovilizadosRow || (Inmovilizado.InmovilizadosRow = {}));
+    })(Inmovilizado = ProyectosZec.Inmovilizado || (ProyectosZec.Inmovilizado = {}));
+})(ProyectosZec || (ProyectosZec = {}));
+var ProyectosZec;
+(function (ProyectosZec) {
+    var Inmovilizado;
+    (function (Inmovilizado) {
+        var InmovilizadosService;
+        (function (InmovilizadosService) {
+            InmovilizadosService.baseUrl = 'Inmovilizado/Inmovilizados';
+            var Methods;
+            (function (Methods) {
+            })(Methods = InmovilizadosService.Methods || (InmovilizadosService.Methods = {}));
+            [
+                'Create',
+                'Update',
+                'Delete',
+                'Retrieve',
+                'List'
+            ].forEach(function (x) {
+                InmovilizadosService[x] = function (r, s, o) {
+                    return Q.serviceRequest(InmovilizadosService.baseUrl + '/' + x, r, s, o);
+                };
+                Methods[x] = InmovilizadosService.baseUrl + '/' + x;
+            });
+        })(InmovilizadosService = Inmovilizado.InmovilizadosService || (Inmovilizado.InmovilizadosService = {}));
+    })(Inmovilizado = ProyectosZec.Inmovilizado || (ProyectosZec.Inmovilizado = {}));
 })(ProyectosZec || (ProyectosZec = {}));
 var ProyectosZec;
 (function (ProyectosZec) {
@@ -4131,6 +4538,206 @@ var ProyectosZec;
         }(Serenity.EntityGrid));
         CuadroMandos.TecnicosGrid = TecnicosGrid;
     })(CuadroMandos = ProyectosZec.CuadroMandos || (ProyectosZec.CuadroMandos = {}));
+})(ProyectosZec || (ProyectosZec = {}));
+var ProyectosZec;
+(function (ProyectosZec) {
+    var Inmovilizado;
+    (function (Inmovilizado) {
+        var InmovilizadosDialog = /** @class */ (function (_super) {
+            __extends(InmovilizadosDialog, _super);
+            function InmovilizadosDialog() {
+                var _this = _super !== null && _super.apply(this, arguments) || this;
+                _this.form = new Inmovilizado.InmovilizadosForm(_this.idPrefix);
+                return _this;
+            }
+            InmovilizadosDialog.prototype.getFormKey = function () { return Inmovilizado.InmovilizadosForm.formKey; };
+            InmovilizadosDialog.prototype.getIdProperty = function () { return Inmovilizado.InmovilizadosRow.idProperty; };
+            InmovilizadosDialog.prototype.getLocalTextPrefix = function () { return Inmovilizado.InmovilizadosRow.localTextPrefix; };
+            InmovilizadosDialog.prototype.getNameProperty = function () { return Inmovilizado.InmovilizadosRow.nameProperty; };
+            InmovilizadosDialog.prototype.getService = function () { return Inmovilizado.InmovilizadosService.baseUrl; };
+            InmovilizadosDialog.prototype.getDeletePermission = function () { return Inmovilizado.InmovilizadosRow.deletePermission; };
+            InmovilizadosDialog.prototype.getInsertPermission = function () { return Inmovilizado.InmovilizadosRow.insertPermission; };
+            InmovilizadosDialog.prototype.getUpdatePermission = function () { return Inmovilizado.InmovilizadosRow.updatePermission; };
+            InmovilizadosDialog = __decorate([
+                Serenity.Decorators.registerClass()
+            ], InmovilizadosDialog);
+            return InmovilizadosDialog;
+        }(Serenity.EntityDialog));
+        Inmovilizado.InmovilizadosDialog = InmovilizadosDialog;
+    })(Inmovilizado = ProyectosZec.Inmovilizado || (ProyectosZec.Inmovilizado = {}));
+})(ProyectosZec || (ProyectosZec = {}));
+var ProyectosZec;
+(function (ProyectosZec) {
+    var Inmovilizado;
+    (function (Inmovilizado) {
+        var InmovilizadosGrid = /** @class */ (function (_super) {
+            __extends(InmovilizadosGrid, _super);
+            function InmovilizadosGrid(container) {
+                return _super.call(this, container) || this;
+            }
+            InmovilizadosGrid.prototype.getColumnsKey = function () { return 'Inmovilizado.Inmovilizados'; };
+            InmovilizadosGrid.prototype.getDialogType = function () { return Inmovilizado.InmovilizadosDialog; };
+            InmovilizadosGrid.prototype.getIdProperty = function () { return Inmovilizado.InmovilizadosRow.idProperty; };
+            InmovilizadosGrid.prototype.getInsertPermission = function () { return Inmovilizado.InmovilizadosRow.insertPermission; };
+            InmovilizadosGrid.prototype.getLocalTextPrefix = function () { return Inmovilizado.InmovilizadosRow.localTextPrefix; };
+            InmovilizadosGrid.prototype.getService = function () { return Inmovilizado.InmovilizadosService.baseUrl; };
+            InmovilizadosGrid = __decorate([
+                Serenity.Decorators.registerClass()
+            ], InmovilizadosGrid);
+            return InmovilizadosGrid;
+        }(Serenity.EntityGrid));
+        Inmovilizado.InmovilizadosGrid = InmovilizadosGrid;
+    })(Inmovilizado = ProyectosZec.Inmovilizado || (ProyectosZec.Inmovilizado = {}));
+})(ProyectosZec || (ProyectosZec = {}));
+var ProyectosZec;
+(function (ProyectosZec) {
+    var Inmovilizado;
+    (function (Inmovilizado) {
+        var ProveedoresDialog = /** @class */ (function (_super) {
+            __extends(ProveedoresDialog, _super);
+            function ProveedoresDialog() {
+                var _this = _super !== null && _super.apply(this, arguments) || this;
+                _this.form = new Inmovilizado.ProveedoresForm(_this.idPrefix);
+                return _this;
+            }
+            ProveedoresDialog.prototype.getFormKey = function () { return Inmovilizado.ProveedoresForm.formKey; };
+            ProveedoresDialog.prototype.getIdProperty = function () { return Inmovilizado.ProveedoresRow.idProperty; };
+            ProveedoresDialog.prototype.getLocalTextPrefix = function () { return Inmovilizado.ProveedoresRow.localTextPrefix; };
+            ProveedoresDialog.prototype.getNameProperty = function () { return Inmovilizado.ProveedoresRow.nameProperty; };
+            ProveedoresDialog.prototype.getService = function () { return Inmovilizado.ProveedoresService.baseUrl; };
+            ProveedoresDialog.prototype.getDeletePermission = function () { return Inmovilizado.ProveedoresRow.deletePermission; };
+            ProveedoresDialog.prototype.getInsertPermission = function () { return Inmovilizado.ProveedoresRow.insertPermission; };
+            ProveedoresDialog.prototype.getUpdatePermission = function () { return Inmovilizado.ProveedoresRow.updatePermission; };
+            ProveedoresDialog = __decorate([
+                Serenity.Decorators.registerClass()
+            ], ProveedoresDialog);
+            return ProveedoresDialog;
+        }(Serenity.EntityDialog));
+        Inmovilizado.ProveedoresDialog = ProveedoresDialog;
+    })(Inmovilizado = ProyectosZec.Inmovilizado || (ProyectosZec.Inmovilizado = {}));
+})(ProyectosZec || (ProyectosZec = {}));
+var ProyectosZec;
+(function (ProyectosZec) {
+    var Inmovilizado;
+    (function (Inmovilizado) {
+        var ProveedoresGrid = /** @class */ (function (_super) {
+            __extends(ProveedoresGrid, _super);
+            function ProveedoresGrid(container) {
+                return _super.call(this, container) || this;
+            }
+            ProveedoresGrid.prototype.getColumnsKey = function () { return 'Inmovilizado.Proveedores'; };
+            ProveedoresGrid.prototype.getDialogType = function () { return Inmovilizado.ProveedoresDialog; };
+            ProveedoresGrid.prototype.getIdProperty = function () { return Inmovilizado.ProveedoresRow.idProperty; };
+            ProveedoresGrid.prototype.getInsertPermission = function () { return Inmovilizado.ProveedoresRow.insertPermission; };
+            ProveedoresGrid.prototype.getLocalTextPrefix = function () { return Inmovilizado.ProveedoresRow.localTextPrefix; };
+            ProveedoresGrid.prototype.getService = function () { return Inmovilizado.ProveedoresService.baseUrl; };
+            ProveedoresGrid = __decorate([
+                Serenity.Decorators.registerClass()
+            ], ProveedoresGrid);
+            return ProveedoresGrid;
+        }(Serenity.EntityGrid));
+        Inmovilizado.ProveedoresGrid = ProveedoresGrid;
+    })(Inmovilizado = ProyectosZec.Inmovilizado || (ProyectosZec.Inmovilizado = {}));
+})(ProyectosZec || (ProyectosZec = {}));
+var ProyectosZec;
+(function (ProyectosZec) {
+    var Inmovilizado;
+    (function (Inmovilizado) {
+        var SubtiposinmovilizadoDialog = /** @class */ (function (_super) {
+            __extends(SubtiposinmovilizadoDialog, _super);
+            function SubtiposinmovilizadoDialog() {
+                var _this = _super !== null && _super.apply(this, arguments) || this;
+                _this.form = new Inmovilizado.SubtiposinmovilizadoForm(_this.idPrefix);
+                return _this;
+            }
+            SubtiposinmovilizadoDialog.prototype.getFormKey = function () { return Inmovilizado.SubtiposinmovilizadoForm.formKey; };
+            SubtiposinmovilizadoDialog.prototype.getIdProperty = function () { return Inmovilizado.SubtiposinmovilizadoRow.idProperty; };
+            SubtiposinmovilizadoDialog.prototype.getLocalTextPrefix = function () { return Inmovilizado.SubtiposinmovilizadoRow.localTextPrefix; };
+            SubtiposinmovilizadoDialog.prototype.getNameProperty = function () { return Inmovilizado.SubtiposinmovilizadoRow.nameProperty; };
+            SubtiposinmovilizadoDialog.prototype.getService = function () { return Inmovilizado.SubtiposinmovilizadoService.baseUrl; };
+            SubtiposinmovilizadoDialog.prototype.getDeletePermission = function () { return Inmovilizado.SubtiposinmovilizadoRow.deletePermission; };
+            SubtiposinmovilizadoDialog.prototype.getInsertPermission = function () { return Inmovilizado.SubtiposinmovilizadoRow.insertPermission; };
+            SubtiposinmovilizadoDialog.prototype.getUpdatePermission = function () { return Inmovilizado.SubtiposinmovilizadoRow.updatePermission; };
+            SubtiposinmovilizadoDialog = __decorate([
+                Serenity.Decorators.registerClass()
+            ], SubtiposinmovilizadoDialog);
+            return SubtiposinmovilizadoDialog;
+        }(Serenity.EntityDialog));
+        Inmovilizado.SubtiposinmovilizadoDialog = SubtiposinmovilizadoDialog;
+    })(Inmovilizado = ProyectosZec.Inmovilizado || (ProyectosZec.Inmovilizado = {}));
+})(ProyectosZec || (ProyectosZec = {}));
+var ProyectosZec;
+(function (ProyectosZec) {
+    var Inmovilizado;
+    (function (Inmovilizado) {
+        var SubtiposinmovilizadoGrid = /** @class */ (function (_super) {
+            __extends(SubtiposinmovilizadoGrid, _super);
+            function SubtiposinmovilizadoGrid(container) {
+                return _super.call(this, container) || this;
+            }
+            SubtiposinmovilizadoGrid.prototype.getColumnsKey = function () { return 'Inmovilizado.Subtiposinmovilizado'; };
+            SubtiposinmovilizadoGrid.prototype.getDialogType = function () { return Inmovilizado.SubtiposinmovilizadoDialog; };
+            SubtiposinmovilizadoGrid.prototype.getIdProperty = function () { return Inmovilizado.SubtiposinmovilizadoRow.idProperty; };
+            SubtiposinmovilizadoGrid.prototype.getInsertPermission = function () { return Inmovilizado.SubtiposinmovilizadoRow.insertPermission; };
+            SubtiposinmovilizadoGrid.prototype.getLocalTextPrefix = function () { return Inmovilizado.SubtiposinmovilizadoRow.localTextPrefix; };
+            SubtiposinmovilizadoGrid.prototype.getService = function () { return Inmovilizado.SubtiposinmovilizadoService.baseUrl; };
+            SubtiposinmovilizadoGrid = __decorate([
+                Serenity.Decorators.registerClass()
+            ], SubtiposinmovilizadoGrid);
+            return SubtiposinmovilizadoGrid;
+        }(Serenity.EntityGrid));
+        Inmovilizado.SubtiposinmovilizadoGrid = SubtiposinmovilizadoGrid;
+    })(Inmovilizado = ProyectosZec.Inmovilizado || (ProyectosZec.Inmovilizado = {}));
+})(ProyectosZec || (ProyectosZec = {}));
+var ProyectosZec;
+(function (ProyectosZec) {
+    var Inmovilizado;
+    (function (Inmovilizado) {
+        var TiposinmovilizadoDialog = /** @class */ (function (_super) {
+            __extends(TiposinmovilizadoDialog, _super);
+            function TiposinmovilizadoDialog() {
+                var _this = _super !== null && _super.apply(this, arguments) || this;
+                _this.form = new Inmovilizado.TiposinmovilizadoForm(_this.idPrefix);
+                return _this;
+            }
+            TiposinmovilizadoDialog.prototype.getFormKey = function () { return Inmovilizado.TiposinmovilizadoForm.formKey; };
+            TiposinmovilizadoDialog.prototype.getIdProperty = function () { return Inmovilizado.TiposinmovilizadoRow.idProperty; };
+            TiposinmovilizadoDialog.prototype.getLocalTextPrefix = function () { return Inmovilizado.TiposinmovilizadoRow.localTextPrefix; };
+            TiposinmovilizadoDialog.prototype.getNameProperty = function () { return Inmovilizado.TiposinmovilizadoRow.nameProperty; };
+            TiposinmovilizadoDialog.prototype.getService = function () { return Inmovilizado.TiposinmovilizadoService.baseUrl; };
+            TiposinmovilizadoDialog.prototype.getDeletePermission = function () { return Inmovilizado.TiposinmovilizadoRow.deletePermission; };
+            TiposinmovilizadoDialog.prototype.getInsertPermission = function () { return Inmovilizado.TiposinmovilizadoRow.insertPermission; };
+            TiposinmovilizadoDialog.prototype.getUpdatePermission = function () { return Inmovilizado.TiposinmovilizadoRow.updatePermission; };
+            TiposinmovilizadoDialog = __decorate([
+                Serenity.Decorators.registerClass()
+            ], TiposinmovilizadoDialog);
+            return TiposinmovilizadoDialog;
+        }(Serenity.EntityDialog));
+        Inmovilizado.TiposinmovilizadoDialog = TiposinmovilizadoDialog;
+    })(Inmovilizado = ProyectosZec.Inmovilizado || (ProyectosZec.Inmovilizado = {}));
+})(ProyectosZec || (ProyectosZec = {}));
+var ProyectosZec;
+(function (ProyectosZec) {
+    var Inmovilizado;
+    (function (Inmovilizado) {
+        var TiposinmovilizadoGrid = /** @class */ (function (_super) {
+            __extends(TiposinmovilizadoGrid, _super);
+            function TiposinmovilizadoGrid(container) {
+                return _super.call(this, container) || this;
+            }
+            TiposinmovilizadoGrid.prototype.getColumnsKey = function () { return 'Inmovilizado.Tiposinmovilizado'; };
+            TiposinmovilizadoGrid.prototype.getDialogType = function () { return Inmovilizado.TiposinmovilizadoDialog; };
+            TiposinmovilizadoGrid.prototype.getIdProperty = function () { return Inmovilizado.TiposinmovilizadoRow.idProperty; };
+            TiposinmovilizadoGrid.prototype.getInsertPermission = function () { return Inmovilizado.TiposinmovilizadoRow.insertPermission; };
+            TiposinmovilizadoGrid.prototype.getLocalTextPrefix = function () { return Inmovilizado.TiposinmovilizadoRow.localTextPrefix; };
+            TiposinmovilizadoGrid.prototype.getService = function () { return Inmovilizado.TiposinmovilizadoService.baseUrl; };
+            TiposinmovilizadoGrid = __decorate([
+                Serenity.Decorators.registerClass()
+            ], TiposinmovilizadoGrid);
+            return TiposinmovilizadoGrid;
+        }(Serenity.EntityGrid));
+        Inmovilizado.TiposinmovilizadoGrid = TiposinmovilizadoGrid;
+    })(Inmovilizado = ProyectosZec.Inmovilizado || (ProyectosZec.Inmovilizado = {}));
 })(ProyectosZec || (ProyectosZec = {}));
 var ProyectosZec;
 (function (ProyectosZec) {
