@@ -30,10 +30,18 @@ namespace ProyectosZec.Inmovilizado.Entities
         }
 
         [DisplayName("Sub Tipo Inmovilizado"), NotNull, ForeignKey("subtiposinmovilizado", "SubTipoInmovilizadoId"), LeftJoin("jSubTipoInmovilizado"), TextualField("SubTipoInmovilizadoSubTipo")]
+        [LookupEditor(typeof(Entities.TiposinmovilizadoRow), CascadeFrom = "TipoInmovilizadoId", CascadeField = "TipoInmovilizadoId")]
         public Int32? SubTipoInmovilizadoId
         {
             get { return Fields.SubTipoInmovilizadoId[this]; }
             set { Fields.SubTipoInmovilizadoId[this] = value; }
+        }
+
+        [DisplayName("Tipo Id"), Expression("jjSubTipoInmovilizado.[SubTipoInmovilizadoId]"), ForeignKey("tiposinmovilizado", "TipoInmovilizadoId"), LeftJoin("jTipoInmovilizado")]
+        public Int32? TipoInmovilizadoId
+        {
+            get { return Fields.TipoInmovilizadoId[this]; }
+            set { Fields.TipoInmovilizadoId[this] = value; }
         }
 
         [DisplayName("Sede"), NotNull, ForeignKey("sedes", "SedeId"), LeftJoin("jSede"), TextualField("Sede")]
@@ -142,6 +150,7 @@ namespace ProyectosZec.Inmovilizado.Entities
             public Int32Field InmovilizadoId;
             public StringField Descripcion;
             public Int32Field SubTipoInmovilizadoId;
+            public Int32Field TipoInmovilizadoId;
             public Int32Field SedeId;
             public Int32Field ProveedorId;
             public DateTimeField FechaCompra;
@@ -155,6 +164,7 @@ namespace ProyectosZec.Inmovilizado.Entities
             public StringField SubTipoInmovilizadoSubTipo;
 
             public StringField Sede;
+            public StringField Tipo;
 
             public StringField Proveedor;
         }

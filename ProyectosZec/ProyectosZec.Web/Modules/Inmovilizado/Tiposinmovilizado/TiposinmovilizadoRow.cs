@@ -13,6 +13,7 @@ namespace ProyectosZec.Inmovilizado.Entities
     [DisplayName("Tiposinmovilizado"), InstanceName("Tiposinmovilizado")]
     [ReadPermission("Inmovilizado:General")]
     [ModifyPermission("Inmovilizado:General")]
+    [LookupScript("Inmovilizado.Iposinmovilizado")]
     public sealed class TiposinmovilizadoRow : Row, IIdRow, INameRow
     {
         [DisplayName("Tipo Inmovilizado Id"), Identity]

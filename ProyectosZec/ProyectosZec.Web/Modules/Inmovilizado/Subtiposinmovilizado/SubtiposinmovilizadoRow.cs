@@ -13,6 +13,7 @@ namespace ProyectosZec.Inmovilizado.Entities
     [DisplayName("Subtiposinmovilizado"), InstanceName("Subtiposinmovilizado")]
     [ReadPermission("Inmovilizado:General")]
     [ModifyPermission("Inmovilizado:General")]
+    [LookupScript("Inmocilizado.Subtiposinmovilizado")]
     public sealed class SubtiposinmovilizadoRow : Row, IIdRow, INameRow
     {
         [DisplayName("Sub Tipo Inmovilizado Id"), Identity]
@@ -22,21 +23,21 @@ namespace ProyectosZec.Inmovilizado.Entities
             set { Fields.SubTipoInmovilizadoId[this] = value; }
         }
 
-        [DisplayName("Tipo Inmovilizado"), NotNull, ForeignKey("tiposinmovilizado", "TipoInmovilizadoId"), LeftJoin("jTipoInmovilizado"), TextualField("TipoInmovilizadoTipo")]
+        [DisplayName("Tipo Id"), NotNull, ForeignKey("tiposinmovilizado", "TipoInmovilizadoId"), LeftJoin("jTipoInmovilizado"), TextualField("TipoInmovilizadoTipo"),LookupInclude]
         public Int32? TipoInmovilizadoId
         {
             get { return Fields.TipoInmovilizadoId[this]; }
             set { Fields.TipoInmovilizadoId[this] = value; }
         }
 
-        [DisplayName("Sub Tipo"), Size(75), NotNull, QuickSearch]
+        [DisplayName("SubTipo"), Size(75), NotNull, QuickSearch]
         public String SubTipo
         {
             get { return Fields.SubTipo[this]; }
             set { Fields.SubTipo[this] = value; }
         }
 
-        [DisplayName("Tipo Inmovilizado Tipo"), Expression("jTipoInmovilizado.[Tipo]")]
+        [DisplayName("Tipo"), Expression("jTipoInmovilizado.[Tipo]")]
         public String TipoInmovilizadoTipo
         {
             get { return Fields.TipoInmovilizadoTipo[this]; }
@@ -63,9 +64,8 @@ namespace ProyectosZec.Inmovilizado.Entities
         public class RowFields : RowFieldsBase
         {
             public Int32Field SubTipoInmovilizadoId;
-            public Int32Field TipoInmovilizadoId;
             public StringField SubTipo;
-
+            public Int32Field TipoInmovilizadoId;
             public StringField TipoInmovilizadoTipo;
         }
     }

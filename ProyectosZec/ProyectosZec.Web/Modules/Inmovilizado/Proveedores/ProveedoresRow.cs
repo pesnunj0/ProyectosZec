@@ -13,6 +13,7 @@ namespace ProyectosZec.Inmovilizado.Entities
     [DisplayName("Proveedores"), InstanceName("Proveedores")]
     [ReadPermission("Inmovilizado:General")]
     [ModifyPermission("Inmovilizado:General")]
+    [LookupScript("Inmovilizado.Proveedores")]
     public sealed class ProveedoresRow : Row, IIdRow, INameRow
     {
         [DisplayName("Proveedor Id"), Identity]
