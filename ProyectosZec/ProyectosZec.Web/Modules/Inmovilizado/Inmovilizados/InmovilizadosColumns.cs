@@ -15,12 +15,21 @@ namespace ProyectosZec.Inmovilizado.Columns
     {
         [EditLink, DisplayName("Db.Shared.RecordId"), AlignRight]
         public Int32 InmovilizadoId { get; set; }
-        [EditLink]
+        [EditLink,Width(150)]
         public String Descripcion { get; set; }
-        public String SubTipoInmovilizadoSubTipo { get; set; }
+        [Width(90)]
+        public String NumeroSerie { get; set; }
+        [Width(70),QuickFilter, LookupEditor(typeof(Entities.TiposinmovilizadoRow))]
+        public String Tipo { get; set; }
+        [Width(100), QuickFilter, LookupEditor(typeof(Entities.SubtiposinmovilizadoRow), CascadeFrom = "TipoInmovilizadoId")]
+        public String SubTipo { get; set; }
+        [Width(100),QuickFilter]
         public String Sede { get; set; }
+        [Width(120),QuickFilter]
         public String Proveedor { get; set; }
+        [Width(90), QuickFilter, DisplayFormat("d")]
         public DateTime FechaCompra { get; set; }
+        [Width(90), QuickFilter, DisplayFormat("d")]
         public DateTime FechaBaja { get; set; }
         public Decimal Valor { get; set; }
         public Int16 Amortizacion { get; set; }

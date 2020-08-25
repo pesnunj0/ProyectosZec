@@ -119,7 +119,8 @@ namespace ProyectosZec.Migrations.DefaultDB
             });
 
             this.CreateTableWithId32("Inmovilizados", "InmovilizadoId", s => s
-                 .WithColumn("Descripcion").AsString(25).NotNullable()
+                 .WithColumn("Descripcion").AsString(75).NotNullable()
+                 .WithColumn("NumeroSerie").AsString(25)
                  .WithColumn("SubTipoInmovilizadoId").AsInt32().NotNullable()
                  .ForeignKey("FK_SubtipoId","SubTiposInmovilizado", "SubTipoInmovilizadoId")
                  .WithColumn("SedeId").AsInt32().NotNullable()

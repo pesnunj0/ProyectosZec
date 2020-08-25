@@ -11,19 +11,19 @@ namespace ProyectosZec.Inmovilizado.Entities
 
     [ConnectionKey("Default"), Module("Inmovilizado"), TableName("subtiposinmovilizado")]
     [DisplayName("Subtiposinmovilizado"), InstanceName("Subtiposinmovilizado")]
-    [ReadPermission("Inmovilizado:General")]
-    [ModifyPermission("Inmovilizado:General")]
-    [LookupScript("Inmocilizado.Subtiposinmovilizado")]
+    [ReadPermission("Inmovilizado:Read")]
+    [ModifyPermission("Inmovilizado:Modify")]
+    [LookupScript("Inmovilizado.Subtiposinmovilizado")]
     public sealed class SubtiposinmovilizadoRow : Row, IIdRow, INameRow
     {
-        [DisplayName("Sub Tipo Inmovilizado Id"), Identity]
+        [DisplayName("SubTipoInmovilizadoId"), Identity]
         public Int32? SubTipoInmovilizadoId
         {
             get { return Fields.SubTipoInmovilizadoId[this]; }
             set { Fields.SubTipoInmovilizadoId[this] = value; }
         }
 
-        [DisplayName("Tipo Id"), NotNull, ForeignKey("tiposinmovilizado", "TipoInmovilizadoId"), LeftJoin("jTipoInmovilizado"), TextualField("TipoInmovilizadoTipo"),LookupInclude]
+        [DisplayName("TipoId"), NotNull, ForeignKey("tiposinmovilizado", "TipoInmovilizadoId"), LeftJoin("jTipoInmovilizado"), TextualField("TipoInmovilizadoTipo"),LookupInclude]
         public Int32? TipoInmovilizadoId
         {
             get { return Fields.TipoInmovilizadoId[this]; }

@@ -14,8 +14,18 @@ namespace ProyectosZec.Inmovilizado.Forms
     public class InmovilizadosForm
     {
         public String Descripcion { get; set; }
+        
+        public String NumeroSerie { get; set; }
+
+        [DisplayName("Tipo"), LookupEditor(typeof(Entities.TiposinmovilizadoRow))]
+        public Int32 TipoInmovilizadoId { get; set; }
+
+        [DisplayName("SubTipo"), LookupEditor(typeof(Entities.SubtiposinmovilizadoRow), CascadeFrom = "TipoInmovilizadoId")]
         public Int32 SubTipoInmovilizadoId { get; set; }
+
+        [LookupEditor("Intranet.Sedes")]
         public Int32 SedeId { get; set; }
+        [DisplayName("Proveedor")]
         public Int32 ProveedorId { get; set; }
         public DateTime FechaCompra { get; set; }
         public DateTime FechaBaja { get; set; }

@@ -11,8 +11,8 @@ namespace ProyectosZec.Inmovilizado.Entities
 
     [ConnectionKey("Default"), Module("Inmovilizado"), TableName("proveedores")]
     [DisplayName("Proveedores"), InstanceName("Proveedores")]
-    [ReadPermission("Inmovilizado:General")]
-    [ModifyPermission("Inmovilizado:General")]
+    [ReadPermission("Inmovilizado:Read")]
+    [ModifyPermission("Inmovilizado:Modify")]
     [LookupScript("Inmovilizado.Proveedores")]
     public sealed class ProveedoresRow : Row, IIdRow, INameRow
     {

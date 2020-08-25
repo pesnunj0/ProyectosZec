@@ -11,8 +11,8 @@ namespace ProyectosZec.Inmovilizado.Entities
 
     [ConnectionKey("Default"), Module("Inmovilizado"), TableName("inmovilizados")]
     [DisplayName("Inmovilizados"), InstanceName("Inmovilizados")]
-    [ReadPermission("Inmovilizado:General")]
-    [ModifyPermission("Inmovilizado:General")]
+    [ReadPermission("Inmovilizado:Read")]
+    [ModifyPermission("Inmovilizado:Modify")]
     public sealed class InmovilizadosRow : Row, IIdRow, INameRow
     {
         [DisplayName("Inmovilizado Id"), Identity]
@@ -22,36 +22,47 @@ namespace ProyectosZec.Inmovilizado.Entities
             set { Fields.InmovilizadoId[this] = value; }
         }
 
-        [DisplayName("Descripcion"), Size(25), NotNull, QuickSearch]
+        [DisplayName("Descripcion"), Size(75), NotNull, QuickSearch]
         public String Descripcion
         {
             get { return Fields.Descripcion[this]; }
             set { Fields.Descripcion[this] = value; }
         }
 
-        [DisplayName("Sub Tipo Inmovilizado"), NotNull, ForeignKey("subtiposinmovilizado", "SubTipoInmovilizadoId"), LeftJoin("jSubTipoInmovilizado"), TextualField("SubTipoInmovilizadoSubTipo")]
-        [LookupEditor(typeof(Entities.TiposinmovilizadoRow), CascadeFrom = "TipoInmovilizadoId", CascadeField = "TipoInmovilizadoId")]
+        [DisplayName("S/N"), Size(25), NotNull, QuickSearch]
+        public String NumeroSerie
+        {
+            get { return Fields.NumeroSerie[this]; }
+            set { Fields.NumeroSerie[this] = value; }
+        }
+
+        [DisplayName("Sub Tipo"), NotNull, ForeignKey("subtiposinmovilizado", "SubTipoInmovilizadoId"), LeftJoin("jSubTipoInmovilizado"), TextualField("SubTipo")]
+        [LookupEditor("Inmovilizado.Subtiposinmovilizado", InplaceAdd = true, CascadeFrom = "TipoInmovilizadoId", CascadeField = "TipoInmovilizadoId")]
         public Int32? SubTipoInmovilizadoId
         {
             get { return Fields.SubTipoInmovilizadoId[this]; }
             set { Fields.SubTipoInmovilizadoId[this] = value; }
         }
 
-        [DisplayName("Tipo Id"), Expression("jjSubTipoInmovilizado.[SubTipoInmovilizadoId]"), ForeignKey("tiposinmovilizado", "TipoInmovilizadoId"), LeftJoin("jTipoInmovilizado")]
+        [DisplayName("Tipo Id"), Expression("jSubTipoInmovilizado.[TipoInmovilizadoId]"), ForeignKey("tiposinmovilizado", "TipoInmovilizadoId"), LeftJoin("jTipoInmovilizado")]
+        [LookupEditor(typeof(Entities.TiposinmovilizadoRow))]
         public Int32? TipoInmovilizadoId
         {
             get { return Fields.TipoInmovilizadoId[this]; }
             set { Fields.TipoInmovilizadoId[this] = value; }
         }
 
-        [DisplayName("Sede"), NotNull, ForeignKey("sedes", "SedeId"), LeftJoin("jSede"), TextualField("Sede")]
+        [DisplayName("Sede"), NotNull, ForeignKey("sedes", "SedeId"), LeftJoin("jSede"), TextualField("Sede"),LookupInclude]
+        [LookupEditor("Intranet.Sedes", InplaceAdd = true)]
         public Int32? SedeId
         {
             get { return Fields.SedeId[this]; }
             set { Fields.SedeId[this] = value; }
         }
 
-        [DisplayName("Proveedor"), NotNull, ForeignKey("proveedores", "ProveedorId"), LeftJoin("jProveedor"), TextualField("Proveedor")]
+        [DisplayName("Proveedor"), NotNull, ForeignKey("proveedores", "ProveedorId"), LeftJoin("jProveedor"), TextualField("Proveedor"),LookupInclude]
+        [LookupEditor(typeof(ProveedoresRow), InplaceAdd = true)]
+        
         public Int32? ProveedorId
         {
             get { return Fields.ProveedorId[this]; }
@@ -100,18 +111,17 @@ namespace ProyectosZec.Inmovilizado.Entities
             set { Fields.Factura[this] = value; }
         }
 
-        [DisplayName("Sub Tipo Inmovilizado Tipo Inmovilizado Id"), Expression("jSubTipoInmovilizado.[TipoInmovilizadoId]")]
-        public Int32? SubTipoInmovilizadoTipoInmovilizadoId
+        [DisplayName("Tipo"), Expression("jTipoInmovilizado.[Tipo]")]
+        public String Tipo
         {
-            get { return Fields.SubTipoInmovilizadoTipoInmovilizadoId[this]; }
-            set { Fields.SubTipoInmovilizadoTipoInmovilizadoId[this] = value; }
+            get { return Fields.Tipo[this]; }
+            set { Fields.Tipo[this] = value; }
         }
-
-        [DisplayName("Sub Tipo Inmovilizado Sub Tipo"), Expression("jSubTipoInmovilizado.[SubTipo]")]
-        public String SubTipoInmovilizadoSubTipo
+        [DisplayName("SubTipo"), Expression("jSubTipoInmovilizado.[SubTipo]")]
+        public String SubTipo
         {
-            get { return Fields.SubTipoInmovilizadoSubTipo[this]; }
-            set { Fields.SubTipoInmovilizadoSubTipo[this] = value; }
+            get { return Fields.SubTipo[this]; }
+            set { Fields.SubTipo[this] = value; }
         }
 
         [DisplayName("Sede"), Expression("jSede.[Sede]")]
@@ -149,6 +159,7 @@ namespace ProyectosZec.Inmovilizado.Entities
         {
             public Int32Field InmovilizadoId;
             public StringField Descripcion;
+            public StringField NumeroSerie;
             public Int32Field SubTipoInmovilizadoId;
             public Int32Field TipoInmovilizadoId;
             public Int32Field SedeId;
@@ -160,8 +171,7 @@ namespace ProyectosZec.Inmovilizado.Entities
             public Int16Field Garantia;
             public StringField Factura;
 
-            public Int32Field SubTipoInmovilizadoTipoInmovilizadoId;
-            public StringField SubTipoInmovilizadoSubTipo;
+            public StringField SubTipo;
 
             public StringField Sede;
             public StringField Tipo;
