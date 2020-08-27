@@ -2257,6 +2257,7 @@ declare namespace ProyectosZec.Inmovilizado {
         protected getLocalTextPrefix(): string;
         protected getService(): string;
         constructor(container: JQuery);
+        getButtons(): Serenity.ToolButton[];
     }
 }
 declare namespace ProyectosZec.Inmovilizado {
@@ -2305,6 +2306,7 @@ declare namespace ProyectosZec.Inmovilizado {
         protected getLocalTextPrefix(): string;
         protected getService(): string;
         constructor(container: JQuery);
+        getButtons(): Serenity.ToolButton[];
     }
 }
 declare namespace ProyectosZec.Inmovilizado {

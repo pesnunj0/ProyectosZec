@@ -15,8 +15,9 @@ namespace ProyectosZec.Inmovilizado.Columns
     {
         [EditLink, DisplayName("Db.Shared.RecordId"), AlignRight]
         public Int32 SubTipoInmovilizadoId { get; set; }
+        [Width(90), QuickFilter]
         public String TipoInmovilizadoTipo { get; set; }
-        [EditLink]
+        [EditLink,Width(300)]
         public String SubTipo { get; set; }
     }
 }

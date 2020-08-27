@@ -24,6 +24,7 @@ namespace ProyectosZec.Inmovilizado.Entities
         }
 
         [DisplayName("TipoId"), NotNull, ForeignKey("tiposinmovilizado", "TipoInmovilizadoId"), LeftJoin("jTipoInmovilizado"), TextualField("TipoInmovilizadoTipo"),LookupInclude]
+        [LookupEditor("Inmovilizado.Tiposinmovilizado")]
         public Int32? TipoInmovilizadoId
         {
             get { return Fields.TipoInmovilizadoId[this]; }

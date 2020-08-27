@@ -9,6 +9,13 @@ namespace ProyectosZec.Inmovilizado.Endpoints
     using MyRepository = Repositories.SubtiposinmovilizadoRepository;
     using MyRow = Entities.SubtiposinmovilizadoRow;
 
+    // Añadidos
+    using ProyectosZec;
+    using System;
+    using Serenity.Reporting;
+    using Serenity.Web;
+    // Fin Añadidos
+
     [RoutePrefix("Services/Inmovilizado/Subtiposinmovilizado"), Route("{action}")]
     [ConnectionKey(typeof(MyRow)), ServiceAuthorize(typeof(MyRow))]
     public class SubtiposinmovilizadoController : ServiceEndpoint
@@ -41,6 +48,16 @@ namespace ProyectosZec.Inmovilizado.Endpoints
         public ListResponse<MyRow> List(IDbConnection connection, ListRequest request)
         {
             return new MyRepository().List(connection, request);
+        }
+        // Añadidos Excel
+        [HttpPost]
+        public FileContentResult ListExcel(IDbConnection connection, ListRequest request)
+        {
+            var data = List(connection, request).Entities;
+            var report = new DynamicDataReport(data, request.IncludeColumns, typeof(Columns.SubtiposinmovilizadoColumns));
+            var bytes = new ReportRepository().Render(report);
+            return ExcelContentResult.Create(bytes, "SubTipos_InmovilizadosList_" +
+                DateTime.Now.ToString("yyyyMMdd_HHmmss") + ".xlsx");
         }
     }
 }

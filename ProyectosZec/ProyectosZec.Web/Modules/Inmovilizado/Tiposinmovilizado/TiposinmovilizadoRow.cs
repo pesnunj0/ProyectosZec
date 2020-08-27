@@ -10,10 +10,10 @@ namespace ProyectosZec.Inmovilizado.Entities
     using System.IO;
 
     [ConnectionKey("Default"), Module("Inmovilizado"), TableName("tiposinmovilizado")]
-    [DisplayName("Tiposinmovilizado"), InstanceName("Tiposinmovilizado")]
+    [DisplayName("Tiposinmovilizado"), InstanceName("c")]
     [ReadPermission("Inmovilizado:General")]
     [ModifyPermission("Inmovilizado:General")]
-    [LookupScript("Inmovilizado.Iposinmovilizado")]
+    [LookupScript("Inmovilizado.Tiposinmovilizado")]
     public sealed class TiposinmovilizadoRow : Row, IIdRow, INameRow
     {
         [DisplayName("Tipo Inmovilizado Id"), Identity]

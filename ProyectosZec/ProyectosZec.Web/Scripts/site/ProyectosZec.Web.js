@@ -4581,7 +4581,29 @@ var ProyectosZec;
             InmovilizadosGrid.prototype.getInsertPermission = function () { return Inmovilizado.InmovilizadosRow.insertPermission; };
             InmovilizadosGrid.prototype.getLocalTextPrefix = function () { return Inmovilizado.InmovilizadosRow.localTextPrefix; };
             InmovilizadosGrid.prototype.getService = function () { return Inmovilizado.InmovilizadosService.baseUrl; };
+            InmovilizadosGrid.prototype.getButtons = function () {
+                var _this = this;
+                var buttons = _super.prototype.getButtons.call(this);
+                buttons.push(ProyectosZec.Common.ExcelExportHelper.createToolButton({
+                    grid: this,
+                    onViewSubmit: function () { return _this.onViewSubmit(); },
+                    service: 'Inmovilizado/Inmovilizados/ListExcel',
+                    separator: true
+                }));
+                buttons.push(ProyectosZec.Common.PdfExportHelper.createToolButton({
+                    grid: this,
+                    onViewSubmit: function () { return _this.onViewSubmit(); }
+                }));
+                return buttons;
+                // Fin añadidos
+            };
             InmovilizadosGrid = __decorate([
+                Serenity.Decorators.registerClass()
+                // Añadido para los filtros multiples
+                ,
+                Serenity.Decorators.filterable()
+                // Fin Añadido
+                ,
                 Serenity.Decorators.registerClass()
             ], InmovilizadosGrid);
             return InmovilizadosGrid;
@@ -4681,8 +4703,28 @@ var ProyectosZec;
             SubtiposinmovilizadoGrid.prototype.getInsertPermission = function () { return Inmovilizado.SubtiposinmovilizadoRow.insertPermission; };
             SubtiposinmovilizadoGrid.prototype.getLocalTextPrefix = function () { return Inmovilizado.SubtiposinmovilizadoRow.localTextPrefix; };
             SubtiposinmovilizadoGrid.prototype.getService = function () { return Inmovilizado.SubtiposinmovilizadoService.baseUrl; };
+            SubtiposinmovilizadoGrid.prototype.getButtons = function () {
+                var _this = this;
+                var buttons = _super.prototype.getButtons.call(this);
+                buttons.push(ProyectosZec.Common.ExcelExportHelper.createToolButton({
+                    grid: this,
+                    onViewSubmit: function () { return _this.onViewSubmit(); },
+                    service: 'Inmovilizado/Inmovilizados/ListExcel',
+                    separator: true
+                }));
+                buttons.push(ProyectosZec.Common.PdfExportHelper.createToolButton({
+                    grid: this,
+                    onViewSubmit: function () { return _this.onViewSubmit(); }
+                }));
+                return buttons;
+                // Fin añadidos
+            };
             SubtiposinmovilizadoGrid = __decorate([
                 Serenity.Decorators.registerClass()
+                // Añadido para los filtros multiples
+                ,
+                Serenity.Decorators.filterable()
+                // Fin Añadido
             ], SubtiposinmovilizadoGrid);
             return SubtiposinmovilizadoGrid;
         }(Serenity.EntityGrid));

@@ -54,7 +54,7 @@ namespace ProyectosZec.Inmovilizado.Endpoints
         public FileContentResult ListExcel(IDbConnection connection, ListRequest request)
         {
             var data = List(connection, request).Entities;
-            var report = new DynamicDataReport(data, request.IncludeColumns, typeof(Columns.TelefonosColumns));
+            var report = new DynamicDataReport(data, request.IncludeColumns, typeof(Columns.InmovilizadosColumns));
             var bytes = new ReportRepository().Render(report);
             return ExcelContentResult.Create(bytes, "InmovilizadosList_" +
                 DateTime.Now.ToString("yyyyMMdd_HHmmss") + ".xlsx");
