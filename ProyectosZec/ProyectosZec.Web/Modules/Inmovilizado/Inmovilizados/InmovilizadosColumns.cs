@@ -13,9 +13,9 @@ namespace ProyectosZec.Inmovilizado.Columns
     [BasedOnRow(typeof(Entities.InmovilizadosRow), CheckNames = true)]
     public class InmovilizadosColumns
     {
-        [EditLink, DisplayName("Db.Shared.RecordId"), AlignRight]
+        [EditLink,Width(30), DisplayName("Db.Shared.RecordId"), AlignRight]
         public Int32 InmovilizadoId { get; set; }
-        [EditLink,Width(150)]
+        [EditLink,Width(270)]
         public String Descripcion { get; set; }
         [Width(130)]
         public String NumeroSerie { get; set; }
