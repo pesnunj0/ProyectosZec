@@ -8,7 +8,10 @@ namespace ProyectosZec.Migrations.DefaultDB
         public override void Up()
         {
             this.CreateTableWithId32("Proveedores", "ProveedorId", s => s
-            .WithColumn("Proveedor").AsString(45).NotNullable());
+            .WithColumn("Proveedor").AsString(45).NotNullable()
+            .WithColumn("Telefono").AsString(20).Nullable()
+            .WithColumn("Email").AsString(40).Nullable()
+            .WithColumn("Contacto").AsString(40).Nullable());
 
             this.CreateTableWithId32("TiposInmovilizado", "TipoInmovilizadoId", s => s
                 .WithColumn("Tipo").AsString(25).NotNullable());

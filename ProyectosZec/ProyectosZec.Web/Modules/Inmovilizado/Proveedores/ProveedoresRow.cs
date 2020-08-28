@@ -30,6 +30,26 @@ namespace ProyectosZec.Inmovilizado.Entities
             set { Fields.Proveedor[this] = value; }
         }
 
+        [DisplayName("Contacto"),Size(40)]
+        public String Contacto
+        {
+            get { return Fields.Contacto[this]; }
+            set { Fields.Contacto[this] = value; }
+        }
+
+        [DisplayName("Teléfono"), Size(20)]
+        public String Telefono
+        {
+            get { return Fields.Telefono[this]; }
+            set { Fields.Telefono[this] = value; }
+        }
+
+        [DisplayName("Email"), Size(40)]
+        public String Email
+        {
+            get { return Fields.Email[this]; }
+            set { Fields.Email[this] = value; }
+        }
         IIdField IIdRow.IdField
         {
             get { return Fields.ProveedorId; }
@@ -51,6 +71,10 @@ namespace ProyectosZec.Inmovilizado.Entities
         {
             public Int32Field ProveedorId;
             public StringField Proveedor;
+            public StringField Contacto;
+            public StringField Telefono; 
+            public StringField Email;
+
         }
     }
 }

@@ -19,6 +19,7 @@ namespace ProyectosZec.Inmovilizado {
         getButtons() {
             var buttons = super.getButtons();
 
+            // Botones Excel y Pdf
             buttons.push(ProyectosZec.Common.ExcelExportHelper.createToolButton({
                 grid: this,
                 onViewSubmit: () => this.onViewSubmit(),

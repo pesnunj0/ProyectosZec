@@ -15,7 +15,14 @@ namespace ProyectosZec.Inmovilizado.Columns
     {
         [EditLink, DisplayName("Db.Shared.RecordId"), AlignRight]
         public Int32 ProveedorId { get; set; }
-        [EditLink]
+        [EditLink, Width(170)]
         public String Proveedor { get; set; }
+
+        [Width(170)]
+        public String Contacto { get; set; }
+        [Width(100)]
+        public String Telefono { get; set; }
+
+        public String Email { get; set; }
     }
 }

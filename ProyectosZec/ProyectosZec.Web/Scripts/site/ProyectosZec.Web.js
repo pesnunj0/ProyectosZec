@@ -4584,6 +4584,7 @@ var ProyectosZec;
             InmovilizadosGrid.prototype.getButtons = function () {
                 var _this = this;
                 var buttons = _super.prototype.getButtons.call(this);
+                // Botones Excel y Pdf
                 buttons.push(ProyectosZec.Common.ExcelExportHelper.createToolButton({
                     grid: this,
                     onViewSubmit: function () { return _this.onViewSubmit(); },
@@ -4653,6 +4654,23 @@ var ProyectosZec;
             ProveedoresGrid.prototype.getInsertPermission = function () { return Inmovilizado.ProveedoresRow.insertPermission; };
             ProveedoresGrid.prototype.getLocalTextPrefix = function () { return Inmovilizado.ProveedoresRow.localTextPrefix; };
             ProveedoresGrid.prototype.getService = function () { return Inmovilizado.ProveedoresService.baseUrl; };
+            ProveedoresGrid.prototype.getButtons = function () {
+                var _this = this;
+                var buttons = _super.prototype.getButtons.call(this);
+                // Botones Excel y Pdf
+                buttons.push(ProyectosZec.Common.ExcelExportHelper.createToolButton({
+                    grid: this,
+                    onViewSubmit: function () { return _this.onViewSubmit(); },
+                    service: 'Inmovilizado/Proveedores/ListExcel',
+                    separator: true
+                }));
+                buttons.push(ProyectosZec.Common.PdfExportHelper.createToolButton({
+                    grid: this,
+                    onViewSubmit: function () { return _this.onViewSubmit(); }
+                }));
+                return buttons;
+                // Fin añadidos
+            };
             ProveedoresGrid = __decorate([
                 Serenity.Decorators.registerClass()
             ], ProveedoresGrid);
@@ -4709,7 +4727,7 @@ var ProyectosZec;
                 buttons.push(ProyectosZec.Common.ExcelExportHelper.createToolButton({
                     grid: this,
                     onViewSubmit: function () { return _this.onViewSubmit(); },
-                    service: 'Inmovilizado/Inmovilizados/ListExcel',
+                    service: 'Inmovilizado/Subtiposinmovilizados/ListExcel',
                     separator: true
                 }));
                 buttons.push(ProyectosZec.Common.PdfExportHelper.createToolButton({

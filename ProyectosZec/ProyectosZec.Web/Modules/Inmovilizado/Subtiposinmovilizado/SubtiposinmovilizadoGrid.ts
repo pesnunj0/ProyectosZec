@@ -22,7 +22,7 @@ namespace ProyectosZec.Inmovilizado {
             buttons.push(ProyectosZec.Common.ExcelExportHelper.createToolButton({
                 grid: this,
                 onViewSubmit: () => this.onViewSubmit(),
-                service: 'Inmovilizado/Inmovilizados/ListExcel',
+                service: 'Inmovilizado/Subtiposinmovilizados/ListExcel',
                 separator: true
             }));
 
