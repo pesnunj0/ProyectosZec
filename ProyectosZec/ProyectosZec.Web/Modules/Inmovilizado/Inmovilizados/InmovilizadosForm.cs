@@ -13,8 +13,11 @@ namespace ProyectosZec.Inmovilizado.Forms
     [BasedOnRow(typeof(Entities.InmovilizadosRow), CheckNames = true)]
     public class InmovilizadosForm
     {
+        public String Codigo { get; set; }
         public String Descripcion { get; set; }
-        
+
+        public String Ubicacion { get; set; }
+
         public String NumeroSerie { get; set; }
 
         [DisplayName("Tipo"), LookupEditor(typeof(Entities.TiposinmovilizadoRow))]
@@ -22,7 +25,7 @@ namespace ProyectosZec.Inmovilizado.Forms
 
         [DisplayName("SubTipo"), LookupEditor(typeof(Entities.SubtiposinmovilizadoRow), CascadeFrom = "TipoInmovilizadoId")]
         public Int32 SubTipoInmovilizadoId { get; set; }
-
+        public String Pg { get; set; }
         [LookupEditor("Intranet.Sedes")]
         public Int32 SedeId { get; set; }
         [DisplayName("Proveedor")]
@@ -33,5 +36,6 @@ namespace ProyectosZec.Inmovilizado.Forms
         public Int16 Amortizacion { get; set; }
         public Int16 Garantia { get; set; }
         public String Factura { get; set; }
+        public String GalleryImages { get; set; }
     }
 }

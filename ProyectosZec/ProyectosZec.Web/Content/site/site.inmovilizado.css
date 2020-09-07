@@ -1,0 +1,35 @@
+.reset-box-sizing,
+.reset-box-sizing *,
+.reset-box-sizing *:before,
+.reset-box-sizing *:after {
+  -ms-box-sizing: content-box;
+  box-sizing: content-box;
+}
+.s-Inmovilizado-ProveedoresDialog > .size {
+  width: 650px;
+}
+.s-Inmovilizado-ProveedoresDialog .caption {
+  width: 150px;
+}
+.s-Inmovilizado-SubtiposinmovilizadoDialog > .size {
+  width: 650px;
+}
+.s-Inmovilizado-SubtiposinmovilizadoDialog .caption {
+  width: 150px;
+}
+.s-Inmovilizado-TiposinmovilizadoDialog > .size {
+  width: 650px;
+}
+.s-Inmovilizado-TiposinmovilizadoDialog .caption {
+  width: 150px;
+}
+.s-Inmovilizado-InmovilizadosDialog > .size {
+  width: 750px;
+  height: 700px;
+}
+.s-Inmovilizado-InmovilizadosDialog .caption {
+  width: 150px;
+}
+.s-Inmovilizado-InmovilizadosDialog .s-InmovilizadoGrid > .grid-container {
+  height: 600px;
+}

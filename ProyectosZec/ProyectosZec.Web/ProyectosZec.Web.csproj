@@ -525,6 +525,12 @@
     <Content Include="Content\site\site.cuadromandos.min.css">
       <DependentUpon>site.cuadromandos.css</DependentUpon>
     </Content>
+    <Content Include="Content\site\site.inmovilizado.css">
+      <DependentUpon>site.inmovilizado.less</DependentUpon>
+    </Content>
+    <Content Include="Content\site\site.inmovilizado.min.css">
+      <DependentUpon>site.inmovilizado.css</DependentUpon>
+    </Content>
     <Content Include="Content\slick-default-theme.css" />
     <Content Include="Content\slick.columnpicker.css" />
     <Content Include="Content\slick.grid.css" />
@@ -1836,12 +1842,18 @@
     <TypeScriptCompile Include="Imports\ServerTypings\Inmovilizado.TiposinmovilizadoForm.ts">
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
-    <TypeScriptCompile Include="Imports\ServerTypings\Inmovilizado.InmovilizadosRow.ts">  <DependentUpon>ServerTypings.tt</DependentUpon></TypeScriptCompile>
-    <TypeScriptCompile Include="Imports\ServerTypings\Inmovilizado.InmovilizadosService.ts">  <DependentUpon>ServerTypings.tt</DependentUpon></TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\Inmovilizado.InmovilizadosRow.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\Inmovilizado.InmovilizadosService.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
     <Content Include="Modules\Inmovilizado\Inmovilizados\InmovilizadosIndex.cshtml" />
     <TypeScriptCompile Include="Modules\Inmovilizado\Inmovilizados\InmovilizadosDialog.ts" />
     <TypeScriptCompile Include="Modules\Inmovilizado\Inmovilizados\InmovilizadosGrid.ts" />
-    <TypeScriptCompile Include="Imports\ServerTypings\Inmovilizado.InmovilizadosForm.ts">  <DependentUpon>ServerTypings.tt</DependentUpon></TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\Inmovilizado.InmovilizadosForm.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Global.asax" />
@@ -1859,6 +1871,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\DefaultDB\DefaultDB_20200903_130000_Inmovilizado_cambios.cs" />
     <Compile Include="Migrations\DefaultDB\DefaultDB_20200819_130000_Inmovilizado.cs" />
     <Compile Include="Migrations\DefaultDB\DefaultDB_20200303_130000_Telefonos.cs" />
     <Compile Include="Migrations\ProyectosDB\ProyectosDB_20200219_000000_Proyectos.cs" />
@@ -2079,7 +2092,7 @@
     <Compile Include="Modules\Inmovilizado\Inmovilizados\InmovilizadosForm.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Data\" />
+    <Folder Include="App_Data\upload\" />
     <Folder Include="Modules\CuadroMandos\Scripts\" />
   </ItemGroup>
   <ItemGroup>

@@ -22,7 +22,14 @@ namespace ProyectosZec.Inmovilizado.Entities
             set { Fields.InmovilizadoId[this] = value; }
         }
 
-        [DisplayName("Descripcion"), Size(75), NotNull, QuickSearch]
+        [DisplayName("Codigo"), Size(20), QuickSearch]
+        public String Codigo
+        {
+            get { return Fields.Codigo[this]; }
+            set { Fields.Codigo[this] = value; }
+        }
+
+        [DisplayName("Descripción"), Size(75), NotNull, QuickSearch]
         public String Descripcion
         {
             get { return Fields.Descripcion[this]; }
@@ -34,6 +41,20 @@ namespace ProyectosZec.Inmovilizado.Entities
         {
             get { return Fields.NumeroSerie[this]; }
             set { Fields.NumeroSerie[this] = value; }
+        }
+
+        [DisplayName("Ubic."), Size(20), QuickSearch]
+        public String Ubicacion
+        {
+            get { return Fields.Ubicacion[this]; }
+            set { Fields.Ubicacion[this] = value; }
+        }
+
+        [DisplayName("PG"), Size(20), QuickSearch]
+        public String Pg
+        {
+            get { return Fields.Pg[this]; }
+            set { Fields.Pg[this] = value; }
         }
 
         [DisplayName("Sub Tipo"), NotNull, ForeignKey("subtiposinmovilizado", "SubTipoInmovilizadoId"), LeftJoin("jSubTipoInmovilizado")]
@@ -75,6 +96,12 @@ namespace ProyectosZec.Inmovilizado.Entities
             get { return Fields.FechaCompra[this]; }
             set { Fields.FechaCompra[this] = value; }
         }
+        [DisplayName("Valor Residual"), Expression("T0.[Valor]-(T0.[Valor]/(T0.[Amortizacion]*12))*TIMESTAMPDIFF(MONTH, T0.[FechaCompra], CURRENT_TIMESTAMP)")]
+        public Decimal? ValorResidual
+        {
+            get { return Fields.ValorResidual[this]; }
+            set { Fields.ValorResidual[this] = value; }
+        }
 
         [DisplayName("Fecha Baja")]
         public DateTime? FechaBaja
@@ -83,7 +110,7 @@ namespace ProyectosZec.Inmovilizado.Entities
             set { Fields.FechaBaja[this] = value; }
         }
 
-        [DisplayName("Valor"), Size(10), Scale(2), NotNull]
+        [DisplayName("Coste Inicial"), Size(10), Scale(2), NotNull]
         public Decimal? Valor
         {
             get { return Fields.Valor[this]; }
@@ -138,6 +165,14 @@ namespace ProyectosZec.Inmovilizado.Entities
             set { Fields.Proveedor[this] = value; }
         }
 
+        [DisplayName("Fotos"), Size(100),
+        MultipleImageUploadEditor(FilenameFormat = "Inmovilizados/GalleryImages/~")]
+        public string GalleryImages
+        {
+            get { return Fields.GalleryImages[this]; }
+            set { Fields.GalleryImages[this] = value; }
+        }
+
         IIdField IIdRow.IdField
         {
             get { return Fields.InmovilizadoId; }
@@ -158,6 +193,10 @@ namespace ProyectosZec.Inmovilizado.Entities
         public class RowFields : RowFieldsBase
         {
             public Int32Field InmovilizadoId;
+
+            public StringField Ubicacion;
+            public StringField Codigo;
+            public StringField Pg;
             public StringField Descripcion;
             public StringField NumeroSerie;
             public Int32Field SubTipoInmovilizadoId;
@@ -170,6 +209,7 @@ namespace ProyectosZec.Inmovilizado.Entities
             public Int16Field Amortizacion;
             public Int16Field Garantia;
             public StringField Factura;
+            public readonly StringField GalleryImages;
 
             public StringField SubTipo;
 
@@ -177,6 +217,7 @@ namespace ProyectosZec.Inmovilizado.Entities
             public StringField Tipo;
 
             public StringField Proveedor;
+            public DecimalField ValorResidual;
         }
     }
 }
