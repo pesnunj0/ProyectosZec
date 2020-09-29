@@ -1006,31 +1006,42 @@ var ProyectosZec;
     (function (Inmovilizado) {
         var InmovilizadosForm = /** @class */ (function (_super) {
             __extends(InmovilizadosForm, _super);
-            function InmovilizadosForm() {
-                return _super !== null && _super.apply(this, arguments) || this;
+            function InmovilizadosForm(prefix) {
+                var _this = _super.call(this, prefix) || this;
+                if (!InmovilizadosForm.init) {
+                    InmovilizadosForm.init = true;
+                    var s = Serenity;
+                    var w0 = s.StringEditor;
+                    var w1 = s.LookupEditor;
+                    var w2 = s.DateEditor;
+                    var w3 = s.DecimalEditor;
+                    var w4 = s.IntegerEditor;
+                    var w5 = s.MultipleImageUploadEditor;
+                    Q.initFormType(InmovilizadosForm, [
+                        'Codigo', w0,
+                        'Descripcion', w0,
+                        'Ubicacion', w0,
+                        'NumeroSerie', w0,
+                        'TipoInmovilizadoId', w1,
+                        'SubTipoInmovilizadoId', w1,
+                        'Pg', w0,
+                        'SedeId', w1,
+                        'ProveedorId', w1,
+                        'FechaCompra', w2,
+                        'FechaBaja', w2,
+                        'Valor', w3,
+                        'Amortizacion', w4,
+                        'Garantia', w4,
+                        'Factura', w0,
+                        'GalleryImages', w5
+                    ]);
+                }
+                return _this;
             }
             InmovilizadosForm.formKey = 'Inmovilizado.Inmovilizados';
             return InmovilizadosForm;
         }(Serenity.PrefixedContext));
         Inmovilizado.InmovilizadosForm = InmovilizadosForm;
-        [,
-            ['Descripcion', function () { return Serenity.StringEditor; }],
-            ['SubTipoInmovilizadoId', function () { return Serenity.IntegerEditor; }],
-            ['SedeId', function () { return Serenity.IntegerEditor; }],
-            ['ProveedorId', function () { return Serenity.IntegerEditor; }],
-            ['FechaCompra', function () { return Serenity.DateEditor; }],
-            ['FechaBaja', function () { return Serenity.DateEditor; }],
-            ['Valor', function () { return Serenity.DecimalEditor; }],
-            ['Amortizacion', function () { return Serenity.IntegerEditor; }],
-            ['Garantia', function () { return Serenity.IntegerEditor; }],
-            ['Factura', function () { return Serenity.StringEditor; }]
-        ].forEach(function (x) { return Object.defineProperty(InmovilizadosForm.prototype, x[0], {
-            get: function () {
-                return this.w(x[0], x[1]());
-            },
-            enumerable: true,
-            configurable: true
-        }); });
     })(Inmovilizado = ProyectosZec.Inmovilizado || (ProyectosZec.Inmovilizado = {}));
 })(ProyectosZec || (ProyectosZec = {}));
 var ProyectosZec;
@@ -1042,30 +1053,10 @@ var ProyectosZec;
             InmovilizadosRow.idProperty = 'InmovilizadoId';
             InmovilizadosRow.nameProperty = 'Descripcion';
             InmovilizadosRow.localTextPrefix = 'Inmovilizado.Inmovilizados';
-            InmovilizadosRow.deletePermission = 'Inmovilizado:General';
-            InmovilizadosRow.insertPermission = 'Inmovilizado:General';
-            InmovilizadosRow.readPermission = 'Inmovilizado:General';
-            InmovilizadosRow.updatePermission = 'Inmovilizado:General';
-            var Fields;
-            (function (Fields) {
-            })(Fields = InmovilizadosRow.Fields || (InmovilizadosRow.Fields = {}));
-            [
-                'InmovilizadoId',
-                'Descripcion',
-                'SubTipoInmovilizadoId',
-                'SedeId',
-                'ProveedorId',
-                'FechaCompra',
-                'FechaBaja',
-                'Valor',
-                'Amortizacion',
-                'Garantia',
-                'Factura',
-                'SubTipoInmovilizadoTipoInmovilizadoId',
-                'SubTipoInmovilizadoSubTipo',
-                'Sede',
-                'Proveedor'
-            ].forEach(function (x) { return Fields[x] = x; });
+            InmovilizadosRow.deletePermission = 'Inmovilizado:Modify';
+            InmovilizadosRow.insertPermission = 'Inmovilizado:Modify';
+            InmovilizadosRow.readPermission = 'Inmovilizado:Read';
+            InmovilizadosRow.updatePermission = 'Inmovilizado:Modify';
         })(InmovilizadosRow = Inmovilizado.InmovilizadosRow || (Inmovilizado.InmovilizadosRow = {}));
     })(Inmovilizado = ProyectosZec.Inmovilizado || (ProyectosZec.Inmovilizado = {}));
 })(ProyectosZec || (ProyectosZec = {}));
@@ -1076,9 +1067,6 @@ var ProyectosZec;
         var InmovilizadosService;
         (function (InmovilizadosService) {
             InmovilizadosService.baseUrl = 'Inmovilizado/Inmovilizados';
-            var Methods;
-            (function (Methods) {
-            })(Methods = InmovilizadosService.Methods || (InmovilizadosService.Methods = {}));
             [
                 'Create',
                 'Update',
@@ -1089,7 +1077,6 @@ var ProyectosZec;
                 InmovilizadosService[x] = function (r, s, o) {
                     return Q.serviceRequest(InmovilizadosService.baseUrl + '/' + x, r, s, o);
                 };
-                Methods[x] = InmovilizadosService.baseUrl + '/' + x;
             });
         })(InmovilizadosService = Inmovilizado.InmovilizadosService || (Inmovilizado.InmovilizadosService = {}));
     })(Inmovilizado = ProyectosZec.Inmovilizado || (ProyectosZec.Inmovilizado = {}));
@@ -1100,22 +1087,25 @@ var ProyectosZec;
     (function (Inmovilizado) {
         var ProveedoresForm = /** @class */ (function (_super) {
             __extends(ProveedoresForm, _super);
-            function ProveedoresForm() {
-                return _super !== null && _super.apply(this, arguments) || this;
+            function ProveedoresForm(prefix) {
+                var _this = _super.call(this, prefix) || this;
+                if (!ProveedoresForm.init) {
+                    ProveedoresForm.init = true;
+                    var s = Serenity;
+                    var w0 = s.StringEditor;
+                    Q.initFormType(ProveedoresForm, [
+                        'Proveedor', w0,
+                        'Contacto', w0,
+                        'Telefono', w0,
+                        'Email', w0
+                    ]);
+                }
+                return _this;
             }
             ProveedoresForm.formKey = 'Inmovilizado.Proveedores';
             return ProveedoresForm;
         }(Serenity.PrefixedContext));
         Inmovilizado.ProveedoresForm = ProveedoresForm;
-        [,
-            ['Proveedor', function () { return Serenity.StringEditor; }]
-        ].forEach(function (x) { return Object.defineProperty(ProveedoresForm.prototype, x[0], {
-            get: function () {
-                return this.w(x[0], x[1]());
-            },
-            enumerable: true,
-            configurable: true
-        }); });
     })(Inmovilizado = ProyectosZec.Inmovilizado || (ProyectosZec.Inmovilizado = {}));
 })(ProyectosZec || (ProyectosZec = {}));
 var ProyectosZec;
@@ -1127,17 +1117,15 @@ var ProyectosZec;
             ProveedoresRow.idProperty = 'ProveedorId';
             ProveedoresRow.nameProperty = 'Proveedor';
             ProveedoresRow.localTextPrefix = 'Inmovilizado.Proveedores';
-            ProveedoresRow.deletePermission = 'Inmovilizado:General';
-            ProveedoresRow.insertPermission = 'Inmovilizado:General';
-            ProveedoresRow.readPermission = 'Inmovilizado:General';
-            ProveedoresRow.updatePermission = 'Inmovilizado:General';
-            var Fields;
-            (function (Fields) {
-            })(Fields = ProveedoresRow.Fields || (ProveedoresRow.Fields = {}));
-            [
-                'ProveedorId',
-                'Proveedor'
-            ].forEach(function (x) { return Fields[x] = x; });
+            ProveedoresRow.lookupKey = 'Inmovilizado.Proveedores';
+            function getLookup() {
+                return Q.getLookup('Inmovilizado.Proveedores');
+            }
+            ProveedoresRow.getLookup = getLookup;
+            ProveedoresRow.deletePermission = 'Inmovilizado:Modify';
+            ProveedoresRow.insertPermission = 'Inmovilizado:Modify';
+            ProveedoresRow.readPermission = 'Inmovilizado:Read';
+            ProveedoresRow.updatePermission = 'Inmovilizado:Modify';
         })(ProveedoresRow = Inmovilizado.ProveedoresRow || (Inmovilizado.ProveedoresRow = {}));
     })(Inmovilizado = ProyectosZec.Inmovilizado || (ProyectosZec.Inmovilizado = {}));
 })(ProyectosZec || (ProyectosZec = {}));
@@ -1148,9 +1136,6 @@ var ProyectosZec;
         var ProveedoresService;
         (function (ProveedoresService) {
             ProveedoresService.baseUrl = 'Inmovilizado/Proveedores';
-            var Methods;
-            (function (Methods) {
-            })(Methods = ProveedoresService.Methods || (ProveedoresService.Methods = {}));
             [
                 'Create',
                 'Update',
@@ -1161,7 +1146,6 @@ var ProyectosZec;
                 ProveedoresService[x] = function (r, s, o) {
                     return Q.serviceRequest(ProveedoresService.baseUrl + '/' + x, r, s, o);
                 };
-                Methods[x] = ProveedoresService.baseUrl + '/' + x;
             });
         })(ProveedoresService = Inmovilizado.ProveedoresService || (Inmovilizado.ProveedoresService = {}));
     })(Inmovilizado = ProyectosZec.Inmovilizado || (ProyectosZec.Inmovilizado = {}));
@@ -1172,23 +1156,24 @@ var ProyectosZec;
     (function (Inmovilizado) {
         var SubtiposinmovilizadoForm = /** @class */ (function (_super) {
             __extends(SubtiposinmovilizadoForm, _super);
-            function SubtiposinmovilizadoForm() {
-                return _super !== null && _super.apply(this, arguments) || this;
+            function SubtiposinmovilizadoForm(prefix) {
+                var _this = _super.call(this, prefix) || this;
+                if (!SubtiposinmovilizadoForm.init) {
+                    SubtiposinmovilizadoForm.init = true;
+                    var s = Serenity;
+                    var w0 = s.LookupEditor;
+                    var w1 = s.StringEditor;
+                    Q.initFormType(SubtiposinmovilizadoForm, [
+                        'TipoInmovilizadoId', w0,
+                        'SubTipo', w1
+                    ]);
+                }
+                return _this;
             }
             SubtiposinmovilizadoForm.formKey = 'Inmovilizado.Subtiposinmovilizado';
             return SubtiposinmovilizadoForm;
         }(Serenity.PrefixedContext));
         Inmovilizado.SubtiposinmovilizadoForm = SubtiposinmovilizadoForm;
-        [,
-            ['TipoInmovilizadoId', function () { return Serenity.IntegerEditor; }],
-            ['SubTipo', function () { return Serenity.StringEditor; }]
-        ].forEach(function (x) { return Object.defineProperty(SubtiposinmovilizadoForm.prototype, x[0], {
-            get: function () {
-                return this.w(x[0], x[1]());
-            },
-            enumerable: true,
-            configurable: true
-        }); });
     })(Inmovilizado = ProyectosZec.Inmovilizado || (ProyectosZec.Inmovilizado = {}));
 })(ProyectosZec || (ProyectosZec = {}));
 var ProyectosZec;
@@ -1200,19 +1185,15 @@ var ProyectosZec;
             SubtiposinmovilizadoRow.idProperty = 'SubTipoInmovilizadoId';
             SubtiposinmovilizadoRow.nameProperty = 'SubTipo';
             SubtiposinmovilizadoRow.localTextPrefix = 'Inmovilizado.Subtiposinmovilizado';
-            SubtiposinmovilizadoRow.deletePermission = 'Inmovilizado:General';
-            SubtiposinmovilizadoRow.insertPermission = 'Inmovilizado:General';
-            SubtiposinmovilizadoRow.readPermission = 'Inmovilizado:General';
-            SubtiposinmovilizadoRow.updatePermission = 'Inmovilizado:General';
-            var Fields;
-            (function (Fields) {
-            })(Fields = SubtiposinmovilizadoRow.Fields || (SubtiposinmovilizadoRow.Fields = {}));
-            [
-                'SubTipoInmovilizadoId',
-                'TipoInmovilizadoId',
-                'SubTipo',
-                'TipoInmovilizadoTipo'
-            ].forEach(function (x) { return Fields[x] = x; });
+            SubtiposinmovilizadoRow.lookupKey = 'Inmovilizado.Subtiposinmovilizado';
+            function getLookup() {
+                return Q.getLookup('Inmovilizado.Subtiposinmovilizado');
+            }
+            SubtiposinmovilizadoRow.getLookup = getLookup;
+            SubtiposinmovilizadoRow.deletePermission = 'Inmovilizado:Modify';
+            SubtiposinmovilizadoRow.insertPermission = 'Inmovilizado:Modify';
+            SubtiposinmovilizadoRow.readPermission = 'Inmovilizado:Read';
+            SubtiposinmovilizadoRow.updatePermission = 'Inmovilizado:Modify';
         })(SubtiposinmovilizadoRow = Inmovilizado.SubtiposinmovilizadoRow || (Inmovilizado.SubtiposinmovilizadoRow = {}));
     })(Inmovilizado = ProyectosZec.Inmovilizado || (ProyectosZec.Inmovilizado = {}));
 })(ProyectosZec || (ProyectosZec = {}));
@@ -1223,9 +1204,6 @@ var ProyectosZec;
         var SubtiposinmovilizadoService;
         (function (SubtiposinmovilizadoService) {
             SubtiposinmovilizadoService.baseUrl = 'Inmovilizado/Subtiposinmovilizado';
-            var Methods;
-            (function (Methods) {
-            })(Methods = SubtiposinmovilizadoService.Methods || (SubtiposinmovilizadoService.Methods = {}));
             [
                 'Create',
                 'Update',
@@ -1236,7 +1214,6 @@ var ProyectosZec;
                 SubtiposinmovilizadoService[x] = function (r, s, o) {
                     return Q.serviceRequest(SubtiposinmovilizadoService.baseUrl + '/' + x, r, s, o);
                 };
-                Methods[x] = SubtiposinmovilizadoService.baseUrl + '/' + x;
             });
         })(SubtiposinmovilizadoService = Inmovilizado.SubtiposinmovilizadoService || (Inmovilizado.SubtiposinmovilizadoService = {}));
     })(Inmovilizado = ProyectosZec.Inmovilizado || (ProyectosZec.Inmovilizado = {}));
@@ -1247,22 +1224,22 @@ var ProyectosZec;
     (function (Inmovilizado) {
         var TiposinmovilizadoForm = /** @class */ (function (_super) {
             __extends(TiposinmovilizadoForm, _super);
-            function TiposinmovilizadoForm() {
-                return _super !== null && _super.apply(this, arguments) || this;
+            function TiposinmovilizadoForm(prefix) {
+                var _this = _super.call(this, prefix) || this;
+                if (!TiposinmovilizadoForm.init) {
+                    TiposinmovilizadoForm.init = true;
+                    var s = Serenity;
+                    var w0 = s.StringEditor;
+                    Q.initFormType(TiposinmovilizadoForm, [
+                        'Tipo', w0
+                    ]);
+                }
+                return _this;
             }
             TiposinmovilizadoForm.formKey = 'Inmovilizado.Tiposinmovilizado';
             return TiposinmovilizadoForm;
         }(Serenity.PrefixedContext));
         Inmovilizado.TiposinmovilizadoForm = TiposinmovilizadoForm;
-        [,
-            ['Tipo', function () { return Serenity.StringEditor; }]
-        ].forEach(function (x) { return Object.defineProperty(TiposinmovilizadoForm.prototype, x[0], {
-            get: function () {
-                return this.w(x[0], x[1]());
-            },
-            enumerable: true,
-            configurable: true
-        }); });
     })(Inmovilizado = ProyectosZec.Inmovilizado || (ProyectosZec.Inmovilizado = {}));
 })(ProyectosZec || (ProyectosZec = {}));
 var ProyectosZec;
@@ -1274,17 +1251,15 @@ var ProyectosZec;
             TiposinmovilizadoRow.idProperty = 'TipoInmovilizadoId';
             TiposinmovilizadoRow.nameProperty = 'Tipo';
             TiposinmovilizadoRow.localTextPrefix = 'Inmovilizado.Tiposinmovilizado';
+            TiposinmovilizadoRow.lookupKey = 'Inmovilizado.Tiposinmovilizado';
+            function getLookup() {
+                return Q.getLookup('Inmovilizado.Tiposinmovilizado');
+            }
+            TiposinmovilizadoRow.getLookup = getLookup;
             TiposinmovilizadoRow.deletePermission = 'Inmovilizado:General';
             TiposinmovilizadoRow.insertPermission = 'Inmovilizado:General';
             TiposinmovilizadoRow.readPermission = 'Inmovilizado:General';
             TiposinmovilizadoRow.updatePermission = 'Inmovilizado:General';
-            var Fields;
-            (function (Fields) {
-            })(Fields = TiposinmovilizadoRow.Fields || (TiposinmovilizadoRow.Fields = {}));
-            [
-                'TipoInmovilizadoId',
-                'Tipo'
-            ].forEach(function (x) { return Fields[x] = x; });
         })(TiposinmovilizadoRow = Inmovilizado.TiposinmovilizadoRow || (Inmovilizado.TiposinmovilizadoRow = {}));
     })(Inmovilizado = ProyectosZec.Inmovilizado || (ProyectosZec.Inmovilizado = {}));
 })(ProyectosZec || (ProyectosZec = {}));
@@ -1295,9 +1270,6 @@ var ProyectosZec;
         var TiposinmovilizadoService;
         (function (TiposinmovilizadoService) {
             TiposinmovilizadoService.baseUrl = 'Inmovilizado/Tiposinmovilizado';
-            var Methods;
-            (function (Methods) {
-            })(Methods = TiposinmovilizadoService.Methods || (TiposinmovilizadoService.Methods = {}));
             [
                 'Create',
                 'Update',
@@ -1308,7 +1280,6 @@ var ProyectosZec;
                 TiposinmovilizadoService[x] = function (r, s, o) {
                     return Q.serviceRequest(TiposinmovilizadoService.baseUrl + '/' + x, r, s, o);
                 };
-                Methods[x] = TiposinmovilizadoService.baseUrl + '/' + x;
             });
         })(TiposinmovilizadoService = Inmovilizado.TiposinmovilizadoService || (Inmovilizado.TiposinmovilizadoService = {}));
     })(Inmovilizado = ProyectosZec.Inmovilizado || (ProyectosZec.Inmovilizado = {}));
@@ -1652,102 +1623,8 @@ var ProyectosZec;
 (function (ProyectosZec) {
     var Texts;
     (function (Texts) {
-        ProyectosZec['Texts'] = Q.proxyTexts(Texts, '', { Db: { Administration: { Language: { Id: 1, LanguageId: 1, LanguageName: 1 }, Role: { RoleId: 1, RoleName: 1 }, RolePermission: { PermissionKey: 1, RoleId: 1, RolePermissionId: 1, RoleRoleName: 1 }, Translation: { CustomText: 1, EntityPlural: 1, Key: 1, OverrideConfirmation: 1, SaveChangesButton: 1, SourceLanguage: 1, SourceText: 1, TargetLanguage: 1, TargetText: 1 }, User: { DisplayName: 1, Email: 1, InsertDate: 1, InsertUserId: 1, IsActive: 1, LastDirectoryUpdate: 1, Password: 1, PasswordConfirm: 1, PasswordHash: 1, PasswordSalt: 1, Source: 1, UpdateDate: 1, UpdateUserId: 1, UserId: 1, UserImage: 1, Username: 1 }, UserPermission: { Granted: 1, PermissionKey: 1, User: 1, UserId: 1, UserPermissionId: 1, Username: 1 }, UserRole: { RoleId: 1, User: 1, UserId: 1, UserRoleId: 1, Username: 1 } }, Common: { UserPreference: { Name: 1, PreferenceType: 1, UserId: 1, UserPreferenceId: 1, Value: 1 } }, CuadroMandos: { Capital: { Capital: 1, CapitalId: 1 }, Estados: { Estado: 1, EstadoId: 1 }, Islas: { Isla: 1, IslaId: 1, NombreIsla: 1 }, Prescriptorinversor: { PrescriptorInversor: 1, PrescriptorInversorId: 1 }, Proyectos: { Capital: 1, CapitalId: 1, Captacion: 1, Contacto: 1, Denominacion: 1, Descripcion: 1, Email: 1, EmpleoReal: 1, Empleos: 1, Estado: 1, EstadoId: 1, Expediente: 1, FechaAmpliacion: 1, FechaAutorizacion: 1, FechaBaja: 1, FechaInicio: 1, FechaInscripcion: 1, FechaPresentacion: 1, Inversion: 1, InversionReal: 1, Isla: 1, IslaId: 1, Nace: 1, NombreTecnico: 1, PrescriptorInversor: 1, PrescriptorInversorId: 1, ProyectoId: 1, Sector: 1, SectorId: 1, Subsector: 1, SubsectorId: 1, SubsectorSectorId: 1, Tecnico: 1, TecnicoId: 1, Telefono: 1 }, Sectores: { Sector: 1, SectorId: 1 }, Subsectores: { Sector: 1, SectorId: 1, Subsector: 1, SubsectorId: 1 }, Tecnicos: { NombreTecnico: 1, Tecnico: 1, TecnicoId: 1 } }, Intranet: { Departamentos: { Departamento: 1, DepartamentoId: 1 }, Sedes: { Sede: 1, SedeId: 1 }, Telefonos: { Departamento: 1, DepartamentoId: 1, ExtCorta: 1, Fijo: 1, Movil: 1, Nombre: 1, Sede: 1, SedeId: 1, TelefonoId: 1 } } }, Forms: { Membership: { ChangePassword: { FormTitle: 1, SubmitButton: 1, Success: 1 }, ForgotPassword: { BackToLogin: 1, FormInfo: 1, FormTitle: 1, SubmitButton: 1, Success: 1 }, Login: { FacebookButton: 1, ForgotPassword: 1, FormTitle: 1, GoogleButton: 1, OR: 1, RememberMe: 1, SignInButton: 1, SignUpButton: 1 }, ResetPassword: { BackToLogin: 1, EmailSubject: 1, FormTitle: 1, SubmitButton: 1, Success: 1 }, SignUp: { AcceptTerms: 1, ActivateEmailSubject: 1, ActivationCompleteMessage: 1, BackToLogin: 1, ConfirmEmail: 1, ConfirmPassword: 1, DisplayName: 1, Email: 1, FormInfo: 1, FormTitle: 1, Password: 1, SubmitButton: 1, Success: 1 } } }, Site: { AccessDenied: { ClickToChangeUser: 1, ClickToLogin: 1, LackPermissions: 1, NotLoggedIn: 1, PageTitle: 1 }, BasicProgressDialog: { CancelTitle: 1, PleaseWait: 1 }, BulkServiceAction: { AllHadErrorsFormat: 1, AllSuccessFormat: 1, ConfirmationFormat: 1, ErrorCount: 1, NothingToProcess: 1, SomeHadErrorsFormat: 1, SuccessCount: 1 }, Dashboard: { ContentDescription: 1 }, Layout: { FooterCopyright: 1, FooterInfo: 1, FooterRights: 1, GeneralSettings: 1, Language: 1, Theme: 1, ThemeBlack: 1, ThemeBlackLight: 1, ThemeBlue: 1, ThemeBlueLight: 1, ThemeGreen: 1, ThemeGreenLight: 1, ThemePurple: 1, ThemePurpleLight: 1, ThemeRed: 1, ThemeRedLight: 1, ThemeYellow: 1, ThemeYellowLight: 1 }, RolePermissionDialog: { DialogTitle: 1, EditButton: 1, SaveSuccess: 1 }, UserDialog: { EditPermissionsButton: 1, EditRolesButton: 1 }, UserPermissionDialog: { DialogTitle: 1, Grant: 1, Permission: 1, Revoke: 1, SaveSuccess: 1 }, UserRoleDialog: { DialogTitle: 1, SaveSuccess: 1 }, ValidationError: { Title: 1 } }, Validation: { AuthenticationError: 1, CantFindUserWithEmail: 1, CurrentPasswordMismatch: 1, DeleteForeignKeyError: 1, EmailConfirm: 1, EmailInUse: 1, InvalidActivateToken: 1, InvalidResetToken: 1, MinRequiredPasswordLength: 1, SavePrimaryKeyError: 1 } });
+        ProyectosZec['Texts'] = Q.proxyTexts(Texts, '', { Db: { Administration: { Language: { Id: 1, LanguageId: 1, LanguageName: 1 }, Role: { RoleId: 1, RoleName: 1 }, RolePermission: { PermissionKey: 1, RoleId: 1, RolePermissionId: 1, RoleRoleName: 1 }, Translation: { CustomText: 1, EntityPlural: 1, Key: 1, OverrideConfirmation: 1, SaveChangesButton: 1, SourceLanguage: 1, SourceText: 1, TargetLanguage: 1, TargetText: 1 }, User: { DisplayName: 1, Email: 1, InsertDate: 1, InsertUserId: 1, IsActive: 1, LastDirectoryUpdate: 1, Password: 1, PasswordConfirm: 1, PasswordHash: 1, PasswordSalt: 1, Source: 1, UpdateDate: 1, UpdateUserId: 1, UserId: 1, UserImage: 1, Username: 1 }, UserPermission: { Granted: 1, PermissionKey: 1, User: 1, UserId: 1, UserPermissionId: 1, Username: 1 }, UserRole: { RoleId: 1, User: 1, UserId: 1, UserRoleId: 1, Username: 1 } }, Common: { UserPreference: { Name: 1, PreferenceType: 1, UserId: 1, UserPreferenceId: 1, Value: 1 } }, CuadroMandos: { Capital: { Capital: 1, CapitalId: 1 }, Estados: { Estado: 1, EstadoId: 1 }, Islas: { Isla: 1, IslaId: 1, NombreIsla: 1 }, Prescriptorinversor: { PrescriptorInversor: 1, PrescriptorInversorId: 1 }, Proyectos: { Capital: 1, CapitalId: 1, Captacion: 1, Contacto: 1, Denominacion: 1, Descripcion: 1, Email: 1, EmpleoReal: 1, Empleos: 1, Estado: 1, EstadoId: 1, Expediente: 1, FechaAmpliacion: 1, FechaAutorizacion: 1, FechaBaja: 1, FechaInicio: 1, FechaInscripcion: 1, FechaPresentacion: 1, Inversion: 1, InversionReal: 1, Isla: 1, IslaId: 1, Nace: 1, NombreTecnico: 1, PrescriptorInversor: 1, PrescriptorInversorId: 1, ProyectoId: 1, Sector: 1, SectorId: 1, Subsector: 1, SubsectorId: 1, SubsectorSectorId: 1, Tecnico: 1, TecnicoId: 1, Telefono: 1 }, Sectores: { Sector: 1, SectorId: 1 }, Subsectores: { Sector: 1, SectorId: 1, Subsector: 1, SubsectorId: 1 }, Tecnicos: { NombreTecnico: 1, Tecnico: 1, TecnicoId: 1 } }, Inmovilizado: { Inmovilizados: { Amortizacion: 1, Codigo: 1, Descripcion: 1, Factura: 1, FechaBaja: 1, FechaCompra: 1, GalleryImages: 1, Garantia: 1, InmovilizadoId: 1, NumeroSerie: 1, Pg: 1, Proveedor: 1, ProveedorId: 1, Sede: 1, SedeId: 1, SubTipo: 1, SubTipoInmovilizadoId: 1, Tipo: 1, TipoInmovilizadoId: 1, Ubicacion: 1, Valor: 1, ValorResidual: 1 }, Proveedores: { Contacto: 1, Email: 1, Proveedor: 1, ProveedorId: 1, Telefono: 1 }, Subtiposinmovilizado: { SubTipo: 1, SubTipoInmovilizadoId: 1, TipoInmovilizadoId: 1, TipoInmovilizadoTipo: 1 }, Tiposinmovilizado: { Tipo: 1, TipoInmovilizadoId: 1 } }, Intranet: { Departamentos: { Departamento: 1, DepartamentoId: 1 }, Sedes: { Sede: 1, SedeId: 1 }, Telefonos: { Departamento: 1, DepartamentoId: 1, ExtCorta: 1, Fijo: 1, Movil: 1, Nombre: 1, Sede: 1, SedeId: 1, TelefonoId: 1 } } }, Forms: { Membership: { ChangePassword: { FormTitle: 1, SubmitButton: 1, Success: 1 }, ForgotPassword: { BackToLogin: 1, FormInfo: 1, FormTitle: 1, SubmitButton: 1, Success: 1 }, Login: { FacebookButton: 1, ForgotPassword: 1, FormTitle: 1, GoogleButton: 1, OR: 1, RememberMe: 1, SignInButton: 1, SignUpButton: 1 }, ResetPassword: { BackToLogin: 1, EmailSubject: 1, FormTitle: 1, SubmitButton: 1, Success: 1 }, SignUp: { AcceptTerms: 1, ActivateEmailSubject: 1, ActivationCompleteMessage: 1, BackToLogin: 1, ConfirmEmail: 1, ConfirmPassword: 1, DisplayName: 1, Email: 1, FormInfo: 1, FormTitle: 1, Password: 1, SubmitButton: 1, Success: 1 } } }, Site: { AccessDenied: { ClickToChangeUser: 1, ClickToLogin: 1, LackPermissions: 1, NotLoggedIn: 1, PageTitle: 1 }, BasicProgressDialog: { CancelTitle: 1, PleaseWait: 1 }, BulkServiceAction: { AllHadErrorsFormat: 1, AllSuccessFormat: 1, ConfirmationFormat: 1, ErrorCount: 1, NothingToProcess: 1, SomeHadErrorsFormat: 1, SuccessCount: 1 }, Dashboard: { ContentDescription: 1 }, Layout: { FooterCopyright: 1, FooterInfo: 1, FooterRights: 1, GeneralSettings: 1, Language: 1, Theme: 1, ThemeBlack: 1, ThemeBlackLight: 1, ThemeBlue: 1, ThemeBlueLight: 1, ThemeGreen: 1, ThemeGreenLight: 1, ThemePurple: 1, ThemePurpleLight: 1, ThemeRed: 1, ThemeRedLight: 1, ThemeYellow: 1, ThemeYellowLight: 1 }, RolePermissionDialog: { DialogTitle: 1, EditButton: 1, SaveSuccess: 1 }, UserDialog: { EditPermissionsButton: 1, EditRolesButton: 1 }, UserPermissionDialog: { DialogTitle: 1, Grant: 1, Permission: 1, Revoke: 1, SaveSuccess: 1 }, UserRoleDialog: { DialogTitle: 1, SaveSuccess: 1 }, ValidationError: { Title: 1 } }, Validation: { AuthenticationError: 1, CantFindUserWithEmail: 1, CurrentPasswordMismatch: 1, DeleteForeignKeyError: 1, EmailConfirm: 1, EmailInUse: 1, InvalidActivateToken: 1, InvalidResetToken: 1, MinRequiredPasswordLength: 1, SavePrimaryKeyError: 1 } });
     })(Texts = ProyectosZec.Texts || (ProyectosZec.Texts = {}));
-})(ProyectosZec || (ProyectosZec = {}));
-var ProyectosZec;
-(function (ProyectosZec) {
-    var Inmovilizado;
-    (function (Inmovilizado) {
-        var InmovilizadosForm = /** @class */ (function (_super) {
-            __extends(InmovilizadosForm, _super);
-            function InmovilizadosForm() {
-                return _super !== null && _super.apply(this, arguments) || this;
-            }
-            InmovilizadosForm.formKey = 'Inmovilizado.Inmovilizados';
-            return InmovilizadosForm;
-        }(Serenity.PrefixedContext));
-        Inmovilizado.InmovilizadosForm = InmovilizadosForm;
-        [,
-            ['Descripcion', function () { return Serenity.StringEditor; }],
-            ['SubTipoInmovilizadoId', function () { return Serenity.IntegerEditor; }],
-            ['SedeId', function () { return Serenity.IntegerEditor; }],
-            ['ProveedorId', function () { return Serenity.IntegerEditor; }],
-            ['FechaCompra', function () { return Serenity.DateEditor; }],
-            ['FechaBaja', function () { return Serenity.DateEditor; }],
-            ['Valor', function () { return Serenity.DecimalEditor; }],
-            ['Amortizacion', function () { return Serenity.IntegerEditor; }],
-            ['Garantia', function () { return Serenity.IntegerEditor; }],
-            ['Factura', function () { return Serenity.StringEditor; }]
-        ].forEach(function (x) { return Object.defineProperty(InmovilizadosForm.prototype, x[0], {
-            get: function () {
-                return this.w(x[0], x[1]());
-            },
-            enumerable: true,
-            configurable: true
-        }); });
-    })(Inmovilizado = ProyectosZec.Inmovilizado || (ProyectosZec.Inmovilizado = {}));
-})(ProyectosZec || (ProyectosZec = {}));
-var ProyectosZec;
-(function (ProyectosZec) {
-    var Inmovilizado;
-    (function (Inmovilizado) {
-        var InmovilizadosRow;
-        (function (InmovilizadosRow) {
-            InmovilizadosRow.idProperty = 'InmovilizadoId';
-            InmovilizadosRow.nameProperty = 'Descripcion';
-            InmovilizadosRow.localTextPrefix = 'Inmovilizado.Inmovilizados';
-            InmovilizadosRow.deletePermission = 'Inmovilizado:General';
-            InmovilizadosRow.insertPermission = 'Inmovilizado:General';
-            InmovilizadosRow.readPermission = 'Inmovilizado:General';
-            InmovilizadosRow.updatePermission = 'Inmovilizado:General';
-            var Fields;
-            (function (Fields) {
-            })(Fields = InmovilizadosRow.Fields || (InmovilizadosRow.Fields = {}));
-            [
-                'InmovilizadoId',
-                'Descripcion',
-                'SubTipoInmovilizadoId',
-                'SedeId',
-                'ProveedorId',
-                'FechaCompra',
-                'FechaBaja',
-                'Valor',
-                'Amortizacion',
-                'Garantia',
-                'Factura',
-                'SubTipoInmovilizadoTipoInmovilizadoId',
-                'SubTipoInmovilizadoSubTipo',
-                'Sede',
-                'Proveedor'
-            ].forEach(function (x) { return Fields[x] = x; });
-        })(InmovilizadosRow = Inmovilizado.InmovilizadosRow || (Inmovilizado.InmovilizadosRow = {}));
-    })(Inmovilizado = ProyectosZec.Inmovilizado || (ProyectosZec.Inmovilizado = {}));
-})(ProyectosZec || (ProyectosZec = {}));
-var ProyectosZec;
-(function (ProyectosZec) {
-    var Inmovilizado;
-    (function (Inmovilizado) {
-        var InmovilizadosService;
-        (function (InmovilizadosService) {
-            InmovilizadosService.baseUrl = 'Inmovilizado/Inmovilizados';
-            var Methods;
-            (function (Methods) {
-            })(Methods = InmovilizadosService.Methods || (InmovilizadosService.Methods = {}));
-            [
-                'Create',
-                'Update',
-                'Delete',
-                'Retrieve',
-                'List'
-            ].forEach(function (x) {
-                InmovilizadosService[x] = function (r, s, o) {
-                    return Q.serviceRequest(InmovilizadosService.baseUrl + '/' + x, r, s, o);
-                };
-                Methods[x] = InmovilizadosService.baseUrl + '/' + x;
-            });
-        })(InmovilizadosService = Inmovilizado.InmovilizadosService || (Inmovilizado.InmovilizadosService = {}));
-    })(Inmovilizado = ProyectosZec.Inmovilizado || (ProyectosZec.Inmovilizado = {}));
 })(ProyectosZec || (ProyectosZec = {}));
 var ProyectosZec;
 (function (ProyectosZec) {
@@ -4581,6 +4458,27 @@ var ProyectosZec;
             InmovilizadosGrid.prototype.getInsertPermission = function () { return Inmovilizado.InmovilizadosRow.insertPermission; };
             InmovilizadosGrid.prototype.getLocalTextPrefix = function () { return Inmovilizado.InmovilizadosRow.localTextPrefix; };
             InmovilizadosGrid.prototype.getService = function () { return Inmovilizado.InmovilizadosService.baseUrl; };
+            // Agrupar y sumar 
+            InmovilizadosGrid.prototype.createSlickGrid = function () {
+                var grid = _super.prototype.createSlickGrid.call(this);
+                // need to register this plugin for grouping or you'll have errors
+                grid.registerPlugin(new Slick.Data.GroupItemMetadataProvider());
+                this.view.setSummaryOptions({
+                    aggregators: [
+                        new Slick.Aggregators.Sum("Valor" /* Valor */),
+                        new Slick.Aggregators.Sum("ValorResidual" /* ValorResidual */)
+                    ]
+                });
+                return grid;
+            };
+            InmovilizadosGrid.prototype.getSlickOptions = function () {
+                var opt = _super.prototype.getSlickOptions.call(this);
+                opt.showFooterRow = true;
+                return opt;
+            };
+            InmovilizadosGrid.prototype.usePager = function () {
+                return false;
+            };
             InmovilizadosGrid.prototype.getButtons = function () {
                 var _this = this;
                 var buttons = _super.prototype.getButtons.call(this);
@@ -4595,8 +4493,34 @@ var ProyectosZec;
                     grid: this,
                     onViewSubmit: function () { return _this.onViewSubmit(); }
                 }));
+                buttons.push({
+                    title: 'SubTipo',
+                    cssClass: 'expand-all-button',
+                    onClick: function () { return _this.view.setGrouping([{
+                            formatter: function (x) { return 'Subtipo: ' + x.value + ' (' + x.count + ' Inmovilizados)'; },
+                            getter: "SubTipo" /* SubTipo */
+                        }]); }
+                });
+                buttons.push({
+                    title: 'Desagrupar',
+                    cssClass: 'collapse-all-button',
+                    onClick: function () { return _this.view.setGrouping([]); }
+                });
                 return buttons;
                 // Fin añadidos
+            };
+            /**
+     * This method is called for all rows
+     * @param item Data item for current row
+     * @param index Index of the row in grid
+     */
+            InmovilizadosGrid.prototype.getItemCssClass = function (item, index) {
+                var klass = "";
+                if (item.FechaBaja != null)
+                    klass += " discontinued";
+                else if (item.ValorResidual <= 0)
+                    klass += " out-of-stock";
+                return Q.trimToNull(klass);
             };
             InmovilizadosGrid = __decorate([
                 Serenity.Decorators.registerClass()

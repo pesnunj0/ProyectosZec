@@ -1,38 +1,61 @@
-﻿
-namespace ProyectosZec.Inmovilizado {
-    export class InmovilizadosForm extends Serenity.PrefixedContext {
-        static formKey = 'Inmovilizado.Inmovilizados';
-    }
-
+﻿namespace ProyectosZec.Inmovilizado {
     export interface InmovilizadosForm {
+        Codigo: Serenity.StringEditor;
         Descripcion: Serenity.StringEditor;
-        SubTipoInmovilizadoId: Serenity.IntegerEditor;
-        SedeId: Serenity.IntegerEditor;
-        ProveedorId: Serenity.IntegerEditor;
+        Ubicacion: Serenity.StringEditor;
+        NumeroSerie: Serenity.StringEditor;
+        TipoInmovilizadoId: Serenity.LookupEditor;
+        SubTipoInmovilizadoId: Serenity.LookupEditor;
+        Pg: Serenity.StringEditor;
+        SedeId: Serenity.LookupEditor;
+        ProveedorId: Serenity.LookupEditor;
         FechaCompra: Serenity.DateEditor;
         FechaBaja: Serenity.DateEditor;
         Valor: Serenity.DecimalEditor;
         Amortizacion: Serenity.IntegerEditor;
         Garantia: Serenity.IntegerEditor;
         Factura: Serenity.StringEditor;
+        GalleryImages: Serenity.MultipleImageUploadEditor;
     }
 
-    [,
-        ['Descripcion', () => Serenity.StringEditor],
-        ['SubTipoInmovilizadoId', () => Serenity.IntegerEditor],
-        ['SedeId', () => Serenity.IntegerEditor],
-        ['ProveedorId', () => Serenity.IntegerEditor],
-        ['FechaCompra', () => Serenity.DateEditor],
-        ['FechaBaja', () => Serenity.DateEditor],
-        ['Valor', () => Serenity.DecimalEditor],
-        ['Amortizacion', () => Serenity.IntegerEditor],
-        ['Garantia', () => Serenity.IntegerEditor],
-        ['Factura', () => Serenity.StringEditor]
-    ].forEach(x => Object.defineProperty(InmovilizadosForm.prototype, <string>x[0], {
-        get: function () {
-            return this.w(x[0], (x[1] as any)());
-        },
-        enumerable: true,
-        configurable: true
-    }));
+    export class InmovilizadosForm extends Serenity.PrefixedContext {
+        static formKey = 'Inmovilizado.Inmovilizados';
+        private static init: boolean;
+
+        constructor(prefix: string) {
+            super(prefix);
+
+            if (!InmovilizadosForm.init)  {
+                InmovilizadosForm.init = true;
+
+                var s = Serenity;
+                var w0 = s.StringEditor;
+                var w1 = s.LookupEditor;
+                var w2 = s.DateEditor;
+                var w3 = s.DecimalEditor;
+                var w4 = s.IntegerEditor;
+                var w5 = s.MultipleImageUploadEditor;
+
+                Q.initFormType(InmovilizadosForm, [
+                    'Codigo', w0,
+                    'Descripcion', w0,
+                    'Ubicacion', w0,
+                    'NumeroSerie', w0,
+                    'TipoInmovilizadoId', w1,
+                    'SubTipoInmovilizadoId', w1,
+                    'Pg', w0,
+                    'SedeId', w1,
+                    'ProveedorId', w1,
+                    'FechaCompra', w2,
+                    'FechaBaja', w2,
+                    'Valor', w3,
+                    'Amortizacion', w4,
+                    'Garantia', w4,
+                    'Factura', w0,
+                    'GalleryImages', w5
+                ]);
+            }
+        }
+    }
 }
+

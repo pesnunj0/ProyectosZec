@@ -34,16 +34,16 @@ namespace ProyectosZec.Inmovilizado.Columns
         public String Sede { get; set; }
         [Width(180),QuickFilter]
         public String Proveedor { get; set; }
-        [Width(90), DisplayName("Compra"),QuickFilter, DisplayFormat("d")]
+        [Width(90), DisplayName("F.Compra"),QuickFilter, DisplayFormat("d")]
         public DateTime FechaCompra { get; set; }
 
-        [Width(90), DisplayName("Baja"), QuickFilter, DisplayFormat("d")]
+        [Width(90), DisplayName("F. Baja"), QuickFilter, DisplayFormat("d")]
         public DateTime FechaBaja { get; set; }
-        [Width(100), DisplayFormat("#,##0.00")]
+        [Width(90), DisplayName("V. Inicial"), DisplayFormat("#,##0.00")]
         public Decimal Valor { get; set; }
         [Width(60),DisplayName("Amort.")]
         public Int16 Amortizacion { get; set; }
-        [Width(110), DisplayFormat("#,##0.00")]
+        [Width(90), DisplayName("V. Residual"), DisplayFormat("#,##0.00")]
         public Decimal ValorResidual { get; set; }
         [Width(60), DisplayName("Garant.")]
         

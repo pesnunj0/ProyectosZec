@@ -16,6 +16,34 @@ namespace ProyectosZec.Inmovilizado {
         constructor(container: JQuery) {
             super(container);
         }
+
+        // Agrupar y sumar 
+        protected createSlickGrid() {
+            var grid = super.createSlickGrid();
+
+            // need to register this plugin for grouping or you'll have errors
+            grid.registerPlugin(new Slick.Data.GroupItemMetadataProvider());
+
+            this.view.setSummaryOptions({
+                aggregators: [
+                    new Slick.Aggregators.Sum(InmovilizadosRow.Fields.Valor),
+                    new Slick.Aggregators.Sum(InmovilizadosRow.Fields.ValorResidual)
+                ]
+            });
+
+            return grid;
+        }
+
+        protected getSlickOptions() {
+            var opt = super.getSlickOptions();
+            opt.showFooterRow = true;
+            return opt;
+        }
+
+        protected usePager() {
+            return false;
+        }
+
         getButtons() {
             var buttons = super.getButtons();
 
@@ -32,9 +60,43 @@ namespace ProyectosZec.Inmovilizado {
                 onViewSubmit: () => this.onViewSubmit()
             }));
 
+            buttons.push(
+                {
+                    title: 'SubTipo',
+                    cssClass: 'expand-all-button',
+                    onClick: () => this.view.setGrouping(
+                        [{
+                            formatter: x => 'Subtipo: ' + x.value + ' (' + x.count + ' Inmovilizados)',
+                            getter: InmovilizadosRow.Fields.SubTipo
+                        }])
+                }
+            );
+            buttons.push(
+                {
+                    title: 'Desagrupar',
+                    cssClass: 'collapse-all-button',
+                    onClick: () => this.view.setGrouping([])
+                }
+            );
+
             return buttons;
             // Fin añadidos
 
+        }
+        /**
+ * This method is called for all rows
+ * @param item Data item for current row
+ * @param index Index of the row in grid
+ */
+        protected getItemCssClass(item: Inmovilizado.InmovilizadosRow, index: number): string {
+            let klass: string = "";
+
+            if (item.FechaBaja != null)
+                klass += " discontinued";
+            else if (item.ValorResidual <= 0)
+                klass += " out-of-stock";
+ 
+            return Q.trimToNull(klass);
         }
     }
 }

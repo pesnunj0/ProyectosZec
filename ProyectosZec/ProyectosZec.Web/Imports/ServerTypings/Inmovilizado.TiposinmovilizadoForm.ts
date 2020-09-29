@@ -1,20 +1,26 @@
-﻿
-namespace ProyectosZec.Inmovilizado {
-    export class TiposinmovilizadoForm extends Serenity.PrefixedContext {
-        static formKey = 'Inmovilizado.Tiposinmovilizado';
-    }
-
+﻿namespace ProyectosZec.Inmovilizado {
     export interface TiposinmovilizadoForm {
         Tipo: Serenity.StringEditor;
     }
 
-    [,
-        ['Tipo', () => Serenity.StringEditor]
-    ].forEach(x => Object.defineProperty(TiposinmovilizadoForm.prototype, <string>x[0], {
-        get: function () {
-            return this.w(x[0], (x[1] as any)());
-        },
-        enumerable: true,
-        configurable: true
-    }));
+    export class TiposinmovilizadoForm extends Serenity.PrefixedContext {
+        static formKey = 'Inmovilizado.Tiposinmovilizado';
+        private static init: boolean;
+
+        constructor(prefix: string) {
+            super(prefix);
+
+            if (!TiposinmovilizadoForm.init)  {
+                TiposinmovilizadoForm.init = true;
+
+                var s = Serenity;
+                var w0 = s.StringEditor;
+
+                Q.initFormType(TiposinmovilizadoForm, [
+                    'Tipo', w0
+                ]);
+            }
+        }
+    }
 }
+

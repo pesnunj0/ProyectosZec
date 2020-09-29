@@ -1017,27 +1017,42 @@ declare namespace ProyectosZec {
     }
 }
 declare namespace ProyectosZec.Inmovilizado {
-    class InmovilizadosForm extends Serenity.PrefixedContext {
-        static formKey: string;
-    }
+}
+declare namespace ProyectosZec.Inmovilizado {
     interface InmovilizadosForm {
+        Codigo: Serenity.StringEditor;
         Descripcion: Serenity.StringEditor;
-        SubTipoInmovilizadoId: Serenity.IntegerEditor;
-        SedeId: Serenity.IntegerEditor;
-        ProveedorId: Serenity.IntegerEditor;
+        Ubicacion: Serenity.StringEditor;
+        NumeroSerie: Serenity.StringEditor;
+        TipoInmovilizadoId: Serenity.LookupEditor;
+        SubTipoInmovilizadoId: Serenity.LookupEditor;
+        Pg: Serenity.StringEditor;
+        SedeId: Serenity.LookupEditor;
+        ProveedorId: Serenity.LookupEditor;
         FechaCompra: Serenity.DateEditor;
         FechaBaja: Serenity.DateEditor;
         Valor: Serenity.DecimalEditor;
         Amortizacion: Serenity.IntegerEditor;
         Garantia: Serenity.IntegerEditor;
         Factura: Serenity.StringEditor;
+        GalleryImages: Serenity.MultipleImageUploadEditor;
+    }
+    class InmovilizadosForm extends Serenity.PrefixedContext {
+        static formKey: string;
+        private static init;
+        constructor(prefix: string);
     }
 }
 declare namespace ProyectosZec.Inmovilizado {
     interface InmovilizadosRow {
         InmovilizadoId?: number;
+        Ubicacion?: string;
+        Codigo?: string;
+        Pg?: string;
         Descripcion?: string;
+        NumeroSerie?: string;
         SubTipoInmovilizadoId?: number;
+        TipoInmovilizadoId?: number;
         SedeId?: number;
         ProveedorId?: number;
         FechaCompra?: string;
@@ -1046,35 +1061,44 @@ declare namespace ProyectosZec.Inmovilizado {
         Amortizacion?: number;
         Garantia?: number;
         Factura?: string;
-        SubTipoInmovilizadoTipoInmovilizadoId?: number;
-        SubTipoInmovilizadoSubTipo?: string;
+        GalleryImages?: string;
+        SubTipo?: string;
         Sede?: string;
+        Tipo?: string;
         Proveedor?: string;
+        ValorResidual?: number;
     }
     namespace InmovilizadosRow {
         const idProperty = "InmovilizadoId";
         const nameProperty = "Descripcion";
         const localTextPrefix = "Inmovilizado.Inmovilizados";
-        const deletePermission = "Inmovilizado:General";
-        const insertPermission = "Inmovilizado:General";
-        const readPermission = "Inmovilizado:General";
-        const updatePermission = "Inmovilizado:General";
-        namespace Fields {
-            const InmovilizadoId: any;
-            const Descripcion: any;
-            const SubTipoInmovilizadoId: any;
-            const SedeId: any;
-            const ProveedorId: any;
-            const FechaCompra: any;
-            const FechaBaja: any;
-            const Valor: any;
-            const Amortizacion: any;
-            const Garantia: any;
-            const Factura: any;
-            const SubTipoInmovilizadoTipoInmovilizadoId: any;
-            const SubTipoInmovilizadoSubTipo: any;
-            const Sede: any;
-            const Proveedor: any;
+        const deletePermission = "Inmovilizado:Modify";
+        const insertPermission = "Inmovilizado:Modify";
+        const readPermission = "Inmovilizado:Read";
+        const updatePermission = "Inmovilizado:Modify";
+        const enum Fields {
+            InmovilizadoId = "InmovilizadoId",
+            Ubicacion = "Ubicacion",
+            Codigo = "Codigo",
+            Pg = "Pg",
+            Descripcion = "Descripcion",
+            NumeroSerie = "NumeroSerie",
+            SubTipoInmovilizadoId = "SubTipoInmovilizadoId",
+            TipoInmovilizadoId = "TipoInmovilizadoId",
+            SedeId = "SedeId",
+            ProveedorId = "ProveedorId",
+            FechaCompra = "FechaCompra",
+            FechaBaja = "FechaBaja",
+            Valor = "Valor",
+            Amortizacion = "Amortizacion",
+            Garantia = "Garantia",
+            Factura = "Factura",
+            GalleryImages = "GalleryImages",
+            SubTipo = "SubTipo",
+            Sede = "Sede",
+            Tipo = "Tipo",
+            Proveedor = "Proveedor",
+            ValorResidual = "ValorResidual"
         }
     }
 }
@@ -1086,39 +1110,54 @@ declare namespace ProyectosZec.Inmovilizado {
         function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
         function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<InmovilizadosRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
         function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<InmovilizadosRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
-        namespace Methods {
-            const Create: string;
-            const Update: string;
-            const Delete: string;
-            const Retrieve: string;
-            const List: string;
+        const enum Methods {
+            Create = "Inmovilizado/Inmovilizados/Create",
+            Update = "Inmovilizado/Inmovilizados/Update",
+            Delete = "Inmovilizado/Inmovilizados/Delete",
+            Retrieve = "Inmovilizado/Inmovilizados/Retrieve",
+            List = "Inmovilizado/Inmovilizados/List"
         }
     }
 }
 declare namespace ProyectosZec.Inmovilizado {
-    class ProveedoresForm extends Serenity.PrefixedContext {
-        static formKey: string;
-    }
+}
+declare namespace ProyectosZec.Inmovilizado {
     interface ProveedoresForm {
         Proveedor: Serenity.StringEditor;
+        Contacto: Serenity.StringEditor;
+        Telefono: Serenity.StringEditor;
+        Email: Serenity.StringEditor;
+    }
+    class ProveedoresForm extends Serenity.PrefixedContext {
+        static formKey: string;
+        private static init;
+        constructor(prefix: string);
     }
 }
 declare namespace ProyectosZec.Inmovilizado {
     interface ProveedoresRow {
         ProveedorId?: number;
         Proveedor?: string;
+        Contacto?: string;
+        Telefono?: string;
+        Email?: string;
     }
     namespace ProveedoresRow {
         const idProperty = "ProveedorId";
         const nameProperty = "Proveedor";
         const localTextPrefix = "Inmovilizado.Proveedores";
-        const deletePermission = "Inmovilizado:General";
-        const insertPermission = "Inmovilizado:General";
-        const readPermission = "Inmovilizado:General";
-        const updatePermission = "Inmovilizado:General";
-        namespace Fields {
-            const ProveedorId: any;
-            const Proveedor: any;
+        const lookupKey = "Inmovilizado.Proveedores";
+        function getLookup(): Q.Lookup<ProveedoresRow>;
+        const deletePermission = "Inmovilizado:Modify";
+        const insertPermission = "Inmovilizado:Modify";
+        const readPermission = "Inmovilizado:Read";
+        const updatePermission = "Inmovilizado:Modify";
+        const enum Fields {
+            ProveedorId = "ProveedorId",
+            Proveedor = "Proveedor",
+            Contacto = "Contacto",
+            Telefono = "Telefono",
+            Email = "Email"
         }
     }
 }
@@ -1130,44 +1169,50 @@ declare namespace ProyectosZec.Inmovilizado {
         function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
         function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<ProveedoresRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
         function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<ProveedoresRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
-        namespace Methods {
-            const Create: string;
-            const Update: string;
-            const Delete: string;
-            const Retrieve: string;
-            const List: string;
+        const enum Methods {
+            Create = "Inmovilizado/Proveedores/Create",
+            Update = "Inmovilizado/Proveedores/Update",
+            Delete = "Inmovilizado/Proveedores/Delete",
+            Retrieve = "Inmovilizado/Proveedores/Retrieve",
+            List = "Inmovilizado/Proveedores/List"
         }
     }
 }
 declare namespace ProyectosZec.Inmovilizado {
+}
+declare namespace ProyectosZec.Inmovilizado {
+    interface SubtiposinmovilizadoForm {
+        TipoInmovilizadoId: Serenity.LookupEditor;
+        SubTipo: Serenity.StringEditor;
+    }
     class SubtiposinmovilizadoForm extends Serenity.PrefixedContext {
         static formKey: string;
-    }
-    interface SubtiposinmovilizadoForm {
-        TipoInmovilizadoId: Serenity.IntegerEditor;
-        SubTipo: Serenity.StringEditor;
+        private static init;
+        constructor(prefix: string);
     }
 }
 declare namespace ProyectosZec.Inmovilizado {
     interface SubtiposinmovilizadoRow {
         SubTipoInmovilizadoId?: number;
-        TipoInmovilizadoId?: number;
         SubTipo?: string;
+        TipoInmovilizadoId?: number;
         TipoInmovilizadoTipo?: string;
     }
     namespace SubtiposinmovilizadoRow {
         const idProperty = "SubTipoInmovilizadoId";
         const nameProperty = "SubTipo";
         const localTextPrefix = "Inmovilizado.Subtiposinmovilizado";
-        const deletePermission = "Inmovilizado:General";
-        const insertPermission = "Inmovilizado:General";
-        const readPermission = "Inmovilizado:General";
-        const updatePermission = "Inmovilizado:General";
-        namespace Fields {
-            const SubTipoInmovilizadoId: any;
-            const TipoInmovilizadoId: any;
-            const SubTipo: any;
-            const TipoInmovilizadoTipo: any;
+        const lookupKey = "Inmovilizado.Subtiposinmovilizado";
+        function getLookup(): Q.Lookup<SubtiposinmovilizadoRow>;
+        const deletePermission = "Inmovilizado:Modify";
+        const insertPermission = "Inmovilizado:Modify";
+        const readPermission = "Inmovilizado:Read";
+        const updatePermission = "Inmovilizado:Modify";
+        const enum Fields {
+            SubTipoInmovilizadoId = "SubTipoInmovilizadoId",
+            SubTipo = "SubTipo",
+            TipoInmovilizadoId = "TipoInmovilizadoId",
+            TipoInmovilizadoTipo = "TipoInmovilizadoTipo"
         }
     }
 }
@@ -1179,21 +1224,25 @@ declare namespace ProyectosZec.Inmovilizado {
         function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
         function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<SubtiposinmovilizadoRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
         function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<SubtiposinmovilizadoRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
-        namespace Methods {
-            const Create: string;
-            const Update: string;
-            const Delete: string;
-            const Retrieve: string;
-            const List: string;
+        const enum Methods {
+            Create = "Inmovilizado/Subtiposinmovilizado/Create",
+            Update = "Inmovilizado/Subtiposinmovilizado/Update",
+            Delete = "Inmovilizado/Subtiposinmovilizado/Delete",
+            Retrieve = "Inmovilizado/Subtiposinmovilizado/Retrieve",
+            List = "Inmovilizado/Subtiposinmovilizado/List"
         }
     }
 }
 declare namespace ProyectosZec.Inmovilizado {
-    class TiposinmovilizadoForm extends Serenity.PrefixedContext {
-        static formKey: string;
-    }
+}
+declare namespace ProyectosZec.Inmovilizado {
     interface TiposinmovilizadoForm {
         Tipo: Serenity.StringEditor;
+    }
+    class TiposinmovilizadoForm extends Serenity.PrefixedContext {
+        static formKey: string;
+        private static init;
+        constructor(prefix: string);
     }
 }
 declare namespace ProyectosZec.Inmovilizado {
@@ -1205,13 +1254,15 @@ declare namespace ProyectosZec.Inmovilizado {
         const idProperty = "TipoInmovilizadoId";
         const nameProperty = "Tipo";
         const localTextPrefix = "Inmovilizado.Tiposinmovilizado";
+        const lookupKey = "Inmovilizado.Tiposinmovilizado";
+        function getLookup(): Q.Lookup<TiposinmovilizadoRow>;
         const deletePermission = "Inmovilizado:General";
         const insertPermission = "Inmovilizado:General";
         const readPermission = "Inmovilizado:General";
         const updatePermission = "Inmovilizado:General";
-        namespace Fields {
-            const TipoInmovilizadoId: any;
-            const Tipo: any;
+        const enum Fields {
+            TipoInmovilizadoId = "TipoInmovilizadoId",
+            Tipo = "Tipo"
         }
     }
 }
@@ -1223,12 +1274,12 @@ declare namespace ProyectosZec.Inmovilizado {
         function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
         function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<TiposinmovilizadoRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
         function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<TiposinmovilizadoRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
-        namespace Methods {
-            const Create: string;
-            const Update: string;
-            const Delete: string;
-            const Retrieve: string;
-            const List: string;
+        const enum Methods {
+            Create = "Inmovilizado/Tiposinmovilizado/Create",
+            Update = "Inmovilizado/Tiposinmovilizado/Update",
+            Delete = "Inmovilizado/Tiposinmovilizado/Delete",
+            Retrieve = "Inmovilizado/Tiposinmovilizado/Retrieve",
+            List = "Inmovilizado/Tiposinmovilizado/List"
         }
     }
 }
@@ -1502,85 +1553,6 @@ declare namespace ProyectosZec {
     }
 }
 declare namespace ProyectosZec.Texts {
-}
-declare namespace ProyectosZec.Inmovilizado {
-    class InmovilizadosForm extends Serenity.PrefixedContext {
-        static formKey: string;
-    }
-    interface InmovilizadosForm {
-        Descripcion: Serenity.StringEditor;
-        SubTipoInmovilizadoId: Serenity.IntegerEditor;
-        SedeId: Serenity.IntegerEditor;
-        ProveedorId: Serenity.IntegerEditor;
-        FechaCompra: Serenity.DateEditor;
-        FechaBaja: Serenity.DateEditor;
-        Valor: Serenity.DecimalEditor;
-        Amortizacion: Serenity.IntegerEditor;
-        Garantia: Serenity.IntegerEditor;
-        Factura: Serenity.StringEditor;
-    }
-}
-declare namespace ProyectosZec.Inmovilizado {
-    interface InmovilizadosRow {
-        InmovilizadoId?: number;
-        Descripcion?: string;
-        SubTipoInmovilizadoId?: number;
-        SedeId?: number;
-        ProveedorId?: number;
-        FechaCompra?: string;
-        FechaBaja?: string;
-        Valor?: number;
-        Amortizacion?: number;
-        Garantia?: number;
-        Factura?: string;
-        SubTipoInmovilizadoTipoInmovilizadoId?: number;
-        SubTipoInmovilizadoSubTipo?: string;
-        Sede?: string;
-        Proveedor?: string;
-    }
-    namespace InmovilizadosRow {
-        const idProperty = "InmovilizadoId";
-        const nameProperty = "Descripcion";
-        const localTextPrefix = "Inmovilizado.Inmovilizados";
-        const deletePermission = "Inmovilizado:General";
-        const insertPermission = "Inmovilizado:General";
-        const readPermission = "Inmovilizado:General";
-        const updatePermission = "Inmovilizado:General";
-        namespace Fields {
-            const InmovilizadoId: any;
-            const Descripcion: any;
-            const SubTipoInmovilizadoId: any;
-            const SedeId: any;
-            const ProveedorId: any;
-            const FechaCompra: any;
-            const FechaBaja: any;
-            const Valor: any;
-            const Amortizacion: any;
-            const Garantia: any;
-            const Factura: any;
-            const SubTipoInmovilizadoTipoInmovilizadoId: any;
-            const SubTipoInmovilizadoSubTipo: any;
-            const Sede: any;
-            const Proveedor: any;
-        }
-    }
-}
-declare namespace ProyectosZec.Inmovilizado {
-    namespace InmovilizadosService {
-        const baseUrl = "Inmovilizado/Inmovilizados";
-        function Create(request: Serenity.SaveRequest<InmovilizadosRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
-        function Update(request: Serenity.SaveRequest<InmovilizadosRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
-        function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
-        function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<InmovilizadosRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
-        function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<InmovilizadosRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
-        namespace Methods {
-            const Create: string;
-            const Update: string;
-            const Delete: string;
-            const Retrieve: string;
-            const List: string;
-        }
-    }
 }
 declare namespace ProyectosZec.Administration {
     class LanguageDialog extends Serenity.EntityDialog<LanguageRow, any> {
@@ -2257,7 +2229,16 @@ declare namespace ProyectosZec.Inmovilizado {
         protected getLocalTextPrefix(): string;
         protected getService(): string;
         constructor(container: JQuery);
+        protected createSlickGrid(): Slick.Grid;
+        protected getSlickOptions(): Slick.GridOptions;
+        protected usePager(): boolean;
         getButtons(): Serenity.ToolButton[];
+        /**
+ * This method is called for all rows
+ * @param item Data item for current row
+ * @param index Index of the row in grid
+ */
+        protected getItemCssClass(item: Inmovilizado.InmovilizadosRow, index: number): string;
     }
 }
 declare namespace ProyectosZec.Inmovilizado {

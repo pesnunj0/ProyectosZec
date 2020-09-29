@@ -1,5 +1,4 @@
-﻿
-namespace ProyectosZec.Inmovilizado {
+﻿namespace ProyectosZec.Inmovilizado {
     export namespace ProveedoresService {
         export const baseUrl = 'Inmovilizado/Proveedores';
 
@@ -9,12 +8,12 @@ namespace ProyectosZec.Inmovilizado {
         export declare function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<ProveedoresRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
         export declare function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<ProveedoresRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
 
-        export namespace Methods {
-            export declare const Create: string;
-            export declare const Update: string;
-            export declare const Delete: string;
-            export declare const Retrieve: string;
-            export declare const List: string;
+        export declare const enum Methods {
+            Create = "Inmovilizado/Proveedores/Create",
+            Update = "Inmovilizado/Proveedores/Update",
+            Delete = "Inmovilizado/Proveedores/Delete",
+            Retrieve = "Inmovilizado/Proveedores/Retrieve",
+            List = "Inmovilizado/Proveedores/List"
         }
 
         [
@@ -24,10 +23,10 @@ namespace ProyectosZec.Inmovilizado {
             'Retrieve', 
             'List'
         ].forEach(x => {
-            (<any>ProveedoresService)[x] = function (r, s, o) { 
-                return Q.serviceRequest(baseUrl + '/' + x, r, s, o); 
+            (<any>ProveedoresService)[x] = function (r, s, o) {
+                return Q.serviceRequest(baseUrl + '/' + x, r, s, o);
             };
-            (<any>Methods)[x] = baseUrl + '/' + x;
         });
     }
 }
+

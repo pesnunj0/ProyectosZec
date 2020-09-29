@@ -67,10 +67,10 @@ edite el archivo MSBuild. Visite https://go.microsoft.com/fwlink/?LinkID=208121 
       <publishTime>04/06/2019 08:23:08</publishTime>
     </File>
     <File Include="bin/ProyectosZec.Web.dll">
-      <publishTime>09/07/2020 14:44:11</publishTime>
+      <publishTime>09/29/2020 14:12:52</publishTime>
     </File>
     <File Include="bin/ProyectosZec.Web.pdb">
-      <publishTime>09/07/2020 14:44:11</publishTime>
+      <publishTime>09/29/2020 14:12:52</publishTime>
     </File>
     <File Include="bin/Renci.SshNet.dll">
       <publishTime>10/16/2017 20:53:06</publishTime>
@@ -2185,7 +2185,7 @@ edite el archivo MSBuild. Visite https://go.microsoft.com/fwlink/?LinkID=208121 
       <publishTime>03/09/2020 10:07:31</publishTime>
     </File>
     <File Include="Imports/ClientTypes/ClientTypes.log">
-      <publishTime>03/11/2020 10:05:07</publishTime>
+      <publishTime>09/29/2020 14:11:20</publishTime>
     </File>
     <File Include="Imports/CodeGenerationHelpers.ttinclude">
       <publishTime>03/09/2020 10:07:31</publishTime>
@@ -3718,7 +3718,7 @@ edite el archivo MSBuild. Visite https://go.microsoft.com/fwlink/?LinkID=208121 
       <publishTime>03/09/2020 10:07:33</publishTime>
     </File>
     <File Include="Scripts/site/ProyectosZec.Web.js">
-      <publishTime>08/28/2020 14:22:53</publishTime>
+      <publishTime>09/29/2020 14:11:00</publishTime>
     </File>
     <File Include="Scripts/site/ScriptBundles.json">
       <publishTime>03/09/2020 10:07:33</publishTime>

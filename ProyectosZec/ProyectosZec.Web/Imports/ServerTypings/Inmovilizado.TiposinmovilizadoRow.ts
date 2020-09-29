@@ -1,5 +1,4 @@
-﻿
-namespace ProyectosZec.Inmovilizado {
+﻿namespace ProyectosZec.Inmovilizado {
     export interface TiposinmovilizadoRow {
         TipoInmovilizadoId?: number;
         Tipo?: string;
@@ -9,19 +8,20 @@ namespace ProyectosZec.Inmovilizado {
         export const idProperty = 'TipoInmovilizadoId';
         export const nameProperty = 'Tipo';
         export const localTextPrefix = 'Inmovilizado.Tiposinmovilizado';
+        export const lookupKey = 'Inmovilizado.Tiposinmovilizado';
+
+        export function getLookup(): Q.Lookup<TiposinmovilizadoRow> {
+            return Q.getLookup<TiposinmovilizadoRow>('Inmovilizado.Tiposinmovilizado');
+        }
         export const deletePermission = 'Inmovilizado:General';
         export const insertPermission = 'Inmovilizado:General';
         export const readPermission = 'Inmovilizado:General';
         export const updatePermission = 'Inmovilizado:General';
 
-        export namespace Fields {
-            export declare const TipoInmovilizadoId;
-            export declare const Tipo;
+        export declare const enum Fields {
+            TipoInmovilizadoId = "TipoInmovilizadoId",
+            Tipo = "Tipo"
         }
-
-        [
-            'TipoInmovilizadoId',
-            'Tipo'
-        ].forEach(x => (<any>Fields)[x] = x);
     }
 }
+

@@ -1075,6 +1075,18 @@
     <TypeScriptCompile Include="Imports\ServerTypings\CuadroMandos.TecnicosColumns.ts">
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\Inmovilizado.InmovilizadosColumns.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\Inmovilizado.ProveedoresColumns.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\Inmovilizado.SubtiposinmovilizadoColumns.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\Inmovilizado.TiposinmovilizadoColumns.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
     <TypeScriptCompile Include="Imports\ServerTypings\Intranet.DepartamentosColumns.ts">
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
@@ -1793,15 +1805,6 @@
     <TypeScriptCompile Include="Modules\Intranet\Telefonos\TelefonosDialog.ts" />
     <TypeScriptCompile Include="Modules\Intranet\Telefonos\TelefonosGrid.ts" />
     <TypeScriptCompile Include="Imports\ServerTypings\Intranet.TelefonosForm.ts">
-      <DependentUpon>ServerTypings.tt</DependentUpon>
-    </TypeScriptCompile>
-    <TypeScriptCompile Include="Imports\ServerTypings\Unmovilizado.InmovilizadosRow.ts">
-      <DependentUpon>ServerTypings.tt</DependentUpon>
-    </TypeScriptCompile>
-    <TypeScriptCompile Include="Imports\ServerTypings\Unmovilizado.InmovilizadosService.ts">
-      <DependentUpon>ServerTypings.tt</DependentUpon>
-    </TypeScriptCompile>
-    <TypeScriptCompile Include="Imports\ServerTypings\Unmovilizado.InmovilizadosForm.ts">
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
     <Content Include="Content\site\site.unmovilizado.less" />

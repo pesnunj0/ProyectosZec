@@ -1,9 +1,8 @@
-﻿
-namespace ProyectosZec.Inmovilizado {
+﻿namespace ProyectosZec.Inmovilizado {
     export interface SubtiposinmovilizadoRow {
         SubTipoInmovilizadoId?: number;
-        TipoInmovilizadoId?: number;
         SubTipo?: string;
+        TipoInmovilizadoId?: number;
         TipoInmovilizadoTipo?: string;
     }
 
@@ -11,23 +10,22 @@ namespace ProyectosZec.Inmovilizado {
         export const idProperty = 'SubTipoInmovilizadoId';
         export const nameProperty = 'SubTipo';
         export const localTextPrefix = 'Inmovilizado.Subtiposinmovilizado';
-        export const deletePermission = 'Inmovilizado:General';
-        export const insertPermission = 'Inmovilizado:General';
-        export const readPermission = 'Inmovilizado:General';
-        export const updatePermission = 'Inmovilizado:General';
+        export const lookupKey = 'Inmovilizado.Subtiposinmovilizado';
 
-        export namespace Fields {
-            export declare const SubTipoInmovilizadoId;
-            export declare const TipoInmovilizadoId;
-            export declare const SubTipo;
-            export declare const TipoInmovilizadoTipo;
+        export function getLookup(): Q.Lookup<SubtiposinmovilizadoRow> {
+            return Q.getLookup<SubtiposinmovilizadoRow>('Inmovilizado.Subtiposinmovilizado');
         }
+        export const deletePermission = 'Inmovilizado:Modify';
+        export const insertPermission = 'Inmovilizado:Modify';
+        export const readPermission = 'Inmovilizado:Read';
+        export const updatePermission = 'Inmovilizado:Modify';
 
-        [
-            'SubTipoInmovilizadoId',
-            'TipoInmovilizadoId',
-            'SubTipo',
-            'TipoInmovilizadoTipo'
-        ].forEach(x => (<any>Fields)[x] = x);
+        export declare const enum Fields {
+            SubTipoInmovilizadoId = "SubTipoInmovilizadoId",
+            SubTipo = "SubTipo",
+            TipoInmovilizadoId = "TipoInmovilizadoId",
+            TipoInmovilizadoTipo = "TipoInmovilizadoTipo"
+        }
     }
 }
+

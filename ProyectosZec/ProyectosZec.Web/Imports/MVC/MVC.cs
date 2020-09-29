@@ -96,6 +96,30 @@ namespace MVC
             public const string ValidationError = "~/Views/Errors/ValidationError.cshtml";
         }
 
+        public static class Inmovilizado
+        {
+            public static class Inmovilizados
+            {
+                public const string InmovilizadosIndex = "~/Modules/Inmovilizado/Inmovilizados/InmovilizadosIndex.cshtml";
+            }
+
+            public static class Proveedores
+            {
+                public const string ProveedoresIndex = "~/Modules/Inmovilizado/Proveedores/ProveedoresIndex.cshtml";
+            }
+
+            public static class Subtiposinmovilizado
+            {
+                public const string SubtiposinmovilizadoIndex = "~/Modules/Inmovilizado/Subtiposinmovilizado/SubtiposinmovilizadoIndex.cshtml";
+            }
+
+            public static class Tiposinmovilizado
+            {
+                public const string TiposinmovilizadoIndex = "~/Modules/Inmovilizado/Tiposinmovilizado/TiposinmovilizadoIndex.cshtml";
+            }
+
+        }
+
         public static class Intranet
         {
             public static class Departamentos
