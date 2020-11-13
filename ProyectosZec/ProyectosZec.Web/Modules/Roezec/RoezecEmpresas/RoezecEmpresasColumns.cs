@@ -17,6 +17,7 @@ namespace ProyectosZec.Roezec.Columns
         public Int32 Id { get; set; }
         [EditLink]
         public String DenominacionSocial { get; set; }
+        [Width(60),DisplayName("CIF")]
         public String Cif { get; set; }
         [Hidden]
         public String Direccion { get; set; }
@@ -31,6 +32,7 @@ namespace ProyectosZec.Roezec.Columns
         public String Isla { get; set; }
         [Hidden]
         public String NotasMarginales { get; set; }
+        [Width(70)]
         public Int32 AnyoExpediente { get; set; }
         [QuickFilter]
         [Width(100)]
@@ -41,27 +43,27 @@ namespace ProyectosZec.Roezec.Columns
         public String Tecnico { get; set; }
         [Hidden]
         public String FormaJuridica { get; set; }
-        [Hidden]
+        [Hidden, AlignRight]
         public Double Superficie { get; set; }
         public String ExentaAreaAcotada { get; set; }
         [Hidden]
         [DisplayName("Motivo Exenc.")]
         public String MotivosExencion { get; set; }
-        [DisplayName("Obj. Empleo")]
+        [DisplayName("Obj. Empleo"), AlignRight]
         public Double ObjetivoEmpleo { get; set; }
-        [DisplayName("Obj. Invers.")]
+        [DisplayName("Obj. Invers."),DisplayFormat("#,###"),AlignRight]
         public Double ObjetivoInversion { get; set; }
         [Hidden, DisplayName("Observ. Empleo")]
         public String ObservacionesEmpleo { get; set; }
         [Hidden, DisplayName("Observ. Inversión")]
         public String ObservacionesInversion { get; set; }
-        [Hidden]
+        [Hidden,AlignRight]
         public Int32 PreEmpleo { get; set; }
-        [Hidden]
+        [Hidden, AlignRight]
         public Int32 PreInversion { get; set; }
-        [Hidden]
+        [Hidden, AlignRight]
         public Int32 TrasEmpleo { get; set; }
-        [Hidden]
+        [Hidden, AlignRight]
         public Int32 TrasInversion { get; set; }
         [Width(90), QuickFilter, DisplayFormat("d")]
         public DateTime FechaAlta { get; set; }

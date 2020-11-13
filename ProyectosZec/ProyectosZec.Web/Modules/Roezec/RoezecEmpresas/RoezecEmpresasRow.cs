@@ -80,7 +80,7 @@ namespace ProyectosZec.Roezec.Entities
             set { Fields.NotasMarginales[this] = value; }
         }
 
-        [DisplayName("Anyo Expediente"), Column("anyo_expediente"), NotNull]
+        [DisplayName("Año Exp."), Column("anyo_expediente"), NotNull]
         public Int32? AnyoExpediente
         {
             get { return Fields.AnyoExpediente[this]; }
@@ -199,7 +199,7 @@ namespace ProyectosZec.Roezec.Entities
             set { Fields.FechaAlta[this] = value; }
         }
 
-        [DisplayName("Fecha Modificacion"), Column("fecha_modificacion"), NotNull]
+        [DisplayName("Fecha Modificacion"), Expression("IF(fecha_modificacion='0000-00-00 00:00:00',null,fecha_modificacion)")]
         public DateTime? FechaModificacion
         {
             get { return Fields.FechaModificacion[this]; }

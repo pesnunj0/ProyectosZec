@@ -5227,8 +5227,29 @@ var ProyectosZec;
             RoezecEmpresasGrid.prototype.getInsertPermission = function () { return Roezec.RoezecEmpresasRow.insertPermission; };
             RoezecEmpresasGrid.prototype.getLocalTextPrefix = function () { return Roezec.RoezecEmpresasRow.localTextPrefix; };
             RoezecEmpresasGrid.prototype.getService = function () { return Roezec.RoezecEmpresasService.baseUrl; };
+            // Botones Excel y Pdf
+            RoezecEmpresasGrid.prototype.getButtons = function () {
+                var _this = this;
+                var buttons = _super.prototype.getButtons.call(this);
+                buttons.push(ProyectosZec.Common.ExcelExportHelper.createToolButton({
+                    grid: this,
+                    onViewSubmit: function () { return _this.onViewSubmit(); },
+                    service: 'Roezec/RoezecEmpresas/ListExcel',
+                    separator: true
+                }));
+                buttons.push(ProyectosZec.Common.PdfExportHelper.createToolButton({
+                    grid: this,
+                    onViewSubmit: function () { return _this.onViewSubmit(); }
+                }));
+                return buttons;
+                // Fin añadidos
+            };
             RoezecEmpresasGrid = __decorate([
                 Serenity.Decorators.registerClass()
+                // Añadido para los filtros multiples
+                ,
+                Serenity.Decorators.filterable()
+                // Fin Añadido
             ], RoezecEmpresasGrid);
             return RoezecEmpresasGrid;
         }(Serenity.EntityGrid));
