@@ -170,6 +170,15 @@ namespace MVC
                     public const string AccountSignUp_AdminLTE = "~/Modules/Membership/Account/SignUp/AccountSignUp.AdminLTE.cshtml";
                 }
             }
+
+        }
+
+        public static class Roezec
+        {
+            public static class RoezecEmpresas
+            {
+                public const string RoezecEmpresasIndex = "~/Modules/Roezec/RoezecEmpresas/RoezecEmpresasIndex.cshtml";
+            }
         }
 
         public static class Shared

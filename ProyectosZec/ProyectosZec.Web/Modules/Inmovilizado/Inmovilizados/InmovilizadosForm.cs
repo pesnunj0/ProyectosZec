@@ -37,5 +37,6 @@ namespace ProyectosZec.Inmovilizado.Forms
         public Int16 Garantia { get; set; }
         public String Factura { get; set; }
         public String GalleryImages { get; set; }
+        public String Files { get; set; }
     }
 }

@@ -16,6 +16,7 @@
         Garantia: Serenity.IntegerEditor;
         Factura: Serenity.StringEditor;
         GalleryImages: Serenity.MultipleImageUploadEditor;
+        Files: Serenity.MultipleImageUploadEditor;
     }
 
     export class InmovilizadosForm extends Serenity.PrefixedContext {
@@ -52,7 +53,8 @@
                     'Amortizacion', w4,
                     'Garantia', w4,
                     'Factura', w0,
-                    'GalleryImages', w5
+                    'GalleryImages', w5,
+                    'Files', w5
                 ]);
             }
         }

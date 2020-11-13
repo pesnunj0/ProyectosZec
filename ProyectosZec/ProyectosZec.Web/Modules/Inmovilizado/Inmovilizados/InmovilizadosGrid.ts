@@ -1,5 +1,6 @@
 ﻿
 namespace ProyectosZec.Inmovilizado {
+    import fld = InmovilizadosRow.Fields;
     @Serenity.Decorators.registerClass()
     // Añadido para los filtros multiples
     @Serenity.Decorators.filterable()
@@ -83,6 +84,20 @@ namespace ProyectosZec.Inmovilizado {
             // Fin añadidos
 
         }
+        /**
+ * We override getColumns() to be able to add a custom CSS class to UnitPrice
+ * We could also add this class in ProductColumns.cs but didn't want to modify
+ * it solely for this sample.
+ */
+        protected getColumns(): Slick.Column[] {
+            var columns = super.getColumns();
+            // adding a specific css class to UnitPrice column, 
+            // to be able to format cell with a different background
+            Q.first(columns, x => x.field == fld.ValorResidual).cssClass += " col-unit-price";
+
+            return columns;
+        }
+
         /**
  * This method is called for all rows
  * @param item Data item for current row

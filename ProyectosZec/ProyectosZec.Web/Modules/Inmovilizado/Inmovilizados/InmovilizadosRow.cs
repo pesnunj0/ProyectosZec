@@ -96,7 +96,7 @@ namespace ProyectosZec.Inmovilizado.Entities
             get { return Fields.FechaCompra[this]; }
             set { Fields.FechaCompra[this] = value; }
         }
-        [DisplayName("Valor Residual"), Expression("T0.[Valor]-(T0.[Valor]/(T0.[Amortizacion]*12))*TIMESTAMPDIFF(MONTH, T0.[FechaCompra], CURRENT_TIMESTAMP)")]
+        [DisplayName("Valor Residual"), Expression("IF(T0.[Valor]-(T0.[Valor]/(T0.[Amortizacion]*12))*TIMESTAMPDIFF(MONTH, T0.[FechaCompra], CURRENT_TIMESTAMP)<0,0,T0.[Valor]-(T0.[Valor]/(T0.[Amortizacion]*12))*TIMESTAMPDIFF(MONTH, T0.[FechaCompra], CURRENT_TIMESTAMP))")]
         public Decimal? ValorResidual
         {
             get { return Fields.ValorResidual[this]; }
@@ -173,6 +173,12 @@ namespace ProyectosZec.Inmovilizado.Entities
             set { Fields.GalleryImages[this] = value; }
         }
 
+        [DisplayName("Ficheros"), Size(100), MultipleFileUploadEditor(FilenameFormat = "Inmovilizados/Files/~", ScaleWidth = 800, ScaleHeight = 600)]
+        public string Files
+        {
+            get { return Fields.Files[this]; }
+            set { Fields.Files[this] = value; }
+        }
         IIdField IIdRow.IdField
         {
             get { return Fields.InmovilizadoId; }
@@ -210,6 +216,7 @@ namespace ProyectosZec.Inmovilizado.Entities
             public Int16Field Garantia;
             public StringField Factura;
             public readonly StringField GalleryImages;
+            public readonly StringField Files;
 
             public StringField SubTipo;
 

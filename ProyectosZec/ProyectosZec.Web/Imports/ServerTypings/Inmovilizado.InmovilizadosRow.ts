@@ -17,6 +17,7 @@
         Garantia?: number;
         Factura?: string;
         GalleryImages?: string;
+        Files?: string;
         SubTipo?: string;
         Sede?: string;
         Tipo?: string;
@@ -51,6 +52,7 @@
             Garantia = "Garantia",
             Factura = "Factura",
             GalleryImages = "GalleryImages",
+            Files = "Files",
             SubTipo = "SubTipo",
             Sede = "Sede",
             Tipo = "Tipo",

@@ -33,3 +33,35 @@
 .s-Inmovilizado-InmovilizadosDialog .s-InmovilizadoGrid > .grid-container {
   height: 600px;
 }
+.s-Inmovilizado-InmovilizadosGrid .discontinued .slick-cell,
+.s-Inmovilizado-InmovilizadosGrid .discontinued .slick-cell a {
+  color: lightgray;
+}
+.s-Inmovilizado-InmovilizadosGrid .out-of-stock .slick-cell,
+.s-Inmovilizado-InmovilizadosGrid .out-of-stock .slick-cell a {
+  background-color: #ffaaaa;
+  color: red;
+}
+.s-Inmovilizado-InmovilizadosGrid .critical-stock {
+  background-color: #ffd5c0;
+}
+.s-Inmovilizado-InmovilizadosGrid .critical-stock .slick-cell,
+.s-Inmovilizado-InmovilizadosGrid .critical-stock .slick-cell a {
+  color: black;
+}
+.s-Inmovilizado-InmovilizadosGrid .much-stock .slick-cell,
+.s-Inmovilizado-InmovilizadosGrid .much-stock .slick-cell a {
+  font-style: italic;
+}
+.s-Inmovilizado-InmovilizadosGrid .high-price .col-unit-price {
+  background-color: darkorchid;
+  color: #fff;
+}
+.s-Inmovilizado-InmovilizadosGrid .medium-price .col-unit-price {
+  background-color: yellow;
+  color: #000;
+}
+.s-Inmovilizado-InmovilizadosGrid .low-price .col-unit-price {
+  background-color: green;
+  color: #fff;
+}

@@ -11,7 +11,8 @@ namespace ProyectosZec.Migrations.DefaultDB
             .AddColumn("Codigo").AsString(20).Nullable()
             .AddColumn("Ubicacion").AsString(20).Nullable()
             .AddColumn("Pg").AsString(12).Nullable()
-            .AddColumn("Imagen").AsString(10000).Nullable();
+            .AddColumn("GalleryImages").AsString(4000).Nullable()
+            .AddColumn("Files").AsString(4000).Nullable();
         }
     }
 }
