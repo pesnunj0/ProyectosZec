@@ -17,7 +17,7 @@ namespace ProyectosZec.Roezec.Columns
         public Int32 Id { get; set; }
         [EditLink]
         public String DenominacionSocial { get; set; }
-        [Width(60),DisplayName("CIF")]
+        [Width(85),DisplayName("CIF")]
         public String Cif { get; set; }
         [Hidden]
         public String Direccion { get; set; }
@@ -32,11 +32,12 @@ namespace ProyectosZec.Roezec.Columns
         public String Isla { get; set; }
         [Hidden]
         public String NotasMarginales { get; set; }
-        [Width(70)]
+        [Width(70),AlignRight]
         public Int32 AnyoExpediente { get; set; }
-        [QuickFilter]
-        [Width(100)]
+        [QuickFilter,AlignRight]
+        [Width(80)]
         public Int32 NumExpediente { get; set; }
+        [AlignRight]
         public Int32 Agencia { get; set; }
         [QuickFilter]
         [Width(80)]
@@ -71,12 +72,13 @@ namespace ProyectosZec.Roezec.Columns
         public DateTime FechaModificacion { get; set; }
         [Width(90), QuickFilter, DisplayFormat("d")]
         public DateTime FechaBaja { get; set; }
+        [Width(80),AlignRight]
         public String Situacion { get; set; }
-        [Hidden]
+        [Hidden,Width(90)]
         public String UsrAlta { get; set; }
-        [DisplayName("Usr. Modif.")]
+        [DisplayName("Usr. Modif."),Width(90)]
         public String UsrModificacion { get; set; }
-        [Hidden]
+        [Hidden, Width(90),DisplayName("Usr. Baja")]
         public String UsrBaja { get; set; }
     }
 }

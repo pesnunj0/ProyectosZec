@@ -87,7 +87,7 @@ namespace ProyectosZec.Roezec.Entities
             set { Fields.AnyoExpediente[this] = value; }
         }
 
-        [DisplayName("Num Expediente"), Column("num_expediente"), NotNull]
+        [DisplayName("Número"), Column("num_expediente"), NotNull]
         public Int32? NumExpediente
         {
             get { return Fields.NumExpediente[this]; }

@@ -23,7 +23,7 @@ namespace ProyectosZec.Inmovilizado.Columns
         public String NumeroSerie { get; set; }
         [Width(130)]
         public String Ubicacion { get; set; }
-        [Width(70)]
+        [Width(90)]
         public String Pg { get; set; }
 
         [Width(70),QuickFilter]
