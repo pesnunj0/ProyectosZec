@@ -32,7 +32,7 @@ namespace ProyectosZec.Roezec.Columns
         public String Isla { get; set; }
         [Hidden]
         public String NotasMarginales { get; set; }
-        [Width(70),AlignRight]
+        [Width(70),AlignRight, QuickFilter]
         public Int32 AnyoExpediente { get; set; }
         [QuickFilter,AlignRight]
         [Width(80)]
@@ -46,13 +46,14 @@ namespace ProyectosZec.Roezec.Columns
         public String FormaJuridica { get; set; }
         [Hidden, AlignRight]
         public Double Superficie { get; set; }
+        [Width(90)]
         public String ExentaAreaAcotada { get; set; }
         [Hidden]
         [DisplayName("Motivo Exenc.")]
         public String MotivosExencion { get; set; }
         [DisplayName("Obj. Empleo"), AlignRight]
         public Double ObjetivoEmpleo { get; set; }
-        [DisplayName("Obj. Invers."),DisplayFormat("#,###"),AlignRight]
+        [DisplayName("Obj. Invers."),DisplayFormat("#,###"),AlignRight,Width(100)]
         public Double ObjetivoInversion { get; set; }
         [Hidden, DisplayName("Observ. Empleo")]
         public String ObservacionesEmpleo { get; set; }

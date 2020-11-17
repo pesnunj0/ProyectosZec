@@ -1096,6 +1096,9 @@
     <TypeScriptCompile Include="Imports\ServerTypings\Intranet.TelefonosColumns.ts">
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\Roezec.NacesColumns.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
     <TypeScriptCompile Include="Imports\ServerTypings\Roezec.RoezecEmpresasColumns.ts">
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
@@ -1873,6 +1876,18 @@
     <TypeScriptCompile Include="Modules\Roezec\RoezecEmpresas\RoezecEmpresasDialog.ts" />
     <TypeScriptCompile Include="Modules\Roezec\RoezecEmpresas\RoezecEmpresasGrid.ts" />
     <Content Include="Content\site\site.roezec.less" />
+    <TypeScriptCompile Include="Imports\ServerTypings\Roezec.NacesRow.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\Roezec.NacesService.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <Content Include="Modules\Roezec\Naces\NacesIndex.cshtml" />
+    <TypeScriptCompile Include="Modules\Roezec\Naces\NacesDialog.ts" />
+    <TypeScriptCompile Include="Modules\Roezec\Naces\NacesGrid.ts" />
+    <TypeScriptCompile Include="Imports\ServerTypings\Roezec.NacesForm.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Global.asax" />
@@ -2116,6 +2131,12 @@
     <Compile Include="Modules\Roezec\RoezecEmpresas\RoezecEmpresasColumns.cs" />
     <Compile Include="Modules\Roezec\RoezecEmpresas\RoezecEmpresasForm.cs" />
     <Compile Include="Modules\Roezec\RoezecNavigation.cs" />
+    <Compile Include="Modules\Roezec\Naces\NacesRow.cs" />
+    <Compile Include="Modules\Roezec\Naces\NacesRepository.cs" />
+    <Compile Include="Modules\Roezec\Naces\NacesEndpoint.cs" />
+    <Compile Include="Modules\Roezec\Naces\NacesPage.cs" />
+    <Compile Include="Modules\Roezec\Naces\NacesColumns.cs" />
+    <Compile Include="Modules\Roezec\Naces\NacesForm.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\upload\" />

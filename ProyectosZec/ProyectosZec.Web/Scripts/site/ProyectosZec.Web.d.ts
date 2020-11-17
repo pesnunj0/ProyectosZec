@@ -1548,6 +1548,66 @@ declare namespace ProyectosZec.Membership {
 declare namespace ProyectosZec.Roezec {
 }
 declare namespace ProyectosZec.Roezec {
+    interface NacesForm {
+        Nace: Serenity.StringEditor;
+        Codigo: Serenity.StringEditor;
+        Actividad: Serenity.StringEditor;
+        FechaAlta: Serenity.DateEditor;
+        UsrAlta: Serenity.StringEditor;
+    }
+    class NacesForm extends Serenity.PrefixedContext {
+        static formKey: string;
+        private static init;
+        constructor(prefix: string);
+    }
+}
+declare namespace ProyectosZec.Roezec {
+    interface NacesRow {
+        Id?: number;
+        Nace?: string;
+        Codigo?: string;
+        Actividad?: string;
+        FechaAlta?: string;
+        UsrAlta?: string;
+    }
+    namespace NacesRow {
+        const idProperty = "Id";
+        const nameProperty = "Nace";
+        const localTextPrefix = "Roezec.Naces";
+        const deletePermission = "Roezec:Delete";
+        const insertPermission = "Roezec:Insert";
+        const readPermission = "Roezec:Read";
+        const updatePermission = "Roezec:Modify";
+        const enum Fields {
+            Id = "Id",
+            Nace = "Nace",
+            Codigo = "Codigo",
+            Actividad = "Actividad",
+            FechaAlta = "FechaAlta",
+            UsrAlta = "UsrAlta"
+        }
+    }
+}
+declare namespace ProyectosZec.Roezec {
+    namespace NacesService {
+        const baseUrl = "Roezec/Naces";
+        function Create(request: Serenity.SaveRequest<NacesRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Update(request: Serenity.SaveRequest<NacesRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<NacesRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<NacesRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        const enum Methods {
+            Create = "Roezec/Naces/Create",
+            Update = "Roezec/Naces/Update",
+            Delete = "Roezec/Naces/Delete",
+            Retrieve = "Roezec/Naces/Retrieve",
+            List = "Roezec/Naces/List"
+        }
+    }
+}
+declare namespace ProyectosZec.Roezec {
+}
+declare namespace ProyectosZec.Roezec {
     interface RoezecEmpresasForm {
         DenominacionSocial: Serenity.StringEditor;
         Cif: Serenity.StringEditor;
@@ -2565,6 +2625,31 @@ declare namespace ProyectosZec.Membership {
     }
 }
 declare namespace ProyectosZec.Roezec {
+    class NacesDialog extends Serenity.EntityDialog<NacesRow, any> {
+        protected getFormKey(): string;
+        protected getIdProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected getNameProperty(): string;
+        protected getService(): string;
+        protected getDeletePermission(): string;
+        protected getInsertPermission(): string;
+        protected getUpdatePermission(): string;
+        protected form: NacesForm;
+    }
+}
+declare namespace ProyectosZec.Roezec {
+    class NacesGrid extends Serenity.EntityGrid<NacesRow, any> {
+        protected getColumnsKey(): string;
+        protected getDialogType(): typeof NacesDialog;
+        protected getIdProperty(): string;
+        protected getInsertPermission(): string;
+        protected getLocalTextPrefix(): string;
+        protected getService(): string;
+        constructor(container: JQuery);
+        getButtons(): Serenity.ToolButton[];
+    }
+}
+declare namespace ProyectosZec.Roezec {
     class RoezecEmpresasDialog extends Serenity.EntityDialog<RoezecEmpresasRow, any> {
         protected getFormKey(): string;
         protected getIdProperty(): string;
@@ -2586,6 +2671,9 @@ declare namespace ProyectosZec.Roezec {
         protected getLocalTextPrefix(): string;
         protected getService(): string;
         constructor(container: JQuery);
+        protected createSlickGrid(): Slick.Grid;
+        protected getSlickOptions(): Slick.GridOptions;
+        protected usePager(): boolean;
         getButtons(): Serenity.ToolButton[];
     }
 }

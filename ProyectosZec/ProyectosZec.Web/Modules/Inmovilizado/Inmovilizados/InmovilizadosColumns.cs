@@ -15,7 +15,7 @@ namespace ProyectosZec.Inmovilizado.Columns
     {
         [Hidden,EditLink,Width(30), DisplayName("Db.Shared.RecordId"), AlignRight]
         public Int32 InmovilizadoId { get; set; }
-        [EditLink,Width(60)]
+        [EditLink,Width(80)]
         public String Codigo { get; set; }
         [EditLink,Width(270)]
         public String Descripcion { get; set; }

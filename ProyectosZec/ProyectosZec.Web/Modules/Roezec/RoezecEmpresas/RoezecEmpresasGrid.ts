@@ -16,6 +16,35 @@ namespace ProyectosZec.Roezec {
         constructor(container: JQuery) {
             super(container);
         }
+        // Agrupar y sumar 
+        protected createSlickGrid() {
+            var grid = super.createSlickGrid();
+
+            // need to register this plugin for grouping or you'll have errors
+            grid.registerPlugin(new Slick.Data.GroupItemMetadataProvider());
+
+            // sumamos Objetivo Empleo y de Inversión
+            this.view.setSummaryOptions({
+                aggregators: [
+                    new Slick.Aggregators.Sum(RoezecEmpresasRow.Fields.ObjetivoEmpleo),
+                    new Slick.Aggregators.Sum(RoezecEmpresasRow.Fields.ObjetivoInversion)
+                ]
+            });
+
+            return grid;
+        }
+        // Mostramos Footer con los totales
+        protected getSlickOptions() {
+            var opt = super.getSlickOptions();
+            opt.showFooterRow = true;
+            return opt;
+        }
+
+        protected usePager() {
+            return false;
+        }
+
+
         // Botones Excel y Pdf
         getButtons() {
             var buttons = super.getButtons();
@@ -31,6 +60,39 @@ namespace ProyectosZec.Roezec {
                 grid: this,
                 onViewSubmit: () => this.onViewSubmit()
             }));
+
+            buttons.push(
+                {
+                    title: 'Agrupar por Año',
+                    cssClass: 'expand-all-button',
+                    onClick: () => this.view.setGrouping(
+                        [{
+                            formatter: x => 'Año: ' + x.value + ' (' + x.count + ' Empresas)',
+                            getter: RoezecEmpresasRow.Fields.AnyoExpediente
+                        }])
+                }
+            );
+            buttons.push(
+                {
+                    title: 'Agrupar por Año y Técnico',
+                    cssClass: 'expand-all-button',
+                    onClick: () => this.view.setGrouping(
+                        [{
+                            formatter: x => 'Año: ' + x.value + ' (' + x.count + ' Empresas)',
+                            getter: RoezecEmpresasRow.Fields.AnyoExpediente
+                        }, {
+                            formatter: x => 'Técnico: ' + x.value + ' (' + x.count + ' Empresas)',
+                                getter: RoezecEmpresasRow.Fields.Tecnico
+                        }])
+                }
+            );
+            buttons.push(
+                {
+                    title: 'Desagrupar',
+                    cssClass: 'collapse-all-button',
+                    onClick: () => this.view.setGrouping([])
+                }
+            );
 
             return buttons;
             // Fin añadidos

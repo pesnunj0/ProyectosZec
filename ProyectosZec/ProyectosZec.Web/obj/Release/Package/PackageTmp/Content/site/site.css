@@ -7649,3 +7649,9 @@ section.content > .s-DataGrid {
 .s-Roezec-RoezecEmpresasDialog .caption {
   width: 150px;
 }
+.s-Roezec-NacesDialog > .size {
+  width: 650px;
+}
+.s-Roezec-NacesDialog .caption {
+  width: 150px;
+}

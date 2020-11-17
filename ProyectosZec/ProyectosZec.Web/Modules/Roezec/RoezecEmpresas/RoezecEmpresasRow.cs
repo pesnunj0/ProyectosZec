@@ -59,7 +59,7 @@ namespace ProyectosZec.Roezec.Entities
             set { Fields.Poblacion[this] = value; }
         }
 
-        [DisplayName("Provincia"), Column("provincia"), Size(255), NotNull]
+        [DisplayName("Provincia"), Column("provincia"), Size(255)]
         public String Provincia
         {
             get { return Fields.Provincia[this]; }
@@ -73,126 +73,126 @@ namespace ProyectosZec.Roezec.Entities
             set { Fields.Isla[this] = value; }
         }
 
-        [DisplayName("Notas Marginales"), Column("notas_marginales"), NotNull]
+        [DisplayName("Notas Marginales"), Column("notas_marginales")]
         public String NotasMarginales
         {
             get { return Fields.NotasMarginales[this]; }
             set { Fields.NotasMarginales[this] = value; }
         }
 
-        [DisplayName("Año Exp."), Column("anyo_expediente"), NotNull]
+        [DisplayName("Año Exp."), Column("anyo_expediente")]
         public Int32? AnyoExpediente
         {
             get { return Fields.AnyoExpediente[this]; }
             set { Fields.AnyoExpediente[this] = value; }
         }
 
-        [DisplayName("Número"), Column("num_expediente"), NotNull]
+        [DisplayName("Número"), Column("num_expediente")]
         public Int32? NumExpediente
         {
             get { return Fields.NumExpediente[this]; }
             set { Fields.NumExpediente[this] = value; }
         }
 
-        [DisplayName("Agencia"), Column("agencia"), NotNull]
+        [DisplayName("Agencia"), Column("agencia")]
         public Int32? Agencia
         {
             get { return Fields.Agencia[this]; }
             set { Fields.Agencia[this] = value; }
         }
 
-        [DisplayName("Tecnico"), Column("tecnico"), Size(255), NotNull]
+        [DisplayName("Tecnico"), Column("tecnico"), Size(255)]
         public String Tecnico
         {
             get { return Fields.Tecnico[this]; }
             set { Fields.Tecnico[this] = value; }
         }
 
-        [DisplayName("Forma Juridica"), Column("forma_juridica"), Size(255), NotNull]
+        [DisplayName("Forma Juridica"), Column("forma_juridica"), Size(255)]
         public String FormaJuridica
         {
             get { return Fields.FormaJuridica[this]; }
             set { Fields.FormaJuridica[this] = value; }
         }
 
-        [DisplayName("Superficie"), Column("superficie"), NotNull]
+        [DisplayName("Superficie"), Column("superficie")]
         public Double? Superficie
         {
             get { return Fields.Superficie[this]; }
             set { Fields.Superficie[this] = value; }
         }
 
-        [DisplayName("Exenta Area Acotada"), Column("exenta_area_acotada"), Size(255), NotNull]
+        [DisplayName("Exenta"), Column("exenta_area_acotada"), Size(255)]
         public String ExentaAreaAcotada
         {
             get { return Fields.ExentaAreaAcotada[this]; }
             set { Fields.ExentaAreaAcotada[this] = value; }
         }
 
-        [DisplayName("Motivos Exencion"), Column("motivos_exencion"), Size(255), NotNull]
+        [DisplayName("Motivos Exencion"), Column("motivos_exencion"), Size(255)]
         public String MotivosExencion
         {
             get { return Fields.MotivosExencion[this]; }
             set { Fields.MotivosExencion[this] = value; }
         }
 
-        [DisplayName("Objetivo Empleo"), Column("objetivo_empleo"), NotNull]
+        [DisplayName("Objetivo Empleo"), Column("objetivo_empleo")]
         public Double? ObjetivoEmpleo
         {
             get { return Fields.ObjetivoEmpleo[this]; }
             set { Fields.ObjetivoEmpleo[this] = value; }
         }
 
-        [DisplayName("Objetivo Inversion"), Column("objetivo_inversion"), NotNull]
+        [DisplayName("Objetivo Inversion"), Column("objetivo_inversion")]
         public Double? ObjetivoInversion
         {
             get { return Fields.ObjetivoInversion[this]; }
             set { Fields.ObjetivoInversion[this] = value; }
         }
 
-        [DisplayName("Observaciones Empleo"), Column("observaciones_empleo"), Size(255), NotNull]
+        [DisplayName("Observaciones Empleo"), Column("observaciones_empleo"), Size(255)]
         public String ObservacionesEmpleo
         {
             get { return Fields.ObservacionesEmpleo[this]; }
             set { Fields.ObservacionesEmpleo[this] = value; }
         }
 
-        [DisplayName("Observaciones Inversion"), Column("observaciones_inversion"), Size(255), NotNull]
+        [DisplayName("Observaciones Inversion"), Column("observaciones_inversion"), Size(255)]
         public String ObservacionesInversion
         {
             get { return Fields.ObservacionesInversion[this]; }
             set { Fields.ObservacionesInversion[this] = value; }
         }
 
-        [DisplayName("Pre Empleo"), Column("pre_empleo"), NotNull]
+        [DisplayName("Pre Empleo"), Column("pre_empleo")]
         public Int32? PreEmpleo
         {
             get { return Fields.PreEmpleo[this]; }
             set { Fields.PreEmpleo[this] = value; }
         }
 
-        [DisplayName("Pre Inversion"), Column("pre_inversion"), NotNull]
+        [DisplayName("Pre Inversion"), Column("pre_inversion")]
         public Int32? PreInversion
         {
             get { return Fields.PreInversion[this]; }
             set { Fields.PreInversion[this] = value; }
         }
 
-        [DisplayName("Tras Empleo"), Column("tras_empleo"), NotNull]
+        [DisplayName("Tras Empleo"), Column("tras_empleo")]
         public Int32? TrasEmpleo
         {
             get { return Fields.TrasEmpleo[this]; }
             set { Fields.TrasEmpleo[this] = value; }
         }
 
-        [DisplayName("Tras Inversion"), Column("tras_inversion"), NotNull]
+        [DisplayName("Tras Inversion"), Column("tras_inversion")]
         public Int32? TrasInversion
         {
             get { return Fields.TrasInversion[this]; }
             set { Fields.TrasInversion[this] = value; }
         }
 
-        [DisplayName("Fecha Alta"), Column("fecha_alta"), NotNull]
+        [DisplayName("Fecha Alta"), Column("fecha_alta")]
         public DateTime? FechaAlta
         {
             get { return Fields.FechaAlta[this]; }
@@ -213,14 +213,14 @@ namespace ProyectosZec.Roezec.Entities
             set { Fields.FechaBaja[this] = value; }
         }
 
-        [DisplayName("Situacion"), Column("situacion"), Size(255), NotNull]
+        [DisplayName("Situacion"), Column("situacion"), Size(255)]
         public String Situacion
         {
             get { return Fields.Situacion[this]; }
             set { Fields.Situacion[this] = value; }
         }
 
-        [DisplayName("Usr Alta"), Column("usr_alta"), Size(255), NotNull]
+        [DisplayName("Usr Alta"), Column("usr_alta"), Size(255)]
         public String UsrAlta
         {
             get { return Fields.UsrAlta[this]; }
