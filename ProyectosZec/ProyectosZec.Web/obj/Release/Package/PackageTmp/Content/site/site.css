@@ -7655,3 +7655,9 @@ section.content > .s-DataGrid {
 .s-Roezec-NacesDialog .caption {
   width: 150px;
 }
+.s-Roezec-ActividadesDialog > .size {
+  width: 650px;
+}
+.s-Roezec-ActividadesDialog .caption {
+  width: 150px;
+}

@@ -1548,6 +1548,121 @@ declare namespace ProyectosZec.Membership {
 declare namespace ProyectosZec.Roezec {
 }
 declare namespace ProyectosZec.Roezec {
+    interface ActividadesForm {
+        IdNace: Serenity.LookupEditor;
+        IdEmpresa: Serenity.LookupEditor;
+    }
+    class ActividadesForm extends Serenity.PrefixedContext {
+        static formKey: string;
+        private static init;
+        constructor(prefix: string);
+    }
+}
+declare namespace ProyectosZec.Roezec {
+    interface ActividadesRow {
+        Id?: number;
+        IdNace?: number;
+        IdEmpresa?: number;
+        Actividad?: string;
+        Empresa?: string;
+        Cif?: string;
+        Direccion?: string;
+        Cp?: string;
+        Poblacion?: string;
+        Provincia?: string;
+        Isla?: string;
+        NotasMarginales?: string;
+        AnyoExpediente?: number;
+        NumExpediente?: number;
+        Agencia?: number;
+        Tecnico?: string;
+        FormaJuridica?: string;
+        Superficie?: number;
+        ExentaAreaAcotada?: string;
+        MotivosExencion?: string;
+        ObjetivoEmpleo?: number;
+        ObjetivoInversion?: number;
+        ObservacionesEmpleo?: string;
+        ObservacionesInversion?: string;
+        PreEmpleo?: number;
+        PreInversion?: number;
+        TrasEmpleo?: number;
+        TrasInversion?: number;
+        FechaAlta?: string;
+        FechaModificacion?: string;
+        FechaBaja?: string;
+        Situacion?: string;
+        UsrAlta?: string;
+        UsrModificacion?: string;
+        UsrBaja?: string;
+    }
+    namespace ActividadesRow {
+        const idProperty = "Id";
+        const nameProperty = "Actividad";
+        const localTextPrefix = "Roezec.Actividades";
+        const deletePermission = "Roezec:Read";
+        const insertPermission = "Roezec:Read";
+        const readPermission = "Roezec:Read";
+        const updatePermission = "Roezec:Read";
+        const enum Fields {
+            Id = "Id",
+            IdNace = "IdNace",
+            IdEmpresa = "IdEmpresa",
+            Actividad = "Actividad",
+            Empresa = "Empresa",
+            Cif = "Cif",
+            Direccion = "Direccion",
+            Cp = "Cp",
+            Poblacion = "Poblacion",
+            Provincia = "Provincia",
+            Isla = "Isla",
+            NotasMarginales = "NotasMarginales",
+            AnyoExpediente = "AnyoExpediente",
+            NumExpediente = "NumExpediente",
+            Agencia = "Agencia",
+            Tecnico = "Tecnico",
+            FormaJuridica = "FormaJuridica",
+            Superficie = "Superficie",
+            ExentaAreaAcotada = "ExentaAreaAcotada",
+            MotivosExencion = "MotivosExencion",
+            ObjetivoEmpleo = "ObjetivoEmpleo",
+            ObjetivoInversion = "ObjetivoInversion",
+            ObservacionesEmpleo = "ObservacionesEmpleo",
+            ObservacionesInversion = "ObservacionesInversion",
+            PreEmpleo = "PreEmpleo",
+            PreInversion = "PreInversion",
+            TrasEmpleo = "TrasEmpleo",
+            TrasInversion = "TrasInversion",
+            FechaAlta = "FechaAlta",
+            FechaModificacion = "FechaModificacion",
+            FechaBaja = "FechaBaja",
+            Situacion = "Situacion",
+            UsrAlta = "UsrAlta",
+            UsrModificacion = "UsrModificacion",
+            UsrBaja = "UsrBaja"
+        }
+    }
+}
+declare namespace ProyectosZec.Roezec {
+    namespace ActividadesService {
+        const baseUrl = "Roezec/Actividades";
+        function Create(request: Serenity.SaveRequest<ActividadesRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Update(request: Serenity.SaveRequest<ActividadesRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<ActividadesRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<ActividadesRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        const enum Methods {
+            Create = "Roezec/Actividades/Create",
+            Update = "Roezec/Actividades/Update",
+            Delete = "Roezec/Actividades/Delete",
+            Retrieve = "Roezec/Actividades/Retrieve",
+            List = "Roezec/Actividades/List"
+        }
+    }
+}
+declare namespace ProyectosZec.Roezec {
+}
+declare namespace ProyectosZec.Roezec {
     interface NacesForm {
         Nace: Serenity.StringEditor;
         Codigo: Serenity.StringEditor;
@@ -1572,8 +1687,10 @@ declare namespace ProyectosZec.Roezec {
     }
     namespace NacesRow {
         const idProperty = "Id";
-        const nameProperty = "Nace";
+        const nameProperty = "Actividad";
         const localTextPrefix = "Roezec.Naces";
+        const lookupKey = "Roezec.Naces";
+        function getLookup(): Q.Lookup<NacesRow>;
         const deletePermission = "Roezec:Delete";
         const insertPermission = "Roezec:Insert";
         const readPermission = "Roezec:Read";
@@ -1686,6 +1803,8 @@ declare namespace ProyectosZec.Roezec {
         const idProperty = "Id";
         const nameProperty = "DenominacionSocial";
         const localTextPrefix = "Roezec.RoezecEmpresas";
+        const lookupKey = "Roezec.RoezecEmpresas";
+        function getLookup(): Q.Lookup<RoezecEmpresasRow>;
         const deletePermission = "Roezec:Delete";
         const insertPermission = "Roezec:Insert";
         const readPermission = "Roezec:Read";
@@ -2622,6 +2741,34 @@ declare namespace ProyectosZec.Membership {
         protected getFormKey(): string;
         private form;
         constructor(container: JQuery);
+    }
+}
+declare namespace ProyectosZec.Roezec {
+    class ActividadesDialog extends Serenity.EntityDialog<ActividadesRow, any> {
+        protected getFormKey(): string;
+        protected getIdProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected getNameProperty(): string;
+        protected getService(): string;
+        protected getDeletePermission(): string;
+        protected getInsertPermission(): string;
+        protected getUpdatePermission(): string;
+        protected form: ActividadesForm;
+    }
+}
+declare namespace ProyectosZec.Roezec {
+    class ActividadesGrid extends Serenity.EntityGrid<ActividadesRow, any> {
+        protected getColumnsKey(): string;
+        protected getDialogType(): typeof ActividadesDialog;
+        protected getIdProperty(): string;
+        protected getInsertPermission(): string;
+        protected getLocalTextPrefix(): string;
+        protected getService(): string;
+        constructor(container: JQuery);
+        protected createSlickGrid(): Slick.Grid;
+        protected getSlickOptions(): Slick.GridOptions;
+        protected usePager(): boolean;
+        getButtons(): Serenity.ToolButton[];
     }
 }
 declare namespace ProyectosZec.Roezec {

@@ -175,6 +175,11 @@ namespace MVC
 
         public static class Roezec
         {
+            public static class Actividades
+            {
+                public const string ActividadesIndex = "~/Modules/Roezec/Actividades/ActividadesIndex.cshtml";
+            }
+
             public static class Naces
             {
                 public const string NacesIndex = "~/Modules/Roezec/Naces/NacesIndex.cshtml";

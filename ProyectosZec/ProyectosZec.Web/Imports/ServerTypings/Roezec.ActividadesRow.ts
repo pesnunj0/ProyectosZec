@@ -1,7 +1,10 @@
 ﻿namespace ProyectosZec.Roezec {
-    export interface RoezecEmpresasRow {
+    export interface ActividadesRow {
         Id?: number;
-        DenominacionSocial?: string;
+        IdNace?: number;
+        IdEmpresa?: number;
+        Actividad?: string;
+        Empresa?: string;
         Cif?: string;
         Direccion?: string;
         Cp?: string;
@@ -34,23 +37,21 @@
         UsrBaja?: string;
     }
 
-    export namespace RoezecEmpresasRow {
+    export namespace ActividadesRow {
         export const idProperty = 'Id';
-        export const nameProperty = 'DenominacionSocial';
-        export const localTextPrefix = 'Roezec.RoezecEmpresas';
-        export const lookupKey = 'Roezec.RoezecEmpresas';
-
-        export function getLookup(): Q.Lookup<RoezecEmpresasRow> {
-            return Q.getLookup<RoezecEmpresasRow>('Roezec.RoezecEmpresas');
-        }
-        export const deletePermission = 'Roezec:Delete';
-        export const insertPermission = 'Roezec:Insert';
+        export const nameProperty = 'Actividad';
+        export const localTextPrefix = 'Roezec.Actividades';
+        export const deletePermission = 'Roezec:Read';
+        export const insertPermission = 'Roezec:Read';
         export const readPermission = 'Roezec:Read';
-        export const updatePermission = 'Roezec:Modify';
+        export const updatePermission = 'Roezec:Read';
 
         export declare const enum Fields {
             Id = "Id",
-            DenominacionSocial = "DenominacionSocial",
+            IdNace = "IdNace",
+            IdEmpresa = "IdEmpresa",
+            Actividad = "Actividad",
+            Empresa = "Empresa",
             Cif = "Cif",
             Direccion = "Direccion",
             Cp = "Cp",

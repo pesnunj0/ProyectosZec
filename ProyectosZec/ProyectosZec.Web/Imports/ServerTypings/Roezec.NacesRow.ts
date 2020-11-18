@@ -10,8 +10,13 @@
 
     export namespace NacesRow {
         export const idProperty = 'Id';
-        export const nameProperty = 'Nace';
+        export const nameProperty = 'Actividad';
         export const localTextPrefix = 'Roezec.Naces';
+        export const lookupKey = 'Roezec.Naces';
+
+        export function getLookup(): Q.Lookup<NacesRow> {
+            return Q.getLookup<NacesRow>('Roezec.Naces');
+        }
         export const deletePermission = 'Roezec:Delete';
         export const insertPermission = 'Roezec:Insert';
         export const readPermission = 'Roezec:Read';

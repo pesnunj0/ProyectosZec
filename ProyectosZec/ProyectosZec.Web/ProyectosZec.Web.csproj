@@ -1096,6 +1096,9 @@
     <TypeScriptCompile Include="Imports\ServerTypings\Intranet.TelefonosColumns.ts">
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\Roezec.ActividadesColumns.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
     <TypeScriptCompile Include="Imports\ServerTypings\Roezec.NacesColumns.ts">
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
@@ -1888,6 +1891,18 @@
     <TypeScriptCompile Include="Imports\ServerTypings\Roezec.NacesForm.ts">
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\Roezec.ActividadesRow.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\Roezec.ActividadesService.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <Content Include="Modules\Roezec\Actividades\ActividadesIndex.cshtml" />
+    <TypeScriptCompile Include="Modules\Roezec\Actividades\ActividadesDialog.ts" />
+    <TypeScriptCompile Include="Modules\Roezec\Actividades\ActividadesGrid.ts" />
+    <TypeScriptCompile Include="Imports\ServerTypings\Roezec.ActividadesForm.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Global.asax" />
@@ -2137,6 +2152,12 @@
     <Compile Include="Modules\Roezec\Naces\NacesPage.cs" />
     <Compile Include="Modules\Roezec\Naces\NacesColumns.cs" />
     <Compile Include="Modules\Roezec\Naces\NacesForm.cs" />
+    <Compile Include="Modules\Roezec\Actividades\ActividadesRow.cs" />
+    <Compile Include="Modules\Roezec\Actividades\ActividadesRepository.cs" />
+    <Compile Include="Modules\Roezec\Actividades\ActividadesEndpoint.cs" />
+    <Compile Include="Modules\Roezec\Actividades\ActividadesPage.cs" />
+    <Compile Include="Modules\Roezec\Actividades\ActividadesColumns.cs" />
+    <Compile Include="Modules\Roezec\Actividades\ActividadesForm.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\upload\" />

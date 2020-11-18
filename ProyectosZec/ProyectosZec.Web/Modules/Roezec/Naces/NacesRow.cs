@@ -15,6 +15,7 @@ namespace ProyectosZec.Roezec.Entities
     [ModifyPermission("Roezec:Modify")]
     [InsertPermission("Roezec:Insert")]
     [DeletePermission("Roezec:Delete")]
+    [LookupScript("Roezec.Naces")]
     public sealed class NacesRow : Row, IIdRow, INameRow
     {
         [DisplayName("Id"), Column("id"), Identity]
@@ -66,7 +67,7 @@ namespace ProyectosZec.Roezec.Entities
 
         StringField INameRow.NameField
         {
-            get { return Fields.Nace; }
+            get { return Fields.Actividad; }
         }
 
         public static readonly RowFields Fields = new RowFields().Init();
