@@ -2,10 +2,8 @@
   "ExpandedNodes": [
     "",
     "\\ProyectosZec",
-    "\\ProyectosZec\\ProyectosZec.Web",
-    "\\ProyectosZec\\ProyectosZec.Web\\Migrations\\DefaultDB",
-    "\\ProyectosZec\\ProyectosZec.Web\\Modules"
+    "\\ProyectosZec\\ProyectosZec.Web"
   ],
-  "SelectedNode": "\\ProyectosZec\\ProyectosZec.Web\\Migrations",
+  "SelectedNode": "\\ProyectosZec.sln",
   "PreviewInSolutionExplorer": false
 }
