@@ -2767,7 +2767,6 @@ declare namespace ProyectosZec.Roezec {
         constructor(container: JQuery);
         protected createSlickGrid(): Slick.Grid;
         protected getSlickOptions(): Slick.GridOptions;
-        protected usePager(): boolean;
         getButtons(): Serenity.ToolButton[];
     }
 }

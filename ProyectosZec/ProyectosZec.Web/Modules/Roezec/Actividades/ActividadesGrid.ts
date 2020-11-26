@@ -24,26 +24,36 @@ namespace ProyectosZec.Roezec {
             // need to register this plugin for grouping or you'll have errors
             grid.registerPlugin(new Slick.Data.GroupItemMetadataProvider());
 
-            // sumamos Objetivo Empleo y de Inversión
-            this.view.setSummaryOptions({
-                aggregators: [
-                    new Slick.Aggregators.Sum(ActividadesRow.Fields.ObjetivoEmpleo),
-                    new Slick.Aggregators.Sum(ActividadesRow.Fields.ObjetivoInversion)
-                ]
-            });
+            //// sumamos Objetivo Empleo y de Inversión
+            //this.view.setSummaryOptions({
+            //    aggregators: [
+            //        new Slick.Aggregators.Sum(ActividadesRow.Fields.ObjetivoEmpleo),
+            //        new Slick.Aggregators.Sum(ActividadesRow.Fields.ObjetivoInversion)
+            //    ]
+            //});
+            // Declaramos que el Grid puedes seleccionar fila
+            grid.setSelectionModel(new Slick.RowSelectionModel());
 
             return grid;
         }
         // Mostramos Footer con los totales
         protected getSlickOptions() {
             var opt = super.getSlickOptions();
-            opt.showFooterRow = true;
+            // Fila Seleccionable
+            opt.enableTextSelectionOnCells = true;
+            opt.selectedCellCssClass = "slick-row-selected";
+            opt.enableCellNavigation = true;
+            // Fin Fila Seleccionable
+            // Mostrar Pie
+            //opt.showFooterRow = true;
+            // Fin de Mostrar Pie de página
             return opt;
         }
 
-        protected usePager() {
-            return false;
-        }
+        //protected usePager() {
+        //    // Quitamos la paginación para que sume totales
+        //    return false;
+        //}
 
 
         // Botones Excel y Pdf
@@ -68,22 +78,35 @@ namespace ProyectosZec.Roezec {
                     cssClass: 'expand-all-button',
                     onClick: () => this.view.setGrouping(
                         [{
-                            formatter: x => 'Año: ' + x.value + ' (' + x.count + ' Empresas)',
+                            formatter: x => 'Año: ' + x.value + ' (' + x.count + ' Nace/Empresas)',
                             getter: ActividadesRow.Fields.AnyoExpediente
                         }])
                 }
             );
+
             buttons.push(
                 {
-                    title: 'Agrupar por Año y Técnico',
+                    title: 'Agrupar por Nace',
                     cssClass: 'expand-all-button',
                     onClick: () => this.view.setGrouping(
                         [{
-                            formatter: x => 'Año: ' + x.value + ' (' + x.count + ' Empresas)',
+                            formatter: x => 'Nace: ' + x.value + ' (' + x.count + ' Empresas)',
+                            getter: ActividadesRow.Fields.Actividad
+                        }])
+                }
+            );
+
+            buttons.push(
+                {
+                    title: 'Agrupar por Año y Nace',
+                    cssClass: 'expand-all-button',
+                    onClick: () => this.view.setGrouping(
+                        [{
+                            formatter: x => 'Año: ' + x.value + ' (' + x.count + ' Nace/Empresas)',
                             getter: ActividadesRow.Fields.AnyoExpediente
                         }, {
-                            formatter: x => 'Técnico: ' + x.value + ' (' + x.count + ' Empresas)',
-                                getter: ActividadesRow.Fields.Tecnico
+                            formatter: x => 'Nace: ' + x.value + ' (' + x.count + ' Empresas)',
+                                getter: ActividadesRow.Fields.Actividad
                         }])
                 }
             );

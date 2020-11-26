@@ -51,7 +51,7 @@ namespace ProyectosZec.Roezec.Columns
         [Hidden]
         [DisplayName("Motivo Exenc.")]
         public String MotivosExencion { get; set; }
-        [DisplayName("Obj. Empleo"), AlignRight]
+        [DisplayName("Obj. Empleo"), AlignRight, DisplayFormat("#,###.0")]
         public Double ObjetivoEmpleo { get; set; }
         [DisplayName("Obj. Invers."),DisplayFormat("#,###"),AlignRight,Width(100)]
         public Double ObjetivoInversion { get; set; }

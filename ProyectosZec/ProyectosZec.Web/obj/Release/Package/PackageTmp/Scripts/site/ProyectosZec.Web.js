@@ -5370,24 +5370,34 @@ var ProyectosZec;
                 var grid = _super.prototype.createSlickGrid.call(this);
                 // need to register this plugin for grouping or you'll have errors
                 grid.registerPlugin(new Slick.Data.GroupItemMetadataProvider());
-                // sumamos Objetivo Empleo y de Inversión
-                this.view.setSummaryOptions({
-                    aggregators: [
-                        new Slick.Aggregators.Sum("ObjetivoEmpleo" /* ObjetivoEmpleo */),
-                        new Slick.Aggregators.Sum("ObjetivoInversion" /* ObjetivoInversion */)
-                    ]
-                });
+                //// sumamos Objetivo Empleo y de Inversión
+                //this.view.setSummaryOptions({
+                //    aggregators: [
+                //        new Slick.Aggregators.Sum(ActividadesRow.Fields.ObjetivoEmpleo),
+                //        new Slick.Aggregators.Sum(ActividadesRow.Fields.ObjetivoInversion)
+                //    ]
+                //});
+                // Declaramos que el Grid puedes seleccionar fila
+                grid.setSelectionModel(new Slick.RowSelectionModel());
                 return grid;
             };
             // Mostramos Footer con los totales
             ActividadesGrid.prototype.getSlickOptions = function () {
                 var opt = _super.prototype.getSlickOptions.call(this);
-                opt.showFooterRow = true;
+                // Fila Seleccionable
+                opt.enableTextSelectionOnCells = true;
+                opt.selectedCellCssClass = "slick-row-selected";
+                opt.enableCellNavigation = true;
+                // Fin Fila Seleccionable
+                // Mostrar Pie
+                //opt.showFooterRow = true;
+                // Fin de Mostrar Pie de página
                 return opt;
             };
-            ActividadesGrid.prototype.usePager = function () {
-                return false;
-            };
+            //protected usePager() {
+            //    // Quitamos la paginación para que sume totales
+            //    return false;
+            //}
             // Botones Excel y Pdf
             ActividadesGrid.prototype.getButtons = function () {
                 var _this = this;
@@ -5406,19 +5416,27 @@ var ProyectosZec;
                     title: 'Agrupar por Año',
                     cssClass: 'expand-all-button',
                     onClick: function () { return _this.view.setGrouping([{
-                            formatter: function (x) { return 'Año: ' + x.value + ' (' + x.count + ' Empresas)'; },
+                            formatter: function (x) { return 'Año: ' + x.value + ' (' + x.count + ' Nace/Empresas)'; },
                             getter: "AnyoExpediente" /* AnyoExpediente */
                         }]); }
                 });
                 buttons.push({
-                    title: 'Agrupar por Año y Técnico',
+                    title: 'Agrupar por Nace',
                     cssClass: 'expand-all-button',
                     onClick: function () { return _this.view.setGrouping([{
-                            formatter: function (x) { return 'Año: ' + x.value + ' (' + x.count + ' Empresas)'; },
+                            formatter: function (x) { return 'Nace: ' + x.value + ' (' + x.count + ' Empresas)'; },
+                            getter: "Actividad" /* Actividad */
+                        }]); }
+                });
+                buttons.push({
+                    title: 'Agrupar por Año y Nace',
+                    cssClass: 'expand-all-button',
+                    onClick: function () { return _this.view.setGrouping([{
+                            formatter: function (x) { return 'Año: ' + x.value + ' (' + x.count + ' Nace/Empresas)'; },
                             getter: "AnyoExpediente" /* AnyoExpediente */
                         }, {
-                            formatter: function (x) { return 'Técnico: ' + x.value + ' (' + x.count + ' Empresas)'; },
-                            getter: "Tecnico" /* Tecnico */
+                            formatter: function (x) { return 'Nace: ' + x.value + ' (' + x.count + ' Empresas)'; },
+                            getter: "Actividad" /* Actividad */
                         }]); }
                 });
                 buttons.push({
