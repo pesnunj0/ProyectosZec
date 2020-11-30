@@ -5429,6 +5429,14 @@ var ProyectosZec;
                         }]); }
                 });
                 buttons.push({
+                    title: 'Agrupar por Empresa',
+                    cssClass: 'expand-all-button',
+                    onClick: function () { return _this.view.setGrouping([{
+                            formatter: function (x) { return 'Empresa: ' + x.value + ' (' + x.count + ' Naces)'; },
+                            getter: "Actividad" /* Actividad */
+                        }]); }
+                });
+                buttons.push({
                     title: 'Agrupar por Año y Nace',
                     cssClass: 'expand-all-button',
                     onClick: function () { return _this.view.setGrouping([{

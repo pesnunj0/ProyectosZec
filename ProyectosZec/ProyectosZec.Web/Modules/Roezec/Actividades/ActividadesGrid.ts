@@ -95,7 +95,17 @@ namespace ProyectosZec.Roezec {
                         }])
                 }
             );
-
+            buttons.push(
+                {
+                    title: 'Agrupar por Empresa',
+                    cssClass: 'expand-all-button',
+                    onClick: () => this.view.setGrouping(
+                        [{
+                            formatter: x => 'Empresa: ' + x.value + ' (' + x.count + ' Naces)',
+                            getter: ActividadesRow.Fields.Actividad
+                        }])
+                }
+            );
             buttons.push(
                 {
                     title: 'Agrupar por Año y Nace',
