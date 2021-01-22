@@ -1455,6 +1455,127 @@ declare namespace ProyectosZec.Intranet {
         }
     }
 }
+declare namespace ProyectosZec.Kairos {
+}
+declare namespace ProyectosZec.Kairos {
+    interface KrsEmpleadosForm {
+        CodigoCliente: Serenity.StringEditor;
+        Nombre: Serenity.StringEditor;
+        CodigoValidacion: Serenity.StringEditor;
+        FechaBaja: Serenity.DateEditor;
+        Pin: Serenity.IntegerEditor;
+        Tecnico: Serenity.BooleanEditor;
+        UsoHorario: Serenity.StringEditor;
+        SacarFotoFichaje: Serenity.BooleanEditor;
+        FechaActualizacion: Serenity.DateEditor;
+        FechaBorrado: Serenity.DateEditor;
+        NumeroTarjetaFichaje: Serenity.StringEditor;
+        IdDepartamento: Serenity.StringEditor;
+        IdEmpresa: Serenity.StringEditor;
+        Email: Serenity.StringEditor;
+        PermiteRecordatorio: Serenity.BooleanEditor;
+        PermiteFichajeAutomatico: Serenity.BooleanEditor;
+        IdEmpresaFichajeAutomatico: Serenity.StringEditor;
+        ProgramaExternoIdEmpleado: Serenity.StringEditor;
+        ProgramaExternoDescripcion: Serenity.StringEditor;
+        IdHoraExtraCabecera: Serenity.StringEditor;
+        ClaveAccesoWeb: Serenity.StringEditor;
+        PermiteFichajeWeb: Serenity.BooleanEditor;
+    }
+    class KrsEmpleadosForm extends Serenity.PrefixedContext {
+        static formKey: string;
+        private static init;
+        constructor(prefix: string);
+    }
+}
+declare namespace ProyectosZec.Kairos {
+    interface KrsEmpleadosRow {
+        Id?: number;
+        CodigoCliente?: number;
+        Nombre?: string;
+        CodigoValidacion?: string;
+        FechaBaja?: string;
+        Pin?: number;
+        Tecnico?: boolean;
+        UsoHorario?: string;
+        SacarFotoFichaje?: boolean;
+        FechaActualizacion?: string;
+        FechaBorrado?: string;
+        NumeroTarjetaFichaje?: string;
+        IdDepartamento?: number;
+        IdEmpresa?: number;
+        Email?: string;
+        PermiteRecordatorio?: boolean;
+        PermiteFichajeAutomatico?: boolean;
+        IdEmpresaFichajeAutomatico?: number;
+        ProgramaExternoIdEmpleado?: string;
+        ProgramaExternoDescripcion?: string;
+        IdHoraExtraCabecera?: number;
+        ClaveAccesoWeb?: string;
+        PermiteFichajeWeb?: boolean;
+        IdHoraExtraCabeceraCodigoCliente?: number;
+        IdHoraExtraCabeceraCodigo?: string;
+        IdHoraExtraCabeceraDescripcion?: string;
+        IdHoraExtraCabeceraFechaBorrado?: string;
+    }
+    namespace KrsEmpleadosRow {
+        const idProperty = "Id";
+        const nameProperty = "Nombre";
+        const localTextPrefix = "Kairos.KrsEmpleados";
+        const lookupKey = "Kairos.KrsEmpleados";
+        function getLookup(): Q.Lookup<KrsEmpleadosRow>;
+        const deletePermission = "Kairos:Delete";
+        const insertPermission = "Kairos:Insert";
+        const readPermission = "Kairos:Read";
+        const updatePermission = "Kairos:Modify";
+        const enum Fields {
+            Id = "Id",
+            CodigoCliente = "CodigoCliente",
+            Nombre = "Nombre",
+            CodigoValidacion = "CodigoValidacion",
+            FechaBaja = "FechaBaja",
+            Pin = "Pin",
+            Tecnico = "Tecnico",
+            UsoHorario = "UsoHorario",
+            SacarFotoFichaje = "SacarFotoFichaje",
+            FechaActualizacion = "FechaActualizacion",
+            FechaBorrado = "FechaBorrado",
+            NumeroTarjetaFichaje = "NumeroTarjetaFichaje",
+            IdDepartamento = "IdDepartamento",
+            IdEmpresa = "IdEmpresa",
+            Email = "Email",
+            PermiteRecordatorio = "PermiteRecordatorio",
+            PermiteFichajeAutomatico = "PermiteFichajeAutomatico",
+            IdEmpresaFichajeAutomatico = "IdEmpresaFichajeAutomatico",
+            ProgramaExternoIdEmpleado = "ProgramaExternoIdEmpleado",
+            ProgramaExternoDescripcion = "ProgramaExternoDescripcion",
+            IdHoraExtraCabecera = "IdHoraExtraCabecera",
+            ClaveAccesoWeb = "ClaveAccesoWeb",
+            PermiteFichajeWeb = "PermiteFichajeWeb",
+            IdHoraExtraCabeceraCodigoCliente = "IdHoraExtraCabeceraCodigoCliente",
+            IdHoraExtraCabeceraCodigo = "IdHoraExtraCabeceraCodigo",
+            IdHoraExtraCabeceraDescripcion = "IdHoraExtraCabeceraDescripcion",
+            IdHoraExtraCabeceraFechaBorrado = "IdHoraExtraCabeceraFechaBorrado"
+        }
+    }
+}
+declare namespace ProyectosZec.Kairos {
+    namespace KrsEmpleadosService {
+        const baseUrl = "Kairos/KrsEmpleados";
+        function Create(request: Serenity.SaveRequest<KrsEmpleadosRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Update(request: Serenity.SaveRequest<KrsEmpleadosRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<KrsEmpleadosRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<KrsEmpleadosRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        const enum Methods {
+            Create = "Kairos/KrsEmpleados/Create",
+            Update = "Kairos/KrsEmpleados/Update",
+            Delete = "Kairos/KrsEmpleados/Delete",
+            Retrieve = "Kairos/KrsEmpleados/Retrieve",
+            List = "Kairos/KrsEmpleados/List"
+        }
+    }
+}
 declare namespace ProyectosZec.Membership {
     interface ChangePasswordForm {
         OldPassword: Serenity.PasswordEditor;
@@ -1595,6 +1716,7 @@ declare namespace ProyectosZec.Roezec {
         UsrAlta?: string;
         UsrModificacion?: string;
         UsrBaja?: string;
+        Codigo?: string;
     }
     namespace ActividadesRow {
         const idProperty = "Id";
@@ -1639,7 +1761,8 @@ declare namespace ProyectosZec.Roezec {
             Situacion = "Situacion",
             UsrAlta = "UsrAlta",
             UsrModificacion = "UsrModificacion",
-            UsrBaja = "UsrBaja"
+            UsrBaja = "UsrBaja",
+            Codigo = "Codigo"
         }
     }
 }
@@ -2713,6 +2836,30 @@ declare namespace ProyectosZec.Intranet {
         constructor(container: JQuery);
         protected getDefaultSortBy(): TelefonosRow.Fields[];
         getButtons(): Serenity.ToolButton[];
+    }
+}
+declare namespace ProyectosZec.Kairos {
+    class KrsEmpleadosDialog extends Serenity.EntityDialog<KrsEmpleadosRow, any> {
+        protected getFormKey(): string;
+        protected getIdProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected getNameProperty(): string;
+        protected getService(): string;
+        protected getDeletePermission(): string;
+        protected getInsertPermission(): string;
+        protected getUpdatePermission(): string;
+        protected form: KrsEmpleadosForm;
+    }
+}
+declare namespace ProyectosZec.Kairos {
+    class KrsEmpleadosGrid extends Serenity.EntityGrid<KrsEmpleadosRow, any> {
+        protected getColumnsKey(): string;
+        protected getDialogType(): typeof KrsEmpleadosDialog;
+        protected getIdProperty(): string;
+        protected getInsertPermission(): string;
+        protected getLocalTextPrefix(): string;
+        protected getService(): string;
+        constructor(container: JQuery);
     }
 }
 declare namespace ProyectosZec.Membership {

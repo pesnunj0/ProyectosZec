@@ -13,6 +13,7 @@ namespace ProyectosZec.Roezec.Forms
     [BasedOnRow(typeof(Entities.RoezecEmpresasRow), CheckNames = true)]
     public class RoezecEmpresasForm
     {
+        [Tab("General")]
         public String DenominacionSocial { get; set; }
         public String Cif { get; set; }
         public String Direccion { get; set; }
@@ -29,6 +30,7 @@ namespace ProyectosZec.Roezec.Forms
         public Double Superficie { get; set; }
         public String ExentaAreaAcotada { get; set; }
         public String MotivosExencion { get; set; }
+        [Tab("Objetivos")]
         public Double ObjetivoEmpleo { get; set; }
         public Double ObjetivoInversion { get; set; }
         public String ObservacionesEmpleo { get; set; }
@@ -37,6 +39,7 @@ namespace ProyectosZec.Roezec.Forms
         public Int32 PreInversion { get; set; }
         public Int32 TrasEmpleo { get; set; }
         public Int32 TrasInversion { get; set; }
+        [Tab("Fechas")]
         public DateTime FechaAlta { get; set; }
         public DateTime FechaModificacion { get; set; }
         public DateTime FechaBaja { get; set; }

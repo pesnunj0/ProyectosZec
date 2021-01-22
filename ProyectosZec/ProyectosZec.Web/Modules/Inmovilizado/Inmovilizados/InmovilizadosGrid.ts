@@ -32,12 +32,22 @@ namespace ProyectosZec.Inmovilizado {
                 ]
             });
 
+            // Declaramos que el Grid puedes seleccionar fila
+            grid.setSelectionModel(new Slick.RowSelectionModel());
+
             return grid;
         }
 
         protected getSlickOptions() {
             var opt = super.getSlickOptions();
+            // Mostrar pie de página
             opt.showFooterRow = true;
+            // Fin pie de página
+            // Fila Seleccionable
+            opt.enableTextSelectionOnCells = true;
+            opt.selectedCellCssClass = "slick-row-selected";
+            opt.enableCellNavigation = true;
+            // Fin Fila Seleccionable
             return opt;
         }
 

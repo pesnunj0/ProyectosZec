@@ -7661,3 +7661,9 @@ section.content > .s-DataGrid {
 .s-Roezec-ActividadesDialog .caption {
   width: 150px;
 }
+.s-Kairos-KrsEmpleadosDialog > .size {
+  width: 650px;
+}
+.s-Kairos-KrsEmpleadosDialog .caption {
+  width: 150px;
+}

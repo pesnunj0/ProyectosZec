@@ -139,6 +139,15 @@ namespace MVC
 
         }
 
+        public static class Kairos
+        {
+            public static class KrsEmpleados
+            {
+                public const string KrsEmpleadosIndex = "~/Modules/Kairos/KrsEmpleados/KrsEmpleadosIndex.cshtml";
+            }
+
+        }
+
         public static class Membership
         {
             public static class Account

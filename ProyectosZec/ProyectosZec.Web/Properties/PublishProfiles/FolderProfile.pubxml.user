@@ -67,43 +67,43 @@ edite el archivo MSBuild. Visite https://go.microsoft.com/fwlink/?LinkID=208121 
       <publishTime>11/20/2020 15:16:02</publishTime>
     </File>
     <File Include="bin/ProyectosZec.Web.dll">
-      <publishTime>11/26/2020 15:00:55</publishTime>
+      <publishTime>01/22/2021 14:03:52</publishTime>
     </File>
     <File Include="bin/ProyectosZec.Web.pdb">
-      <publishTime>11/26/2020 15:00:55</publishTime>
+      <publishTime>01/22/2021 14:03:52</publishTime>
     </File>
     <File Include="bin/Renci.SshNet.dll">
       <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="bin/Serenity.Core.dll">
-      <publishTime>11/20/2020 15:16:02</publishTime>
+      <publishTime>11/24/2020 14:39:26</publishTime>
     </File>
     <File Include="bin/Serenity.Core.pdb">
-      <publishTime>11/20/2020 15:16:02</publishTime>
+      <publishTime>11/24/2020 14:39:26</publishTime>
     </File>
     <File Include="bin/Serenity.Data.dll">
-      <publishTime>11/20/2020 15:16:02</publishTime>
+      <publishTime>11/24/2020 14:39:26</publishTime>
     </File>
     <File Include="bin/Serenity.Data.Entity.dll">
-      <publishTime>11/20/2020 15:16:02</publishTime>
+      <publishTime>11/24/2020 14:39:26</publishTime>
     </File>
     <File Include="bin/Serenity.Data.Entity.pdb">
-      <publishTime>11/20/2020 15:16:02</publishTime>
+      <publishTime>11/24/2020 14:39:26</publishTime>
     </File>
     <File Include="bin/Serenity.Data.pdb">
-      <publishTime>11/20/2020 15:16:02</publishTime>
+      <publishTime>11/24/2020 14:39:26</publishTime>
     </File>
     <File Include="bin/Serenity.Services.dll">
-      <publishTime>11/20/2020 15:16:02</publishTime>
+      <publishTime>11/24/2020 14:39:28</publishTime>
     </File>
     <File Include="bin/Serenity.Services.pdb">
-      <publishTime>11/20/2020 15:16:02</publishTime>
+      <publishTime>11/24/2020 14:39:28</publishTime>
     </File>
     <File Include="bin/Serenity.Web.dll">
-      <publishTime>11/20/2020 15:16:02</publishTime>
+      <publishTime>11/24/2020 14:39:44</publishTime>
     </File>
     <File Include="bin/Serenity.Web.pdb">
-      <publishTime>11/20/2020 15:16:02</publishTime>
+      <publishTime>11/24/2020 14:39:44</publishTime>
     </File>
     <File Include="bin/StackExchange.Exceptional.dll">
       <publishTime>11/20/2020 15:16:02</publishTime>
@@ -1891,7 +1891,7 @@ edite el archivo MSBuild. Visite https://go.microsoft.com/fwlink/?LinkID=208121 
       <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="Content/site/site.css">
-      <publishTime>11/23/2020 09:26:44</publishTime>
+      <publishTime>01/22/2021 13:11:48</publishTime>
     </File>
     <File Include="Content/site/site.cuadromandos.css">
       <publishTime>01/01/0001 00:00:00</publishTime>
@@ -1920,8 +1920,11 @@ edite el archivo MSBuild. Visite https://go.microsoft.com/fwlink/?LinkID=208121 
     <File Include="Content/site/site.intranet.less">
       <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
+    <File Include="Content/site/site.kairos.less">
+      <publishTime>01/22/2021 12:51:19</publishTime>
+    </File>
     <File Include="Content/site/site.less">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>01/22/2021 12:51:18</publishTime>
     </File>
     <File Include="Content/site/site.membership.less">
       <publishTime>01/01/0001 00:00:00</publishTime>
@@ -2188,7 +2191,7 @@ edite el archivo MSBuild. Visite https://go.microsoft.com/fwlink/?LinkID=208121 
       <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="Imports/ClientTypes/ClientTypes.log">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>01/22/2021 14:03:02</publishTime>
     </File>
     <File Include="Imports/CodeGenerationHelpers.ttinclude">
       <publishTime>01/01/0001 00:00:00</publishTime>
@@ -2274,6 +2277,9 @@ edite el archivo MSBuild. Visite https://go.microsoft.com/fwlink/?LinkID=208121 
     <File Include="Modules/Intranet/Telefonos/TelefonosIndex.cshtml">
       <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
+    <File Include="Modules/Kairos/KrsEmpleados/KrsEmpleadosIndex.cshtml">
+      <publishTime>01/22/2021 12:51:18</publishTime>
+    </File>
     <File Include="Modules/Membership/Account/AccountLogin.AdminLTE.cshtml">
       <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
@@ -2329,7 +2335,7 @@ edite el archivo MSBuild. Visite https://go.microsoft.com/fwlink/?LinkID=208121 
       <publishTime>11/20/2020 15:16:01</publishTime>
     </File>
     <File Include="Readme.CodeGenerator.txt">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>01/22/2021 11:25:03</publishTime>
     </File>
     <File Include="Scripts/adminlte/app.js">
       <publishTime>01/01/0001 00:00:00</publishTime>
@@ -3730,7 +3736,7 @@ edite el archivo MSBuild. Visite https://go.microsoft.com/fwlink/?LinkID=208121 
       <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="Scripts/site/ProyectosZec.Web.js">
-      <publishTime>11/26/2020 15:00:54</publishTime>
+      <publishTime>01/22/2021 14:03:29</publishTime>
     </File>
     <File Include="Scripts/site/ScriptBundles.json">
       <publishTime>01/01/0001 00:00:00</publishTime>
@@ -4183,7 +4189,7 @@ edite el archivo MSBuild. Visite https://go.microsoft.com/fwlink/?LinkID=208121 
       <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>11/24/2020 15:21:41</publishTime>
+      <publishTime>01/22/2021 14:03:54</publishTime>
     </File>
     <File Include="Welcome.htm">
       <publishTime>01/01/0001 00:00:00</publishTime>

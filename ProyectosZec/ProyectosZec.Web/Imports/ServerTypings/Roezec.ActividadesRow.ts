@@ -35,6 +35,7 @@
         UsrAlta?: string;
         UsrModificacion?: string;
         UsrBaja?: string;
+        Codigo?: string;
     }
 
     export namespace ActividadesRow {
@@ -81,7 +82,8 @@
             Situacion = "Situacion",
             UsrAlta = "UsrAlta",
             UsrModificacion = "UsrModificacion",
-            UsrBaja = "UsrBaja"
+            UsrBaja = "UsrBaja",
+            Codigo = "Codigo"
         }
     }
 }
