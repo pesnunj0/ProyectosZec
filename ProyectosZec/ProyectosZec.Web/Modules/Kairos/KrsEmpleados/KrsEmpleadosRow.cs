@@ -10,7 +10,7 @@ namespace ProyectosZec.Kairos.Entities
     using System.IO;
 
     [ConnectionKey("Kairos"), Module("Kairos"), TableName("[dbo].[KRS_Empleados]")]
-    [DisplayName("Krs Empleados"), InstanceName("Krs Empleados")]
+    [DisplayName("Empleados Kairos"), InstanceName("Krs Empleados")]
     [ReadPermission("Kairos:Read")]
     [ModifyPermission("Kairos:Modify")]
     [InsertPermission("Kairos:Insert")]

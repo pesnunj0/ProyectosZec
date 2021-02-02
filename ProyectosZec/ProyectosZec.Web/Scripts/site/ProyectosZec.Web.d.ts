@@ -1456,6 +1456,196 @@ declare namespace ProyectosZec.Intranet {
     }
 }
 declare namespace ProyectosZec.Kairos {
+    class DepartamentosForm extends Serenity.PrefixedContext {
+        static formKey: string;
+    }
+    interface DepartamentosForm {
+        CodigoCliente: Serenity.IntegerEditor;
+        Codigo: Serenity.StringEditor;
+        Descripcion: Serenity.StringEditor;
+        FechaBorrado: Serenity.DateEditor;
+        SedeId: Serenity.IntegerEditor;
+    }
+}
+declare namespace ProyectosZec.Kairos {
+    interface DepartamentosRow {
+        Id?: number;
+        CodigoCliente?: number;
+        Codigo?: string;
+        Descripcion?: string;
+        FechaBorrado?: string;
+        SedeId?: number;
+    }
+    namespace DepartamentosRow {
+        const idProperty = "Id";
+        const nameProperty = "Codigo";
+        const localTextPrefix = "Kairos.Departamentos";
+        const deletePermission = "Kairos:General";
+        const insertPermission = "Kairos:General";
+        const readPermission = "Kairos:General";
+        const updatePermission = "Kairos:General";
+        namespace Fields {
+            const Id: any;
+            const CodigoCliente: any;
+            const Codigo: any;
+            const Descripcion: any;
+            const FechaBorrado: any;
+            const SedeId: any;
+        }
+    }
+}
+declare namespace ProyectosZec.Kairos {
+    namespace DepartamentosService {
+        const baseUrl = "Kairos/Departamentos";
+        function Create(request: Serenity.SaveRequest<DepartamentosRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Update(request: Serenity.SaveRequest<DepartamentosRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<DepartamentosRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<DepartamentosRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        namespace Methods {
+            const Create: string;
+            const Update: string;
+            const Delete: string;
+            const Retrieve: string;
+            const List: string;
+        }
+    }
+}
+declare namespace ProyectosZec.Kairos {
+    class FichajesForm extends Serenity.PrefixedContext {
+        static formKey: string;
+    }
+    interface FichajesForm {
+        IdEmpleado: Serenity.IntegerEditor;
+        CodigoCliente: Serenity.IntegerEditor;
+        FechaHora: Serenity.DateEditor;
+        Observaciones: Serenity.StringEditor;
+        GpsPosicionLatitud: Serenity.StringEditor;
+        GpsPosicionLongitud: Serenity.StringEditor;
+        GpsFechaHora: Serenity.DateEditor;
+        GpsProveedor: Serenity.StringEditor;
+        GpsAltitud: Serenity.StringEditor;
+        IdTerminal: Serenity.IntegerEditor;
+        IdDispositivoModelo: Serenity.IntegerEditor;
+        Modificado: Serenity.DateEditor;
+        Anulado: Serenity.DateEditor;
+        Validado: Serenity.IntegerEditor;
+        TipoDispositivo: Serenity.IntegerEditor;
+        EntradaSalida: Serenity.StringEditor;
+        IdEmpresa: Serenity.IntegerEditor;
+    }
+}
+declare namespace ProyectosZec.Kairos {
+    interface FichajesRow {
+        Id?: number;
+        IdEmpleado?: number;
+        CodigoCliente?: number;
+        FechaHora?: string;
+        Observaciones?: string;
+        GpsPosicionLatitud?: string;
+        GpsPosicionLongitud?: string;
+        GpsFechaHora?: string;
+        GpsProveedor?: string;
+        GpsAltitud?: string;
+        IdTerminal?: number;
+        IdDispositivoModelo?: number;
+        Modificado?: string;
+        Anulado?: string;
+        Validado?: number;
+        TipoDispositivo?: number;
+        EntradaSalida?: string;
+        IdEmpresa?: number;
+        IdTerminalCodigoCliente?: number;
+        IdTerminalCodigo?: string;
+        IdTerminalDescripcion?: string;
+        IdTerminalTipoDispositivo?: number;
+        IdTerminalIdDepartamento?: number;
+        IdTerminalFechaActualizacion?: string;
+        IdTerminalFechaBorrado?: string;
+        IdTerminalDispositivoHuellaDactilar?: boolean;
+        IdTerminalDispositivoHuellaDactilarNumero?: number;
+        IdTerminalDispositivoHuellaDactilarIp?: string;
+        IdTerminalDispositivoHuellaDactilarMarca?: string;
+        IdTerminalDispositivoHuellaDactilarModelo?: string;
+        IdTerminalDispositivoHuellaDactilarFirmware?: string;
+        IdTerminalDispositivoHuellaDactilarPuerto?: string;
+        IdTerminalDispositivoHuellaDactilarDns?: boolean;
+        IdDispositivoModeloCodigoCliente?: number;
+        IdDispositivoModeloFabricante?: string;
+        IdDispositivoModeloMarca?: string;
+        IdDispositivoModeloModelo?: string;
+        IdDispositivoModeloMac?: string;
+        IdDispositivoModeloFechaBorrado?: string;
+    }
+    namespace FichajesRow {
+        const idProperty = "Id";
+        const nameProperty = "Observaciones";
+        const localTextPrefix = "Kairos.Fichajes";
+        const deletePermission = "Kairos:General";
+        const insertPermission = "Kairos:General";
+        const readPermission = "Kairos:General";
+        const updatePermission = "Kairos:General";
+        namespace Fields {
+            const Id: any;
+            const IdEmpleado: any;
+            const CodigoCliente: any;
+            const FechaHora: any;
+            const Observaciones: any;
+            const GpsPosicionLatitud: any;
+            const GpsPosicionLongitud: any;
+            const GpsFechaHora: any;
+            const GpsProveedor: any;
+            const GpsAltitud: any;
+            const IdTerminal: any;
+            const IdDispositivoModelo: any;
+            const Modificado: any;
+            const Anulado: any;
+            const Validado: any;
+            const TipoDispositivo: any;
+            const EntradaSalida: any;
+            const IdEmpresa: any;
+            const IdTerminalCodigoCliente: any;
+            const IdTerminalCodigo: any;
+            const IdTerminalDescripcion: any;
+            const IdTerminalTipoDispositivo: any;
+            const IdTerminalIdDepartamento: any;
+            const IdTerminalFechaActualizacion: any;
+            const IdTerminalFechaBorrado: any;
+            const IdTerminalDispositivoHuellaDactilar: any;
+            const IdTerminalDispositivoHuellaDactilarNumero: any;
+            const IdTerminalDispositivoHuellaDactilarIp: any;
+            const IdTerminalDispositivoHuellaDactilarMarca: any;
+            const IdTerminalDispositivoHuellaDactilarModelo: any;
+            const IdTerminalDispositivoHuellaDactilarFirmware: any;
+            const IdTerminalDispositivoHuellaDactilarPuerto: any;
+            const IdTerminalDispositivoHuellaDactilarDns: any;
+            const IdDispositivoModeloCodigoCliente: any;
+            const IdDispositivoModeloFabricante: any;
+            const IdDispositivoModeloMarca: any;
+            const IdDispositivoModeloModelo: any;
+            const IdDispositivoModeloMac: any;
+            const IdDispositivoModeloFechaBorrado: any;
+        }
+    }
+}
+declare namespace ProyectosZec.Kairos {
+    namespace FichajesService {
+        const baseUrl = "Kairos/Fichajes";
+        function Create(request: Serenity.SaveRequest<FichajesRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Update(request: Serenity.SaveRequest<FichajesRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<FichajesRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<FichajesRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        namespace Methods {
+            const Create: string;
+            const Update: string;
+            const Delete: string;
+            const Retrieve: string;
+            const List: string;
+        }
+    }
+}
+declare namespace ProyectosZec.Kairos {
 }
 declare namespace ProyectosZec.Kairos {
     interface KrsEmpleadosForm {
@@ -1573,6 +1763,94 @@ declare namespace ProyectosZec.Kairos {
             Delete = "Kairos/KrsEmpleados/Delete",
             Retrieve = "Kairos/KrsEmpleados/Retrieve",
             List = "Kairos/KrsEmpleados/List"
+        }
+    }
+}
+declare namespace ProyectosZec.Kairos {
+    class SedesForm extends Serenity.PrefixedContext {
+        static formKey: string;
+    }
+    interface SedesForm {
+        Sede: Serenity.StringEditor;
+    }
+}
+declare namespace ProyectosZec.Kairos {
+    interface SedesRow {
+        SedeId?: number;
+        Sede?: string;
+    }
+    namespace SedesRow {
+        const idProperty = "SedeId";
+        const nameProperty = "Sede";
+        const localTextPrefix = "Kairos.Sedes";
+        const deletePermission = "Kairos:General";
+        const insertPermission = "Kairos:General";
+        const readPermission = "Kairos:General";
+        const updatePermission = "Kairos:General";
+        namespace Fields {
+            const SedeId: any;
+            const Sede: any;
+        }
+    }
+}
+declare namespace ProyectosZec.Kairos {
+    namespace SedesService {
+        const baseUrl = "Kairos/Sedes";
+        function Create(request: Serenity.SaveRequest<SedesRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Update(request: Serenity.SaveRequest<SedesRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<SedesRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<SedesRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        namespace Methods {
+            const Create: string;
+            const Update: string;
+            const Delete: string;
+            const Retrieve: string;
+            const List: string;
+        }
+    }
+}
+declare namespace ProyectosZec.Kairos {
+    class TiposFichajeForm extends Serenity.PrefixedContext {
+        static formKey: string;
+    }
+    interface TiposFichajeForm {
+        Tipo: Serenity.StringEditor;
+    }
+}
+declare namespace ProyectosZec.Kairos {
+    interface TiposFichajeRow {
+        Id?: string;
+        Tipo?: string;
+    }
+    namespace TiposFichajeRow {
+        const idProperty = "Id";
+        const nameProperty = "Id";
+        const localTextPrefix = "Kairos.TiposFichaje";
+        const deletePermission = "Kairos::General";
+        const insertPermission = "Kairos::General";
+        const readPermission = "Kairos::General";
+        const updatePermission = "Kairos::General";
+        namespace Fields {
+            const Id: any;
+            const Tipo: any;
+        }
+    }
+}
+declare namespace ProyectosZec.Kairos {
+    namespace TiposFichajeService {
+        const baseUrl = "Kairos/TiposFichaje";
+        function Create(request: Serenity.SaveRequest<TiposFichajeRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Update(request: Serenity.SaveRequest<TiposFichajeRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<TiposFichajeRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<TiposFichajeRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        namespace Methods {
+            const Create: string;
+            const Update: string;
+            const Delete: string;
+            const Retrieve: string;
+            const List: string;
         }
     }
 }
@@ -2839,6 +3117,54 @@ declare namespace ProyectosZec.Intranet {
     }
 }
 declare namespace ProyectosZec.Kairos {
+    class DepartamentosDialog extends Serenity.EntityDialog<DepartamentosRow, any> {
+        protected getFormKey(): string;
+        protected getIdProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected getNameProperty(): string;
+        protected getService(): string;
+        protected getDeletePermission(): string;
+        protected getInsertPermission(): string;
+        protected getUpdatePermission(): string;
+        protected form: DepartamentosForm;
+    }
+}
+declare namespace ProyectosZec.Kairos {
+    class DepartamentosGrid extends Serenity.EntityGrid<DepartamentosRow, any> {
+        protected getColumnsKey(): string;
+        protected getDialogType(): typeof DepartamentosDialog;
+        protected getIdProperty(): string;
+        protected getInsertPermission(): string;
+        protected getLocalTextPrefix(): string;
+        protected getService(): string;
+        constructor(container: JQuery);
+    }
+}
+declare namespace ProyectosZec.Kairos {
+    class FichajesDialog extends Serenity.EntityDialog<FichajesRow, any> {
+        protected getFormKey(): string;
+        protected getIdProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected getNameProperty(): string;
+        protected getService(): string;
+        protected getDeletePermission(): string;
+        protected getInsertPermission(): string;
+        protected getUpdatePermission(): string;
+        protected form: FichajesForm;
+    }
+}
+declare namespace ProyectosZec.Kairos {
+    class FichajesGrid extends Serenity.EntityGrid<FichajesRow, any> {
+        protected getColumnsKey(): string;
+        protected getDialogType(): typeof FichajesDialog;
+        protected getIdProperty(): string;
+        protected getInsertPermission(): string;
+        protected getLocalTextPrefix(): string;
+        protected getService(): string;
+        constructor(container: JQuery);
+    }
+}
+declare namespace ProyectosZec.Kairos {
     class KrsEmpleadosDialog extends Serenity.EntityDialog<KrsEmpleadosRow, any> {
         protected getFormKey(): string;
         protected getIdProperty(): string;
@@ -2855,6 +3181,54 @@ declare namespace ProyectosZec.Kairos {
     class KrsEmpleadosGrid extends Serenity.EntityGrid<KrsEmpleadosRow, any> {
         protected getColumnsKey(): string;
         protected getDialogType(): typeof KrsEmpleadosDialog;
+        protected getIdProperty(): string;
+        protected getInsertPermission(): string;
+        protected getLocalTextPrefix(): string;
+        protected getService(): string;
+        constructor(container: JQuery);
+    }
+}
+declare namespace ProyectosZec.Kairos {
+    class SedesDialog extends Serenity.EntityDialog<SedesRow, any> {
+        protected getFormKey(): string;
+        protected getIdProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected getNameProperty(): string;
+        protected getService(): string;
+        protected getDeletePermission(): string;
+        protected getInsertPermission(): string;
+        protected getUpdatePermission(): string;
+        protected form: SedesForm;
+    }
+}
+declare namespace ProyectosZec.Kairos {
+    class SedesGrid extends Serenity.EntityGrid<SedesRow, any> {
+        protected getColumnsKey(): string;
+        protected getDialogType(): typeof SedesDialog;
+        protected getIdProperty(): string;
+        protected getInsertPermission(): string;
+        protected getLocalTextPrefix(): string;
+        protected getService(): string;
+        constructor(container: JQuery);
+    }
+}
+declare namespace ProyectosZec.Kairos {
+    class TiposFichajeDialog extends Serenity.EntityDialog<TiposFichajeRow, any> {
+        protected getFormKey(): string;
+        protected getIdProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected getNameProperty(): string;
+        protected getService(): string;
+        protected getDeletePermission(): string;
+        protected getInsertPermission(): string;
+        protected getUpdatePermission(): string;
+        protected form: TiposFichajeForm;
+    }
+}
+declare namespace ProyectosZec.Kairos {
+    class TiposFichajeGrid extends Serenity.EntityGrid<TiposFichajeRow, any> {
+        protected getColumnsKey(): string;
+        protected getDialogType(): typeof TiposFichajeDialog;
         protected getIdProperty(): string;
         protected getInsertPermission(): string;
         protected getLocalTextPrefix(): string;

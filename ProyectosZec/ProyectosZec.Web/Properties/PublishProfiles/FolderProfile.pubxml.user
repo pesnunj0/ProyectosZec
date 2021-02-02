@@ -67,10 +67,10 @@ edite el archivo MSBuild. Visite https://go.microsoft.com/fwlink/?LinkID=208121 
       <publishTime>11/20/2020 15:16:02</publishTime>
     </File>
     <File Include="bin/ProyectosZec.Web.dll">
-      <publishTime>01/22/2021 14:03:52</publishTime>
+      <publishTime>02/02/2021 13:08:50</publishTime>
     </File>
     <File Include="bin/ProyectosZec.Web.pdb">
-      <publishTime>01/22/2021 14:03:52</publishTime>
+      <publishTime>02/02/2021 13:08:50</publishTime>
     </File>
     <File Include="bin/Renci.SshNet.dll">
       <publishTime>01/01/0001 00:00:00</publishTime>
@@ -1891,7 +1891,7 @@ edite el archivo MSBuild. Visite https://go.microsoft.com/fwlink/?LinkID=208121 
       <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="Content/site/site.css">
-      <publishTime>01/22/2021 13:11:48</publishTime>
+      <publishTime>01/02/2021 13:53:51</publishTime>
     </File>
     <File Include="Content/site/site.cuadromandos.css">
       <publishTime>01/01/0001 00:00:00</publishTime>
@@ -1921,7 +1921,7 @@ edite el archivo MSBuild. Visite https://go.microsoft.com/fwlink/?LinkID=208121 
       <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="Content/site/site.kairos.less">
-      <publishTime>01/22/2021 12:51:19</publishTime>
+      <publishTime>01/31/2021 17:56:10</publishTime>
     </File>
     <File Include="Content/site/site.less">
       <publishTime>01/22/2021 12:51:18</publishTime>
@@ -2277,8 +2277,20 @@ edite el archivo MSBuild. Visite https://go.microsoft.com/fwlink/?LinkID=208121 
     <File Include="Modules/Intranet/Telefonos/TelefonosIndex.cshtml">
       <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
+    <File Include="Modules/Kairos/Departamentos/DepartamentosIndex.cshtml">
+      <publishTime>01/31/2021 17:56:10</publishTime>
+    </File>
+    <File Include="Modules/Kairos/Fichajes/FichajesIndex.cshtml">
+      <publishTime>01/25/2021 09:06:02</publishTime>
+    </File>
     <File Include="Modules/Kairos/KrsEmpleados/KrsEmpleadosIndex.cshtml">
       <publishTime>01/22/2021 12:51:18</publishTime>
+    </File>
+    <File Include="Modules/Kairos/Sedes/SedesIndex.cshtml">
+      <publishTime>01/31/2021 17:14:45</publishTime>
+    </File>
+    <File Include="Modules/Kairos/TiposFichaje/TiposFichajeIndex.cshtml">
+      <publishTime>01/31/2021 17:14:46</publishTime>
     </File>
     <File Include="Modules/Membership/Account/AccountLogin.AdminLTE.cshtml">
       <publishTime>01/01/0001 00:00:00</publishTime>
@@ -3736,7 +3748,7 @@ edite el archivo MSBuild. Visite https://go.microsoft.com/fwlink/?LinkID=208121 
       <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="Scripts/site/ProyectosZec.Web.js">
-      <publishTime>01/22/2021 14:03:29</publishTime>
+      <publishTime>01/02/2021 13:54:08</publishTime>
     </File>
     <File Include="Scripts/site/ScriptBundles.json">
       <publishTime>01/01/0001 00:00:00</publishTime>

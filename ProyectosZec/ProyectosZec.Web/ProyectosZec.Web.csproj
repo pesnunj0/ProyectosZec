@@ -1919,6 +1919,51 @@
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
     <Content Include="Content\site\site.kairos.less" />
+    <TypeScriptCompile Include="Imports\ServerTypings\Kairos.FichajesRow.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\Kairos.FichajesService.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <Content Include="Modules\Kairos\Fichajes\FichajesIndex.cshtml" />
+    <TypeScriptCompile Include="Modules\Kairos\Fichajes\FichajesDialog.ts" />
+    <TypeScriptCompile Include="Modules\Kairos\Fichajes\FichajesGrid.ts" />
+    <TypeScriptCompile Include="Imports\ServerTypings\Kairos.FichajesForm.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\Kairos.SedesRow.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\Kairos.SedesService.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\Kairos.SedesForm.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\Kairos.TiposFichajeRow.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\Kairos.TiposFichajeService.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <Content Include="Modules\Kairos\TiposFichaje\TiposFichajeIndex.cshtml" />
+    <TypeScriptCompile Include="Modules\Kairos\TiposFichaje\TiposFichajeDialog.ts" />
+    <TypeScriptCompile Include="Modules\Kairos\TiposFichaje\TiposFichajeGrid.ts" />
+    <TypeScriptCompile Include="Imports\ServerTypings\Kairos.TiposFichajeForm.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\Kairos.DepartamentosRow.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\Kairos.DepartamentosService.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <Content Include="Modules\Kairos\Departamentos\DepartamentosIndex.cshtml" />
+    <TypeScriptCompile Include="Modules\Kairos\Departamentos\DepartamentosDialog.ts" />
+    <TypeScriptCompile Include="Modules\Kairos\Departamentos\DepartamentosGrid.ts" />
+    <TypeScriptCompile Include="Imports\ServerTypings\Kairos.DepartamentosForm.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Global.asax" />
@@ -2181,6 +2226,24 @@
     <Compile Include="Modules\Kairos\KrsEmpleados\KrsEmpleadosColumns.cs" />
     <Compile Include="Modules\Kairos\KrsEmpleados\KrsEmpleadosForm.cs" />
     <Compile Include="Modules\Kairos\KairosNavigation.cs" />
+    <Compile Include="Modules\Kairos\Fichajes\FichajesRow.cs" />
+    <Compile Include="Modules\Kairos\Fichajes\FichajesRepository.cs" />
+    <Compile Include="Modules\Kairos\Fichajes\FichajesEndpoint.cs" />
+    <Compile Include="Modules\Kairos\Fichajes\FichajesPage.cs" />
+    <Compile Include="Modules\Kairos\Fichajes\FichajesColumns.cs" />
+    <Compile Include="Modules\Kairos\Fichajes\FichajesForm.cs" />
+    <Compile Include="Modules\Kairos\TiposFichaje\TiposFichajeRow.cs" />
+    <Compile Include="Modules\Kairos\TiposFichaje\TiposFichajeRepository.cs" />
+    <Compile Include="Modules\Kairos\TiposFichaje\TiposFichajeEndpoint.cs" />
+    <Compile Include="Modules\Kairos\TiposFichaje\TiposFichajePage.cs" />
+    <Compile Include="Modules\Kairos\TiposFichaje\TiposFichajeColumns.cs" />
+    <Compile Include="Modules\Kairos\TiposFichaje\TiposFichajeForm.cs" />
+    <Compile Include="Modules\Kairos\Departamentos\DepartamentosRow.cs" />
+    <Compile Include="Modules\Kairos\Departamentos\DepartamentosRepository.cs" />
+    <Compile Include="Modules\Kairos\Departamentos\DepartamentosEndpoint.cs" />
+    <Compile Include="Modules\Kairos\Departamentos\DepartamentosPage.cs" />
+    <Compile Include="Modules\Kairos\Departamentos\DepartamentosColumns.cs" />
+    <Compile Include="Modules\Kairos\Departamentos\DepartamentosForm.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\upload\" />

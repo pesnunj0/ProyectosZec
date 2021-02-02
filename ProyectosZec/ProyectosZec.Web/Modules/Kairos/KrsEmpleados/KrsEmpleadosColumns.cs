@@ -13,15 +13,15 @@ namespace ProyectosZec.Kairos.Columns
     [BasedOnRow(typeof(Entities.KrsEmpleadosRow), CheckNames = true)]
     public class KrsEmpleadosColumns
     {
-        [EditLink, DisplayName("Db.Shared.RecordId"), AlignRight]
+        [EditLink, DisplayName("Db.Shared.RecordId"), AlignRight,Width(40)]
         public Int64 Id { get; set; }
-        [EditLink, DisplayName("Empleado"),Width(130)]
+        [EditLink, DisplayName("Empleado"),Width(250)]
         public String Nombre { get; set; }
         [DisplayName("DNI"), Width(80)]
         public String CodigoValidacion { get; set; }
         [Width(70)]
         public Int32 Pin { get; set; }
-        [Width(140)]
+        [Width(250)]
         public String Email { get; set; }
         [DisplayName("ClaveWeb"), Width(80)]
         public String ClaveAccesoWeb { get; set; }

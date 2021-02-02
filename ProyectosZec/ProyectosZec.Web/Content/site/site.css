@@ -7667,3 +7667,27 @@ section.content > .s-DataGrid {
 .s-Kairos-KrsEmpleadosDialog .caption {
   width: 150px;
 }
+.s-Kairos-FichajesDialog > .size {
+  width: 650px;
+}
+.s-Kairos-FichajesDialog .caption {
+  width: 150px;
+}
+.s-Kairos-SedesDialog > .size {
+  width: 650px;
+}
+.s-Kairos-SedesDialog .caption {
+  width: 150px;
+}
+.s-Kairos-TiposFichajeDialog > .size {
+  width: 650px;
+}
+.s-Kairos-TiposFichajeDialog .caption {
+  width: 150px;
+}
+.s-Kairos-DepartamentosDialog > .size {
+  width: 650px;
+}
+.s-Kairos-DepartamentosDialog .caption {
+  width: 150px;
+}
