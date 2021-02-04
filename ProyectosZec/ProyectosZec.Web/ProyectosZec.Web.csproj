@@ -1096,7 +1096,19 @@
     <TypeScriptCompile Include="Imports\ServerTypings\Intranet.TelefonosColumns.ts">
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\Kairos.DepartamentosColumns.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\Kairos.DiarioColumns.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\Kairos.FichajesColumns.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
     <TypeScriptCompile Include="Imports\ServerTypings\Kairos.KrsEmpleadosColumns.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\Kairos.TiposFichajeColumns.ts">
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
     <TypeScriptCompile Include="Imports\ServerTypings\Roezec.ActividadesColumns.ts">
@@ -1931,15 +1943,6 @@
     <TypeScriptCompile Include="Imports\ServerTypings\Kairos.FichajesForm.ts">
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
-    <TypeScriptCompile Include="Imports\ServerTypings\Kairos.SedesRow.ts">
-      <DependentUpon>ServerTypings.tt</DependentUpon>
-    </TypeScriptCompile>
-    <TypeScriptCompile Include="Imports\ServerTypings\Kairos.SedesService.ts">
-      <DependentUpon>ServerTypings.tt</DependentUpon>
-    </TypeScriptCompile>
-    <TypeScriptCompile Include="Imports\ServerTypings\Kairos.SedesForm.ts">
-      <DependentUpon>ServerTypings.tt</DependentUpon>
-    </TypeScriptCompile>
     <TypeScriptCompile Include="Imports\ServerTypings\Kairos.TiposFichajeRow.ts">
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
@@ -1962,6 +1965,18 @@
     <TypeScriptCompile Include="Modules\Kairos\Departamentos\DepartamentosDialog.ts" />
     <TypeScriptCompile Include="Modules\Kairos\Departamentos\DepartamentosGrid.ts" />
     <TypeScriptCompile Include="Imports\ServerTypings\Kairos.DepartamentosForm.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\Kairos.DiarioRow.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\Kairos.DiarioService.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <Content Include="Modules\Kairos\Diario\DiarioIndex.cshtml" />
+    <TypeScriptCompile Include="Modules\Kairos\Diario\DiarioDialog.ts" />
+    <TypeScriptCompile Include="Modules\Kairos\Diario\DiarioGrid.ts" />
+    <TypeScriptCompile Include="Imports\ServerTypings\Kairos.DiarioForm.ts">
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
   </ItemGroup>
@@ -2244,6 +2259,12 @@
     <Compile Include="Modules\Kairos\Departamentos\DepartamentosPage.cs" />
     <Compile Include="Modules\Kairos\Departamentos\DepartamentosColumns.cs" />
     <Compile Include="Modules\Kairos\Departamentos\DepartamentosForm.cs" />
+    <Compile Include="Modules\Kairos\Diario\DiarioRow.cs" />
+    <Compile Include="Modules\Kairos\Diario\DiarioRepository.cs" />
+    <Compile Include="Modules\Kairos\Diario\DiarioEndpoint.cs" />
+    <Compile Include="Modules\Kairos\Diario\DiarioPage.cs" />
+    <Compile Include="Modules\Kairos\Diario\DiarioColumns.cs" />
+    <Compile Include="Modules\Kairos\Diario\DiarioForm.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\upload\" />

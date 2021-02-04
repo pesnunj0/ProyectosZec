@@ -1,5 +1,4 @@
-﻿
-namespace ProyectosZec.Kairos {
+﻿namespace ProyectosZec.Kairos {
     export namespace DepartamentosService {
         export const baseUrl = 'Kairos/Departamentos';
 
@@ -9,12 +8,12 @@ namespace ProyectosZec.Kairos {
         export declare function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<DepartamentosRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
         export declare function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<DepartamentosRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
 
-        export namespace Methods {
-            export declare const Create: string;
-            export declare const Update: string;
-            export declare const Delete: string;
-            export declare const Retrieve: string;
-            export declare const List: string;
+        export declare const enum Methods {
+            Create = "Kairos/Departamentos/Create",
+            Update = "Kairos/Departamentos/Update",
+            Delete = "Kairos/Departamentos/Delete",
+            Retrieve = "Kairos/Departamentos/Retrieve",
+            List = "Kairos/Departamentos/List"
         }
 
         [
@@ -24,10 +23,10 @@ namespace ProyectosZec.Kairos {
             'Retrieve', 
             'List'
         ].forEach(x => {
-            (<any>DepartamentosService)[x] = function (r, s, o) { 
-                return Q.serviceRequest(baseUrl + '/' + x, r, s, o); 
+            (<any>DepartamentosService)[x] = function (r, s, o) {
+                return Q.serviceRequest(baseUrl + '/' + x, r, s, o);
             };
-            (<any>Methods)[x] = baseUrl + '/' + x;
         });
     }
 }
+

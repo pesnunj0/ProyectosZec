@@ -30,16 +30,18 @@ namespace ProyectosZec.Kairos.Columns
 
         [DisplayName("Hora"), Width(80)]
         public String Hora { get; set; }
-
+        [QuickFilter, Width(90), DisplayName("Fichaje")]
+        public String Fichaje { get; set; }
+        
+        [Width(110)]
+        public String Dispositivo { get; set; }
         [Width(300)]
         public String Observaciones { get; set; }
         public DateTime Modificado { get; set; }
         public DateTime Anulado { get; set; }
         public Int32 Validado { get; set; }
-        [Width(110)]
-        public String Dispositivo { get; set; }
 
-        [QuickFilter, Width(90),DisplayName("Fichaje")]
-        public String Fichaje { get; set; }
+
+ 
     }
 }

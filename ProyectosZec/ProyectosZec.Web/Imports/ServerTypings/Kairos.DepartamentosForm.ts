@@ -1,28 +1,36 @@
-﻿
-namespace ProyectosZec.Kairos {
-    export class DepartamentosForm extends Serenity.PrefixedContext {
-        static formKey = 'Kairos.Departamentos';
-    }
-
+﻿namespace ProyectosZec.Kairos {
     export interface DepartamentosForm {
-        CodigoCliente: Serenity.IntegerEditor;
+        CodigoCliente: Serenity.StringEditor;
         Codigo: Serenity.StringEditor;
         Descripcion: Serenity.StringEditor;
         FechaBorrado: Serenity.DateEditor;
         SedeId: Serenity.IntegerEditor;
     }
 
-    [,
-        ['CodigoCliente', () => Serenity.IntegerEditor],
-        ['Codigo', () => Serenity.StringEditor],
-        ['Descripcion', () => Serenity.StringEditor],
-        ['FechaBorrado', () => Serenity.DateEditor],
-        ['SedeId', () => Serenity.IntegerEditor]
-    ].forEach(x => Object.defineProperty(DepartamentosForm.prototype, <string>x[0], {
-        get: function () {
-            return this.w(x[0], (x[1] as any)());
-        },
-        enumerable: true,
-        configurable: true
-    }));
+    export class DepartamentosForm extends Serenity.PrefixedContext {
+        static formKey = 'Kairos.Departamentos';
+        private static init: boolean;
+
+        constructor(prefix: string) {
+            super(prefix);
+
+            if (!DepartamentosForm.init)  {
+                DepartamentosForm.init = true;
+
+                var s = Serenity;
+                var w0 = s.StringEditor;
+                var w1 = s.DateEditor;
+                var w2 = s.IntegerEditor;
+
+                Q.initFormType(DepartamentosForm, [
+                    'CodigoCliente', w0,
+                    'Codigo', w0,
+                    'Descripcion', w0,
+                    'FechaBorrado', w1,
+                    'SedeId', w2
+                ]);
+            }
+        }
+    }
 }
+

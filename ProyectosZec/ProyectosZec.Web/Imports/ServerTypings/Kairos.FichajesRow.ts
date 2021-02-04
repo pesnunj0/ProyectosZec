@@ -1,5 +1,4 @@
-﻿
-namespace ProyectosZec.Kairos {
+﻿namespace ProyectosZec.Kairos {
     export interface FichajesRow {
         Id?: number;
         IdEmpleado?: number;
@@ -40,99 +39,72 @@ namespace ProyectosZec.Kairos {
         IdDispositivoModeloModelo?: string;
         IdDispositivoModeloMac?: string;
         IdDispositivoModeloFechaBorrado?: string;
+        Empleado?: string;
+        Hora?: string;
+        DptoId?: number;
+        SedeId?: number;
+        Sede?: string;
+        Dispositivo?: string;
+        Fichaje?: string;
     }
 
     export namespace FichajesRow {
         export const idProperty = 'Id';
         export const nameProperty = 'Observaciones';
         export const localTextPrefix = 'Kairos.Fichajes';
-        export const deletePermission = 'Kairos:General';
-        export const insertPermission = 'Kairos:General';
-        export const readPermission = 'Kairos:General';
-        export const updatePermission = 'Kairos:General';
+        export const deletePermission = 'Kairos:Delete';
+        export const insertPermission = 'Kairos:Insert';
+        export const readPermission = 'Kairos:Read';
+        export const updatePermission = 'Kairos:Modify';
 
-        export namespace Fields {
-            export declare const Id;
-            export declare const IdEmpleado;
-            export declare const CodigoCliente;
-            export declare const FechaHora;
-            export declare const Observaciones;
-            export declare const GpsPosicionLatitud;
-            export declare const GpsPosicionLongitud;
-            export declare const GpsFechaHora;
-            export declare const GpsProveedor;
-            export declare const GpsAltitud;
-            export declare const IdTerminal;
-            export declare const IdDispositivoModelo;
-            export declare const Modificado;
-            export declare const Anulado;
-            export declare const Validado;
-            export declare const TipoDispositivo;
-            export declare const EntradaSalida;
-            export declare const IdEmpresa;
-            export declare const IdTerminalCodigoCliente;
-            export declare const IdTerminalCodigo;
-            export declare const IdTerminalDescripcion;
-            export declare const IdTerminalTipoDispositivo;
-            export declare const IdTerminalIdDepartamento;
-            export declare const IdTerminalFechaActualizacion;
-            export declare const IdTerminalFechaBorrado;
-            export declare const IdTerminalDispositivoHuellaDactilar;
-            export declare const IdTerminalDispositivoHuellaDactilarNumero;
-            export declare const IdTerminalDispositivoHuellaDactilarIp;
-            export declare const IdTerminalDispositivoHuellaDactilarMarca;
-            export declare const IdTerminalDispositivoHuellaDactilarModelo;
-            export declare const IdTerminalDispositivoHuellaDactilarFirmware;
-            export declare const IdTerminalDispositivoHuellaDactilarPuerto;
-            export declare const IdTerminalDispositivoHuellaDactilarDns;
-            export declare const IdDispositivoModeloCodigoCliente;
-            export declare const IdDispositivoModeloFabricante;
-            export declare const IdDispositivoModeloMarca;
-            export declare const IdDispositivoModeloModelo;
-            export declare const IdDispositivoModeloMac;
-            export declare const IdDispositivoModeloFechaBorrado;
+        export declare const enum Fields {
+            Id = "Id",
+            IdEmpleado = "IdEmpleado",
+            CodigoCliente = "CodigoCliente",
+            FechaHora = "FechaHora",
+            Observaciones = "Observaciones",
+            GpsPosicionLatitud = "GpsPosicionLatitud",
+            GpsPosicionLongitud = "GpsPosicionLongitud",
+            GpsFechaHora = "GpsFechaHora",
+            GpsProveedor = "GpsProveedor",
+            GpsAltitud = "GpsAltitud",
+            IdTerminal = "IdTerminal",
+            IdDispositivoModelo = "IdDispositivoModelo",
+            Modificado = "Modificado",
+            Anulado = "Anulado",
+            Validado = "Validado",
+            TipoDispositivo = "TipoDispositivo",
+            EntradaSalida = "EntradaSalida",
+            IdEmpresa = "IdEmpresa",
+            IdTerminalCodigoCliente = "IdTerminalCodigoCliente",
+            IdTerminalCodigo = "IdTerminalCodigo",
+            IdTerminalDescripcion = "IdTerminalDescripcion",
+            IdTerminalTipoDispositivo = "IdTerminalTipoDispositivo",
+            IdTerminalIdDepartamento = "IdTerminalIdDepartamento",
+            IdTerminalFechaActualizacion = "IdTerminalFechaActualizacion",
+            IdTerminalFechaBorrado = "IdTerminalFechaBorrado",
+            IdTerminalDispositivoHuellaDactilar = "IdTerminalDispositivoHuellaDactilar",
+            IdTerminalDispositivoHuellaDactilarNumero = "IdTerminalDispositivoHuellaDactilarNumero",
+            IdTerminalDispositivoHuellaDactilarIp = "IdTerminalDispositivoHuellaDactilarIp",
+            IdTerminalDispositivoHuellaDactilarMarca = "IdTerminalDispositivoHuellaDactilarMarca",
+            IdTerminalDispositivoHuellaDactilarModelo = "IdTerminalDispositivoHuellaDactilarModelo",
+            IdTerminalDispositivoHuellaDactilarFirmware = "IdTerminalDispositivoHuellaDactilarFirmware",
+            IdTerminalDispositivoHuellaDactilarPuerto = "IdTerminalDispositivoHuellaDactilarPuerto",
+            IdTerminalDispositivoHuellaDactilarDns = "IdTerminalDispositivoHuellaDactilarDns",
+            IdDispositivoModeloCodigoCliente = "IdDispositivoModeloCodigoCliente",
+            IdDispositivoModeloFabricante = "IdDispositivoModeloFabricante",
+            IdDispositivoModeloMarca = "IdDispositivoModeloMarca",
+            IdDispositivoModeloModelo = "IdDispositivoModeloModelo",
+            IdDispositivoModeloMac = "IdDispositivoModeloMac",
+            IdDispositivoModeloFechaBorrado = "IdDispositivoModeloFechaBorrado",
+            Empleado = "Empleado",
+            Hora = "Hora",
+            DptoId = "DptoId",
+            SedeId = "SedeId",
+            Sede = "Sede",
+            Dispositivo = "Dispositivo",
+            Fichaje = "Fichaje"
         }
-
-        [
-            'Id',
-            'IdEmpleado',
-            'CodigoCliente',
-            'FechaHora',
-            'Observaciones',
-            'GpsPosicionLatitud',
-            'GpsPosicionLongitud',
-            'GpsFechaHora',
-            'GpsProveedor',
-            'GpsAltitud',
-            'IdTerminal',
-            'IdDispositivoModelo',
-            'Modificado',
-            'Anulado',
-            'Validado',
-            'TipoDispositivo',
-            'EntradaSalida',
-            'IdEmpresa',
-            'IdTerminalCodigoCliente',
-            'IdTerminalCodigo',
-            'IdTerminalDescripcion',
-            'IdTerminalTipoDispositivo',
-            'IdTerminalIdDepartamento',
-            'IdTerminalFechaActualizacion',
-            'IdTerminalFechaBorrado',
-            'IdTerminalDispositivoHuellaDactilar',
-            'IdTerminalDispositivoHuellaDactilarNumero',
-            'IdTerminalDispositivoHuellaDactilarIp',
-            'IdTerminalDispositivoHuellaDactilarMarca',
-            'IdTerminalDispositivoHuellaDactilarModelo',
-            'IdTerminalDispositivoHuellaDactilarFirmware',
-            'IdTerminalDispositivoHuellaDactilarPuerto',
-            'IdTerminalDispositivoHuellaDactilarDns',
-            'IdDispositivoModeloCodigoCliente',
-            'IdDispositivoModeloFabricante',
-            'IdDispositivoModeloMarca',
-            'IdDispositivoModeloModelo',
-            'IdDispositivoModeloMac',
-            'IdDispositivoModeloFechaBorrado'
-        ].forEach(x => (<any>Fields)[x] = x);
     }
 }
+

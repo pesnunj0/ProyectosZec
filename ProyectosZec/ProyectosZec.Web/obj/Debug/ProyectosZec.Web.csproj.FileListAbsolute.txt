@@ -60,7 +60,6 @@ C:\Users\administrador.CONSORCIOLP\source\repos\ProyectosZec\ProyectosZec\Proyec
 C:\Users\administrador.CONSORCIOLP\source\repos\ProyectosZec\ProyectosZec\ProyectosZec.Web\obj\Debug\ProyectosZec.Web.csproj.CopyComplete
 C:\Users\administrador.CONSORCIOLP\source\repos\ProyectosZec\ProyectosZec\ProyectosZec.Web\obj\Debug\ProyectosZec.Web.dll
 C:\Users\administrador.CONSORCIOLP\source\repos\ProyectosZec\ProyectosZec\ProyectosZec.Web\obj\Debug\ProyectosZec.Web.pdb
-C:\Users\administrador.CONSORCIOLP\source\repos\ProyectosZec\ProyectosZec\ProyectosZec.Web\obj\Debug\ProyectosZec.Web.csprojAssemblyReference.cache
 C:\Users\jnunez\source\repos\ProyectosZec\ProyectosZec\ProyectosZec.Web\bin\wkhtmltopdf.exe
 C:\Users\jnunez\source\repos\ProyectosZec\ProyectosZec\ProyectosZec.Web\bin\Content\site\images\serenity-logo-40.png
 C:\Users\jnunez\source\repos\ProyectosZec\ProyectosZec\ProyectosZec.Web\bin\Content\site\images\serenity-logo-g-40.png

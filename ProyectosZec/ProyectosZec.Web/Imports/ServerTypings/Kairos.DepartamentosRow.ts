@@ -1,5 +1,4 @@
-﻿
-namespace ProyectosZec.Kairos {
+﻿namespace ProyectosZec.Kairos {
     export interface DepartamentosRow {
         Id?: number;
         CodigoCliente?: number;
@@ -18,22 +17,14 @@ namespace ProyectosZec.Kairos {
         export const readPermission = 'Kairos:General';
         export const updatePermission = 'Kairos:General';
 
-        export namespace Fields {
-            export declare const Id;
-            export declare const CodigoCliente;
-            export declare const Codigo;
-            export declare const Descripcion;
-            export declare const FechaBorrado;
-            export declare const SedeId;
+        export declare const enum Fields {
+            Id = "Id",
+            CodigoCliente = "CodigoCliente",
+            Codigo = "Codigo",
+            Descripcion = "Descripcion",
+            FechaBorrado = "FechaBorrado",
+            SedeId = "SedeId"
         }
-
-        [
-            'Id',
-            'CodigoCliente',
-            'Codigo',
-            'Descripcion',
-            'FechaBorrado',
-            'SedeId'
-        ].forEach(x => (<any>Fields)[x] = x);
     }
 }
+

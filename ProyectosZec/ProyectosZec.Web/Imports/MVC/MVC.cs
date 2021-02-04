@@ -141,9 +141,29 @@ namespace MVC
 
         public static class Kairos
         {
+            public static class Departamentos
+            {
+                public const string DepartamentosIndex = "~/Modules/Kairos/Departamentos/DepartamentosIndex.cshtml";
+            }
+
+            public static class Diario
+            {
+                public const string DiarioIndex = "~/Modules/Kairos/Diario/DiarioIndex.cshtml";
+            }
+
+            public static class Fichajes
+            {
+                public const string FichajesIndex = "~/Modules/Kairos/Fichajes/FichajesIndex.cshtml";
+            }
+
             public static class KrsEmpleados
             {
                 public const string KrsEmpleadosIndex = "~/Modules/Kairos/KrsEmpleados/KrsEmpleadosIndex.cshtml";
+            }
+
+            public static class TiposFichaje
+            {
+                public const string TiposFichajeIndex = "~/Modules/Kairos/TiposFichaje/TiposFichajeIndex.cshtml";
             }
 
         }

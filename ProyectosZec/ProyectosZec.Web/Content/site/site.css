@@ -7691,3 +7691,9 @@ section.content > .s-DataGrid {
 .s-Kairos-DepartamentosDialog .caption {
   width: 150px;
 }
+.s-Kairos-DiarioDialog > .size {
+  width: 650px;
+}
+.s-Kairos-DiarioDialog .caption {
+  width: 150px;
+}

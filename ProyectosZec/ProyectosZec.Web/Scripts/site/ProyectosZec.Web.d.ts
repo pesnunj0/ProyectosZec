@@ -1456,15 +1456,19 @@ declare namespace ProyectosZec.Intranet {
     }
 }
 declare namespace ProyectosZec.Kairos {
-    class DepartamentosForm extends Serenity.PrefixedContext {
-        static formKey: string;
-    }
+}
+declare namespace ProyectosZec.Kairos {
     interface DepartamentosForm {
-        CodigoCliente: Serenity.IntegerEditor;
+        CodigoCliente: Serenity.StringEditor;
         Codigo: Serenity.StringEditor;
         Descripcion: Serenity.StringEditor;
         FechaBorrado: Serenity.DateEditor;
         SedeId: Serenity.IntegerEditor;
+    }
+    class DepartamentosForm extends Serenity.PrefixedContext {
+        static formKey: string;
+        private static init;
+        constructor(prefix: string);
     }
 }
 declare namespace ProyectosZec.Kairos {
@@ -1484,13 +1488,13 @@ declare namespace ProyectosZec.Kairos {
         const insertPermission = "Kairos:General";
         const readPermission = "Kairos:General";
         const updatePermission = "Kairos:General";
-        namespace Fields {
-            const Id: any;
-            const CodigoCliente: any;
-            const Codigo: any;
-            const Descripcion: any;
-            const FechaBorrado: any;
-            const SedeId: any;
+        const enum Fields {
+            Id = "Id",
+            CodigoCliente = "CodigoCliente",
+            Codigo = "Codigo",
+            Descripcion = "Descripcion",
+            FechaBorrado = "FechaBorrado",
+            SedeId = "SedeId"
         }
     }
 }
@@ -1502,22 +1506,93 @@ declare namespace ProyectosZec.Kairos {
         function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
         function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<DepartamentosRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
         function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<DepartamentosRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
-        namespace Methods {
-            const Create: string;
-            const Update: string;
-            const Delete: string;
-            const Retrieve: string;
-            const List: string;
+        const enum Methods {
+            Create = "Kairos/Departamentos/Create",
+            Update = "Kairos/Departamentos/Update",
+            Delete = "Kairos/Departamentos/Delete",
+            Retrieve = "Kairos/Departamentos/Retrieve",
+            List = "Kairos/Departamentos/List"
         }
     }
 }
 declare namespace ProyectosZec.Kairos {
-    class FichajesForm extends Serenity.PrefixedContext {
-        static formKey: string;
+}
+declare namespace ProyectosZec.Kairos {
+    interface DiarioForm {
+        IdDepartamento: Serenity.StringEditor;
+        Empleado: Serenity.StringEditor;
+        Fecha: Serenity.DateEditor;
+        Entrada: Serenity.DateEditor;
+        HoraEntrada: Serenity.StringEditor;
+        Salida: Serenity.DateEditor;
+        HoraSalida: Serenity.StringEditor;
     }
+    class DiarioForm extends Serenity.PrefixedContext {
+        static formKey: string;
+        private static init;
+        constructor(prefix: string);
+    }
+}
+declare namespace ProyectosZec.Kairos {
+    interface DiarioRow {
+        Id?: number;
+        IdEmpleado?: number;
+        IdDepartamento?: number;
+        Empleado?: string;
+        Fecha?: string;
+        Entrada?: string;
+        HoraEntrada?: string;
+        Salida?: string;
+        HoraSalida?: string;
+        SedeId?: number;
+        Sede?: string;
+    }
+    namespace DiarioRow {
+        const idProperty = "Id";
+        const nameProperty = "Empleado";
+        const localTextPrefix = "Kairos.Diario";
+        const deletePermission = "Kairos:Delete";
+        const insertPermission = "Kairos:Insert";
+        const readPermission = "Kairos:Read";
+        const updatePermission = "Kairos:Modify";
+        const enum Fields {
+            Id = "Id",
+            IdEmpleado = "IdEmpleado",
+            IdDepartamento = "IdDepartamento",
+            Empleado = "Empleado",
+            Fecha = "Fecha",
+            Entrada = "Entrada",
+            HoraEntrada = "HoraEntrada",
+            Salida = "Salida",
+            HoraSalida = "HoraSalida",
+            SedeId = "SedeId",
+            Sede = "Sede"
+        }
+    }
+}
+declare namespace ProyectosZec.Kairos {
+    namespace DiarioService {
+        const baseUrl = "Kairos/Diario";
+        function Create(request: Serenity.SaveRequest<DiarioRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Update(request: Serenity.SaveRequest<DiarioRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<DiarioRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<DiarioRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        const enum Methods {
+            Create = "Kairos/Diario/Create",
+            Update = "Kairos/Diario/Update",
+            Delete = "Kairos/Diario/Delete",
+            Retrieve = "Kairos/Diario/Retrieve",
+            List = "Kairos/Diario/List"
+        }
+    }
+}
+declare namespace ProyectosZec.Kairos {
+}
+declare namespace ProyectosZec.Kairos {
     interface FichajesForm {
-        IdEmpleado: Serenity.IntegerEditor;
-        CodigoCliente: Serenity.IntegerEditor;
+        IdEmpleado: Serenity.StringEditor;
+        CodigoCliente: Serenity.StringEditor;
         FechaHora: Serenity.DateEditor;
         Observaciones: Serenity.StringEditor;
         GpsPosicionLatitud: Serenity.StringEditor;
@@ -1525,14 +1600,19 @@ declare namespace ProyectosZec.Kairos {
         GpsFechaHora: Serenity.DateEditor;
         GpsProveedor: Serenity.StringEditor;
         GpsAltitud: Serenity.StringEditor;
-        IdTerminal: Serenity.IntegerEditor;
-        IdDispositivoModelo: Serenity.IntegerEditor;
+        IdTerminal: Serenity.StringEditor;
+        IdDispositivoModelo: Serenity.StringEditor;
         Modificado: Serenity.DateEditor;
         Anulado: Serenity.DateEditor;
         Validado: Serenity.IntegerEditor;
         TipoDispositivo: Serenity.IntegerEditor;
-        EntradaSalida: Serenity.StringEditor;
-        IdEmpresa: Serenity.IntegerEditor;
+        EntradaSalida: Serenity.LookupEditor;
+        IdEmpresa: Serenity.StringEditor;
+    }
+    class FichajesForm extends Serenity.PrefixedContext {
+        static formKey: string;
+        private static init;
+        constructor(prefix: string);
     }
 }
 declare namespace ProyectosZec.Kairos {
@@ -1576,55 +1656,69 @@ declare namespace ProyectosZec.Kairos {
         IdDispositivoModeloModelo?: string;
         IdDispositivoModeloMac?: string;
         IdDispositivoModeloFechaBorrado?: string;
+        Empleado?: string;
+        Hora?: string;
+        DptoId?: number;
+        SedeId?: number;
+        Sede?: string;
+        Dispositivo?: string;
+        Fichaje?: string;
     }
     namespace FichajesRow {
         const idProperty = "Id";
         const nameProperty = "Observaciones";
         const localTextPrefix = "Kairos.Fichajes";
-        const deletePermission = "Kairos:General";
-        const insertPermission = "Kairos:General";
-        const readPermission = "Kairos:General";
-        const updatePermission = "Kairos:General";
-        namespace Fields {
-            const Id: any;
-            const IdEmpleado: any;
-            const CodigoCliente: any;
-            const FechaHora: any;
-            const Observaciones: any;
-            const GpsPosicionLatitud: any;
-            const GpsPosicionLongitud: any;
-            const GpsFechaHora: any;
-            const GpsProveedor: any;
-            const GpsAltitud: any;
-            const IdTerminal: any;
-            const IdDispositivoModelo: any;
-            const Modificado: any;
-            const Anulado: any;
-            const Validado: any;
-            const TipoDispositivo: any;
-            const EntradaSalida: any;
-            const IdEmpresa: any;
-            const IdTerminalCodigoCliente: any;
-            const IdTerminalCodigo: any;
-            const IdTerminalDescripcion: any;
-            const IdTerminalTipoDispositivo: any;
-            const IdTerminalIdDepartamento: any;
-            const IdTerminalFechaActualizacion: any;
-            const IdTerminalFechaBorrado: any;
-            const IdTerminalDispositivoHuellaDactilar: any;
-            const IdTerminalDispositivoHuellaDactilarNumero: any;
-            const IdTerminalDispositivoHuellaDactilarIp: any;
-            const IdTerminalDispositivoHuellaDactilarMarca: any;
-            const IdTerminalDispositivoHuellaDactilarModelo: any;
-            const IdTerminalDispositivoHuellaDactilarFirmware: any;
-            const IdTerminalDispositivoHuellaDactilarPuerto: any;
-            const IdTerminalDispositivoHuellaDactilarDns: any;
-            const IdDispositivoModeloCodigoCliente: any;
-            const IdDispositivoModeloFabricante: any;
-            const IdDispositivoModeloMarca: any;
-            const IdDispositivoModeloModelo: any;
-            const IdDispositivoModeloMac: any;
-            const IdDispositivoModeloFechaBorrado: any;
+        const deletePermission = "Kairos:Delete";
+        const insertPermission = "Kairos:Insert";
+        const readPermission = "Kairos:Read";
+        const updatePermission = "Kairos:Modify";
+        const enum Fields {
+            Id = "Id",
+            IdEmpleado = "IdEmpleado",
+            CodigoCliente = "CodigoCliente",
+            FechaHora = "FechaHora",
+            Observaciones = "Observaciones",
+            GpsPosicionLatitud = "GpsPosicionLatitud",
+            GpsPosicionLongitud = "GpsPosicionLongitud",
+            GpsFechaHora = "GpsFechaHora",
+            GpsProveedor = "GpsProveedor",
+            GpsAltitud = "GpsAltitud",
+            IdTerminal = "IdTerminal",
+            IdDispositivoModelo = "IdDispositivoModelo",
+            Modificado = "Modificado",
+            Anulado = "Anulado",
+            Validado = "Validado",
+            TipoDispositivo = "TipoDispositivo",
+            EntradaSalida = "EntradaSalida",
+            IdEmpresa = "IdEmpresa",
+            IdTerminalCodigoCliente = "IdTerminalCodigoCliente",
+            IdTerminalCodigo = "IdTerminalCodigo",
+            IdTerminalDescripcion = "IdTerminalDescripcion",
+            IdTerminalTipoDispositivo = "IdTerminalTipoDispositivo",
+            IdTerminalIdDepartamento = "IdTerminalIdDepartamento",
+            IdTerminalFechaActualizacion = "IdTerminalFechaActualizacion",
+            IdTerminalFechaBorrado = "IdTerminalFechaBorrado",
+            IdTerminalDispositivoHuellaDactilar = "IdTerminalDispositivoHuellaDactilar",
+            IdTerminalDispositivoHuellaDactilarNumero = "IdTerminalDispositivoHuellaDactilarNumero",
+            IdTerminalDispositivoHuellaDactilarIp = "IdTerminalDispositivoHuellaDactilarIp",
+            IdTerminalDispositivoHuellaDactilarMarca = "IdTerminalDispositivoHuellaDactilarMarca",
+            IdTerminalDispositivoHuellaDactilarModelo = "IdTerminalDispositivoHuellaDactilarModelo",
+            IdTerminalDispositivoHuellaDactilarFirmware = "IdTerminalDispositivoHuellaDactilarFirmware",
+            IdTerminalDispositivoHuellaDactilarPuerto = "IdTerminalDispositivoHuellaDactilarPuerto",
+            IdTerminalDispositivoHuellaDactilarDns = "IdTerminalDispositivoHuellaDactilarDns",
+            IdDispositivoModeloCodigoCliente = "IdDispositivoModeloCodigoCliente",
+            IdDispositivoModeloFabricante = "IdDispositivoModeloFabricante",
+            IdDispositivoModeloMarca = "IdDispositivoModeloMarca",
+            IdDispositivoModeloModelo = "IdDispositivoModeloModelo",
+            IdDispositivoModeloMac = "IdDispositivoModeloMac",
+            IdDispositivoModeloFechaBorrado = "IdDispositivoModeloFechaBorrado",
+            Empleado = "Empleado",
+            Hora = "Hora",
+            DptoId = "DptoId",
+            SedeId = "SedeId",
+            Sede = "Sede",
+            Dispositivo = "Dispositivo",
+            Fichaje = "Fichaje"
         }
     }
 }
@@ -1636,12 +1730,12 @@ declare namespace ProyectosZec.Kairos {
         function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
         function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<FichajesRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
         function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<FichajesRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
-        namespace Methods {
-            const Create: string;
-            const Update: string;
-            const Delete: string;
-            const Retrieve: string;
-            const List: string;
+        const enum Methods {
+            Create = "Kairos/Fichajes/Create",
+            Update = "Kairos/Fichajes/Update",
+            Delete = "Kairos/Fichajes/Delete",
+            Retrieve = "Kairos/Fichajes/Retrieve",
+            List = "Kairos/Fichajes/List"
         }
     }
 }
@@ -1767,55 +1861,15 @@ declare namespace ProyectosZec.Kairos {
     }
 }
 declare namespace ProyectosZec.Kairos {
-    class SedesForm extends Serenity.PrefixedContext {
-        static formKey: string;
-    }
-    interface SedesForm {
-        Sede: Serenity.StringEditor;
-    }
 }
 declare namespace ProyectosZec.Kairos {
-    interface SedesRow {
-        SedeId?: number;
-        Sede?: string;
-    }
-    namespace SedesRow {
-        const idProperty = "SedeId";
-        const nameProperty = "Sede";
-        const localTextPrefix = "Kairos.Sedes";
-        const deletePermission = "Kairos:General";
-        const insertPermission = "Kairos:General";
-        const readPermission = "Kairos:General";
-        const updatePermission = "Kairos:General";
-        namespace Fields {
-            const SedeId: any;
-            const Sede: any;
-        }
-    }
-}
-declare namespace ProyectosZec.Kairos {
-    namespace SedesService {
-        const baseUrl = "Kairos/Sedes";
-        function Create(request: Serenity.SaveRequest<SedesRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
-        function Update(request: Serenity.SaveRequest<SedesRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
-        function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
-        function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<SedesRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
-        function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<SedesRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
-        namespace Methods {
-            const Create: string;
-            const Update: string;
-            const Delete: string;
-            const Retrieve: string;
-            const List: string;
-        }
-    }
-}
-declare namespace ProyectosZec.Kairos {
-    class TiposFichajeForm extends Serenity.PrefixedContext {
-        static formKey: string;
-    }
     interface TiposFichajeForm {
         Tipo: Serenity.StringEditor;
+    }
+    class TiposFichajeForm extends Serenity.PrefixedContext {
+        static formKey: string;
+        private static init;
+        constructor(prefix: string);
     }
 }
 declare namespace ProyectosZec.Kairos {
@@ -1825,15 +1879,17 @@ declare namespace ProyectosZec.Kairos {
     }
     namespace TiposFichajeRow {
         const idProperty = "Id";
-        const nameProperty = "Id";
+        const nameProperty = "Tipo";
         const localTextPrefix = "Kairos.TiposFichaje";
-        const deletePermission = "Kairos::General";
-        const insertPermission = "Kairos::General";
-        const readPermission = "Kairos::General";
-        const updatePermission = "Kairos::General";
-        namespace Fields {
-            const Id: any;
-            const Tipo: any;
+        const lookupKey = "Kairos.TiposFichaje";
+        function getLookup(): Q.Lookup<TiposFichajeRow>;
+        const deletePermission = "Kairos:Delete";
+        const insertPermission = "Kairos:Insert";
+        const readPermission = "Kairos:Read";
+        const updatePermission = "Kairos:Modify";
+        const enum Fields {
+            Id = "Id",
+            Tipo = "Tipo"
         }
     }
 }
@@ -1845,12 +1901,12 @@ declare namespace ProyectosZec.Kairos {
         function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
         function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<TiposFichajeRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
         function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<TiposFichajeRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
-        namespace Methods {
-            const Create: string;
-            const Update: string;
-            const Delete: string;
-            const Retrieve: string;
-            const List: string;
+        const enum Methods {
+            Create = "Kairos/TiposFichaje/Create",
+            Update = "Kairos/TiposFichaje/Update",
+            Delete = "Kairos/TiposFichaje/Delete",
+            Retrieve = "Kairos/TiposFichaje/Retrieve",
+            List = "Kairos/TiposFichaje/List"
         }
     }
 }
@@ -3141,6 +3197,30 @@ declare namespace ProyectosZec.Kairos {
     }
 }
 declare namespace ProyectosZec.Kairos {
+    class DiarioDialog extends Serenity.EntityDialog<DiarioRow, any> {
+        protected getFormKey(): string;
+        protected getIdProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected getNameProperty(): string;
+        protected getService(): string;
+        protected getDeletePermission(): string;
+        protected getInsertPermission(): string;
+        protected getUpdatePermission(): string;
+        protected form: DiarioForm;
+    }
+}
+declare namespace ProyectosZec.Kairos {
+    class DiarioGrid extends Serenity.EntityGrid<DiarioRow, any> {
+        protected getColumnsKey(): string;
+        protected getDialogType(): typeof DiarioDialog;
+        protected getIdProperty(): string;
+        protected getInsertPermission(): string;
+        protected getLocalTextPrefix(): string;
+        protected getService(): string;
+        constructor(container: JQuery);
+    }
+}
+declare namespace ProyectosZec.Kairos {
     class FichajesDialog extends Serenity.EntityDialog<FichajesRow, any> {
         protected getFormKey(): string;
         protected getIdProperty(): string;
@@ -3181,30 +3261,6 @@ declare namespace ProyectosZec.Kairos {
     class KrsEmpleadosGrid extends Serenity.EntityGrid<KrsEmpleadosRow, any> {
         protected getColumnsKey(): string;
         protected getDialogType(): typeof KrsEmpleadosDialog;
-        protected getIdProperty(): string;
-        protected getInsertPermission(): string;
-        protected getLocalTextPrefix(): string;
-        protected getService(): string;
-        constructor(container: JQuery);
-    }
-}
-declare namespace ProyectosZec.Kairos {
-    class SedesDialog extends Serenity.EntityDialog<SedesRow, any> {
-        protected getFormKey(): string;
-        protected getIdProperty(): string;
-        protected getLocalTextPrefix(): string;
-        protected getNameProperty(): string;
-        protected getService(): string;
-        protected getDeletePermission(): string;
-        protected getInsertPermission(): string;
-        protected getUpdatePermission(): string;
-        protected form: SedesForm;
-    }
-}
-declare namespace ProyectosZec.Kairos {
-    class SedesGrid extends Serenity.EntityGrid<SedesRow, any> {
-        protected getColumnsKey(): string;
-        protected getDialogType(): typeof SedesDialog;
         protected getIdProperty(): string;
         protected getInsertPermission(): string;
         protected getLocalTextPrefix(): string;

@@ -1,20 +1,26 @@
-﻿
-namespace ProyectosZec.Kairos {
-    export class TiposFichajeForm extends Serenity.PrefixedContext {
-        static formKey = 'Kairos.TiposFichaje';
-    }
-
+﻿namespace ProyectosZec.Kairos {
     export interface TiposFichajeForm {
         Tipo: Serenity.StringEditor;
     }
 
-    [,
-        ['Tipo', () => Serenity.StringEditor]
-    ].forEach(x => Object.defineProperty(TiposFichajeForm.prototype, <string>x[0], {
-        get: function () {
-            return this.w(x[0], (x[1] as any)());
-        },
-        enumerable: true,
-        configurable: true
-    }));
+    export class TiposFichajeForm extends Serenity.PrefixedContext {
+        static formKey = 'Kairos.TiposFichaje';
+        private static init: boolean;
+
+        constructor(prefix: string) {
+            super(prefix);
+
+            if (!TiposFichajeForm.init)  {
+                TiposFichajeForm.init = true;
+
+                var s = Serenity;
+                var w0 = s.StringEditor;
+
+                Q.initFormType(TiposFichajeForm, [
+                    'Tipo', w0
+                ]);
+            }
+        }
+    }
 }
+

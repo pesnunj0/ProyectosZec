@@ -1,5 +1,4 @@
-﻿
-namespace ProyectosZec.Kairos {
+﻿namespace ProyectosZec.Kairos {
     export interface TiposFichajeRow {
         Id?: string;
         Tipo?: string;
@@ -7,21 +6,22 @@ namespace ProyectosZec.Kairos {
 
     export namespace TiposFichajeRow {
         export const idProperty = 'Id';
-        export const nameProperty = 'Id';
+        export const nameProperty = 'Tipo';
         export const localTextPrefix = 'Kairos.TiposFichaje';
-        export const deletePermission = 'Kairos::General';
-        export const insertPermission = 'Kairos::General';
-        export const readPermission = 'Kairos::General';
-        export const updatePermission = 'Kairos::General';
+        export const lookupKey = 'Kairos.TiposFichaje';
 
-        export namespace Fields {
-            export declare const Id;
-            export declare const Tipo;
+        export function getLookup(): Q.Lookup<TiposFichajeRow> {
+            return Q.getLookup<TiposFichajeRow>('Kairos.TiposFichaje');
         }
+        export const deletePermission = 'Kairos:Delete';
+        export const insertPermission = 'Kairos:Insert';
+        export const readPermission = 'Kairos:Read';
+        export const updatePermission = 'Kairos:Modify';
 
-        [
-            'Id',
-            'Tipo'
-        ].forEach(x => (<any>Fields)[x] = x);
+        export declare const enum Fields {
+            Id = "Id",
+            Tipo = "Tipo"
+        }
     }
 }
+

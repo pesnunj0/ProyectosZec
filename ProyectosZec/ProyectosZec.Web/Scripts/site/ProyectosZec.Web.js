@@ -1495,26 +1495,28 @@ var ProyectosZec;
     (function (Kairos) {
         var DepartamentosForm = /** @class */ (function (_super) {
             __extends(DepartamentosForm, _super);
-            function DepartamentosForm() {
-                return _super !== null && _super.apply(this, arguments) || this;
+            function DepartamentosForm(prefix) {
+                var _this = _super.call(this, prefix) || this;
+                if (!DepartamentosForm.init) {
+                    DepartamentosForm.init = true;
+                    var s = Serenity;
+                    var w0 = s.StringEditor;
+                    var w1 = s.DateEditor;
+                    var w2 = s.IntegerEditor;
+                    Q.initFormType(DepartamentosForm, [
+                        'CodigoCliente', w0,
+                        'Codigo', w0,
+                        'Descripcion', w0,
+                        'FechaBorrado', w1,
+                        'SedeId', w2
+                    ]);
+                }
+                return _this;
             }
             DepartamentosForm.formKey = 'Kairos.Departamentos';
             return DepartamentosForm;
         }(Serenity.PrefixedContext));
         Kairos.DepartamentosForm = DepartamentosForm;
-        [,
-            ['CodigoCliente', function () { return Serenity.IntegerEditor; }],
-            ['Codigo', function () { return Serenity.StringEditor; }],
-            ['Descripcion', function () { return Serenity.StringEditor; }],
-            ['FechaBorrado', function () { return Serenity.DateEditor; }],
-            ['SedeId', function () { return Serenity.IntegerEditor; }]
-        ].forEach(function (x) { return Object.defineProperty(DepartamentosForm.prototype, x[0], {
-            get: function () {
-                return this.w(x[0], x[1]());
-            },
-            enumerable: true,
-            configurable: true
-        }); });
     })(Kairos = ProyectosZec.Kairos || (ProyectosZec.Kairos = {}));
 })(ProyectosZec || (ProyectosZec = {}));
 var ProyectosZec;
@@ -1530,17 +1532,6 @@ var ProyectosZec;
             DepartamentosRow.insertPermission = 'Kairos:General';
             DepartamentosRow.readPermission = 'Kairos:General';
             DepartamentosRow.updatePermission = 'Kairos:General';
-            var Fields;
-            (function (Fields) {
-            })(Fields = DepartamentosRow.Fields || (DepartamentosRow.Fields = {}));
-            [
-                'Id',
-                'CodigoCliente',
-                'Codigo',
-                'Descripcion',
-                'FechaBorrado',
-                'SedeId'
-            ].forEach(function (x) { return Fields[x] = x; });
         })(DepartamentosRow = Kairos.DepartamentosRow || (Kairos.DepartamentosRow = {}));
     })(Kairos = ProyectosZec.Kairos || (ProyectosZec.Kairos = {}));
 })(ProyectosZec || (ProyectosZec = {}));
@@ -1551,9 +1542,6 @@ var ProyectosZec;
         var DepartamentosService;
         (function (DepartamentosService) {
             DepartamentosService.baseUrl = 'Kairos/Departamentos';
-            var Methods;
-            (function (Methods) {
-            })(Methods = DepartamentosService.Methods || (DepartamentosService.Methods = {}));
             [
                 'Create',
                 'Update',
@@ -1564,7 +1552,6 @@ var ProyectosZec;
                 DepartamentosService[x] = function (r, s, o) {
                     return Q.serviceRequest(DepartamentosService.baseUrl + '/' + x, r, s, o);
                 };
-                Methods[x] = DepartamentosService.baseUrl + '/' + x;
             });
         })(DepartamentosService = Kairos.DepartamentosService || (Kairos.DepartamentosService = {}));
     })(Kairos = ProyectosZec.Kairos || (ProyectosZec.Kairos = {}));
@@ -1573,40 +1560,111 @@ var ProyectosZec;
 (function (ProyectosZec) {
     var Kairos;
     (function (Kairos) {
+        var DiarioForm = /** @class */ (function (_super) {
+            __extends(DiarioForm, _super);
+            function DiarioForm(prefix) {
+                var _this = _super.call(this, prefix) || this;
+                if (!DiarioForm.init) {
+                    DiarioForm.init = true;
+                    var s = Serenity;
+                    var w0 = s.StringEditor;
+                    var w1 = s.DateEditor;
+                    Q.initFormType(DiarioForm, [
+                        'IdDepartamento', w0,
+                        'Empleado', w0,
+                        'Fecha', w1,
+                        'Entrada', w1,
+                        'HoraEntrada', w0,
+                        'Salida', w1,
+                        'HoraSalida', w0
+                    ]);
+                }
+                return _this;
+            }
+            DiarioForm.formKey = 'Kairos.Diario';
+            return DiarioForm;
+        }(Serenity.PrefixedContext));
+        Kairos.DiarioForm = DiarioForm;
+    })(Kairos = ProyectosZec.Kairos || (ProyectosZec.Kairos = {}));
+})(ProyectosZec || (ProyectosZec = {}));
+var ProyectosZec;
+(function (ProyectosZec) {
+    var Kairos;
+    (function (Kairos) {
+        var DiarioRow;
+        (function (DiarioRow) {
+            DiarioRow.idProperty = 'Id';
+            DiarioRow.nameProperty = 'Empleado';
+            DiarioRow.localTextPrefix = 'Kairos.Diario';
+            DiarioRow.deletePermission = 'Kairos:Delete';
+            DiarioRow.insertPermission = 'Kairos:Insert';
+            DiarioRow.readPermission = 'Kairos:Read';
+            DiarioRow.updatePermission = 'Kairos:Modify';
+        })(DiarioRow = Kairos.DiarioRow || (Kairos.DiarioRow = {}));
+    })(Kairos = ProyectosZec.Kairos || (ProyectosZec.Kairos = {}));
+})(ProyectosZec || (ProyectosZec = {}));
+var ProyectosZec;
+(function (ProyectosZec) {
+    var Kairos;
+    (function (Kairos) {
+        var DiarioService;
+        (function (DiarioService) {
+            DiarioService.baseUrl = 'Kairos/Diario';
+            [
+                'Create',
+                'Update',
+                'Delete',
+                'Retrieve',
+                'List'
+            ].forEach(function (x) {
+                DiarioService[x] = function (r, s, o) {
+                    return Q.serviceRequest(DiarioService.baseUrl + '/' + x, r, s, o);
+                };
+            });
+        })(DiarioService = Kairos.DiarioService || (Kairos.DiarioService = {}));
+    })(Kairos = ProyectosZec.Kairos || (ProyectosZec.Kairos = {}));
+})(ProyectosZec || (ProyectosZec = {}));
+var ProyectosZec;
+(function (ProyectosZec) {
+    var Kairos;
+    (function (Kairos) {
         var FichajesForm = /** @class */ (function (_super) {
             __extends(FichajesForm, _super);
-            function FichajesForm() {
-                return _super !== null && _super.apply(this, arguments) || this;
+            function FichajesForm(prefix) {
+                var _this = _super.call(this, prefix) || this;
+                if (!FichajesForm.init) {
+                    FichajesForm.init = true;
+                    var s = Serenity;
+                    var w0 = s.StringEditor;
+                    var w1 = s.DateEditor;
+                    var w2 = s.IntegerEditor;
+                    var w3 = s.LookupEditor;
+                    Q.initFormType(FichajesForm, [
+                        'IdEmpleado', w0,
+                        'CodigoCliente', w0,
+                        'FechaHora', w1,
+                        'Observaciones', w0,
+                        'GpsPosicionLatitud', w0,
+                        'GpsPosicionLongitud', w0,
+                        'GpsFechaHora', w1,
+                        'GpsProveedor', w0,
+                        'GpsAltitud', w0,
+                        'IdTerminal', w0,
+                        'IdDispositivoModelo', w0,
+                        'Modificado', w1,
+                        'Anulado', w1,
+                        'Validado', w2,
+                        'TipoDispositivo', w2,
+                        'EntradaSalida', w3,
+                        'IdEmpresa', w0
+                    ]);
+                }
+                return _this;
             }
             FichajesForm.formKey = 'Kairos.Fichajes';
             return FichajesForm;
         }(Serenity.PrefixedContext));
         Kairos.FichajesForm = FichajesForm;
-        [,
-            ['IdEmpleado', function () { return Serenity.IntegerEditor; }],
-            ['CodigoCliente', function () { return Serenity.IntegerEditor; }],
-            ['FechaHora', function () { return Serenity.DateEditor; }],
-            ['Observaciones', function () { return Serenity.StringEditor; }],
-            ['GpsPosicionLatitud', function () { return Serenity.StringEditor; }],
-            ['GpsPosicionLongitud', function () { return Serenity.StringEditor; }],
-            ['GpsFechaHora', function () { return Serenity.DateEditor; }],
-            ['GpsProveedor', function () { return Serenity.StringEditor; }],
-            ['GpsAltitud', function () { return Serenity.StringEditor; }],
-            ['IdTerminal', function () { return Serenity.IntegerEditor; }],
-            ['IdDispositivoModelo', function () { return Serenity.IntegerEditor; }],
-            ['Modificado', function () { return Serenity.DateEditor; }],
-            ['Anulado', function () { return Serenity.DateEditor; }],
-            ['Validado', function () { return Serenity.IntegerEditor; }],
-            ['TipoDispositivo', function () { return Serenity.IntegerEditor; }],
-            ['EntradaSalida', function () { return Serenity.StringEditor; }],
-            ['IdEmpresa', function () { return Serenity.IntegerEditor; }]
-        ].forEach(function (x) { return Object.defineProperty(FichajesForm.prototype, x[0], {
-            get: function () {
-                return this.w(x[0], x[1]());
-            },
-            enumerable: true,
-            configurable: true
-        }); });
     })(Kairos = ProyectosZec.Kairos || (ProyectosZec.Kairos = {}));
 })(ProyectosZec || (ProyectosZec = {}));
 var ProyectosZec;
@@ -1618,54 +1676,10 @@ var ProyectosZec;
             FichajesRow.idProperty = 'Id';
             FichajesRow.nameProperty = 'Observaciones';
             FichajesRow.localTextPrefix = 'Kairos.Fichajes';
-            FichajesRow.deletePermission = 'Kairos:General';
-            FichajesRow.insertPermission = 'Kairos:General';
-            FichajesRow.readPermission = 'Kairos:General';
-            FichajesRow.updatePermission = 'Kairos:General';
-            var Fields;
-            (function (Fields) {
-            })(Fields = FichajesRow.Fields || (FichajesRow.Fields = {}));
-            [
-                'Id',
-                'IdEmpleado',
-                'CodigoCliente',
-                'FechaHora',
-                'Observaciones',
-                'GpsPosicionLatitud',
-                'GpsPosicionLongitud',
-                'GpsFechaHora',
-                'GpsProveedor',
-                'GpsAltitud',
-                'IdTerminal',
-                'IdDispositivoModelo',
-                'Modificado',
-                'Anulado',
-                'Validado',
-                'TipoDispositivo',
-                'EntradaSalida',
-                'IdEmpresa',
-                'IdTerminalCodigoCliente',
-                'IdTerminalCodigo',
-                'IdTerminalDescripcion',
-                'IdTerminalTipoDispositivo',
-                'IdTerminalIdDepartamento',
-                'IdTerminalFechaActualizacion',
-                'IdTerminalFechaBorrado',
-                'IdTerminalDispositivoHuellaDactilar',
-                'IdTerminalDispositivoHuellaDactilarNumero',
-                'IdTerminalDispositivoHuellaDactilarIp',
-                'IdTerminalDispositivoHuellaDactilarMarca',
-                'IdTerminalDispositivoHuellaDactilarModelo',
-                'IdTerminalDispositivoHuellaDactilarFirmware',
-                'IdTerminalDispositivoHuellaDactilarPuerto',
-                'IdTerminalDispositivoHuellaDactilarDns',
-                'IdDispositivoModeloCodigoCliente',
-                'IdDispositivoModeloFabricante',
-                'IdDispositivoModeloMarca',
-                'IdDispositivoModeloModelo',
-                'IdDispositivoModeloMac',
-                'IdDispositivoModeloFechaBorrado'
-            ].forEach(function (x) { return Fields[x] = x; });
+            FichajesRow.deletePermission = 'Kairos:Delete';
+            FichajesRow.insertPermission = 'Kairos:Insert';
+            FichajesRow.readPermission = 'Kairos:Read';
+            FichajesRow.updatePermission = 'Kairos:Modify';
         })(FichajesRow = Kairos.FichajesRow || (Kairos.FichajesRow = {}));
     })(Kairos = ProyectosZec.Kairos || (ProyectosZec.Kairos = {}));
 })(ProyectosZec || (ProyectosZec = {}));
@@ -1676,9 +1690,6 @@ var ProyectosZec;
         var FichajesService;
         (function (FichajesService) {
             FichajesService.baseUrl = 'Kairos/Fichajes';
-            var Methods;
-            (function (Methods) {
-            })(Methods = FichajesService.Methods || (FichajesService.Methods = {}));
             [
                 'Create',
                 'Update',
@@ -1689,7 +1700,6 @@ var ProyectosZec;
                 FichajesService[x] = function (r, s, o) {
                     return Q.serviceRequest(FichajesService.baseUrl + '/' + x, r, s, o);
                 };
-                Methods[x] = FichajesService.baseUrl + '/' + x;
             });
         })(FichajesService = Kairos.FichajesService || (Kairos.FichajesService = {}));
     })(Kairos = ProyectosZec.Kairos || (ProyectosZec.Kairos = {}));
@@ -1788,96 +1798,24 @@ var ProyectosZec;
 (function (ProyectosZec) {
     var Kairos;
     (function (Kairos) {
-        var SedesForm = /** @class */ (function (_super) {
-            __extends(SedesForm, _super);
-            function SedesForm() {
-                return _super !== null && _super.apply(this, arguments) || this;
-            }
-            SedesForm.formKey = 'Kairos.Sedes';
-            return SedesForm;
-        }(Serenity.PrefixedContext));
-        Kairos.SedesForm = SedesForm;
-        [,
-            ['Sede', function () { return Serenity.StringEditor; }]
-        ].forEach(function (x) { return Object.defineProperty(SedesForm.prototype, x[0], {
-            get: function () {
-                return this.w(x[0], x[1]());
-            },
-            enumerable: true,
-            configurable: true
-        }); });
-    })(Kairos = ProyectosZec.Kairos || (ProyectosZec.Kairos = {}));
-})(ProyectosZec || (ProyectosZec = {}));
-var ProyectosZec;
-(function (ProyectosZec) {
-    var Kairos;
-    (function (Kairos) {
-        var SedesRow;
-        (function (SedesRow) {
-            SedesRow.idProperty = 'SedeId';
-            SedesRow.nameProperty = 'Sede';
-            SedesRow.localTextPrefix = 'Kairos.Sedes';
-            SedesRow.deletePermission = 'Kairos:General';
-            SedesRow.insertPermission = 'Kairos:General';
-            SedesRow.readPermission = 'Kairos:General';
-            SedesRow.updatePermission = 'Kairos:General';
-            var Fields;
-            (function (Fields) {
-            })(Fields = SedesRow.Fields || (SedesRow.Fields = {}));
-            [
-                'SedeId',
-                'Sede'
-            ].forEach(function (x) { return Fields[x] = x; });
-        })(SedesRow = Kairos.SedesRow || (Kairos.SedesRow = {}));
-    })(Kairos = ProyectosZec.Kairos || (ProyectosZec.Kairos = {}));
-})(ProyectosZec || (ProyectosZec = {}));
-var ProyectosZec;
-(function (ProyectosZec) {
-    var Kairos;
-    (function (Kairos) {
-        var SedesService;
-        (function (SedesService) {
-            SedesService.baseUrl = 'Kairos/Sedes';
-            var Methods;
-            (function (Methods) {
-            })(Methods = SedesService.Methods || (SedesService.Methods = {}));
-            [
-                'Create',
-                'Update',
-                'Delete',
-                'Retrieve',
-                'List'
-            ].forEach(function (x) {
-                SedesService[x] = function (r, s, o) {
-                    return Q.serviceRequest(SedesService.baseUrl + '/' + x, r, s, o);
-                };
-                Methods[x] = SedesService.baseUrl + '/' + x;
-            });
-        })(SedesService = Kairos.SedesService || (Kairos.SedesService = {}));
-    })(Kairos = ProyectosZec.Kairos || (ProyectosZec.Kairos = {}));
-})(ProyectosZec || (ProyectosZec = {}));
-var ProyectosZec;
-(function (ProyectosZec) {
-    var Kairos;
-    (function (Kairos) {
         var TiposFichajeForm = /** @class */ (function (_super) {
             __extends(TiposFichajeForm, _super);
-            function TiposFichajeForm() {
-                return _super !== null && _super.apply(this, arguments) || this;
+            function TiposFichajeForm(prefix) {
+                var _this = _super.call(this, prefix) || this;
+                if (!TiposFichajeForm.init) {
+                    TiposFichajeForm.init = true;
+                    var s = Serenity;
+                    var w0 = s.StringEditor;
+                    Q.initFormType(TiposFichajeForm, [
+                        'Tipo', w0
+                    ]);
+                }
+                return _this;
             }
             TiposFichajeForm.formKey = 'Kairos.TiposFichaje';
             return TiposFichajeForm;
         }(Serenity.PrefixedContext));
         Kairos.TiposFichajeForm = TiposFichajeForm;
-        [,
-            ['Tipo', function () { return Serenity.StringEditor; }]
-        ].forEach(function (x) { return Object.defineProperty(TiposFichajeForm.prototype, x[0], {
-            get: function () {
-                return this.w(x[0], x[1]());
-            },
-            enumerable: true,
-            configurable: true
-        }); });
     })(Kairos = ProyectosZec.Kairos || (ProyectosZec.Kairos = {}));
 })(ProyectosZec || (ProyectosZec = {}));
 var ProyectosZec;
@@ -1887,19 +1825,17 @@ var ProyectosZec;
         var TiposFichajeRow;
         (function (TiposFichajeRow) {
             TiposFichajeRow.idProperty = 'Id';
-            TiposFichajeRow.nameProperty = 'Id';
+            TiposFichajeRow.nameProperty = 'Tipo';
             TiposFichajeRow.localTextPrefix = 'Kairos.TiposFichaje';
-            TiposFichajeRow.deletePermission = 'Kairos::General';
-            TiposFichajeRow.insertPermission = 'Kairos::General';
-            TiposFichajeRow.readPermission = 'Kairos::General';
-            TiposFichajeRow.updatePermission = 'Kairos::General';
-            var Fields;
-            (function (Fields) {
-            })(Fields = TiposFichajeRow.Fields || (TiposFichajeRow.Fields = {}));
-            [
-                'Id',
-                'Tipo'
-            ].forEach(function (x) { return Fields[x] = x; });
+            TiposFichajeRow.lookupKey = 'Kairos.TiposFichaje';
+            function getLookup() {
+                return Q.getLookup('Kairos.TiposFichaje');
+            }
+            TiposFichajeRow.getLookup = getLookup;
+            TiposFichajeRow.deletePermission = 'Kairos:Delete';
+            TiposFichajeRow.insertPermission = 'Kairos:Insert';
+            TiposFichajeRow.readPermission = 'Kairos:Read';
+            TiposFichajeRow.updatePermission = 'Kairos:Modify';
         })(TiposFichajeRow = Kairos.TiposFichajeRow || (Kairos.TiposFichajeRow = {}));
     })(Kairos = ProyectosZec.Kairos || (ProyectosZec.Kairos = {}));
 })(ProyectosZec || (ProyectosZec = {}));
@@ -1910,9 +1846,6 @@ var ProyectosZec;
         var TiposFichajeService;
         (function (TiposFichajeService) {
             TiposFichajeService.baseUrl = 'Kairos/TiposFichaje';
-            var Methods;
-            (function (Methods) {
-            })(Methods = TiposFichajeService.Methods || (TiposFichajeService.Methods = {}));
             [
                 'Create',
                 'Update',
@@ -1923,7 +1856,6 @@ var ProyectosZec;
                 TiposFichajeService[x] = function (r, s, o) {
                     return Q.serviceRequest(TiposFichajeService.baseUrl + '/' + x, r, s, o);
                 };
-                Methods[x] = TiposFichajeService.baseUrl + '/' + x;
             });
         })(TiposFichajeService = Kairos.TiposFichajeService || (Kairos.TiposFichajeService = {}));
     })(Kairos = ProyectosZec.Kairos || (ProyectosZec.Kairos = {}));
@@ -2295,7 +2227,7 @@ var ProyectosZec;
 (function (ProyectosZec) {
     var Texts;
     (function (Texts) {
-        ProyectosZec['Texts'] = Q.proxyTexts(Texts, '', { Db: { Administration: { Language: { Id: 1, LanguageId: 1, LanguageName: 1 }, Role: { RoleId: 1, RoleName: 1 }, RolePermission: { PermissionKey: 1, RoleId: 1, RolePermissionId: 1, RoleRoleName: 1 }, Translation: { CustomText: 1, EntityPlural: 1, Key: 1, OverrideConfirmation: 1, SaveChangesButton: 1, SourceLanguage: 1, SourceText: 1, TargetLanguage: 1, TargetText: 1 }, User: { DisplayName: 1, Email: 1, InsertDate: 1, InsertUserId: 1, IsActive: 1, LastDirectoryUpdate: 1, Password: 1, PasswordConfirm: 1, PasswordHash: 1, PasswordSalt: 1, Source: 1, UpdateDate: 1, UpdateUserId: 1, UserId: 1, UserImage: 1, Username: 1 }, UserPermission: { Granted: 1, PermissionKey: 1, User: 1, UserId: 1, UserPermissionId: 1, Username: 1 }, UserRole: { RoleId: 1, User: 1, UserId: 1, UserRoleId: 1, Username: 1 } }, Common: { UserPreference: { Name: 1, PreferenceType: 1, UserId: 1, UserPreferenceId: 1, Value: 1 } }, CuadroMandos: { Capital: { Capital: 1, CapitalId: 1 }, Estados: { Estado: 1, EstadoId: 1 }, Islas: { Isla: 1, IslaId: 1, NombreIsla: 1 }, Prescriptorinversor: { PrescriptorInversor: 1, PrescriptorInversorId: 1 }, Proyectos: { Capital: 1, CapitalId: 1, Captacion: 1, Contacto: 1, Denominacion: 1, Descripcion: 1, Email: 1, EmpleoReal: 1, Empleos: 1, Estado: 1, EstadoId: 1, Expediente: 1, FechaAmpliacion: 1, FechaAutorizacion: 1, FechaBaja: 1, FechaInicio: 1, FechaInscripcion: 1, FechaPresentacion: 1, Inversion: 1, InversionReal: 1, Isla: 1, IslaId: 1, Nace: 1, NombreTecnico: 1, PrescriptorInversor: 1, PrescriptorInversorId: 1, ProyectoId: 1, Sector: 1, SectorId: 1, Subsector: 1, SubsectorId: 1, SubsectorSectorId: 1, Tecnico: 1, TecnicoId: 1, Telefono: 1 }, Sectores: { Sector: 1, SectorId: 1 }, Subsectores: { Sector: 1, SectorId: 1, Subsector: 1, SubsectorId: 1 }, Tecnicos: { NombreTecnico: 1, Tecnico: 1, TecnicoId: 1 } }, Inmovilizado: { Inmovilizados: { Amortizacion: 1, Codigo: 1, Descripcion: 1, Factura: 1, FechaBaja: 1, FechaCompra: 1, Files: 1, GalleryImages: 1, Garantia: 1, InmovilizadoId: 1, NumeroSerie: 1, Pg: 1, Proveedor: 1, ProveedorId: 1, Sede: 1, SedeId: 1, SubTipo: 1, SubTipoInmovilizadoId: 1, Tipo: 1, TipoInmovilizadoId: 1, Ubicacion: 1, Valor: 1, ValorResidual: 1 }, Proveedores: { Contacto: 1, Email: 1, Proveedor: 1, ProveedorId: 1, Telefono: 1 }, Subtiposinmovilizado: { SubTipo: 1, SubTipoInmovilizadoId: 1, TipoInmovilizadoId: 1, TipoInmovilizadoTipo: 1 }, Tiposinmovilizado: { Tipo: 1, TipoInmovilizadoId: 1 } }, Intranet: { Departamentos: { Departamento: 1, DepartamentoId: 1 }, Sedes: { Sede: 1, SedeId: 1 }, Telefonos: { Departamento: 1, DepartamentoId: 1, ExtCorta: 1, Fijo: 1, Movil: 1, Nombre: 1, Sede: 1, SedeId: 1, TelefonoId: 1 } }, Kairos: { KrsEmpleados: { ClaveAccesoWeb: 1, CodigoCliente: 1, CodigoValidacion: 1, Email: 1, FechaActualizacion: 1, FechaBaja: 1, FechaBorrado: 1, Id: 1, IdDepartamento: 1, IdEmpresa: 1, IdEmpresaFichajeAutomatico: 1, IdHoraExtraCabecera: 1, IdHoraExtraCabeceraCodigo: 1, IdHoraExtraCabeceraCodigoCliente: 1, IdHoraExtraCabeceraDescripcion: 1, IdHoraExtraCabeceraFechaBorrado: 1, Nombre: 1, NumeroTarjetaFichaje: 1, PermiteFichajeAutomatico: 1, PermiteFichajeWeb: 1, PermiteRecordatorio: 1, Pin: 1, ProgramaExternoDescripcion: 1, ProgramaExternoIdEmpleado: 1, SacarFotoFichaje: 1, Tecnico: 1, UsoHorario: 1 } }, Roezec: { Actividades: { Actividad: 1, Agencia: 1, AnyoExpediente: 1, Cif: 1, Codigo: 1, Cp: 1, Direccion: 1, Empresa: 1, ExentaAreaAcotada: 1, FechaAlta: 1, FechaBaja: 1, FechaModificacion: 1, FormaJuridica: 1, Id: 1, IdEmpresa: 1, IdNace: 1, Isla: 1, MotivosExencion: 1, NotasMarginales: 1, NumExpediente: 1, ObjetivoEmpleo: 1, ObjetivoInversion: 1, ObservacionesEmpleo: 1, ObservacionesInversion: 1, Poblacion: 1, PreEmpleo: 1, PreInversion: 1, Provincia: 1, Situacion: 1, Superficie: 1, Tecnico: 1, TrasEmpleo: 1, TrasInversion: 1, UsrAlta: 1, UsrBaja: 1, UsrModificacion: 1 }, Naces: { Actividad: 1, Codigo: 1, FechaAlta: 1, Id: 1, Nace: 1, UsrAlta: 1 }, RoezecEmpresas: { Agencia: 1, AnyoExpediente: 1, Cif: 1, Cp: 1, DenominacionSocial: 1, Direccion: 1, ExentaAreaAcotada: 1, FechaAlta: 1, FechaBaja: 1, FechaModificacion: 1, FormaJuridica: 1, Id: 1, Isla: 1, MotivosExencion: 1, NotasMarginales: 1, NumExpediente: 1, ObjetivoEmpleo: 1, ObjetivoInversion: 1, ObservacionesEmpleo: 1, ObservacionesInversion: 1, Poblacion: 1, PreEmpleo: 1, PreInversion: 1, Provincia: 1, Situacion: 1, Superficie: 1, Tecnico: 1, TrasEmpleo: 1, TrasInversion: 1, UsrAlta: 1, UsrBaja: 1, UsrModificacion: 1 } } }, Forms: { Membership: { ChangePassword: { FormTitle: 1, SubmitButton: 1, Success: 1 }, ForgotPassword: { BackToLogin: 1, FormInfo: 1, FormTitle: 1, SubmitButton: 1, Success: 1 }, Login: { FacebookButton: 1, ForgotPassword: 1, FormTitle: 1, GoogleButton: 1, OR: 1, RememberMe: 1, SignInButton: 1, SignUpButton: 1 }, ResetPassword: { BackToLogin: 1, EmailSubject: 1, FormTitle: 1, SubmitButton: 1, Success: 1 }, SignUp: { AcceptTerms: 1, ActivateEmailSubject: 1, ActivationCompleteMessage: 1, BackToLogin: 1, ConfirmEmail: 1, ConfirmPassword: 1, DisplayName: 1, Email: 1, FormInfo: 1, FormTitle: 1, Password: 1, SubmitButton: 1, Success: 1 } } }, Site: { AccessDenied: { ClickToChangeUser: 1, ClickToLogin: 1, LackPermissions: 1, NotLoggedIn: 1, PageTitle: 1 }, BasicProgressDialog: { CancelTitle: 1, PleaseWait: 1 }, BulkServiceAction: { AllHadErrorsFormat: 1, AllSuccessFormat: 1, ConfirmationFormat: 1, ErrorCount: 1, NothingToProcess: 1, SomeHadErrorsFormat: 1, SuccessCount: 1 }, Dashboard: { ContentDescription: 1 }, Layout: { FooterCopyright: 1, FooterInfo: 1, FooterRights: 1, GeneralSettings: 1, Language: 1, Theme: 1, ThemeBlack: 1, ThemeBlackLight: 1, ThemeBlue: 1, ThemeBlueLight: 1, ThemeGreen: 1, ThemeGreenLight: 1, ThemePurple: 1, ThemePurpleLight: 1, ThemeRed: 1, ThemeRedLight: 1, ThemeYellow: 1, ThemeYellowLight: 1 }, RolePermissionDialog: { DialogTitle: 1, EditButton: 1, SaveSuccess: 1 }, UserDialog: { EditPermissionsButton: 1, EditRolesButton: 1 }, UserPermissionDialog: { DialogTitle: 1, Grant: 1, Permission: 1, Revoke: 1, SaveSuccess: 1 }, UserRoleDialog: { DialogTitle: 1, SaveSuccess: 1 }, ValidationError: { Title: 1 } }, Validation: { AuthenticationError: 1, CantFindUserWithEmail: 1, CurrentPasswordMismatch: 1, DeleteForeignKeyError: 1, EmailConfirm: 1, EmailInUse: 1, InvalidActivateToken: 1, InvalidResetToken: 1, MinRequiredPasswordLength: 1, SavePrimaryKeyError: 1 } });
+        ProyectosZec['Texts'] = Q.proxyTexts(Texts, '', { Db: { Administration: { Language: { Id: 1, LanguageId: 1, LanguageName: 1 }, Role: { RoleId: 1, RoleName: 1 }, RolePermission: { PermissionKey: 1, RoleId: 1, RolePermissionId: 1, RoleRoleName: 1 }, Translation: { CustomText: 1, EntityPlural: 1, Key: 1, OverrideConfirmation: 1, SaveChangesButton: 1, SourceLanguage: 1, SourceText: 1, TargetLanguage: 1, TargetText: 1 }, User: { DisplayName: 1, Email: 1, InsertDate: 1, InsertUserId: 1, IsActive: 1, LastDirectoryUpdate: 1, Password: 1, PasswordConfirm: 1, PasswordHash: 1, PasswordSalt: 1, Source: 1, UpdateDate: 1, UpdateUserId: 1, UserId: 1, UserImage: 1, Username: 1 }, UserPermission: { Granted: 1, PermissionKey: 1, User: 1, UserId: 1, UserPermissionId: 1, Username: 1 }, UserRole: { RoleId: 1, User: 1, UserId: 1, UserRoleId: 1, Username: 1 } }, Common: { UserPreference: { Name: 1, PreferenceType: 1, UserId: 1, UserPreferenceId: 1, Value: 1 } }, CuadroMandos: { Capital: { Capital: 1, CapitalId: 1 }, Estados: { Estado: 1, EstadoId: 1 }, Islas: { Isla: 1, IslaId: 1, NombreIsla: 1 }, Prescriptorinversor: { PrescriptorInversor: 1, PrescriptorInversorId: 1 }, Proyectos: { Capital: 1, CapitalId: 1, Captacion: 1, Contacto: 1, Denominacion: 1, Descripcion: 1, Email: 1, EmpleoReal: 1, Empleos: 1, Estado: 1, EstadoId: 1, Expediente: 1, FechaAmpliacion: 1, FechaAutorizacion: 1, FechaBaja: 1, FechaInicio: 1, FechaInscripcion: 1, FechaPresentacion: 1, Inversion: 1, InversionReal: 1, Isla: 1, IslaId: 1, Nace: 1, NombreTecnico: 1, PrescriptorInversor: 1, PrescriptorInversorId: 1, ProyectoId: 1, Sector: 1, SectorId: 1, Subsector: 1, SubsectorId: 1, SubsectorSectorId: 1, Tecnico: 1, TecnicoId: 1, Telefono: 1 }, Sectores: { Sector: 1, SectorId: 1 }, Subsectores: { Sector: 1, SectorId: 1, Subsector: 1, SubsectorId: 1 }, Tecnicos: { NombreTecnico: 1, Tecnico: 1, TecnicoId: 1 } }, Inmovilizado: { Inmovilizados: { Amortizacion: 1, Codigo: 1, Descripcion: 1, Factura: 1, FechaBaja: 1, FechaCompra: 1, Files: 1, GalleryImages: 1, Garantia: 1, InmovilizadoId: 1, NumeroSerie: 1, Pg: 1, Proveedor: 1, ProveedorId: 1, Sede: 1, SedeId: 1, SubTipo: 1, SubTipoInmovilizadoId: 1, Tipo: 1, TipoInmovilizadoId: 1, Ubicacion: 1, Valor: 1, ValorResidual: 1 }, Proveedores: { Contacto: 1, Email: 1, Proveedor: 1, ProveedorId: 1, Telefono: 1 }, Subtiposinmovilizado: { SubTipo: 1, SubTipoInmovilizadoId: 1, TipoInmovilizadoId: 1, TipoInmovilizadoTipo: 1 }, Tiposinmovilizado: { Tipo: 1, TipoInmovilizadoId: 1 } }, Intranet: { Departamentos: { Departamento: 1, DepartamentoId: 1 }, Sedes: { Sede: 1, SedeId: 1 }, Telefonos: { Departamento: 1, DepartamentoId: 1, ExtCorta: 1, Fijo: 1, Movil: 1, Nombre: 1, Sede: 1, SedeId: 1, TelefonoId: 1 } }, Kairos: { Departamentos: { Codigo: 1, CodigoCliente: 1, Descripcion: 1, FechaBorrado: 1, Id: 1, SedeId: 1 }, Diario: { Empleado: 1, Entrada: 1, Fecha: 1, HoraEntrada: 1, HoraSalida: 1, Id: 1, IdDepartamento: 1, IdEmpleado: 1, Salida: 1, Sede: 1, SedeId: 1 }, Fichajes: { Anulado: 1, CodigoCliente: 1, Dispositivo: 1, DptoId: 1, Empleado: 1, EntradaSalida: 1, FechaHora: 1, Fichaje: 1, GpsAltitud: 1, GpsFechaHora: 1, GpsPosicionLatitud: 1, GpsPosicionLongitud: 1, GpsProveedor: 1, Hora: 1, Id: 1, IdDispositivoModelo: 1, IdDispositivoModeloCodigoCliente: 1, IdDispositivoModeloFabricante: 1, IdDispositivoModeloFechaBorrado: 1, IdDispositivoModeloMac: 1, IdDispositivoModeloMarca: 1, IdDispositivoModeloModelo: 1, IdEmpleado: 1, IdEmpresa: 1, IdTerminal: 1, IdTerminalCodigo: 1, IdTerminalCodigoCliente: 1, IdTerminalDescripcion: 1, IdTerminalDispositivoHuellaDactilar: 1, IdTerminalDispositivoHuellaDactilarDns: 1, IdTerminalDispositivoHuellaDactilarFirmware: 1, IdTerminalDispositivoHuellaDactilarIp: 1, IdTerminalDispositivoHuellaDactilarMarca: 1, IdTerminalDispositivoHuellaDactilarModelo: 1, IdTerminalDispositivoHuellaDactilarNumero: 1, IdTerminalDispositivoHuellaDactilarPuerto: 1, IdTerminalFechaActualizacion: 1, IdTerminalFechaBorrado: 1, IdTerminalIdDepartamento: 1, IdTerminalTipoDispositivo: 1, Modificado: 1, Observaciones: 1, Sede: 1, SedeId: 1, TipoDispositivo: 1, Validado: 1 }, KrsEmpleados: { ClaveAccesoWeb: 1, CodigoCliente: 1, CodigoValidacion: 1, Email: 1, FechaActualizacion: 1, FechaBaja: 1, FechaBorrado: 1, Id: 1, IdDepartamento: 1, IdEmpresa: 1, IdEmpresaFichajeAutomatico: 1, IdHoraExtraCabecera: 1, IdHoraExtraCabeceraCodigo: 1, IdHoraExtraCabeceraCodigoCliente: 1, IdHoraExtraCabeceraDescripcion: 1, IdHoraExtraCabeceraFechaBorrado: 1, Nombre: 1, NumeroTarjetaFichaje: 1, PermiteFichajeAutomatico: 1, PermiteFichajeWeb: 1, PermiteRecordatorio: 1, Pin: 1, ProgramaExternoDescripcion: 1, ProgramaExternoIdEmpleado: 1, SacarFotoFichaje: 1, Tecnico: 1, UsoHorario: 1 }, TiposFichaje: { Id: 1, Tipo: 1 } }, Roezec: { Actividades: { Actividad: 1, Agencia: 1, AnyoExpediente: 1, Cif: 1, Codigo: 1, Cp: 1, Direccion: 1, Empresa: 1, ExentaAreaAcotada: 1, FechaAlta: 1, FechaBaja: 1, FechaModificacion: 1, FormaJuridica: 1, Id: 1, IdEmpresa: 1, IdNace: 1, Isla: 1, MotivosExencion: 1, NotasMarginales: 1, NumExpediente: 1, ObjetivoEmpleo: 1, ObjetivoInversion: 1, ObservacionesEmpleo: 1, ObservacionesInversion: 1, Poblacion: 1, PreEmpleo: 1, PreInversion: 1, Provincia: 1, Situacion: 1, Superficie: 1, Tecnico: 1, TrasEmpleo: 1, TrasInversion: 1, UsrAlta: 1, UsrBaja: 1, UsrModificacion: 1 }, Naces: { Actividad: 1, Codigo: 1, FechaAlta: 1, Id: 1, Nace: 1, UsrAlta: 1 }, RoezecEmpresas: { Agencia: 1, AnyoExpediente: 1, Cif: 1, Cp: 1, DenominacionSocial: 1, Direccion: 1, ExentaAreaAcotada: 1, FechaAlta: 1, FechaBaja: 1, FechaModificacion: 1, FormaJuridica: 1, Id: 1, Isla: 1, MotivosExencion: 1, NotasMarginales: 1, NumExpediente: 1, ObjetivoEmpleo: 1, ObjetivoInversion: 1, ObservacionesEmpleo: 1, ObservacionesInversion: 1, Poblacion: 1, PreEmpleo: 1, PreInversion: 1, Provincia: 1, Situacion: 1, Superficie: 1, Tecnico: 1, TrasEmpleo: 1, TrasInversion: 1, UsrAlta: 1, UsrBaja: 1, UsrModificacion: 1 } } }, Forms: { Membership: { ChangePassword: { FormTitle: 1, SubmitButton: 1, Success: 1 }, ForgotPassword: { BackToLogin: 1, FormInfo: 1, FormTitle: 1, SubmitButton: 1, Success: 1 }, Login: { FacebookButton: 1, ForgotPassword: 1, FormTitle: 1, GoogleButton: 1, OR: 1, RememberMe: 1, SignInButton: 1, SignUpButton: 1 }, ResetPassword: { BackToLogin: 1, EmailSubject: 1, FormTitle: 1, SubmitButton: 1, Success: 1 }, SignUp: { AcceptTerms: 1, ActivateEmailSubject: 1, ActivationCompleteMessage: 1, BackToLogin: 1, ConfirmEmail: 1, ConfirmPassword: 1, DisplayName: 1, Email: 1, FormInfo: 1, FormTitle: 1, Password: 1, SubmitButton: 1, Success: 1 } } }, Site: { AccessDenied: { ClickToChangeUser: 1, ClickToLogin: 1, LackPermissions: 1, NotLoggedIn: 1, PageTitle: 1 }, BasicProgressDialog: { CancelTitle: 1, PleaseWait: 1 }, BulkServiceAction: { AllHadErrorsFormat: 1, AllSuccessFormat: 1, ConfirmationFormat: 1, ErrorCount: 1, NothingToProcess: 1, SomeHadErrorsFormat: 1, SuccessCount: 1 }, Dashboard: { ContentDescription: 1 }, Layout: { FooterCopyright: 1, FooterInfo: 1, FooterRights: 1, GeneralSettings: 1, Language: 1, Theme: 1, ThemeBlack: 1, ThemeBlackLight: 1, ThemeBlue: 1, ThemeBlueLight: 1, ThemeGreen: 1, ThemeGreenLight: 1, ThemePurple: 1, ThemePurpleLight: 1, ThemeRed: 1, ThemeRedLight: 1, ThemeYellow: 1, ThemeYellowLight: 1 }, RolePermissionDialog: { DialogTitle: 1, EditButton: 1, SaveSuccess: 1 }, UserDialog: { EditPermissionsButton: 1, EditRolesButton: 1 }, UserPermissionDialog: { DialogTitle: 1, Grant: 1, Permission: 1, Revoke: 1, SaveSuccess: 1 }, UserRoleDialog: { DialogTitle: 1, SaveSuccess: 1 }, ValidationError: { Title: 1 } }, Validation: { AuthenticationError: 1, CantFindUserWithEmail: 1, CurrentPasswordMismatch: 1, DeleteForeignKeyError: 1, EmailConfirm: 1, EmailInUse: 1, InvalidActivateToken: 1, InvalidResetToken: 1, MinRequiredPasswordLength: 1, SavePrimaryKeyError: 1 } });
     })(Texts = ProyectosZec.Texts || (ProyectosZec.Texts = {}));
 })(ProyectosZec || (ProyectosZec = {}));
 var ProyectosZec;
@@ -5647,6 +5579,56 @@ var ProyectosZec;
 (function (ProyectosZec) {
     var Kairos;
     (function (Kairos) {
+        var DiarioDialog = /** @class */ (function (_super) {
+            __extends(DiarioDialog, _super);
+            function DiarioDialog() {
+                var _this = _super !== null && _super.apply(this, arguments) || this;
+                _this.form = new Kairos.DiarioForm(_this.idPrefix);
+                return _this;
+            }
+            DiarioDialog.prototype.getFormKey = function () { return Kairos.DiarioForm.formKey; };
+            DiarioDialog.prototype.getIdProperty = function () { return Kairos.DiarioRow.idProperty; };
+            DiarioDialog.prototype.getLocalTextPrefix = function () { return Kairos.DiarioRow.localTextPrefix; };
+            DiarioDialog.prototype.getNameProperty = function () { return Kairos.DiarioRow.nameProperty; };
+            DiarioDialog.prototype.getService = function () { return Kairos.DiarioService.baseUrl; };
+            DiarioDialog.prototype.getDeletePermission = function () { return Kairos.DiarioRow.deletePermission; };
+            DiarioDialog.prototype.getInsertPermission = function () { return Kairos.DiarioRow.insertPermission; };
+            DiarioDialog.prototype.getUpdatePermission = function () { return Kairos.DiarioRow.updatePermission; };
+            DiarioDialog = __decorate([
+                Serenity.Decorators.registerClass()
+            ], DiarioDialog);
+            return DiarioDialog;
+        }(Serenity.EntityDialog));
+        Kairos.DiarioDialog = DiarioDialog;
+    })(Kairos = ProyectosZec.Kairos || (ProyectosZec.Kairos = {}));
+})(ProyectosZec || (ProyectosZec = {}));
+var ProyectosZec;
+(function (ProyectosZec) {
+    var Kairos;
+    (function (Kairos) {
+        var DiarioGrid = /** @class */ (function (_super) {
+            __extends(DiarioGrid, _super);
+            function DiarioGrid(container) {
+                return _super.call(this, container) || this;
+            }
+            DiarioGrid.prototype.getColumnsKey = function () { return 'Kairos.Diario'; };
+            DiarioGrid.prototype.getDialogType = function () { return Kairos.DiarioDialog; };
+            DiarioGrid.prototype.getIdProperty = function () { return Kairos.DiarioRow.idProperty; };
+            DiarioGrid.prototype.getInsertPermission = function () { return Kairos.DiarioRow.insertPermission; };
+            DiarioGrid.prototype.getLocalTextPrefix = function () { return Kairos.DiarioRow.localTextPrefix; };
+            DiarioGrid.prototype.getService = function () { return Kairos.DiarioService.baseUrl; };
+            DiarioGrid = __decorate([
+                Serenity.Decorators.registerClass()
+            ], DiarioGrid);
+            return DiarioGrid;
+        }(Serenity.EntityGrid));
+        Kairos.DiarioGrid = DiarioGrid;
+    })(Kairos = ProyectosZec.Kairos || (ProyectosZec.Kairos = {}));
+})(ProyectosZec || (ProyectosZec = {}));
+var ProyectosZec;
+(function (ProyectosZec) {
+    var Kairos;
+    (function (Kairos) {
         var FichajesDialog = /** @class */ (function (_super) {
             __extends(FichajesDialog, _super);
             function FichajesDialog() {
@@ -5741,56 +5723,6 @@ var ProyectosZec;
             return KrsEmpleadosGrid;
         }(Serenity.EntityGrid));
         Kairos.KrsEmpleadosGrid = KrsEmpleadosGrid;
-    })(Kairos = ProyectosZec.Kairos || (ProyectosZec.Kairos = {}));
-})(ProyectosZec || (ProyectosZec = {}));
-var ProyectosZec;
-(function (ProyectosZec) {
-    var Kairos;
-    (function (Kairos) {
-        var SedesDialog = /** @class */ (function (_super) {
-            __extends(SedesDialog, _super);
-            function SedesDialog() {
-                var _this = _super !== null && _super.apply(this, arguments) || this;
-                _this.form = new Kairos.SedesForm(_this.idPrefix);
-                return _this;
-            }
-            SedesDialog.prototype.getFormKey = function () { return Kairos.SedesForm.formKey; };
-            SedesDialog.prototype.getIdProperty = function () { return Kairos.SedesRow.idProperty; };
-            SedesDialog.prototype.getLocalTextPrefix = function () { return Kairos.SedesRow.localTextPrefix; };
-            SedesDialog.prototype.getNameProperty = function () { return Kairos.SedesRow.nameProperty; };
-            SedesDialog.prototype.getService = function () { return Kairos.SedesService.baseUrl; };
-            SedesDialog.prototype.getDeletePermission = function () { return Kairos.SedesRow.deletePermission; };
-            SedesDialog.prototype.getInsertPermission = function () { return Kairos.SedesRow.insertPermission; };
-            SedesDialog.prototype.getUpdatePermission = function () { return Kairos.SedesRow.updatePermission; };
-            SedesDialog = __decorate([
-                Serenity.Decorators.registerClass()
-            ], SedesDialog);
-            return SedesDialog;
-        }(Serenity.EntityDialog));
-        Kairos.SedesDialog = SedesDialog;
-    })(Kairos = ProyectosZec.Kairos || (ProyectosZec.Kairos = {}));
-})(ProyectosZec || (ProyectosZec = {}));
-var ProyectosZec;
-(function (ProyectosZec) {
-    var Kairos;
-    (function (Kairos) {
-        var SedesGrid = /** @class */ (function (_super) {
-            __extends(SedesGrid, _super);
-            function SedesGrid(container) {
-                return _super.call(this, container) || this;
-            }
-            SedesGrid.prototype.getColumnsKey = function () { return 'Kairos.Sedes'; };
-            SedesGrid.prototype.getDialogType = function () { return Kairos.SedesDialog; };
-            SedesGrid.prototype.getIdProperty = function () { return Kairos.SedesRow.idProperty; };
-            SedesGrid.prototype.getInsertPermission = function () { return Kairos.SedesRow.insertPermission; };
-            SedesGrid.prototype.getLocalTextPrefix = function () { return Kairos.SedesRow.localTextPrefix; };
-            SedesGrid.prototype.getService = function () { return Kairos.SedesService.baseUrl; };
-            SedesGrid = __decorate([
-                Serenity.Decorators.registerClass()
-            ], SedesGrid);
-            return SedesGrid;
-        }(Serenity.EntityGrid));
-        Kairos.SedesGrid = SedesGrid;
     })(Kairos = ProyectosZec.Kairos || (ProyectosZec.Kairos = {}));
 })(ProyectosZec || (ProyectosZec = {}));
 var ProyectosZec;
