@@ -6,6 +6,10 @@
         ExtCorta: Serenity.StringEditor;
         Fijo: Serenity.StringEditor;
         Movil: Serenity.StringEditor;
+        CortoMovil: Serenity.StringEditor;
+        Contrato: Serenity.StringEditor;
+        PUK: Serenity.StringEditor;
+        Multisim: Serenity.StringEditor;
     }
 
     export class TelefonosForm extends Serenity.PrefixedContext {
@@ -28,7 +32,11 @@
                     'Nombre', w1,
                     'ExtCorta', w1,
                     'Fijo', w1,
-                    'Movil', w1
+                    'Movil', w1,
+                    'CortoMovil', w1,
+                    'Contrato', w1,
+                    'PUK', w1,
+                    'Multisim', w1
                 ]);
             }
         }

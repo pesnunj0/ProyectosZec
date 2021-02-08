@@ -9,6 +9,13 @@ namespace ProyectosZec.Kairos.Endpoints
     using MyRepository = Repositories.DiarioRepository;
     using MyRow = Entities.DiarioRow;
 
+    // Añadidos
+    using ProyectosZec;
+    using System;
+    using Serenity.Reporting;
+    using Serenity.Web;
+    // Fin Añadidos
+
     [RoutePrefix("Services/Kairos/Diario"), Route("{action}")]
     [ConnectionKey(typeof(MyRow)), ServiceAuthorize(typeof(MyRow))]
     public class DiarioController : ServiceEndpoint
@@ -42,5 +49,16 @@ namespace ProyectosZec.Kairos.Endpoints
         {
             return new MyRepository().List(connection, request);
         }
+        // Añadidos Excel
+        [HttpPost]
+        public FileContentResult ListExcel(IDbConnection connection, ListRequest request)
+        {
+            var data = List(connection, request).Entities;
+            var report = new DynamicDataReport(data, request.IncludeColumns, typeof(Columns.DiarioColumns));
+            var bytes = new ReportRepository().Render(report);
+            return ExcelContentResult.Create(bytes, "DiarioFichajesList_" +
+                DateTime.Now.ToString("yyyyMMdd_HHmmss") + ".xlsx");
+        }
+
     }
 }

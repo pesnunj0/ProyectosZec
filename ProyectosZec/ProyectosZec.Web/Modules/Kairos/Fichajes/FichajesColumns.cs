@@ -24,9 +24,11 @@ namespace ProyectosZec.Kairos.Columns
  
         [DisplayName("Empleado"), Width(220)]
         public String Empleado { get; set; }
+        [Hidden,DisplayName("FechaHora"), DisplayFormat("g")]
+        public DateTime FechaHora { get; set; }
 
         [DisplayName("Fecha"), QuickFilter, DisplayFormat("d")]
-        public DateTime FechaHora { get; set; }
+        public DateTime Fecha { get; set; }
 
         [DisplayName("Hora"), Width(80)]
         public String Hora { get; set; }

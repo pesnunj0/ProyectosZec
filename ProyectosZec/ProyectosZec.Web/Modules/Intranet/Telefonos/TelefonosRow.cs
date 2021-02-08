@@ -69,6 +69,33 @@ namespace ProyectosZec.Intranet.Entities
             set { Fields.Movil[this] = value; }
         }
 
+        [DisplayName("CortoMovil"), Size(5)]
+        public String CortoMovil
+        {
+            get { return Fields.CortoMovil[this]; }
+            set { Fields.CortoMovil[this] = value; }
+        }
+
+        [DisplayName("Contrato"), Size(15)]
+        public String Contrato
+        {
+            get { return Fields.Contrato[this]; }
+            set { Fields.Contrato[this] = value; }
+        }
+
+        [DisplayName("PUK"), Size(8)]
+        public String PUK
+        {
+            get { return Fields.PUK[this]; }
+            set { Fields.PUK[this] = value; }
+        }
+
+        [DisplayName("MultiSim"), Size(2)]
+        public String Multisim
+        {
+            get { return Fields.Multisim[this]; }
+            set { Fields.Multisim[this] = value; }
+        }
         [DisplayName("Sede"), Expression("jSede.[Sede]")]
         public String Sede
         {
@@ -109,10 +136,13 @@ namespace ProyectosZec.Intranet.Entities
             public StringField ExtCorta;
             public StringField Fijo;
             public StringField Movil;
+            public StringField CortoMovil;
+            public StringField Contrato;
 
             public StringField Sede;
-
             public StringField Departamento;
+            public StringField PUK;
+            public StringField Multisim;
         }
     }
 }

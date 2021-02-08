@@ -1396,6 +1396,10 @@ declare namespace ProyectosZec.Intranet {
         ExtCorta: Serenity.StringEditor;
         Fijo: Serenity.StringEditor;
         Movil: Serenity.StringEditor;
+        CortoMovil: Serenity.StringEditor;
+        Contrato: Serenity.StringEditor;
+        PUK: Serenity.StringEditor;
+        Multisim: Serenity.StringEditor;
     }
     class TelefonosForm extends Serenity.PrefixedContext {
         static formKey: string;
@@ -1412,8 +1416,12 @@ declare namespace ProyectosZec.Intranet {
         ExtCorta?: string;
         Fijo?: string;
         Movil?: string;
+        CortoMovil?: string;
+        Contrato?: string;
         Sede?: string;
         Departamento?: string;
+        PUK?: string;
+        Multisim?: string;
     }
     namespace TelefonosRow {
         const idProperty = "TelefonoId";
@@ -1433,8 +1441,12 @@ declare namespace ProyectosZec.Intranet {
             ExtCorta = "ExtCorta",
             Fijo = "Fijo",
             Movil = "Movil",
+            CortoMovil = "CortoMovil",
+            Contrato = "Contrato",
             Sede = "Sede",
-            Departamento = "Departamento"
+            Departamento = "Departamento",
+            PUK = "PUK",
+            Multisim = "Multisim"
         }
     }
 }
@@ -1658,6 +1670,7 @@ declare namespace ProyectosZec.Kairos {
         IdDispositivoModeloFechaBorrado?: string;
         Empleado?: string;
         Hora?: string;
+        Fecha?: string;
         DptoId?: number;
         SedeId?: number;
         Sede?: string;
@@ -1714,6 +1727,7 @@ declare namespace ProyectosZec.Kairos {
             IdDispositivoModeloFechaBorrado = "IdDispositivoModeloFechaBorrado",
             Empleado = "Empleado",
             Hora = "Hora",
+            Fecha = "Fecha",
             DptoId = "DptoId",
             SedeId = "SedeId",
             Sede = "Sede",
@@ -3218,6 +3232,7 @@ declare namespace ProyectosZec.Kairos {
         protected getLocalTextPrefix(): string;
         protected getService(): string;
         constructor(container: JQuery);
+        getButtons(): Serenity.ToolButton[];
     }
 }
 declare namespace ProyectosZec.Kairos {
@@ -3242,6 +3257,7 @@ declare namespace ProyectosZec.Kairos {
         protected getLocalTextPrefix(): string;
         protected getService(): string;
         constructor(container: JQuery);
+        getButtons(): Serenity.ToolButton[];
     }
 }
 declare namespace ProyectosZec.Kairos {

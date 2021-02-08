@@ -7,8 +7,12 @@
         ExtCorta?: string;
         Fijo?: string;
         Movil?: string;
+        CortoMovil?: string;
+        Contrato?: string;
         Sede?: string;
         Departamento?: string;
+        PUK?: string;
+        Multisim?: string;
     }
 
     export namespace TelefonosRow {
@@ -33,8 +37,12 @@
             ExtCorta = "ExtCorta",
             Fijo = "Fijo",
             Movil = "Movil",
+            CortoMovil = "CortoMovil",
+            Contrato = "Contrato",
             Sede = "Sede",
-            Departamento = "Departamento"
+            Departamento = "Departamento",
+            PUK = "PUK",
+            Multisim = "Multisim"
         }
     }
 }

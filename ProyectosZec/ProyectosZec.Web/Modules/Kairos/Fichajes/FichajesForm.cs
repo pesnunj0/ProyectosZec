@@ -15,10 +15,12 @@ namespace ProyectosZec.Kairos.Forms
     {
         public Int64 IdEmpleado { get; set; }
         public Int64 CodigoCliente { get; set; }
+        [DisplayFormat("g")]
         public DateTime FechaHora { get; set; }
         public String Observaciones { get; set; }
         public String GpsPosicionLatitud { get; set; }
         public String GpsPosicionLongitud { get; set; }
+        [DisplayFormat("g")]
         public DateTime GpsFechaHora { get; set; }
         public String GpsProveedor { get; set; }
         public String GpsAltitud { get; set; }

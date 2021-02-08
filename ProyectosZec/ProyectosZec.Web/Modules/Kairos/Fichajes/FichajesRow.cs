@@ -55,10 +55,18 @@ namespace ProyectosZec.Kairos.Entities
         }
 
         [DisplayName("Fecha Hora"), Column("fechaHora"), NotNull]
+        [DateTimeKind(DateTimeKind.Utc), DateTimeEditor]
         public DateTime? FechaHora
         {
             get { return Fields.FechaHora[this]; }
             set { Fields.FechaHora[this] = value; }
+        }
+
+        [DisplayName("Fecha"), Expression("CAST(convert(char(8), T0.[fechaHora], 112) AS Datetime)")]
+        public DateTime? Fecha
+        {
+            get { return Fields.Fecha[this]; }
+            set { Fields.Fecha[this] = value; }
         }
 
         [DisplayName("Hora"), Expression("RIGHT(CONVERT(DATETIME, T0.[fechaHora], 108),8)")]
@@ -91,14 +99,14 @@ namespace ProyectosZec.Kairos.Entities
         }
 
 
-        [DisplayName("Gps Posicion Latitud"), Column("gps_Posicion_Latitud"), Size(100), NotNull]
+        [DisplayName("Gps Posicion Latitud"), Column("gps_Posicion_Latitud"), Size(100)]
         public String GpsPosicionLatitud
         {
             get { return Fields.GpsPosicionLatitud[this]; }
             set { Fields.GpsPosicionLatitud[this] = value; }
         }
 
-        [DisplayName("Gps Posicion Longitud"), Column("gps_Posicion_Longitud"), Size(100), NotNull]
+        [DisplayName("Gps Posicion Longitud"), Column("gps_Posicion_Longitud"), Size(100)]
         public String GpsPosicionLongitud
         {
             get { return Fields.GpsPosicionLongitud[this]; }
@@ -112,7 +120,7 @@ namespace ProyectosZec.Kairos.Entities
             set { Fields.GpsFechaHora[this] = value; }
         }
 
-        [DisplayName("Gps Proveedor"), Column("gps_Proveedor"), Size(1), NotNull]
+        [DisplayName("Gps Proveedor"), Column("gps_Proveedor"), Size(1)]
         public String GpsProveedor
         {
             get { return Fields.GpsProveedor[this]; }
@@ -407,6 +415,7 @@ namespace ProyectosZec.Kairos.Entities
             
             public StringField Empleado;
             public StringField Hora;
+            public DateTimeField Fecha;
             public Int32Field DptoId;
             public Int32Field SedeId;
             public StringField Sede;

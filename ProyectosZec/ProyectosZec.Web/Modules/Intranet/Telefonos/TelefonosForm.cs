@@ -19,5 +19,9 @@ namespace ProyectosZec.Intranet.Forms
         public String ExtCorta { get; set; }
         public String Fijo { get; set; }
         public String Movil { get; set; }
+        public String CortoMovil { get; set; }
+        public String Contrato { get; set; }
+        public String PUK { get; set; }
+        public String Multisim { get; set; }
     }
 }

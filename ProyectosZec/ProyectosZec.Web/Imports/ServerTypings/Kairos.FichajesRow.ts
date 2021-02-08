@@ -41,6 +41,7 @@
         IdDispositivoModeloFechaBorrado?: string;
         Empleado?: string;
         Hora?: string;
+        Fecha?: string;
         DptoId?: number;
         SedeId?: number;
         Sede?: string;
@@ -99,6 +100,7 @@
             IdDispositivoModeloFechaBorrado = "IdDispositivoModeloFechaBorrado",
             Empleado = "Empleado",
             Hora = "Hora",
+            Fecha = "Fecha",
             DptoId = "DptoId",
             SedeId = "SedeId",
             Sede = "Sede",

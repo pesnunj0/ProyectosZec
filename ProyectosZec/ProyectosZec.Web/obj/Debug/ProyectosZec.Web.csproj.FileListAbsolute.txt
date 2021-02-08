@@ -122,3 +122,4 @@ C:\Users\jnunez\source\repos\ProyectosZec\ProyectosZec\ProyectosZec.Web\obj\Debu
 C:\Users\jnunez\source\repos\ProyectosZec\ProyectosZec\ProyectosZec.Web\obj\Debug\ProyectosZec.Web.csproj.CopyComplete
 C:\Users\jnunez\source\repos\ProyectosZec\ProyectosZec\ProyectosZec.Web\obj\Debug\ProyectosZec.Web.dll
 C:\Users\jnunez\source\repos\ProyectosZec\ProyectosZec\ProyectosZec.Web\obj\Debug\ProyectosZec.Web.pdb
+C:\Users\administrador.CONSORCIOLP\source\repos\ProyectosZec\ProyectosZec\ProyectosZec.Web\obj\Debug\ProyectosZec.Web.csprojAssemblyReference.cache

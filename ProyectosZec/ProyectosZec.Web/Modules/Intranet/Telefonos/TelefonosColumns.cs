@@ -17,12 +17,20 @@ namespace ProyectosZec.Intranet.Columns
         public Int32 TelefonoId { get; set; }
         [Width(100), QuickFilter]
         public String Sede { get; set; }
-        [Width(100), QuickFilter]
+        [Width(120), QuickFilter]
         public String Departamento { get; set; }
         [EditLink]
         public String Nombre { get; set; }
         public String ExtCorta { get; set; }
         public String Fijo { get; set; }
         public String Movil { get; set; }
+        public String CortoMovil { get; set; }
+        [Hidden]
+        public String Contrato { get; set; }
+        [Hidden]
+        public String PUK { get; set; }
+        [Hidden]
+        public String Multisim { get; set; }
+
     }
 }
