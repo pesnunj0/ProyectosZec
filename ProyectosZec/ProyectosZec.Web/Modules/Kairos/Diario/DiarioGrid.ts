@@ -16,6 +16,32 @@ namespace ProyectosZec.Kairos {
         constructor(container: JQuery) {
             super(container);
         }
+
+        protected createSlickGrid() {
+            var grid = super.createSlickGrid();
+
+            // Declaramos que el Grid puedes seleccionar fila
+            grid.setSelectionModel(new Slick.RowSelectionModel());
+
+            return grid;
+        }
+
+        /**
+* This method is called for all rows
+* @param item Data item for current row
+* @param index Index of the row in grid
+*/
+        protected getItemCssClass(item: Kairos.DiarioRow, index: number): string {
+            let klass: string = "";
+
+            if (item.Salida == null)
+                klass += " out-of-stock";
+            else if (item.Entrada == null)
+                klass += " critical-stock";
+
+            return Q.trimToNull(klass);
+        }
+
         // Botones Excel y Pdf
         getButtons() {
             var buttons = super.getButtons();

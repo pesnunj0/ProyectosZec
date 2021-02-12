@@ -1605,7 +1605,7 @@ declare namespace ProyectosZec.Kairos {
     interface FichajesForm {
         IdEmpleado: Serenity.StringEditor;
         CodigoCliente: Serenity.StringEditor;
-        FechaHora: Serenity.DateEditor;
+        FechaHora: Serenity.DateTimeEditor;
         Observaciones: Serenity.StringEditor;
         GpsPosicionLatitud: Serenity.StringEditor;
         GpsPosicionLongitud: Serenity.StringEditor;
@@ -3232,6 +3232,13 @@ declare namespace ProyectosZec.Kairos {
         protected getLocalTextPrefix(): string;
         protected getService(): string;
         constructor(container: JQuery);
+        protected createSlickGrid(): Slick.Grid;
+        /**
+* This method is called for all rows
+* @param item Data item for current row
+* @param index Index of the row in grid
+*/
+        protected getItemCssClass(item: Kairos.DiarioRow, index: number): string;
         getButtons(): Serenity.ToolButton[];
     }
 }

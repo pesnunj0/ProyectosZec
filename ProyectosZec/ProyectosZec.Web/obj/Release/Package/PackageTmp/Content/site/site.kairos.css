@@ -1,0 +1,75 @@
+.reset-box-sizing,
+.reset-box-sizing *,
+.reset-box-sizing *:before,
+.reset-box-sizing *:after {
+  -ms-box-sizing: content-box;
+  box-sizing: content-box;
+}
+.s-Kairos-KrsEmpleadosDialog > .size {
+  width: 650px;
+}
+.s-Kairos-KrsEmpleadosDialog .caption {
+  width: 150px;
+}
+.s-Kairos-FichajesDialog > .size {
+  width: 650px;
+}
+.s-Kairos-FichajesDialog .caption {
+  width: 150px;
+}
+.s-Kairos-SedesDialog > .size {
+  width: 650px;
+}
+.s-Kairos-SedesDialog .caption {
+  width: 150px;
+}
+.s-Kairos-TiposFichajeDialog > .size {
+  width: 650px;
+}
+.s-Kairos-TiposFichajeDialog .caption {
+  width: 150px;
+}
+.s-Kairos-DepartamentosDialog > .size {
+  width: 650px;
+}
+.s-Kairos-DepartamentosDialog .caption {
+  width: 150px;
+}
+.s-Kairos-DiarioDialog > .size {
+  width: 650px;
+}
+.s-Kairos-DiarioDialog .caption {
+  width: 150px;
+}
+.s-Kairos-DiarioGrid .discontinued .slick-cell,
+.s-Kairos-DiarioGrid .discontinued .slick-cell a {
+  color: lightgray;
+}
+.s-Kairos-DiarioGrid .out-of-stock .slick-cell,
+.s-Kairos-DiarioGrid .out-of-stock .slick-cell a {
+  background-color: #ffaaaa;
+  color: red;
+}
+.s-Kairos-DiarioGrid .critical-stock {
+  background-color: #ffd5c0;
+}
+.s-Kairos-DiarioGrid .critical-stock .slick-cell,
+.s-Kairos-DiarioGrid .critical-stock .slick-cell a {
+  color: black;
+}
+.s-Kairos-DiarioGrid .much-stock .slick-cell,
+.s-Kairos-DiarioGrid .much-stock .slick-cell a {
+  font-style: italic;
+}
+.s-Kairos-DiarioGrid .high-price .col-unit-price {
+  background-color: darkorchid;
+  color: #fff;
+}
+.s-Kairos-DiarioGrid .medium-price .col-unit-price {
+  background-color: yellow;
+  color: #000;
+}
+.s-Kairos-DiarioGrid .low-price .col-unit-price {
+  background-color: green;
+  color: #fff;
+}

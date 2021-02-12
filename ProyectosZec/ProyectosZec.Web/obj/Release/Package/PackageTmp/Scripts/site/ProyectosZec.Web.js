@@ -1640,9 +1640,10 @@ var ProyectosZec;
                     FichajesForm.init = true;
                     var s = Serenity;
                     var w0 = s.StringEditor;
-                    var w1 = s.DateEditor;
-                    var w2 = s.IntegerEditor;
-                    var w3 = s.LookupEditor;
+                    var w1 = s.DateTimeEditor;
+                    var w2 = s.DateEditor;
+                    var w3 = s.IntegerEditor;
+                    var w4 = s.LookupEditor;
                     Q.initFormType(FichajesForm, [
                         'IdEmpleado', w0,
                         'CodigoCliente', w0,
@@ -1650,16 +1651,16 @@ var ProyectosZec;
                         'Observaciones', w0,
                         'GpsPosicionLatitud', w0,
                         'GpsPosicionLongitud', w0,
-                        'GpsFechaHora', w1,
+                        'GpsFechaHora', w2,
                         'GpsProveedor', w0,
                         'GpsAltitud', w0,
                         'IdTerminal', w0,
                         'IdDispositivoModelo', w0,
-                        'Modificado', w1,
-                        'Anulado', w1,
-                        'Validado', w2,
-                        'TipoDispositivo', w2,
-                        'EntradaSalida', w3,
+                        'Modificado', w2,
+                        'Anulado', w2,
+                        'Validado', w3,
+                        'TipoDispositivo', w3,
+                        'EntradaSalida', w4,
                         'IdEmpresa', w0
                     ]);
                 }
@@ -5621,6 +5622,25 @@ var ProyectosZec;
             DiarioGrid.prototype.getInsertPermission = function () { return Kairos.DiarioRow.insertPermission; };
             DiarioGrid.prototype.getLocalTextPrefix = function () { return Kairos.DiarioRow.localTextPrefix; };
             DiarioGrid.prototype.getService = function () { return Kairos.DiarioService.baseUrl; };
+            DiarioGrid.prototype.createSlickGrid = function () {
+                var grid = _super.prototype.createSlickGrid.call(this);
+                // Declaramos que el Grid puedes seleccionar fila
+                grid.setSelectionModel(new Slick.RowSelectionModel());
+                return grid;
+            };
+            /**
+    * This method is called for all rows
+    * @param item Data item for current row
+    * @param index Index of the row in grid
+    */
+            DiarioGrid.prototype.getItemCssClass = function (item, index) {
+                var klass = "";
+                if (item.Salida == null)
+                    klass += " out-of-stock";
+                else if (item.Entrada == null)
+                    klass += " critical-stock";
+                return Q.trimToNull(klass);
+            };
             // Botones Excel y Pdf
             DiarioGrid.prototype.getButtons = function () {
                 var _this = this;

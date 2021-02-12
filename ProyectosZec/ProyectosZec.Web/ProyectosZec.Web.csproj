@@ -531,6 +531,12 @@
     <Content Include="Content\site\site.inmovilizado.min.css">
       <DependentUpon>site.inmovilizado.css</DependentUpon>
     </Content>
+    <Content Include="Content\site\site.kairos.css">
+      <DependentUpon>site.kairos.less</DependentUpon>
+    </Content>
+    <Content Include="Content\site\site.kairos.min.css">
+      <DependentUpon>site.kairos.css</DependentUpon>
+    </Content>
     <Content Include="Content\slick-default-theme.css" />
     <Content Include="Content\slick.columnpicker.css" />
     <Content Include="Content\slick.grid.css" />
