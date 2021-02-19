@@ -1135,6 +1135,9 @@
     <TypeScriptCompile Include="Imports\ServerTypings\Roezec.RoezecEmpresasService.ts">
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\Roezec.RoezecEstadosColumns.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
     <TypeScriptCompile Include="Imports\ServerTypings\Texts.ts">
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
@@ -1985,6 +1988,18 @@
     <TypeScriptCompile Include="Imports\ServerTypings\Kairos.DiarioForm.ts">
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\Roezec.RoezecEstadosRow.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\Roezec.RoezecEstadosService.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <Content Include="Modules\Roezec\RoezecEstados\RoezecEstadosIndex.cshtml" />
+    <TypeScriptCompile Include="Modules\Roezec\RoezecEstados\RoezecEstadosDialog.ts" />
+    <TypeScriptCompile Include="Modules\Roezec\RoezecEstados\RoezecEstadosGrid.ts" />
+    <TypeScriptCompile Include="Imports\ServerTypings\Roezec.RoezecEstadosForm.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Global.asax" />
@@ -2271,6 +2286,12 @@
     <Compile Include="Modules\Kairos\Diario\DiarioPage.cs" />
     <Compile Include="Modules\Kairos\Diario\DiarioColumns.cs" />
     <Compile Include="Modules\Kairos\Diario\DiarioForm.cs" />
+    <Compile Include="Modules\Roezec\RoezecEstados\RoezecEstadosRow.cs" />
+    <Compile Include="Modules\Roezec\RoezecEstados\RoezecEstadosRepository.cs" />
+    <Compile Include="Modules\Roezec\RoezecEstados\RoezecEstadosEndpoint.cs" />
+    <Compile Include="Modules\Roezec\RoezecEstados\RoezecEstadosPage.cs" />
+    <Compile Include="Modules\Roezec\RoezecEstados\RoezecEstadosColumns.cs" />
+    <Compile Include="Modules\Roezec\RoezecEstados\RoezecEstadosForm.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\upload\" />

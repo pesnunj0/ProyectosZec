@@ -2224,7 +2224,7 @@ declare namespace ProyectosZec.Roezec {
         FechaAlta: Serenity.DateEditor;
         FechaModificacion: Serenity.DateEditor;
         FechaBaja: Serenity.DateEditor;
-        Situacion: Serenity.StringEditor;
+        SituacionId: Serenity.LookupEditor;
         UsrAlta: Serenity.StringEditor;
         UsrModificacion: Serenity.StringEditor;
         UsrBaja: Serenity.StringEditor;
@@ -2265,6 +2265,7 @@ declare namespace ProyectosZec.Roezec {
         FechaAlta?: string;
         FechaModificacion?: string;
         FechaBaja?: string;
+        SituacionId?: string;
         Situacion?: string;
         UsrAlta?: string;
         UsrModificacion?: string;
@@ -2309,6 +2310,7 @@ declare namespace ProyectosZec.Roezec {
             FechaAlta = "FechaAlta",
             FechaModificacion = "FechaModificacion",
             FechaBaja = "FechaBaja",
+            SituacionId = "SituacionId",
             Situacion = "Situacion",
             UsrAlta = "UsrAlta",
             UsrModificacion = "UsrModificacion",
@@ -2330,6 +2332,56 @@ declare namespace ProyectosZec.Roezec {
             Delete = "Roezec/RoezecEmpresas/Delete",
             Retrieve = "Roezec/RoezecEmpresas/Retrieve",
             List = "Roezec/RoezecEmpresas/List"
+        }
+    }
+}
+declare namespace ProyectosZec.Roezec {
+}
+declare namespace ProyectosZec.Roezec {
+    interface RoezecEstadosForm {
+        Descripcion: Serenity.StringEditor;
+    }
+    class RoezecEstadosForm extends Serenity.PrefixedContext {
+        static formKey: string;
+        private static init;
+        constructor(prefix: string);
+    }
+}
+declare namespace ProyectosZec.Roezec {
+    interface RoezecEstadosRow {
+        Codigo?: string;
+        Descripcion?: string;
+    }
+    namespace RoezecEstadosRow {
+        const idProperty = "Codigo";
+        const nameProperty = "Descripcion";
+        const localTextPrefix = "Roezec.RoezecEstados";
+        const lookupKey = "Roezec.RoezecEstados";
+        function getLookup(): Q.Lookup<RoezecEstadosRow>;
+        const deletePermission = "Roezec:Delete";
+        const insertPermission = "Roezec:Insert";
+        const readPermission = "Roezec:Read";
+        const updatePermission = "Roezec:Modify";
+        const enum Fields {
+            Codigo = "Codigo",
+            Descripcion = "Descripcion"
+        }
+    }
+}
+declare namespace ProyectosZec.Roezec {
+    namespace RoezecEstadosService {
+        const baseUrl = "Roezec/RoezecEstados";
+        function Create(request: Serenity.SaveRequest<RoezecEstadosRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Update(request: Serenity.SaveRequest<RoezecEstadosRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<RoezecEstadosRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<RoezecEstadosRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        const enum Methods {
+            Create = "Roezec/RoezecEstados/Create",
+            Update = "Roezec/RoezecEstados/Update",
+            Delete = "Roezec/RoezecEstados/Delete",
+            Retrieve = "Roezec/RoezecEstados/Retrieve",
+            List = "Roezec/RoezecEstados/List"
         }
     }
 }
@@ -3421,5 +3473,29 @@ declare namespace ProyectosZec.Roezec {
         protected getSlickOptions(): Slick.GridOptions;
         protected usePager(): boolean;
         getButtons(): Serenity.ToolButton[];
+    }
+}
+declare namespace ProyectosZec.Roezec {
+    class RoezecEstadosDialog extends Serenity.EntityDialog<RoezecEstadosRow, any> {
+        protected getFormKey(): string;
+        protected getIdProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected getNameProperty(): string;
+        protected getService(): string;
+        protected getDeletePermission(): string;
+        protected getInsertPermission(): string;
+        protected getUpdatePermission(): string;
+        protected form: RoezecEstadosForm;
+    }
+}
+declare namespace ProyectosZec.Roezec {
+    class RoezecEstadosGrid extends Serenity.EntityGrid<RoezecEstadosRow, any> {
+        protected getColumnsKey(): string;
+        protected getDialogType(): typeof RoezecEstadosDialog;
+        protected getIdProperty(): string;
+        protected getInsertPermission(): string;
+        protected getLocalTextPrefix(): string;
+        protected getService(): string;
+        constructor(container: JQuery);
     }
 }

@@ -28,6 +28,7 @@
         FechaAlta?: string;
         FechaModificacion?: string;
         FechaBaja?: string;
+        SituacionId?: string;
         Situacion?: string;
         UsrAlta?: string;
         UsrModificacion?: string;
@@ -77,6 +78,7 @@
             FechaAlta = "FechaAlta",
             FechaModificacion = "FechaModificacion",
             FechaBaja = "FechaBaja",
+            SituacionId = "SituacionId",
             Situacion = "Situacion",
             UsrAlta = "UsrAlta",
             UsrModificacion = "UsrModificacion",

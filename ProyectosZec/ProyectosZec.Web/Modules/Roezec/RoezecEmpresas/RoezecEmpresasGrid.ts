@@ -26,6 +26,7 @@ namespace ProyectosZec.Roezec {
             // sumamos Objetivo Empleo y de Inversión
             this.view.setSummaryOptions({
                 aggregators: [
+                    
                     new Slick.Aggregators.Sum(RoezecEmpresasRow.Fields.ObjetivoEmpleo),
                     new Slick.Aggregators.Sum(RoezecEmpresasRow.Fields.ObjetivoInversion)
                 ]
@@ -41,7 +42,7 @@ namespace ProyectosZec.Roezec {
         }
 
         protected usePager() {
-            return false;
+            return true;
         }
 
 

@@ -73,8 +73,9 @@ namespace ProyectosZec.Roezec.Columns
         public DateTime FechaModificacion { get; set; }
         [Width(90), QuickFilter, DisplayFormat("d")]
         public DateTime FechaBaja { get; set; }
-        [Width(80),AlignRight]
-        public String Situacion { get; set; }
+        [Width(150),AlignRight,DisplayName("Estado"),QuickFilter, QuickFilterOption("multiple", true)]
+        public String Estado { get; set; }
+        
         [Hidden,Width(90)]
         public String UsrAlta { get; set; }
         [DisplayName("Usr. Modif."),Width(90)]

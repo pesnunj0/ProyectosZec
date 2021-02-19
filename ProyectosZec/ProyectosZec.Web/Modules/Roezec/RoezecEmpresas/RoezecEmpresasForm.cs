@@ -10,7 +10,7 @@ namespace ProyectosZec.Roezec.Forms
     using System.IO;
 
     [FormScript("Roezec.RoezecEmpresas")]
-    [BasedOnRow(typeof(Entities.RoezecEmpresasRow), CheckNames = true)]
+    [BasedOnRow(typeof(Entities.RoezecEmpresasRow), CheckNames = false)]
     public class RoezecEmpresasForm
     {
         [Tab("General")]
@@ -43,7 +43,7 @@ namespace ProyectosZec.Roezec.Forms
         public DateTime FechaAlta { get; set; }
         public DateTime FechaModificacion { get; set; }
         public DateTime FechaBaja { get; set; }
-        public String Situacion { get; set; }
+        public String SituacionId { get; set; }
         public String UsrAlta { get; set; }
         public String UsrModificacion { get; set; }
         public String UsrBaja { get; set; }

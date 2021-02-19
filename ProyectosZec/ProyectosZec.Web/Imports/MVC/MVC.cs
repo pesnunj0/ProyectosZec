@@ -218,6 +218,11 @@ namespace MVC
             {
                 public const string RoezecEmpresasIndex = "~/Modules/Roezec/RoezecEmpresas/RoezecEmpresasIndex.cshtml";
             }
+
+            public static class RoezecEstados
+            {
+                public const string RoezecEstadosIndex = "~/Modules/Roezec/RoezecEstados/RoezecEstadosIndex.cshtml";
+            }
         }
 
         public static class Shared

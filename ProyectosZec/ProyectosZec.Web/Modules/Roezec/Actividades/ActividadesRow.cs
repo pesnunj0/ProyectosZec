@@ -242,12 +242,22 @@ namespace ProyectosZec.Roezec.Entities
             set { Fields.FechaBaja[this] = value; }
         }
 
-        [DisplayName("Situacion"), Expression("jEmpresas.situacion"), Size(255)]
-        public String Situacion
+        [DisplayName("EstadoId"), Expression("jEmpresas.situacion"), ForeignKey("roezec_estados", "codigo"), LeftJoin("jEstados"), Size(255)]
+        [LookupEditor("Roezec.RoezecEstados")]
+        public String SituacionId
         {
-            get { return Fields.Situacion[this]; }
-            set { Fields.Situacion[this] = value; }
+            get { return Fields.SituacionId[this]; }
+            set { Fields.SituacionId[this] = value; }
         }
+
+        [DisplayName("Estado"), Expression("jEstados.descripcion")]
+        public String Estado
+        {
+            get { return Fields.Estado[this]; }
+            set { Fields.Estado[this] = value; }
+        }
+
+
 
         [DisplayName("Usr Alta"), Expression("jEmpresas.usr_alta"), Size(255)]
         public String UsrAlta
@@ -321,7 +331,8 @@ namespace ProyectosZec.Roezec.Entities
             public DateTimeField FechaAlta;
             public DateTimeField FechaModificacion;
             public DateTimeField FechaBaja;
-            public StringField Situacion;
+            public StringField SituacionId;
+            public StringField Estado;
             public StringField UsrAlta;
             public StringField UsrModificacion;
             public StringField UsrBaja;

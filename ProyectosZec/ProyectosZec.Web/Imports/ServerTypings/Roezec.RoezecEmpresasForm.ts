@@ -27,7 +27,7 @@
         FechaAlta: Serenity.DateEditor;
         FechaModificacion: Serenity.DateEditor;
         FechaBaja: Serenity.DateEditor;
-        Situacion: Serenity.StringEditor;
+        SituacionId: Serenity.LookupEditor;
         UsrAlta: Serenity.StringEditor;
         UsrModificacion: Serenity.StringEditor;
         UsrBaja: Serenity.StringEditor;
@@ -48,6 +48,7 @@
                 var w1 = s.IntegerEditor;
                 var w2 = s.DecimalEditor;
                 var w3 = s.DateEditor;
+                var w4 = s.LookupEditor;
 
                 Q.initFormType(RoezecEmpresasForm, [
                     'DenominacionSocial', w0,
@@ -77,7 +78,7 @@
                     'FechaAlta', w3,
                     'FechaModificacion', w3,
                     'FechaBaja', w3,
-                    'Situacion', w0,
+                    'SituacionId', w4,
                     'UsrAlta', w0,
                     'UsrModificacion', w0,
                     'UsrBaja', w0
