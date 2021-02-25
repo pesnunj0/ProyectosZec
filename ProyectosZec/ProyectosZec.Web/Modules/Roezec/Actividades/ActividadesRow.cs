@@ -12,7 +12,9 @@ namespace ProyectosZec.Roezec.Entities
     [ConnectionKey("Roezec"), Module("Roezec"), TableName("roezec_actividades")]
     [DisplayName("Actividades"), InstanceName("Actividades")]
     [ReadPermission("Roezec:Read")]
-    [ModifyPermission("Roezec:Read")]
+    [ModifyPermission("Roezec:Modify")]
+    [InsertPermission("Roezec:Insert")]
+    [DeletePermission("Roezec:Delete")]
     public sealed class ActividadesRow : Row, IIdRow, INameRow
     {
         [DisplayName("Id"), Column("id"), Identity]

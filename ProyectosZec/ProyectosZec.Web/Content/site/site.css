@@ -7667,6 +7667,18 @@ section.content > .s-DataGrid {
 .s-Roezec-RoezecEstadosDialog .caption {
   width: 150px;
 }
+.s-Roezec-RepresentantesDialog > .size {
+  width: 650px;
+}
+.s-Roezec-RepresentantesDialog .caption {
+  width: 150px;
+}
+.s-Roezec-SociosDialog > .size {
+  width: 650px;
+}
+.s-Roezec-SociosDialog .caption {
+  width: 150px;
+}
 .s-Kairos-KrsEmpleadosDialog > .size {
   width: 650px;
 }

@@ -24,14 +24,6 @@ namespace ProyectosZec.Roezec {
             // need to register this plugin for grouping or you'll have errors
             grid.registerPlugin(new Slick.Data.GroupItemMetadataProvider());
 
-            //// sumamos Objetivo Empleo y de Inversión
-            //this.view.setSummaryOptions({
-            //    aggregators: [
-            //        new Slick.Aggregators.Sum(ActividadesRow.Fields.ObjetivoEmpleo),
-            //        new Slick.Aggregators.Sum(ActividadesRow.Fields.ObjetivoInversion)
-            //    ]
-            //});
-            // Declaramos que el Grid puedes seleccionar fila
             grid.setSelectionModel(new Slick.RowSelectionModel());
 
             return grid;
@@ -43,17 +35,8 @@ namespace ProyectosZec.Roezec {
             opt.enableTextSelectionOnCells = true;
             opt.selectedCellCssClass = "slick-row-selected";
             opt.enableCellNavigation = true;
-            // Fin Fila Seleccionable
-            // Mostrar Pie
-            //opt.showFooterRow = true;
-            // Fin de Mostrar Pie de página
             return opt;
         }
-
-        //protected usePager() {
-        //    // Quitamos la paginación para que sume totales
-        //    return false;
-        //}
 
 
         // Botones Excel y Pdf
@@ -116,7 +99,7 @@ namespace ProyectosZec.Roezec {
                             getter: ActividadesRow.Fields.AnyoExpediente
                         }, {
                             formatter: x => 'Nace: ' + x.value + ' (' + x.count + ' Empresas)',
-                                getter: ActividadesRow.Fields.Actividad
+                            getter: ActividadesRow.Fields.Actividad
                         }])
                 }
             );
@@ -131,5 +114,6 @@ namespace ProyectosZec.Roezec {
             return buttons;
             // Fin añadidos
 
+        }
     }
 }

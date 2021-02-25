@@ -5,3 +5,5 @@ using MyPages = ProyectosZec.Roezec.Pages;
 [assembly: NavigationLink(int.MaxValue, "Roezec/Empresas", typeof(MyPages.RoezecEmpresasController), icon: "fa-industry")]
 [assembly: NavigationLink(int.MaxValue, "Roezec/Nace", typeof(MyPages.NacesController), icon: "fa-file-archive-o")]
 [assembly: NavigationLink(int.MaxValue, "Roezec/Empresas-Nace", typeof(MyPages.ActividadesController), icon: "fa-industry")]
+[assembly: NavigationLink(int.MaxValue, "Roezec/Representantes", typeof(MyPages.RepresentantesController), icon: "fa-users")]
+[assembly: NavigationLink(int.MaxValue, "Roezec/Socios", typeof(MyPages.SociosController), icon: "fa-users")]

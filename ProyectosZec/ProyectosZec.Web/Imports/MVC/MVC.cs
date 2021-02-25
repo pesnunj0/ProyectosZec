@@ -214,6 +214,11 @@ namespace MVC
                 public const string NacesIndex = "~/Modules/Roezec/Naces/NacesIndex.cshtml";
             }
 
+            public static class Representantes
+            {
+                public const string RepresentantesIndex = "~/Modules/Roezec/Representantes/RepresentantesIndex.cshtml";
+            }
+
             public static class RoezecEmpresas
             {
                 public const string RoezecEmpresasIndex = "~/Modules/Roezec/RoezecEmpresas/RoezecEmpresasIndex.cshtml";
@@ -222,6 +227,11 @@ namespace MVC
             public static class RoezecEstados
             {
                 public const string RoezecEstadosIndex = "~/Modules/Roezec/RoezecEstados/RoezecEstadosIndex.cshtml";
+            }
+
+            public static class Socios
+            {
+                public const string SociosIndex = "~/Modules/Roezec/Socios/SociosIndex.cshtml";
             }
         }
 

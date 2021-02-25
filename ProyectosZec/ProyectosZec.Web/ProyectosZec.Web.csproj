@@ -1123,6 +1123,9 @@
     <TypeScriptCompile Include="Imports\ServerTypings\Roezec.NacesColumns.ts">
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\Roezec.RepresentantesColumns.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
     <TypeScriptCompile Include="Imports\ServerTypings\Roezec.RoezecEmpresasColumns.ts">
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
@@ -1136,6 +1139,9 @@
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
     <TypeScriptCompile Include="Imports\ServerTypings\Roezec.RoezecEstadosColumns.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\Roezec.SociosColumns.ts">
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
     <TypeScriptCompile Include="Imports\ServerTypings\Texts.ts">
@@ -2000,6 +2006,30 @@
     <TypeScriptCompile Include="Imports\ServerTypings\Roezec.RoezecEstadosForm.ts">
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\Roezec.RepresentantesRow.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\Roezec.RepresentantesService.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <Content Include="Modules\Roezec\Representantes\RepresentantesIndex.cshtml" />
+    <TypeScriptCompile Include="Modules\Roezec\Representantes\RepresentantesDialog.ts" />
+    <TypeScriptCompile Include="Modules\Roezec\Representantes\RepresentantesGrid.ts" />
+    <TypeScriptCompile Include="Imports\ServerTypings\Roezec.RepresentantesForm.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\Roezec.SociosRow.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\Roezec.SociosService.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <Content Include="Modules\Roezec\Socios\SociosIndex.cshtml" />
+    <TypeScriptCompile Include="Modules\Roezec\Socios\SociosDialog.ts" />
+    <TypeScriptCompile Include="Modules\Roezec\Socios\SociosGrid.ts" />
+    <TypeScriptCompile Include="Imports\ServerTypings\Roezec.SociosForm.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Global.asax" />
@@ -2292,6 +2322,18 @@
     <Compile Include="Modules\Roezec\RoezecEstados\RoezecEstadosPage.cs" />
     <Compile Include="Modules\Roezec\RoezecEstados\RoezecEstadosColumns.cs" />
     <Compile Include="Modules\Roezec\RoezecEstados\RoezecEstadosForm.cs" />
+    <Compile Include="Modules\Roezec\Representantes\RepresentantesRow.cs" />
+    <Compile Include="Modules\Roezec\Representantes\RepresentantesRepository.cs" />
+    <Compile Include="Modules\Roezec\Representantes\RepresentantesEndpoint.cs" />
+    <Compile Include="Modules\Roezec\Representantes\RepresentantesPage.cs" />
+    <Compile Include="Modules\Roezec\Representantes\RepresentantesColumns.cs" />
+    <Compile Include="Modules\Roezec\Representantes\RepresentantesForm.cs" />
+    <Compile Include="Modules\Roezec\Socios\SociosRow.cs" />
+    <Compile Include="Modules\Roezec\Socios\SociosRepository.cs" />
+    <Compile Include="Modules\Roezec\Socios\SociosEndpoint.cs" />
+    <Compile Include="Modules\Roezec\Socios\SociosPage.cs" />
+    <Compile Include="Modules\Roezec\Socios\SociosColumns.cs" />
+    <Compile Include="Modules\Roezec\Socios\SociosForm.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\upload\" />

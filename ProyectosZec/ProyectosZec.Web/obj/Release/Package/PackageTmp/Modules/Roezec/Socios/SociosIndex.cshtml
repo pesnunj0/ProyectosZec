@@ -1,0 +1,13 @@
+﻿@{
+    ViewData["Title"] = Serenity.LocalText.Get("Db.Roezec.Socios.EntityPlural");
+}
+
+<div id="GridDiv"></div>
+
+<script type="text/javascript">
+    jQuery(function () {
+        new ProyectosZec.Roezec.SociosGrid($('#GridDiv'), {}).init();
+
+        Q.initFullHeightGridPage($('#GridDiv'));
+    });
+</script>

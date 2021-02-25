@@ -67,10 +67,10 @@ edite el archivo MSBuild. Visite https://go.microsoft.com/fwlink/?LinkID=208121 
       <publishTime>11/20/2020 15:16:02</publishTime>
     </File>
     <File Include="bin/ProyectosZec.Web.dll">
-      <publishTime>02/19/2021 13:12:46</publishTime>
+      <publishTime>02/24/2021 14:50:31</publishTime>
     </File>
     <File Include="bin/ProyectosZec.Web.pdb">
-      <publishTime>02/19/2021 13:12:46</publishTime>
+      <publishTime>02/24/2021 14:50:31</publishTime>
     </File>
     <File Include="bin/Renci.SshNet.dll">
       <publishTime>01/01/0001 00:00:00</publishTime>
@@ -1891,7 +1891,7 @@ edite el archivo MSBuild. Visite https://go.microsoft.com/fwlink/?LinkID=208121 
       <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="Content/site/site.css">
-      <publishTime>02/12/2021 13:48:32</publishTime>
+      <publishTime>02/19/2021 15:03:53</publishTime>
     </File>
     <File Include="Content/site/site.cuadromandos.css">
       <publishTime>01/01/0001 00:00:00</publishTime>
@@ -1942,7 +1942,7 @@ edite el archivo MSBuild. Visite https://go.microsoft.com/fwlink/?LinkID=208121 
       <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="Content/site/site.roezec.less">
-      <publishTime>02/12/2021 13:29:16</publishTime>
+      <publishTime>02/19/2021 14:30:53</publishTime>
     </File>
     <File Include="Content/site/site.rtl.css">
       <publishTime>01/01/0001 00:00:00</publishTime>
@@ -2197,7 +2197,7 @@ edite el archivo MSBuild. Visite https://go.microsoft.com/fwlink/?LinkID=208121 
       <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="Imports/ClientTypes/ClientTypes.log">
-      <publishTime>02/19/2021 11:59:34</publishTime>
+      <publishTime>02/23/2021 15:04:31</publishTime>
     </File>
     <File Include="Imports/CodeGenerationHelpers.ttinclude">
       <publishTime>01/01/0001 00:00:00</publishTime>
@@ -2343,11 +2343,17 @@ edite el archivo MSBuild. Visite https://go.microsoft.com/fwlink/?LinkID=208121 
     <File Include="Modules/Roezec/Naces/NacesIndex.cshtml">
       <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
+    <File Include="Modules/Roezec/Representantes/RepresentantesIndex.cshtml">
+      <publishTime>02/19/2021 14:30:51</publishTime>
+    </File>
     <File Include="Modules/Roezec/RoezecEmpresas/RoezecEmpresasIndex.cshtml">
       <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="Modules/Roezec/RoezecEstados/RoezecEstadosIndex.cshtml">
       <publishTime>02/12/2021 13:29:15</publishTime>
+    </File>
+    <File Include="Modules/Roezec/Socios/SociosIndex.cshtml">
+      <publishTime>02/19/2021 14:30:52</publishTime>
     </File>
     <File Include="Modules/Web.config">
       <publishTime>01/01/0001 00:00:00</publishTime>
@@ -3760,7 +3766,7 @@ edite el archivo MSBuild. Visite https://go.microsoft.com/fwlink/?LinkID=208121 
       <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="Scripts/site/ProyectosZec.Web.js">
-      <publishTime>02/19/2021 13:33:59</publishTime>
+      <publishTime>02/23/2021 15:04:57</publishTime>
     </File>
     <File Include="Scripts/site/ScriptBundles.json">
       <publishTime>01/01/0001 00:00:00</publishTime>
@@ -4213,7 +4219,7 @@ edite el archivo MSBuild. Visite https://go.microsoft.com/fwlink/?LinkID=208121 
       <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>02/19/2021 13:12:49</publishTime>
+      <publishTime>02/19/2021 15:13:49</publishTime>
     </File>
     <File Include="Welcome.htm">
       <publishTime>01/01/0001 00:00:00</publishTime>

@@ -31,7 +31,8 @@
         FechaAlta?: string;
         FechaModificacion?: string;
         FechaBaja?: string;
-        Situacion?: string;
+        SituacionId?: string;
+        Estado?: string;
         UsrAlta?: string;
         UsrModificacion?: string;
         UsrBaja?: string;
@@ -42,10 +43,10 @@
         export const idProperty = 'Id';
         export const nameProperty = 'Actividad';
         export const localTextPrefix = 'Roezec.Actividades';
-        export const deletePermission = 'Roezec:Read';
-        export const insertPermission = 'Roezec:Read';
+        export const deletePermission = 'Roezec:Delete';
+        export const insertPermission = 'Roezec:Insert';
         export const readPermission = 'Roezec:Read';
-        export const updatePermission = 'Roezec:Read';
+        export const updatePermission = 'Roezec:Modify';
 
         export declare const enum Fields {
             Id = "Id",
@@ -79,7 +80,8 @@
             FechaAlta = "FechaAlta",
             FechaModificacion = "FechaModificacion",
             FechaBaja = "FechaBaja",
-            Situacion = "Situacion",
+            SituacionId = "SituacionId",
+            Estado = "Estado",
             UsrAlta = "UsrAlta",
             UsrModificacion = "UsrModificacion",
             UsrBaja = "UsrBaja",
