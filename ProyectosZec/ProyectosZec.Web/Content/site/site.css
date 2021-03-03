@@ -7747,3 +7747,23 @@ section.content > .s-DataGrid {
   background-color: green;
   color: #fff;
 }
+.s-Kairos-ExtrasGrid .discontinued .slick-cell,
+.s-Kairos-ExtrasGrid .discontinued .slick-cell a {
+  color: lightgray;
+}
+.s-Kairos-ExtrasGrid .rechazada .slick-cell,
+.s-Kairos-ExtrasGrid .rechazada .slick-cell a {
+  background-color: #ffaaaa;
+  color: red;
+}
+.s-Kairos-ExtrasGrid .aceptada .slick-cell,
+.s-Kairos-ExtrasGrid .aceptada .slick-cell a {
+  background-color: green;
+  color: #fff;
+}
+.s-Kairos-ExtrasDialog > .size {
+  width: 650px;
+}
+.s-Kairos-ExtrasDialog .caption {
+  width: 150px;
+}

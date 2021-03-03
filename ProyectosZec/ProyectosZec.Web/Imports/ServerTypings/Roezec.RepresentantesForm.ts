@@ -12,7 +12,7 @@
         Email: Serenity.StringEditor;
         Telefono: Serenity.StringEditor;
         Descripcion: Serenity.StringEditor;
-        IdEmpresa: Serenity.IntegerEditor;
+        IdEmpresa: Serenity.LookupEditor;
         FechaAlta: Serenity.DateEditor;
         FechaModificacion: Serenity.DateEditor;
         FechaBaja: Serenity.DateEditor;
@@ -35,7 +35,8 @@
                 var s = Serenity;
                 var w0 = s.StringEditor;
                 var w1 = s.IntegerEditor;
-                var w2 = s.DateEditor;
+                var w2 = s.LookupEditor;
+                var w3 = s.DateEditor;
 
                 Q.initFormType(RepresentantesForm, [
                     'TipoDoc', w0,
@@ -50,10 +51,10 @@
                     'Email', w0,
                     'Telefono', w0,
                     'Descripcion', w0,
-                    'IdEmpresa', w1,
-                    'FechaAlta', w2,
-                    'FechaModificacion', w2,
-                    'FechaBaja', w2,
+                    'IdEmpresa', w2,
+                    'FechaAlta', w3,
+                    'FechaModificacion', w3,
+                    'FechaBaja', w3,
                     'UsrAlta', w0,
                     'UsrModificacion', w0,
                     'UsrBaja', w0,

@@ -5,7 +5,7 @@ namespace ProyectosZec.Inmovilizado {
     // Añadido para los filtros multiples
     @Serenity.Decorators.filterable()
     // Fin Añadido
-    @Serenity.Decorators.registerClass()
+    
     export class InmovilizadosGrid extends Serenity.EntityGrid<InmovilizadosRow, any> {
         protected getColumnsKey() { return 'Inmovilizado.Inmovilizados'; }
         protected getDialogType() { return InmovilizadosDialog; }

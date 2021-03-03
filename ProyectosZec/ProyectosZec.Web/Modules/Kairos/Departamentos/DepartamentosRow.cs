@@ -11,8 +11,11 @@ namespace ProyectosZec.Kairos.Entities
 
     [ConnectionKey("Kairos"), Module("Kairos"), TableName("[dbo].[KRS_Departamentos]")]
     [DisplayName("Departamentos"), InstanceName("Departamentos")]
-    [ReadPermission("Kairos:General")]
-    [ModifyPermission("Kairos:General")]
+    [ReadPermission("Kairos:Read")]
+    [ModifyPermission("Kairos:Modify")]
+    [InsertPermission("Kairos:Insert")]
+    [DeletePermission("Kairos:Delete")]
+
     public sealed class DepartamentosRow : Row, IIdRow, INameRow
     {
         [DisplayName("Id"), Column("id"), PrimaryKey]

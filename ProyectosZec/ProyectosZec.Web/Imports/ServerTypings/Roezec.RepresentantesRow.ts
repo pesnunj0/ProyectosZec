@@ -21,6 +21,28 @@
         UsrModificacion?: string;
         UsrBaja?: string;
         MotivoBaja?: string;
+        Empresa?: string;
+        Cif?: string;
+        Isla?: string;
+        NotasMarginales?: string;
+        AnyoExpediente?: number;
+        NumExpediente?: number;
+        Agencia?: number;
+        Tecnico?: string;
+        FormaJuridica?: string;
+        Superficie?: number;
+        ExentaAreaAcotada?: string;
+        MotivosExencion?: string;
+        ObjetivoEmpleo?: number;
+        ObjetivoInversion?: number;
+        ObservacionesEmpleo?: string;
+        ObservacionesInversion?: string;
+        PreEmpleo?: number;
+        PreInversion?: number;
+        TrasEmpleo?: number;
+        TrasInversion?: number;
+        SituacionId?: string;
+        Estado?: string;
     }
 
     export namespace RepresentantesRow {
@@ -53,7 +75,29 @@
             UsrAlta = "UsrAlta",
             UsrModificacion = "UsrModificacion",
             UsrBaja = "UsrBaja",
-            MotivoBaja = "MotivoBaja"
+            MotivoBaja = "MotivoBaja",
+            Empresa = "Empresa",
+            Cif = "Cif",
+            Isla = "Isla",
+            NotasMarginales = "NotasMarginales",
+            AnyoExpediente = "AnyoExpediente",
+            NumExpediente = "NumExpediente",
+            Agencia = "Agencia",
+            Tecnico = "Tecnico",
+            FormaJuridica = "FormaJuridica",
+            Superficie = "Superficie",
+            ExentaAreaAcotada = "ExentaAreaAcotada",
+            MotivosExencion = "MotivosExencion",
+            ObjetivoEmpleo = "ObjetivoEmpleo",
+            ObjetivoInversion = "ObjetivoInversion",
+            ObservacionesEmpleo = "ObservacionesEmpleo",
+            ObservacionesInversion = "ObservacionesInversion",
+            PreEmpleo = "PreEmpleo",
+            PreInversion = "PreInversion",
+            TrasEmpleo = "TrasEmpleo",
+            TrasInversion = "TrasInversion",
+            SituacionId = "SituacionId",
+            Estado = "Estado"
         }
     }
 }

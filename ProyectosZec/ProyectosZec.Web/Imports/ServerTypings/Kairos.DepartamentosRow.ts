@@ -12,10 +12,10 @@
         export const idProperty = 'Id';
         export const nameProperty = 'Codigo';
         export const localTextPrefix = 'Kairos.Departamentos';
-        export const deletePermission = 'Kairos:General';
-        export const insertPermission = 'Kairos:General';
-        export const readPermission = 'Kairos:General';
-        export const updatePermission = 'Kairos:General';
+        export const deletePermission = 'Kairos:Delete';
+        export const insertPermission = 'Kairos:Insert';
+        export const readPermission = 'Kairos:Read';
+        export const updatePermission = 'Kairos:Modify';
 
         export declare const enum Fields {
             Id = "Id",

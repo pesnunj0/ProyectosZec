@@ -1496,10 +1496,10 @@ declare namespace ProyectosZec.Kairos {
         const idProperty = "Id";
         const nameProperty = "Codigo";
         const localTextPrefix = "Kairos.Departamentos";
-        const deletePermission = "Kairos:General";
-        const insertPermission = "Kairos:General";
-        const readPermission = "Kairos:General";
-        const updatePermission = "Kairos:General";
+        const deletePermission = "Kairos:Delete";
+        const insertPermission = "Kairos:Insert";
+        const readPermission = "Kairos:Read";
+        const updatePermission = "Kairos:Modify";
         const enum Fields {
             Id = "Id",
             CodigoCliente = "CodigoCliente",
@@ -1596,6 +1596,105 @@ declare namespace ProyectosZec.Kairos {
             Delete = "Kairos/Diario/Delete",
             Retrieve = "Kairos/Diario/Retrieve",
             List = "Kairos/Diario/List"
+        }
+    }
+}
+declare namespace ProyectosZec.Kairos {
+}
+declare namespace ProyectosZec.Kairos {
+    interface ExtrasForm {
+        CodigoCliente: Serenity.StringEditor;
+        IdEmpleado: Serenity.StringEditor;
+        Fecha: Serenity.DateEditor;
+        IdHoraExtraCabecera: Serenity.StringEditor;
+        Tipo: Serenity.IntegerEditor;
+        TotalHorasExtrasReales: Serenity.DecimalEditor;
+        TotalHorasExtrasConvertidas: Serenity.DecimalEditor;
+        IdAusenciaProgramadaTipo: Serenity.StringEditor;
+        Dia: Serenity.StringEditor;
+        Estado: Serenity.StringEditor;
+        MotivoCancelacion: Serenity.StringEditor;
+        FechaAceptacionCancelacion: Serenity.DateEditor;
+    }
+    class ExtrasForm extends Serenity.PrefixedContext {
+        static formKey: string;
+        private static init;
+        constructor(prefix: string);
+    }
+}
+declare namespace ProyectosZec.Kairos {
+    interface ExtrasRow {
+        Id?: number;
+        CodigoCliente?: number;
+        IdEmpleado?: number;
+        Fecha?: string;
+        IdHoraExtraCabecera?: number;
+        Tipo?: number;
+        TotalHorasExtrasReales?: number;
+        TotalHorasExtrasConvertidas?: number;
+        IdAusenciaProgramadaTipo?: number;
+        Dia?: string;
+        Estado?: string;
+        MotivoCancelacion?: string;
+        FechaAceptacionCancelacion?: string;
+        IdHoraExtraCabeceraCodigoCliente?: number;
+        IdHoraExtraCabeceraCodigo?: string;
+        IdHoraExtraCabeceraDescripcion?: string;
+        IdHoraExtraCabeceraFechaBorrado?: string;
+        Empleado?: string;
+        DptoId?: number;
+        SedeId?: number;
+        Sede?: string;
+        Convertidas?: string;
+    }
+    namespace ExtrasRow {
+        const idProperty = "Id";
+        const nameProperty = "Dia";
+        const localTextPrefix = "Kairos.Extras";
+        const deletePermission = "Kairos:Delete";
+        const insertPermission = "Kairos:Insert";
+        const readPermission = "Kairos:Read";
+        const updatePermission = "Kairos:Modify";
+        const enum Fields {
+            Id = "Id",
+            CodigoCliente = "CodigoCliente",
+            IdEmpleado = "IdEmpleado",
+            Fecha = "Fecha",
+            IdHoraExtraCabecera = "IdHoraExtraCabecera",
+            Tipo = "Tipo",
+            TotalHorasExtrasReales = "TotalHorasExtrasReales",
+            TotalHorasExtrasConvertidas = "TotalHorasExtrasConvertidas",
+            IdAusenciaProgramadaTipo = "IdAusenciaProgramadaTipo",
+            Dia = "Dia",
+            Estado = "Estado",
+            MotivoCancelacion = "MotivoCancelacion",
+            FechaAceptacionCancelacion = "FechaAceptacionCancelacion",
+            IdHoraExtraCabeceraCodigoCliente = "IdHoraExtraCabeceraCodigoCliente",
+            IdHoraExtraCabeceraCodigo = "IdHoraExtraCabeceraCodigo",
+            IdHoraExtraCabeceraDescripcion = "IdHoraExtraCabeceraDescripcion",
+            IdHoraExtraCabeceraFechaBorrado = "IdHoraExtraCabeceraFechaBorrado",
+            Empleado = "Empleado",
+            DptoId = "DptoId",
+            SedeId = "SedeId",
+            Sede = "Sede",
+            Convertidas = "Convertidas"
+        }
+    }
+}
+declare namespace ProyectosZec.Kairos {
+    namespace ExtrasService {
+        const baseUrl = "Kairos/Extras";
+        function Create(request: Serenity.SaveRequest<ExtrasRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Update(request: Serenity.SaveRequest<ExtrasRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<ExtrasRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<ExtrasRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        const enum Methods {
+            Create = "Kairos/Extras/Create",
+            Update = "Kairos/Extras/Update",
+            Delete = "Kairos/Extras/Delete",
+            Retrieve = "Kairos/Extras/Retrieve",
+            List = "Kairos/Extras/List"
         }
     }
 }
@@ -2211,7 +2310,7 @@ declare namespace ProyectosZec.Roezec {
         Email: Serenity.StringEditor;
         Telefono: Serenity.StringEditor;
         Descripcion: Serenity.StringEditor;
-        IdEmpresa: Serenity.IntegerEditor;
+        IdEmpresa: Serenity.LookupEditor;
         FechaAlta: Serenity.DateEditor;
         FechaModificacion: Serenity.DateEditor;
         FechaBaja: Serenity.DateEditor;
@@ -2249,6 +2348,28 @@ declare namespace ProyectosZec.Roezec {
         UsrModificacion?: string;
         UsrBaja?: string;
         MotivoBaja?: string;
+        Empresa?: string;
+        Cif?: string;
+        Isla?: string;
+        NotasMarginales?: string;
+        AnyoExpediente?: number;
+        NumExpediente?: number;
+        Agencia?: number;
+        Tecnico?: string;
+        FormaJuridica?: string;
+        Superficie?: number;
+        ExentaAreaAcotada?: string;
+        MotivosExencion?: string;
+        ObjetivoEmpleo?: number;
+        ObjetivoInversion?: number;
+        ObservacionesEmpleo?: string;
+        ObservacionesInversion?: string;
+        PreEmpleo?: number;
+        PreInversion?: number;
+        TrasEmpleo?: number;
+        TrasInversion?: number;
+        SituacionId?: string;
+        Estado?: string;
     }
     namespace RepresentantesRow {
         const idProperty = "Id";
@@ -2279,7 +2400,29 @@ declare namespace ProyectosZec.Roezec {
             UsrAlta = "UsrAlta",
             UsrModificacion = "UsrModificacion",
             UsrBaja = "UsrBaja",
-            MotivoBaja = "MotivoBaja"
+            MotivoBaja = "MotivoBaja",
+            Empresa = "Empresa",
+            Cif = "Cif",
+            Isla = "Isla",
+            NotasMarginales = "NotasMarginales",
+            AnyoExpediente = "AnyoExpediente",
+            NumExpediente = "NumExpediente",
+            Agencia = "Agencia",
+            Tecnico = "Tecnico",
+            FormaJuridica = "FormaJuridica",
+            Superficie = "Superficie",
+            ExentaAreaAcotada = "ExentaAreaAcotada",
+            MotivosExencion = "MotivosExencion",
+            ObjetivoEmpleo = "ObjetivoEmpleo",
+            ObjetivoInversion = "ObjetivoInversion",
+            ObservacionesEmpleo = "ObservacionesEmpleo",
+            ObservacionesInversion = "ObservacionesInversion",
+            PreEmpleo = "PreEmpleo",
+            PreInversion = "PreInversion",
+            TrasEmpleo = "TrasEmpleo",
+            TrasInversion = "TrasInversion",
+            SituacionId = "SituacionId",
+            Estado = "Estado"
         }
     }
 }
@@ -2785,11 +2928,13 @@ declare namespace ProyectosZec.Administration {
         protected getButtons(): Serenity.ToolButton[];
         protected createToolbarExtensions(): void;
         private getSortedGroupAndPermissionKeys;
-        value: UserPermissionRow[];
+        get value(): UserPermissionRow[];
+        set value(value: UserPermissionRow[]);
         private _rolePermissions;
-        rolePermissions: string[];
+        get rolePermissions(): string[];
+        set rolePermissions(value: string[]);
         private _implicitPermissions;
-        implicitPermissions: Q.Dictionary<string[]>;
+        set implicitPermissions(value: Q.Dictionary<string[]>);
     }
     interface PermissionCheckEditorOptions {
         showRevoke?: boolean;
@@ -2845,9 +2990,12 @@ declare namespace ProyectosZec {
     class BasicProgressDialog extends Serenity.TemplatedDialog<any> {
         constructor();
         cancelled: boolean;
-        max: number;
-        value: number;
-        title: string;
+        get max(): number;
+        set max(value: number);
+        get value(): number;
+        set value(value: number);
+        get title(): string;
+        set title(value: string);
         cancelTitle: string;
         getDialogOptions(): JQueryUI.DialogOptions;
         initDialog(): void;
@@ -2934,7 +3082,8 @@ declare namespace ProyectosZec.Common {
         protected editItem(entityOrId: any): void;
         getEditValue(property: any, target: any): void;
         setEditValue(source: any, property: any): void;
-        value: TEntity[];
+        get value(): TEntity[];
+        set value(value: TEntity[]);
         protected getGridCanLoad(): boolean;
         protected usePager(): boolean;
         protected getInitialTitle(): any;
@@ -3554,6 +3703,40 @@ declare namespace ProyectosZec.Kairos {
     }
 }
 declare namespace ProyectosZec.Kairos {
+    class ExtrasDialog extends Serenity.EntityDialog<ExtrasRow, any> {
+        protected getFormKey(): string;
+        protected getIdProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected getNameProperty(): string;
+        protected getService(): string;
+        protected getDeletePermission(): string;
+        protected getInsertPermission(): string;
+        protected getUpdatePermission(): string;
+        protected form: ExtrasForm;
+    }
+}
+declare namespace ProyectosZec.Kairos {
+    class ExtrasGrid extends Serenity.EntityGrid<ExtrasRow, any> {
+        protected getColumnsKey(): string;
+        protected getDialogType(): typeof ExtrasDialog;
+        protected getIdProperty(): string;
+        protected getInsertPermission(): string;
+        protected getLocalTextPrefix(): string;
+        protected getService(): string;
+        constructor(container: JQuery);
+        protected createSlickGrid(): Slick.Grid;
+        protected getSlickOptions(): Slick.GridOptions;
+        protected usePager(): boolean;
+        getButtons(): Serenity.ToolButton[];
+        /**
+ * This method is called for all rows
+ * @param item Data item for current row
+ * @param index Index of the row in grid
+ */
+        protected getItemCssClass(item: Kairos.ExtrasRow, index: number): string;
+    }
+}
+declare namespace ProyectosZec.Kairos {
     class FichajesDialog extends Serenity.EntityDialog<FichajesRow, any> {
         protected getFormKey(): string;
         protected getIdProperty(): string;
@@ -3728,6 +3911,7 @@ declare namespace ProyectosZec.Roezec {
         protected getLocalTextPrefix(): string;
         protected getService(): string;
         constructor(container: JQuery);
+        getButtons(): Serenity.ToolButton[];
     }
 }
 declare namespace ProyectosZec.Roezec {
@@ -3804,5 +3988,6 @@ declare namespace ProyectosZec.Roezec {
         protected getLocalTextPrefix(): string;
         protected getService(): string;
         constructor(container: JQuery);
+        getButtons(): Serenity.ToolButton[];
     }
 }

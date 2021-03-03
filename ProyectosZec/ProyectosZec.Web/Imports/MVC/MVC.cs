@@ -151,6 +151,11 @@ namespace MVC
                 public const string DiarioIndex = "~/Modules/Kairos/Diario/DiarioIndex.cshtml";
             }
 
+            public static class Extras
+            {
+                public const string ExtrasIndex = "~/Modules/Kairos/Extras/ExtrasIndex.cshtml";
+            }
+
             public static class Fichajes
             {
                 public const string FichajesIndex = "~/Modules/Kairos/Fichajes/FichajesIndex.cshtml";

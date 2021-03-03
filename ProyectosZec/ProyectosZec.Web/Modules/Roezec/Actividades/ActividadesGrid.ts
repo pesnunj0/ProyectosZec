@@ -46,7 +46,7 @@ namespace ProyectosZec.Roezec {
             buttons.push(ProyectosZec.Common.ExcelExportHelper.createToolButton({
                 grid: this,
                 onViewSubmit: () => this.onViewSubmit(),
-                service: 'Roezec/RoezecEmpresas/ListExcel',
+                service: 'Roezec/Actividades/ListExcel',
                 separator: true
             }));
 

@@ -5,8 +5,6 @@ namespace ProyectosZec.Roezec {
     // Añadido para los filtros multiples
     @Serenity.Decorators.filterable()
     // Fin Añadido
-
-    @Serenity.Decorators.registerClass()
     export class SociosGrid extends Serenity.EntityGrid<SociosRow, any> {
         protected getColumnsKey() { return 'Roezec.Socios'; }
         protected getDialogType() { return SociosDialog; }
@@ -17,6 +15,26 @@ namespace ProyectosZec.Roezec {
 
         constructor(container: JQuery) {
             super(container);
+        }
+        // Botones Excel y Pdf
+        getButtons() {
+            var buttons = super.getButtons();
+
+            buttons.push(ProyectosZec.Common.ExcelExportHelper.createToolButton({
+                grid: this,
+                onViewSubmit: () => this.onViewSubmit(),
+                service: 'Roezec/Socios/ListExcel',
+                separator: true
+            }));
+
+            buttons.push(ProyectosZec.Common.PdfExportHelper.createToolButton({
+                grid: this,
+                onViewSubmit: () => this.onViewSubmit()
+            }));
+
+            return buttons;
+            // Fin añadidos
+
         }
     }
 }
