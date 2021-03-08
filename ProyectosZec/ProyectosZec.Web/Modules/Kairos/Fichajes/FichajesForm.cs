@@ -32,5 +32,6 @@ namespace ProyectosZec.Kairos.Forms
         public Int32 TipoDispositivo { get; set; }
         public String EntradaSalida { get; set; }
         public Int64 IdEmpresa { get; set; }
+        public String Files { get; set; }
     }
 }

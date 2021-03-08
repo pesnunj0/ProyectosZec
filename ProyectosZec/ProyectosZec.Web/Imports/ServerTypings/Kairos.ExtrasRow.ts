@@ -22,6 +22,7 @@
         SedeId?: number;
         Sede?: string;
         Convertidas?: string;
+        EstadoDesc?: string;
     }
 
     export namespace ExtrasRow {
@@ -55,7 +56,8 @@
             DptoId = "DptoId",
             SedeId = "SedeId",
             Sede = "Sede",
-            Convertidas = "Convertidas"
+            Convertidas = "Convertidas",
+            EstadoDesc = "EstadoDesc"
         }
     }
 }

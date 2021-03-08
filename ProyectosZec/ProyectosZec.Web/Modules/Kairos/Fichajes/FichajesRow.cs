@@ -12,7 +12,7 @@ namespace ProyectosZec.Kairos.Entities
     [ConnectionKey("Kairos"), Module("Kairos"), TableName("[dbo].[KRSS_Fichajes]")]
     [DisplayName("Fichajes"), InstanceName("Fichajes")]
     [ReadPermission("Kairos:Read")]
-    [ModifyPermission("Kairos:Modify")]
+    [ModifyPermission("Kairos:Admin")]
     [InsertPermission("Kairos:Insert")]
     [DeletePermission("Kairos:Delete")]
     public sealed class FichajesRow : Row, IIdRow, INameRow
@@ -24,8 +24,8 @@ namespace ProyectosZec.Kairos.Entities
             set { Fields.Id[this] = value; }
         }
 
-        [DisplayName("Id Empleado"), Column("idEmpleado"), ForeignKey("[dbo].Krs_Empleados", "Id"), LeftJoin("jEmpleados")]
-        
+        [DisplayName("Empleado"), Column("idEmpleado"), ForeignKey("[dbo].Krs_Empleados", "Id"), LeftJoin("jEmpleados")]
+        [LookupEditor("Kairos.KrsEmpleados")]
         public Int64? IdEmpleado
         {
             get { return Fields.IdEmpleado[this]; }
@@ -352,6 +352,13 @@ namespace ProyectosZec.Kairos.Entities
             set { Fields.IdDispositivoModeloFechaBorrado[this] = value; }
         }
 
+        [DisplayName("Ficheros"), Size(100), MultipleFileUploadEditor(FilenameFormat = "Kairos/Files/~", ScaleWidth = 800, ScaleHeight = 600)]
+        public string Files
+        {
+            get { return Fields.Files[this]; }
+            set { Fields.Files[this] = value; }
+        }
+
         IIdField IIdRow.IdField
         {
             get { return Fields.Id; }
@@ -421,6 +428,7 @@ namespace ProyectosZec.Kairos.Entities
             public StringField Sede;
             public StringField Dispositivo;
             public StringField Fichaje;
+            public readonly StringField Files;
         }
     }
 }

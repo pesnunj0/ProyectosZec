@@ -9,7 +9,7 @@
         TotalHorasExtrasConvertidas: Serenity.DecimalEditor;
         IdAusenciaProgramadaTipo: Serenity.StringEditor;
         Dia: Serenity.StringEditor;
-        Estado: Serenity.StringEditor;
+        Estado: Serenity.LookupEditor;
         MotivoCancelacion: Serenity.StringEditor;
         FechaAceptacionCancelacion: Serenity.DateEditor;
     }
@@ -29,6 +29,7 @@
                 var w1 = s.DateEditor;
                 var w2 = s.IntegerEditor;
                 var w3 = s.DecimalEditor;
+                var w4 = s.LookupEditor;
 
                 Q.initFormType(ExtrasForm, [
                     'CodigoCliente', w0,
@@ -40,7 +41,7 @@
                     'TotalHorasExtrasConvertidas', w3,
                     'IdAusenciaProgramadaTipo', w0,
                     'Dia', w0,
-                    'Estado', w0,
+                    'Estado', w4,
                     'MotivoCancelacion', w0,
                     'FechaAceptacionCancelacion', w1
                 ]);

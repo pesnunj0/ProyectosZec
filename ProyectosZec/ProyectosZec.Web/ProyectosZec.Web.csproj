@@ -1108,6 +1108,9 @@
     <TypeScriptCompile Include="Imports\ServerTypings\Kairos.DiarioColumns.ts">
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\Kairos.EstadosExtrasColumns.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
     <TypeScriptCompile Include="Imports\ServerTypings\Kairos.ExtrasColumns.ts">
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
@@ -1858,7 +1861,6 @@
     <TypeScriptCompile Include="Imports\ServerTypings\Intranet.TelefonosForm.ts">
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
-    <Content Include="Content\site\site.unmovilizado.less" />
     <TypeScriptCompile Include="Imports\ServerTypings\Inmovilizado.ProveedoresRow.ts">
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
@@ -2043,6 +2045,18 @@
     <TypeScriptCompile Include="Modules\Kairos\Extras\ExtrasDialog.ts" />
     <TypeScriptCompile Include="Modules\Kairos\Extras\ExtrasGrid.ts" />
     <TypeScriptCompile Include="Imports\ServerTypings\Kairos.ExtrasForm.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\Kairos.EstadosExtrasRow.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\Kairos.EstadosExtrasService.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <Content Include="Modules\Kairos\EstadosExtras\EstadosExtrasIndex.cshtml" />
+    <TypeScriptCompile Include="Modules\Kairos\EstadosExtras\EstadosExtrasDialog.ts" />
+    <TypeScriptCompile Include="Modules\Kairos\EstadosExtras\EstadosExtrasGrid.ts" />
+    <TypeScriptCompile Include="Imports\ServerTypings\Kairos.EstadosExtrasForm.ts">
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
   </ItemGroup>
@@ -2355,6 +2369,12 @@
     <Compile Include="Modules\Kairos\Extras\ExtrasPage.cs" />
     <Compile Include="Modules\Kairos\Extras\ExtrasColumns.cs" />
     <Compile Include="Modules\Kairos\Extras\ExtrasForm.cs" />
+    <Compile Include="Modules\Kairos\EstadosExtras\EstadosExtrasRow.cs" />
+    <Compile Include="Modules\Kairos\EstadosExtras\EstadosExtrasRepository.cs" />
+    <Compile Include="Modules\Kairos\EstadosExtras\EstadosExtrasEndpoint.cs" />
+    <Compile Include="Modules\Kairos\EstadosExtras\EstadosExtrasPage.cs" />
+    <Compile Include="Modules\Kairos\EstadosExtras\EstadosExtrasColumns.cs" />
+    <Compile Include="Modules\Kairos\EstadosExtras\EstadosExtrasForm.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\upload\" />

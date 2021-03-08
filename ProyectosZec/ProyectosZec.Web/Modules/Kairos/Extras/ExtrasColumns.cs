@@ -39,7 +39,8 @@ namespace ProyectosZec.Kairos.Columns
         public Int64 IdAusenciaProgramadaTipo { get; set; }
         [Hidden]
         public String Dia { get; set; }
-        public String Estado { get; set; }
+        [Width(110), QuickFilter]
+        public String EstadoDesc { get; set; }
         public String MotivoCancelacion { get; set; }
         public DateTime FechaAceptacionCancelacion { get; set; }
     }

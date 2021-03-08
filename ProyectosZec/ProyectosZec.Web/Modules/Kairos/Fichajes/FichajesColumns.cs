@@ -30,7 +30,7 @@ namespace ProyectosZec.Kairos.Columns
         [DisplayName("Fecha"), QuickFilter, DisplayFormat("d")]
         public DateTime Fecha { get; set; }
 
-        [DisplayName("Hora"), Width(80)]
+        [DisplayName("Hora"), Width(80),AlignRight]
         public String Hora { get; set; }
         [QuickFilter, Width(90), DisplayName("Fichaje")]
         public String Fichaje { get; set; }

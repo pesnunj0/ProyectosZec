@@ -7744,7 +7744,7 @@ section.content > .s-DataGrid {
   color: #000;
 }
 .s-Kairos-DiarioGrid .low-price .col-unit-price {
-  background-color: green;
+  background-color: mediumseagreen;
   color: #fff;
 }
 .s-Kairos-ExtrasGrid .discontinued .slick-cell,
@@ -7765,5 +7765,11 @@ section.content > .s-DataGrid {
   width: 650px;
 }
 .s-Kairos-ExtrasDialog .caption {
+  width: 150px;
+}
+.s-Kairos-EstadosExtrasDialog > .size {
+  width: 650px;
+}
+.s-Kairos-EstadosExtrasDialog .caption {
   width: 150px;
 }

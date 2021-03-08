@@ -67,10 +67,10 @@ edite el archivo MSBuild. Visite https://go.microsoft.com/fwlink/?LinkID=208121 
       <publishTime>11/20/2020 15:16:02</publishTime>
     </File>
     <File Include="bin/ProyectosZec.Web.dll">
-      <publishTime>03/03/2021 13:04:56</publishTime>
+      <publishTime>03/08/2021 08:53:12</publishTime>
     </File>
     <File Include="bin/ProyectosZec.Web.pdb">
-      <publishTime>03/03/2021 13:04:56</publishTime>
+      <publishTime>03/08/2021 08:53:12</publishTime>
     </File>
     <File Include="bin/Renci.SshNet.dll">
       <publishTime>01/01/0001 00:00:00</publishTime>
@@ -1891,7 +1891,7 @@ edite el archivo MSBuild. Visite https://go.microsoft.com/fwlink/?LinkID=208121 
       <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="Content/site/site.css">
-      <publishTime>03/01/2021 15:04:20</publishTime>
+      <publishTime>03/03/2021 14:46:24</publishTime>
     </File>
     <File Include="Content/site/site.cuadromandos.css">
       <publishTime>01/01/0001 00:00:00</publishTime>
@@ -1924,7 +1924,7 @@ edite el archivo MSBuild. Visite https://go.microsoft.com/fwlink/?LinkID=208121 
       <publishTime>02/12/2021 09:01:15</publishTime>
     </File>
     <File Include="Content/site/site.kairos.less">
-      <publishTime>03/01/2021 15:04:05</publishTime>
+      <publishTime>03/03/2021 14:33:50</publishTime>
     </File>
     <File Include="Content/site/site.kairos.min.css">
       <publishTime>02/12/2021 09:01:32</publishTime>
@@ -2197,7 +2197,7 @@ edite el archivo MSBuild. Visite https://go.microsoft.com/fwlink/?LinkID=208121 
       <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="Imports/ClientTypes/ClientTypes.log">
-      <publishTime>03/03/2021 12:59:44</publishTime>
+      <publishTime>03/08/2021 08:08:07</publishTime>
     </File>
     <File Include="Imports/CodeGenerationHelpers.ttinclude">
       <publishTime>01/01/0001 00:00:00</publishTime>
@@ -2288,6 +2288,9 @@ edite el archivo MSBuild. Visite https://go.microsoft.com/fwlink/?LinkID=208121 
     </File>
     <File Include="Modules/Kairos/Diario/DiarioIndex.cshtml">
       <publishTime>02/02/2021 13:29:05</publishTime>
+    </File>
+    <File Include="Modules/Kairos/EstadosExtras/EstadosExtrasIndex.cshtml">
+      <publishTime>03/03/2021 14:31:19</publishTime>
     </File>
     <File Include="Modules/Kairos/Extras/ExtrasIndex.cshtml">
       <publishTime>02/26/2021 12:25:46</publishTime>
@@ -3778,7 +3781,7 @@ edite el archivo MSBuild. Visite https://go.microsoft.com/fwlink/?LinkID=208121 
       <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="Scripts/site/ProyectosZec.Web.js">
-      <publishTime>03/03/2021 13:00:12</publishTime>
+      <publishTime>03/08/2021 08:08:33</publishTime>
     </File>
     <File Include="Scripts/site/ScriptBundles.json">
       <publishTime>01/01/0001 00:00:00</publishTime>

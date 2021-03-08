@@ -1602,6 +1602,56 @@ declare namespace ProyectosZec.Kairos {
 declare namespace ProyectosZec.Kairos {
 }
 declare namespace ProyectosZec.Kairos {
+    interface EstadosExtrasForm {
+        Descripcion: Serenity.StringEditor;
+    }
+    class EstadosExtrasForm extends Serenity.PrefixedContext {
+        static formKey: string;
+        private static init;
+        constructor(prefix: string);
+    }
+}
+declare namespace ProyectosZec.Kairos {
+    interface EstadosExtrasRow {
+        EstadoId?: string;
+        Descripcion?: string;
+    }
+    namespace EstadosExtrasRow {
+        const idProperty = "EstadoId";
+        const nameProperty = "Descripcion";
+        const localTextPrefix = "Kairos.EstadosExtras";
+        const lookupKey = "Kairos.EstadosExtras";
+        function getLookup(): Q.Lookup<EstadosExtrasRow>;
+        const deletePermission = "Kairos:Delete";
+        const insertPermission = "Kairos:Insert";
+        const readPermission = "Kairos:Read";
+        const updatePermission = "Kairos:Modify";
+        const enum Fields {
+            EstadoId = "EstadoId",
+            Descripcion = "Descripcion"
+        }
+    }
+}
+declare namespace ProyectosZec.Kairos {
+    namespace EstadosExtrasService {
+        const baseUrl = "Kairos/EstadosExtras";
+        function Create(request: Serenity.SaveRequest<EstadosExtrasRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Update(request: Serenity.SaveRequest<EstadosExtrasRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<EstadosExtrasRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<EstadosExtrasRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        const enum Methods {
+            Create = "Kairos/EstadosExtras/Create",
+            Update = "Kairos/EstadosExtras/Update",
+            Delete = "Kairos/EstadosExtras/Delete",
+            Retrieve = "Kairos/EstadosExtras/Retrieve",
+            List = "Kairos/EstadosExtras/List"
+        }
+    }
+}
+declare namespace ProyectosZec.Kairos {
+}
+declare namespace ProyectosZec.Kairos {
     interface ExtrasForm {
         CodigoCliente: Serenity.StringEditor;
         IdEmpleado: Serenity.StringEditor;
@@ -1612,7 +1662,7 @@ declare namespace ProyectosZec.Kairos {
         TotalHorasExtrasConvertidas: Serenity.DecimalEditor;
         IdAusenciaProgramadaTipo: Serenity.StringEditor;
         Dia: Serenity.StringEditor;
-        Estado: Serenity.StringEditor;
+        Estado: Serenity.LookupEditor;
         MotivoCancelacion: Serenity.StringEditor;
         FechaAceptacionCancelacion: Serenity.DateEditor;
     }
@@ -1646,6 +1696,7 @@ declare namespace ProyectosZec.Kairos {
         SedeId?: number;
         Sede?: string;
         Convertidas?: string;
+        EstadoDesc?: string;
     }
     namespace ExtrasRow {
         const idProperty = "Id";
@@ -1677,7 +1728,8 @@ declare namespace ProyectosZec.Kairos {
             DptoId = "DptoId",
             SedeId = "SedeId",
             Sede = "Sede",
-            Convertidas = "Convertidas"
+            Convertidas = "Convertidas",
+            EstadoDesc = "EstadoDesc"
         }
     }
 }
@@ -3700,6 +3752,30 @@ declare namespace ProyectosZec.Kairos {
 */
         protected getItemCssClass(item: Kairos.DiarioRow, index: number): string;
         getButtons(): Serenity.ToolButton[];
+    }
+}
+declare namespace ProyectosZec.Kairos {
+    class EstadosExtrasDialog extends Serenity.EntityDialog<EstadosExtrasRow, any> {
+        protected getFormKey(): string;
+        protected getIdProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected getNameProperty(): string;
+        protected getService(): string;
+        protected getDeletePermission(): string;
+        protected getInsertPermission(): string;
+        protected getUpdatePermission(): string;
+        protected form: EstadosExtrasForm;
+    }
+}
+declare namespace ProyectosZec.Kairos {
+    class EstadosExtrasGrid extends Serenity.EntityGrid<EstadosExtrasRow, any> {
+        protected getColumnsKey(): string;
+        protected getDialogType(): typeof EstadosExtrasDialog;
+        protected getIdProperty(): string;
+        protected getInsertPermission(): string;
+        protected getLocalTextPrefix(): string;
+        protected getService(): string;
+        constructor(container: JQuery);
     }
 }
 declare namespace ProyectosZec.Kairos {

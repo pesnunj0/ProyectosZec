@@ -126,11 +126,19 @@ namespace ProyectosZec.Kairos.Entities
             set { Fields.Dia[this] = value; }
         }
 
-        [DisplayName("Estado"), Column("estado"), Size(1), NotNull]
+        [DisplayName("EstadoId"), Column("estado"), Size(1), NotNull, ForeignKey("EstadosExtras", "EstadoId"), LeftJoin("jEstado"), LookupInclude]
+        [LookupEditor("Kairos.EstadosExtras")]
         public String Estado
         {
             get { return Fields.Estado[this]; }
             set { Fields.Estado[this] = value; }
+        }
+
+        [DisplayName("Estado"), Expression("jEstado.[descripcion]")]
+        public String EstadoDesc
+        {
+            get { return Fields.EstadoDesc[this]; }
+            set { Fields.EstadoDesc[this] = value; }
         }
 
         [DisplayName("Motivo Cancelacion"), Column("motivoCancelacion"), Size(250)]
@@ -218,6 +226,7 @@ namespace ProyectosZec.Kairos.Entities
             public Int32Field SedeId;
             public StringField Sede;
             public StringField Convertidas;
+            public StringField EstadoDesc;
         }
     }
 }
