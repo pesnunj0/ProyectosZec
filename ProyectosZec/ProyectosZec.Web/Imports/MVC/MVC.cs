@@ -166,6 +166,11 @@ namespace MVC
                 public const string FichajesIndex = "~/Modules/Kairos/Fichajes/FichajesIndex.cshtml";
             }
 
+            public static class HorasExtraConsumidas
+            {
+                public const string HorasExtraConsumidasIndex = "~/Modules/Kairos/HorasExtraConsumidas/HorasExtraConsumidasIndex.cshtml";
+            }
+
             public static class KrsEmpleados
             {
                 public const string KrsEmpleadosIndex = "~/Modules/Kairos/KrsEmpleados/KrsEmpleadosIndex.cshtml";

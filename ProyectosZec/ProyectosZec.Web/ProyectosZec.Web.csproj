@@ -1117,6 +1117,18 @@
     <TypeScriptCompile Include="Imports\ServerTypings\Kairos.FichajesColumns.ts">
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\Kairos.HorasExtraConsumidasColumns.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\Kairos.HorasExtraConsumidasForm.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\Kairos.HorasExtraConsumidasRow.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\Kairos.HorasExtraConsumidasService.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
     <TypeScriptCompile Include="Imports\ServerTypings\Kairos.KrsEmpleadosColumns.ts">
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
@@ -1155,6 +1167,7 @@
     </TypeScriptCompile>
     <TypeScriptCompile Include="Modules\CuadroMandos\Presentadas\PresentadasDialog.ts" />
     <TypeScriptCompile Include="Modules\CuadroMandos\Presentadas\PresentadasGrid.ts" />
+    <TypeScriptCompile Include="Modules\Kairos\HorasExtraConsumidas\HorasExtraConsumidasEditor.ts" />
     <TypeScriptCompile Include="node_modules\%40types\jquery\index.d.ts" />
     <TypeScriptCompile Include="node_modules\%40types\jqueryui\index.d.ts" />
     <TypeScriptCompile Include="node_modules\%40types\jquery.blockui\index.d.ts" />
@@ -2059,6 +2072,9 @@
     <TypeScriptCompile Include="Imports\ServerTypings\Kairos.EstadosExtrasForm.ts">
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
+    <Content Include="Modules\Kairos\HorasExtraConsumidas\HorasExtraConsumidasIndex.cshtml" />
+    <TypeScriptCompile Include="Modules\Kairos\HorasExtraConsumidas\HorasExtraConsumidasDialog.ts" />
+    <TypeScriptCompile Include="Modules\Kairos\HorasExtraConsumidas\HorasExtraConsumidasGrid.ts" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Global.asax" />
@@ -2075,6 +2091,9 @@
     <Compile Include="App_Start\SiteInitialization.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Imports\ClientTypes\Kairos.HorasExtraConsumidasEditorAttribute.cs">
+      <DependentUpon>ClientTypes.tt</DependentUpon>
     </Compile>
     <Compile Include="Migrations\DefaultDB\DefaultDB_20200903_130000_Inmovilizado_cambios.cs" />
     <Compile Include="Migrations\DefaultDB\DefaultDB_20200819_130000_Inmovilizado.cs" />
@@ -2375,6 +2394,12 @@
     <Compile Include="Modules\Kairos\EstadosExtras\EstadosExtrasPage.cs" />
     <Compile Include="Modules\Kairos\EstadosExtras\EstadosExtrasColumns.cs" />
     <Compile Include="Modules\Kairos\EstadosExtras\EstadosExtrasForm.cs" />
+    <Compile Include="Modules\Kairos\HorasExtraConsumidas\HorasExtraConsumidasRow.cs" />
+    <Compile Include="Modules\Kairos\HorasExtraConsumidas\HorasExtraConsumidasRepository.cs" />
+    <Compile Include="Modules\Kairos\HorasExtraConsumidas\HorasExtraConsumidasEndpoint.cs" />
+    <Compile Include="Modules\Kairos\HorasExtraConsumidas\HorasExtraConsumidasPage.cs" />
+    <Compile Include="Modules\Kairos\HorasExtraConsumidas\HorasExtraConsumidasColumns.cs" />
+    <Compile Include="Modules\Kairos\HorasExtraConsumidas\HorasExtraConsumidasForm.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\upload\" />

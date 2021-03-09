@@ -10,9 +10,10 @@ namespace ProyectosZec.Kairos.Forms
     using System.IO;
 
     [FormScript("Kairos.Extras")]
-    [BasedOnRow(typeof(Entities.ExtrasRow), CheckNames = true)]
+    [BasedOnRow(typeof(Entities.ExtrasRow), CheckNames = false)]
     public class ExtrasForm
     {
+        [Tab("HorasExtra")]
         public Int64 CodigoCliente { get; set; }
         public Int64 IdEmpleado { get; set; }
         public DateTime Fecha { get; set; }
@@ -25,5 +26,8 @@ namespace ProyectosZec.Kairos.Forms
         public String Estado { get; set; }
         public String MotivoCancelacion { get; set; }
         public DateTime FechaAceptacionCancelacion { get; set; }
+        [Tab("Consumidas")]
+        [HorasExtraConsumidasEditor]
+        public List<Entities.HorasExtraConsumidasRow> Horas  { get; set; }
     }
 }

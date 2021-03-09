@@ -35,5 +35,21 @@ namespace ProyectosZec.Kairos {
             return buttons;
             // Fin añadidos
         }
+
+        /**
+* This method is called for all rows
+* @param item Data item for current row
+* @param index Index of the row in grid
+*/
+        protected getItemCssClass(item: Kairos.FichajesRow, index: number): string {
+            let klass: string = "";
+
+            if (item.Files != null)
+                klass += " aceptada";
+            
+
+            return Q.trimToNull(klass);
+        }
+
     }
 }

@@ -1,6 +1,6 @@
 ﻿namespace ProyectosZec.Kairos {
     export interface FichajesForm {
-        IdEmpleado: Serenity.StringEditor;
+        IdEmpleado: Serenity.LookupEditor;
         CodigoCliente: Serenity.StringEditor;
         FechaHora: Serenity.DateTimeEditor;
         Observaciones: Serenity.StringEditor;
@@ -17,6 +17,7 @@
         TipoDispositivo: Serenity.IntegerEditor;
         EntradaSalida: Serenity.LookupEditor;
         IdEmpresa: Serenity.StringEditor;
+        Files: Serenity.MultipleImageUploadEditor;
     }
 
     export class FichajesForm extends Serenity.PrefixedContext {
@@ -30,30 +31,32 @@
                 FichajesForm.init = true;
 
                 var s = Serenity;
-                var w0 = s.StringEditor;
-                var w1 = s.DateTimeEditor;
-                var w2 = s.DateEditor;
-                var w3 = s.IntegerEditor;
-                var w4 = s.LookupEditor;
+                var w0 = s.LookupEditor;
+                var w1 = s.StringEditor;
+                var w2 = s.DateTimeEditor;
+                var w3 = s.DateEditor;
+                var w4 = s.IntegerEditor;
+                var w5 = s.MultipleImageUploadEditor;
 
                 Q.initFormType(FichajesForm, [
                     'IdEmpleado', w0,
-                    'CodigoCliente', w0,
-                    'FechaHora', w1,
-                    'Observaciones', w0,
-                    'GpsPosicionLatitud', w0,
-                    'GpsPosicionLongitud', w0,
-                    'GpsFechaHora', w2,
-                    'GpsProveedor', w0,
-                    'GpsAltitud', w0,
-                    'IdTerminal', w0,
-                    'IdDispositivoModelo', w0,
-                    'Modificado', w2,
-                    'Anulado', w2,
-                    'Validado', w3,
-                    'TipoDispositivo', w3,
-                    'EntradaSalida', w4,
-                    'IdEmpresa', w0
+                    'CodigoCliente', w1,
+                    'FechaHora', w2,
+                    'Observaciones', w1,
+                    'GpsPosicionLatitud', w1,
+                    'GpsPosicionLongitud', w1,
+                    'GpsFechaHora', w3,
+                    'GpsProveedor', w1,
+                    'GpsAltitud', w1,
+                    'IdTerminal', w1,
+                    'IdDispositivoModelo', w1,
+                    'Modificado', w3,
+                    'Anulado', w3,
+                    'Validado', w4,
+                    'TipoDispositivo', w4,
+                    'EntradaSalida', w0,
+                    'IdEmpresa', w1,
+                    'Files', w5
                 ]);
             }
         }

@@ -47,6 +47,7 @@
         Sede?: string;
         Dispositivo?: string;
         Fichaje?: string;
+        Files?: string;
     }
 
     export namespace FichajesRow {
@@ -56,7 +57,7 @@
         export const deletePermission = 'Kairos:Delete';
         export const insertPermission = 'Kairos:Insert';
         export const readPermission = 'Kairos:Read';
-        export const updatePermission = 'Kairos:Modify';
+        export const updatePermission = 'Kairos:Admin';
 
         export declare const enum Fields {
             Id = "Id",
@@ -105,7 +106,8 @@
             SedeId = "SedeId",
             Sede = "Sede",
             Dispositivo = "Dispositivo",
-            Fichaje = "Fichaje"
+            Fichaje = "Fichaje",
+            Files = "Files"
         }
     }
 }

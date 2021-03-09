@@ -12,6 +12,7 @@
         Estado: Serenity.LookupEditor;
         MotivoCancelacion: Serenity.StringEditor;
         FechaAceptacionCancelacion: Serenity.DateEditor;
+        HorasExtraConsumidasList: HorasExtraConsumidasEditor;
     }
 
     export class ExtrasForm extends Serenity.PrefixedContext {
@@ -30,6 +31,7 @@
                 var w2 = s.IntegerEditor;
                 var w3 = s.DecimalEditor;
                 var w4 = s.LookupEditor;
+                var w5 = HorasExtraConsumidasEditor;
 
                 Q.initFormType(ExtrasForm, [
                     'CodigoCliente', w0,
@@ -43,7 +45,8 @@
                     'Dia', w0,
                     'Estado', w4,
                     'MotivoCancelacion', w0,
-                    'FechaAceptacionCancelacion', w1
+                    'FechaAceptacionCancelacion', w1,
+                    'HorasExtraConsumidasList', w5
                 ]);
             }
         }
