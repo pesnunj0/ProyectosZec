@@ -15,6 +15,7 @@ namespace ProyectosZec.Kairos.Columns
     {
         [EditLink, DisplayName("Db.Shared.RecordId"), AlignRight]
         public Int64 Id { get; set; }
+        public Int64 IdHoraExtra { get; set; }
         [Hidden]
         public String IdHoraExtraDia { get; set; }
         public String Empleado { get; set; }

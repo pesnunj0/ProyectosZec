@@ -9,6 +9,13 @@ namespace ProyectosZec.Kairos.Endpoints
     using MyRepository = Repositories.HorasExtraConsumidasRepository;
     using MyRow = Entities.HorasExtraConsumidasRow;
 
+    // Añadidos
+    using ProyectosZec;
+    using System;
+    using Serenity.Reporting;
+    using Serenity.Web;
+    // Fin Añadidos
+
     [RoutePrefix("Services/Kairos/HorasExtraConsumidas"), Route("{action}")]
     [ConnectionKey(typeof(MyRow)), ServiceAuthorize(typeof(MyRow))]
     public class HorasExtraConsumidasController : ServiceEndpoint
@@ -41,6 +48,17 @@ namespace ProyectosZec.Kairos.Endpoints
         public ListResponse<MyRow> List(IDbConnection connection, ListRequest request)
         {
             return new MyRepository().List(connection, request);
+        }
+
+        // Añadidos Excel
+        [HttpPost]
+        public FileContentResult ListExcel(IDbConnection connection, ListRequest request)
+        {
+            var data = List(connection, request).Entities;
+            var report = new DynamicDataReport(data, request.IncludeColumns, typeof(Columns.HorasExtraConsumidasColumns));
+            var bytes = new ReportRepository().Render(report);
+            return ExcelContentResult.Create(bytes, "HorasExtraConsumidasList_" +
+                DateTime.Now.ToString("yyyyMMdd_HHmmss") + ".xlsx");
         }
     }
 }

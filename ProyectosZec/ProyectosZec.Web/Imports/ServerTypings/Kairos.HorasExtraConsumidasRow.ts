@@ -17,13 +17,15 @@
         IdHoraExtraEstado?: string;
         IdHoraExtraMotivoCancelacion?: string;
         IdHoraExtraFechaAceptacionCancelacion?: string;
+        IdEmpleado?: number;
+        Empleado?: string;
     }
 
     export namespace HorasExtraConsumidasRow {
         export const idProperty = 'Id';
         export const localTextPrefix = 'Kairos.HorasExtraConsumidas';
-        export const deletePermission = 'Kairos:Delete';
-        export const insertPermission = 'Kairos:Insert';
+        export const deletePermission = 'Kairos:Admin';
+        export const insertPermission = 'Kairos:Admin';
         export const readPermission = 'Kairos:Read';
         export const updatePermission = 'Kairos:Admin';
 
@@ -44,7 +46,9 @@
             IdHoraExtraDia = "IdHoraExtraDia",
             IdHoraExtraEstado = "IdHoraExtraEstado",
             IdHoraExtraMotivoCancelacion = "IdHoraExtraMotivoCancelacion",
-            IdHoraExtraFechaAceptacionCancelacion = "IdHoraExtraFechaAceptacionCancelacion"
+            IdHoraExtraFechaAceptacionCancelacion = "IdHoraExtraFechaAceptacionCancelacion",
+            IdEmpleado = "IdEmpleado",
+            Empleado = "Empleado"
         }
     }
 }

@@ -1,4 +1,7 @@
-﻿
+﻿// ************************************************************************************************************************************************************************************
+// Como no logro que funcione [MasterDetailRelation(foreignKey: "idHoraExtra", IncludeColumns ="Empleado", MasterKeyField = "id")] en ExtrasRow justo encima de la lista,
+// modifico MysSaveHandler y MyRetrieveHandler
+// ************************************************************************************************************************************************************************************
 namespace ProyectosZec.Kairos.Repositories
 {
     using Serenity;
@@ -37,9 +40,39 @@ namespace ProyectosZec.Kairos.Repositories
             return new MyListHandler().Process(connection, request);
         }
 
-        private class MySaveHandler : SaveRequestHandler<MyRow> { }
+        private class MySaveHandler : SaveRequestHandler<MyRow> 
+        {
+            protected override void AfterSave()
+            {
+                base.AfterSave();
+
+                if (Row.Consumidas != null)
+                {
+                    var mc = Entities.HorasExtraConsumidasRow.Fields;
+                    var oldList = IsCreate ? null :
+                        Connection.List<Entities.HorasExtraConsumidasRow>(
+                            mc.IdHoraExtra == this.Row.Id.Value);
+
+                    new Common.DetailListSaveHandler<Entities.HorasExtraConsumidasRow>(
+                        oldList, Row.Consumidas,
+                        x => x.IdHoraExtra = Row.Id.Value).Process(this.UnitOfWork);
+                }
+            }
+        }
         private class MyDeleteHandler : DeleteRequestHandler<MyRow> { }
-        private class MyRetrieveHandler : RetrieveRequestHandler<MyRow> { }
+        private class MyRetrieveHandler : RetrieveRequestHandler<MyRow> 
+        {
+            protected override void OnReturn()
+            {
+                base.OnReturn();
+
+                var mc = Entities.HorasExtraConsumidasRow.Fields;
+                Row.Consumidas = Connection.List<Entities.HorasExtraConsumidasRow>(q => q
+                    .SelectTableFields()
+                    .Select(mc.Empleado)
+                    .Where(mc.IdHoraExtra == Row.Id.Value));
+            }
+        }
         private class MyListHandler : ListRequestHandler<MyRow> { }
     }
 }

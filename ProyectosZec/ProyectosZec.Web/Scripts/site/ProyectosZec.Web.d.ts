@@ -1653,6 +1653,7 @@ declare namespace ProyectosZec.Kairos {
 }
 declare namespace ProyectosZec.Kairos {
     interface ExtrasForm {
+        Id: Serenity.StringEditor;
         CodigoCliente: Serenity.StringEditor;
         IdEmpleado: Serenity.StringEditor;
         Fecha: Serenity.DateEditor;
@@ -1665,7 +1666,7 @@ declare namespace ProyectosZec.Kairos {
         Estado: Serenity.LookupEditor;
         MotivoCancelacion: Serenity.StringEditor;
         FechaAceptacionCancelacion: Serenity.DateEditor;
-        HorasExtraConsumidasList: HorasExtraConsumidasEditor;
+        Consumidas: HorasExtraConsumidasEditor;
     }
     class ExtrasForm extends Serenity.PrefixedContext {
         static formKey: string;
@@ -1698,15 +1699,18 @@ declare namespace ProyectosZec.Kairos {
         Sede?: string;
         Convertidas?: string;
         EstadoDesc?: string;
+        Consumidas?: HorasExtraConsumidasRow[];
+        TotalConsumidas?: number;
+        Pendientes?: number;
     }
     namespace ExtrasRow {
         const idProperty = "Id";
         const nameProperty = "Dia";
         const localTextPrefix = "Kairos.Extras";
-        const deletePermission = "Kairos:Delete";
-        const insertPermission = "Kairos:Insert";
+        const deletePermission = "Kairos:Admin";
+        const insertPermission = "Kairos:Admin";
         const readPermission = "Kairos:Read";
-        const updatePermission = "Kairos:Modify";
+        const updatePermission = "Kairos:Admin";
         const enum Fields {
             Id = "Id",
             CodigoCliente = "CodigoCliente",
@@ -1730,7 +1734,10 @@ declare namespace ProyectosZec.Kairos {
             SedeId = "SedeId",
             Sede = "Sede",
             Convertidas = "Convertidas",
-            EstadoDesc = "EstadoDesc"
+            EstadoDesc = "EstadoDesc",
+            Consumidas = "Consumidas",
+            TotalConsumidas = "TotalConsumidas",
+            Pendientes = "Pendientes"
         }
     }
 }
@@ -1761,7 +1768,7 @@ declare namespace ProyectosZec.Kairos {
         Observaciones: Serenity.StringEditor;
         GpsPosicionLatitud: Serenity.StringEditor;
         GpsPosicionLongitud: Serenity.StringEditor;
-        GpsFechaHora: Serenity.DateEditor;
+        GpsFechaHora: Serenity.DateTimeEditor;
         GpsProveedor: Serenity.StringEditor;
         GpsAltitud: Serenity.StringEditor;
         IdTerminal: Serenity.StringEditor;
@@ -1915,7 +1922,6 @@ declare namespace ProyectosZec.Kairos {
         IdHoraExtra: Serenity.StringEditor;
         Tiempo: Serenity.DecimalEditor;
         Dia: Serenity.DateEditor;
-        FechaAutorizacion: Serenity.DateEditor;
     }
     class HorasExtraConsumidasForm extends Serenity.PrefixedContext {
         static formKey: string;
@@ -1942,12 +1948,14 @@ declare namespace ProyectosZec.Kairos {
         IdHoraExtraEstado?: string;
         IdHoraExtraMotivoCancelacion?: string;
         IdHoraExtraFechaAceptacionCancelacion?: string;
+        IdEmpleado?: number;
+        Empleado?: string;
     }
     namespace HorasExtraConsumidasRow {
         const idProperty = "Id";
         const localTextPrefix = "Kairos.HorasExtraConsumidas";
-        const deletePermission = "Kairos:Delete";
-        const insertPermission = "Kairos:Insert";
+        const deletePermission = "Kairos:Admin";
+        const insertPermission = "Kairos:Admin";
         const readPermission = "Kairos:Read";
         const updatePermission = "Kairos:Admin";
         const enum Fields {
@@ -1967,7 +1975,9 @@ declare namespace ProyectosZec.Kairos {
             IdHoraExtraDia = "IdHoraExtraDia",
             IdHoraExtraEstado = "IdHoraExtraEstado",
             IdHoraExtraMotivoCancelacion = "IdHoraExtraMotivoCancelacion",
-            IdHoraExtraFechaAceptacionCancelacion = "IdHoraExtraFechaAceptacionCancelacion"
+            IdHoraExtraFechaAceptacionCancelacion = "IdHoraExtraFechaAceptacionCancelacion",
+            IdEmpleado = "IdEmpleado",
+            Empleado = "Empleado"
         }
     }
 }
@@ -3940,11 +3950,21 @@ declare namespace ProyectosZec.Kairos {
     }
 }
 declare namespace ProyectosZec.Kairos {
+    class HorasExtraConsumidasEditDialog extends Common.GridEditorDialog<HorasExtraConsumidasRow> {
+        protected getFormKey(): string;
+        protected getNameProperty(): any;
+        protected getLocalTextPrefix(): string;
+        protected form: HorasExtraConsumidasForm;
+        constructor();
+    }
+}
+declare namespace ProyectosZec.Kairos {
     class HorasExtraConsumidasEditor extends Common.GridEditorBase<HorasExtraConsumidasRow> {
         protected getColumnsKey(): string;
         protected getDialogType(): typeof HorasExtraConsumidasDialog;
         protected getLocalTextPrefix(): string;
         constructor(container: JQuery);
+        protected getAddButtonCaption(): string;
     }
 }
 declare namespace ProyectosZec.Kairos {
@@ -3956,6 +3976,7 @@ declare namespace ProyectosZec.Kairos {
         protected getLocalTextPrefix(): string;
         protected getService(): string;
         constructor(container: JQuery);
+        getButtons(): Serenity.ToolButton[];
     }
 }
 declare namespace ProyectosZec.Kairos {

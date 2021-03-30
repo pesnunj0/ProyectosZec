@@ -67,10 +67,10 @@ edite el archivo MSBuild. Visite https://go.microsoft.com/fwlink/?LinkID=208121 
       <publishTime>11/20/2020 15:16:02</publishTime>
     </File>
     <File Include="bin/ProyectosZec.Web.dll">
-      <publishTime>03/09/2021 12:40:10</publishTime>
+      <publishTime>03/30/2021 14:44:41</publishTime>
     </File>
     <File Include="bin/ProyectosZec.Web.pdb">
-      <publishTime>03/09/2021 12:40:10</publishTime>
+      <publishTime>03/30/2021 14:44:41</publishTime>
     </File>
     <File Include="bin/Renci.SshNet.dll">
       <publishTime>01/01/0001 00:00:00</publishTime>
@@ -1891,7 +1891,7 @@ edite el archivo MSBuild. Visite https://go.microsoft.com/fwlink/?LinkID=208121 
       <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="Content/site/site.css">
-      <publishTime>03/09/2021 12:24:40</publishTime>
+      <publishTime>03/10/2021 14:26:43</publishTime>
     </File>
     <File Include="Content/site/site.cuadromandos.css">
       <publishTime>01/01/0001 00:00:00</publishTime>
@@ -1924,7 +1924,7 @@ edite el archivo MSBuild. Visite https://go.microsoft.com/fwlink/?LinkID=208121 
       <publishTime>02/12/2021 09:01:15</publishTime>
     </File>
     <File Include="Content/site/site.kairos.less">
-      <publishTime>03/09/2021 12:23:13</publishTime>
+      <publishTime>03/10/2021 14:26:38</publishTime>
     </File>
     <File Include="Content/site/site.kairos.min.css">
       <publishTime>02/12/2021 09:01:32</publishTime>
@@ -2197,7 +2197,7 @@ edite el archivo MSBuild. Visite https://go.microsoft.com/fwlink/?LinkID=208121 
       <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="Imports/ClientTypes/ClientTypes.log">
-      <publishTime>03/08/2021 15:02:23</publishTime>
+      <publishTime>03/30/2021 14:41:12</publishTime>
     </File>
     <File Include="Imports/CodeGenerationHelpers.ttinclude">
       <publishTime>01/01/0001 00:00:00</publishTime>
@@ -3784,7 +3784,7 @@ edite el archivo MSBuild. Visite https://go.microsoft.com/fwlink/?LinkID=208121 
       <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="Scripts/site/ProyectosZec.Web.js">
-      <publishTime>03/09/2021 12:24:54</publishTime>
+      <publishTime>03/30/2021 14:44:55</publishTime>
     </File>
     <File Include="Scripts/site/ScriptBundles.json">
       <publishTime>01/01/0001 00:00:00</publishTime>

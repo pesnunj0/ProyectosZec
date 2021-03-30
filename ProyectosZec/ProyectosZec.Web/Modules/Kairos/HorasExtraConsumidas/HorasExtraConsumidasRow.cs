@@ -12,9 +12,9 @@ namespace ProyectosZec.Kairos.Entities
     [ConnectionKey("Kairos"), Module("Kairos"), TableName("[dbo].[HorasExtraConsumidas]")]
     [DisplayName("Horas Extra Consumidas"), InstanceName("Horas Extra Consumidas")]
     [ReadPermission("Kairos:Read")]
-    [ModifyPermission("Kairos:Modify")]
-    [InsertPermission("Kairos:Insert")]
-    [DeletePermission("Kairos:Delete")]
+    [ModifyPermission("Kairos:Admin")]
+    [InsertPermission("Kairos:Admin")]
+    [DeletePermission("Kairos:Admin")]
     public sealed class HorasExtraConsumidasRow : Row, IIdRow
     {
         [DisplayName("Id"), Column("id"), Identity]
@@ -24,7 +24,7 @@ namespace ProyectosZec.Kairos.Entities
             set { Fields.Id[this] = value; }
         }
 
-        [DisplayName("Id Hora Extra"), Column("idHoraExtra"), ForeignKey("[dbo].[KRS_HorasExtrasCalculadasCabecera]", "id"), LeftJoin("jIdHoraExtra"), TextualField("IdHoraExtraDia")]
+        [DisplayName("Id Extra"), Column("idHoraExtra"), ForeignKey("[dbo].[KRS_HorasExtrasCalculadasCabecera]", "id"), LeftJoin("jIdHoraExtra"), TextualField("IdHoraExtraDia")]
         public Int64? IdHoraExtra
         {
             get { return Fields.IdHoraExtra[this]; }

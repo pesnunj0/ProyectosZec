@@ -1,5 +1,6 @@
 ﻿namespace ProyectosZec.Kairos {
     export interface ExtrasForm {
+        Id: Serenity.StringEditor;
         CodigoCliente: Serenity.StringEditor;
         IdEmpleado: Serenity.StringEditor;
         Fecha: Serenity.DateEditor;
@@ -12,7 +13,7 @@
         Estado: Serenity.LookupEditor;
         MotivoCancelacion: Serenity.StringEditor;
         FechaAceptacionCancelacion: Serenity.DateEditor;
-        HorasExtraConsumidasList: HorasExtraConsumidasEditor;
+        Consumidas: HorasExtraConsumidasEditor;
     }
 
     export class ExtrasForm extends Serenity.PrefixedContext {
@@ -34,6 +35,7 @@
                 var w5 = HorasExtraConsumidasEditor;
 
                 Q.initFormType(ExtrasForm, [
+                    'Id', w0,
                     'CodigoCliente', w0,
                     'IdEmpleado', w0,
                     'Fecha', w1,
@@ -46,7 +48,7 @@
                     'Estado', w4,
                     'MotivoCancelacion', w0,
                     'FechaAceptacionCancelacion', w1,
-                    'HorasExtraConsumidasList', w5
+                    'Consumidas', w5
                 ]);
             }
         }

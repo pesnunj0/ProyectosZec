@@ -1,4 +1,9 @@
-﻿
+﻿// ********************************************************************************************************************************
+// Particularidad de este programa es que debe contener la Lista de Horas Extra Consumidas para que en el mantenimiento de
+// las horas extra, podamos hacer u save o llamadas a HorasExtraConsumidasRow
+// Javier Nuñez
+// Marzo de 2021
+// ********************************************************************************************************************************
 namespace ProyectosZec.Kairos.Entities
 {
     using Serenity;
@@ -7,17 +12,27 @@ namespace ProyectosZec.Kairos.Entities
     using Serenity.Data.Mapping;
     using System;
     using System.ComponentModel;
+    // Importante añadir si queremos usar List<>
+    using System.Collections.Generic;
     using System.IO;
 
     [ConnectionKey("Kairos"), Module("Kairos"), TableName("[dbo].[KRS_HorasExtrasCalculadasCabecera]")]
     [DisplayName("Extras"), InstanceName("Extras")]
     [ReadPermission("Kairos:Read")]
-    [ModifyPermission("Kairos:Modify")]
-    [InsertPermission("Kairos:Insert")]
-    [DeletePermission("Kairos:Delete")]
+    [ModifyPermission("Kairos:Admin")]
+    [InsertPermission("Kairos:Admin")]
+    [DeletePermission("Kairos:Admin")]
 
     public sealed class ExtrasRow : Row, IIdRow, INameRow
     {
+       // [MasterDetailRelation(foreignKey: "idHoraExtra", IncludeColumns ="Empleado", MasterKeyField = "id")]
+        [DisplayName("Consumidas"),NotMapped]
+        public List<HorasExtraConsumidasRow> Consumidas
+        {
+            get { return Fields.Consumidas[this]; }
+            set { Fields.Consumidas[this] = value; }
+        }
+
         [DisplayName("Id"), Column("id"), Identity]
         public Int64? Id
         {
@@ -84,7 +99,23 @@ namespace ProyectosZec.Kairos.Entities
             set { Fields.IdHoraExtraCabecera[this] = value; }
         }
 
+
+        [DisplayName("Consumidas"),Expression("(SELECT SUM(tiempo) FROM HorasExtraConsumidas WHERE HorasExtraConsumidas.idHoraExtra = t0.[id])")]
+        public Decimal? TotalConsumidas
+        {
+            get { return Fields.TotalConsumidas[this]; }
+            set { Fields.TotalConsumidas[this] = value; }
+        }
+
+        [DisplayName("Pendientes"), Expression("(SELECT t0.[totalHorasExtrasConvertidas]-SUM(tiempo) FROM HorasExtraConsumidas WHERE HorasExtraConsumidas.idHoraExtra = t0.[id])")]
+        public Decimal? Pendientes
+        {
+            get { return Fields.Pendientes[this]; }
+            set { Fields.Pendientes[this] = value; }
+        }
+
         [DisplayName("Tipo"), Column("tipo"), NotNull]
+
         public Int32? Tipo
         {
             get { return Fields.Tipo[this]; }
@@ -227,6 +258,10 @@ namespace ProyectosZec.Kairos.Entities
             public StringField Sede;
             public StringField Convertidas;
             public StringField EstadoDesc;
+            public readonly RowListField<HorasExtraConsumidasRow> Consumidas;
+            public DecimalField TotalConsumidas;
+            public DecimalField Pendientes;
+
         }
     }
 }

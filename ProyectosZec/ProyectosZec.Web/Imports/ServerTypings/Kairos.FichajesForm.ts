@@ -6,7 +6,7 @@
         Observaciones: Serenity.StringEditor;
         GpsPosicionLatitud: Serenity.StringEditor;
         GpsPosicionLongitud: Serenity.StringEditor;
-        GpsFechaHora: Serenity.DateEditor;
+        GpsFechaHora: Serenity.DateTimeEditor;
         GpsProveedor: Serenity.StringEditor;
         GpsAltitud: Serenity.StringEditor;
         IdTerminal: Serenity.StringEditor;
@@ -45,7 +45,7 @@
                     'Observaciones', w1,
                     'GpsPosicionLatitud', w1,
                     'GpsPosicionLongitud', w1,
-                    'GpsFechaHora', w3,
+                    'GpsFechaHora', w2,
                     'GpsProveedor', w1,
                     'GpsAltitud', w1,
                     'IdTerminal', w1,

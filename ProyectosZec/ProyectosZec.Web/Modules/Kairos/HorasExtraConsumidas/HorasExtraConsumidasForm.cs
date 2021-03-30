@@ -16,6 +16,6 @@ namespace ProyectosZec.Kairos.Forms
         public Int64 IdHoraExtra { get; set; }
         public Decimal Tiempo { get; set; }
         public DateTime Dia { get; set; }
-        public DateTime FechaAutorizacion { get; set; }
+        
     }
 }

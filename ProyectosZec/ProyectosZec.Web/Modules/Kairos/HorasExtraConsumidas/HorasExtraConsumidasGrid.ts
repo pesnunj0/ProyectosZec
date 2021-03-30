@@ -13,5 +13,27 @@ namespace ProyectosZec.Kairos {
         constructor(container: JQuery) {
             super(container);
         }
+        // Botones Excel y Pdf
+        getButtons() {
+            var buttons = super.getButtons();
+
+            buttons.push(ProyectosZec.Common.ExcelExportHelper.createToolButton({
+                grid: this,
+                onViewSubmit: () => this.onViewSubmit(),
+                service: 'Kairos/HorasExtraConsumidas/ListExcel',
+                separator: true
+            }));
+
+            buttons.push(ProyectosZec.Common.PdfExportHelper.createToolButton({
+                grid: this,
+                onViewSubmit: () => this.onViewSubmit()
+            }));
+
+            // Quitamos boton de añadir para evitar que se añadan nuevas extras
+//            buttons.splice(Q.indexOf(buttons, x => x.cssClass == "add-button"), 1);
+
+            return buttons;
+            // Fin añadidos
+        }
     }
 }

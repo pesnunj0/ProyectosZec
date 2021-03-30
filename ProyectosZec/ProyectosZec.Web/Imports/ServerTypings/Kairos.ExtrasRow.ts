@@ -23,16 +23,19 @@
         Sede?: string;
         Convertidas?: string;
         EstadoDesc?: string;
+        Consumidas?: HorasExtraConsumidasRow[];
+        TotalConsumidas?: number;
+        Pendientes?: number;
     }
 
     export namespace ExtrasRow {
         export const idProperty = 'Id';
         export const nameProperty = 'Dia';
         export const localTextPrefix = 'Kairos.Extras';
-        export const deletePermission = 'Kairos:Delete';
-        export const insertPermission = 'Kairos:Insert';
+        export const deletePermission = 'Kairos:Admin';
+        export const insertPermission = 'Kairos:Admin';
         export const readPermission = 'Kairos:Read';
-        export const updatePermission = 'Kairos:Modify';
+        export const updatePermission = 'Kairos:Admin';
 
         export declare const enum Fields {
             Id = "Id",
@@ -57,7 +60,10 @@
             SedeId = "SedeId",
             Sede = "Sede",
             Convertidas = "Convertidas",
-            EstadoDesc = "EstadoDesc"
+            EstadoDesc = "EstadoDesc",
+            Consumidas = "Consumidas",
+            TotalConsumidas = "TotalConsumidas",
+            Pendientes = "Pendientes"
         }
     }
 }

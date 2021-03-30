@@ -10,5 +10,9 @@ namespace ProyectosZec.Kairos {
         constructor(container: JQuery) {
             super(container);
         }
+
+        protected getAddButtonCaption() {
+            return "Añadir";
+        }
     }
 }

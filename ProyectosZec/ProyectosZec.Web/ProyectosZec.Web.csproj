@@ -1167,6 +1167,7 @@
     </TypeScriptCompile>
     <TypeScriptCompile Include="Modules\CuadroMandos\Presentadas\PresentadasDialog.ts" />
     <TypeScriptCompile Include="Modules\CuadroMandos\Presentadas\PresentadasGrid.ts" />
+    <TypeScriptCompile Include="Modules\Kairos\HorasExtraConsumidas\HorasExtraConsumidasEditDialog.ts" />
     <TypeScriptCompile Include="Modules\Kairos\HorasExtraConsumidas\HorasExtraConsumidasEditor.ts" />
     <TypeScriptCompile Include="node_modules\%40types\jquery\index.d.ts" />
     <TypeScriptCompile Include="node_modules\%40types\jqueryui\index.d.ts" />

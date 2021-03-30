@@ -3,7 +3,6 @@
         IdHoraExtra: Serenity.StringEditor;
         Tiempo: Serenity.DecimalEditor;
         Dia: Serenity.DateEditor;
-        FechaAutorizacion: Serenity.DateEditor;
     }
 
     export class HorasExtraConsumidasForm extends Serenity.PrefixedContext {
@@ -24,8 +23,7 @@
                 Q.initFormType(HorasExtraConsumidasForm, [
                     'IdHoraExtra', w0,
                     'Tiempo', w1,
-                    'Dia', w2,
-                    'FechaAutorizacion', w2
+                    'Dia', w2
                 ]);
             }
         }

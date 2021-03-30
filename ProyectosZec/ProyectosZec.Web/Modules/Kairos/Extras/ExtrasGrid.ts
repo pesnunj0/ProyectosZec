@@ -26,7 +26,10 @@ namespace ProyectosZec.Kairos {
             this.view.setSummaryOptions({
                 aggregators: [
                     new Slick.Aggregators.Sum(ExtrasRow.Fields.TotalHorasExtrasReales),
-                    new Slick.Aggregators.Sum(ExtrasRow.Fields.TotalHorasExtrasConvertidas)
+                    new Slick.Aggregators.Sum(ExtrasRow.Fields.TotalHorasExtrasConvertidas),
+                    new Slick.Aggregators.Sum(ExtrasRow.Fields.Pendientes),
+                    new Slick.Aggregators.Sum(ExtrasRow.Fields.TotalConsumidas)
+
                 ]
             });
 
@@ -67,6 +70,9 @@ namespace ProyectosZec.Kairos {
                 grid: this,
                 onViewSubmit: () => this.onViewSubmit()
             }));
+
+            // Quitamos boton de añadir para evitar que se añadan nuevas extras
+            buttons.splice(Q.indexOf(buttons, x => x.cssClass == "add-button"), 1);
 
             return buttons;
             // Fin añadidos

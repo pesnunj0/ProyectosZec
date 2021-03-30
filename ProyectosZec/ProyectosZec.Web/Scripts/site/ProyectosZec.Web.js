@@ -1712,6 +1712,7 @@ var ProyectosZec;
                     var w4 = s.LookupEditor;
                     var w5 = Kairos.HorasExtraConsumidasEditor;
                     Q.initFormType(ExtrasForm, [
+                        'Id', w0,
                         'CodigoCliente', w0,
                         'IdEmpleado', w0,
                         'Fecha', w1,
@@ -1724,7 +1725,7 @@ var ProyectosZec;
                         'Estado', w4,
                         'MotivoCancelacion', w0,
                         'FechaAceptacionCancelacion', w1,
-                        'HorasExtraConsumidasList', w5
+                        'Consumidas', w5
                     ]);
                 }
                 return _this;
@@ -1744,10 +1745,10 @@ var ProyectosZec;
             ExtrasRow.idProperty = 'Id';
             ExtrasRow.nameProperty = 'Dia';
             ExtrasRow.localTextPrefix = 'Kairos.Extras';
-            ExtrasRow.deletePermission = 'Kairos:Delete';
-            ExtrasRow.insertPermission = 'Kairos:Insert';
+            ExtrasRow.deletePermission = 'Kairos:Admin';
+            ExtrasRow.insertPermission = 'Kairos:Admin';
             ExtrasRow.readPermission = 'Kairos:Read';
-            ExtrasRow.updatePermission = 'Kairos:Modify';
+            ExtrasRow.updatePermission = 'Kairos:Admin';
         })(ExtrasRow = Kairos.ExtrasRow || (Kairos.ExtrasRow = {}));
     })(Kairos = ProyectosZec.Kairos || (ProyectosZec.Kairos = {}));
 })(ProyectosZec || (ProyectosZec = {}));
@@ -1796,7 +1797,7 @@ var ProyectosZec;
                         'Observaciones', w1,
                         'GpsPosicionLatitud', w1,
                         'GpsPosicionLongitud', w1,
-                        'GpsFechaHora', w3,
+                        'GpsFechaHora', w2,
                         'GpsProveedor', w1,
                         'GpsAltitud', w1,
                         'IdTerminal', w1,
@@ -1872,8 +1873,7 @@ var ProyectosZec;
                     Q.initFormType(HorasExtraConsumidasForm, [
                         'IdHoraExtra', w0,
                         'Tiempo', w1,
-                        'Dia', w2,
-                        'FechaAutorizacion', w2
+                        'Dia', w2
                     ]);
                 }
                 return _this;
@@ -1892,8 +1892,8 @@ var ProyectosZec;
         (function (HorasExtraConsumidasRow) {
             HorasExtraConsumidasRow.idProperty = 'Id';
             HorasExtraConsumidasRow.localTextPrefix = 'Kairos.HorasExtraConsumidas';
-            HorasExtraConsumidasRow.deletePermission = 'Kairos:Delete';
-            HorasExtraConsumidasRow.insertPermission = 'Kairos:Insert';
+            HorasExtraConsumidasRow.deletePermission = 'Kairos:Admin';
+            HorasExtraConsumidasRow.insertPermission = 'Kairos:Admin';
             HorasExtraConsumidasRow.readPermission = 'Kairos:Read';
             HorasExtraConsumidasRow.updatePermission = 'Kairos:Admin';
         })(HorasExtraConsumidasRow = Kairos.HorasExtraConsumidasRow || (Kairos.HorasExtraConsumidasRow = {}));
@@ -2677,7 +2677,7 @@ var ProyectosZec;
 (function (ProyectosZec) {
     var Texts;
     (function (Texts) {
-        ProyectosZec['Texts'] = Q.proxyTexts(Texts, '', { Db: { Administration: { Language: { Id: 1, LanguageId: 1, LanguageName: 1 }, Role: { RoleId: 1, RoleName: 1 }, RolePermission: { PermissionKey: 1, RoleId: 1, RolePermissionId: 1, RoleRoleName: 1 }, Translation: { CustomText: 1, EntityPlural: 1, Key: 1, OverrideConfirmation: 1, SaveChangesButton: 1, SourceLanguage: 1, SourceText: 1, TargetLanguage: 1, TargetText: 1 }, User: { DisplayName: 1, Email: 1, InsertDate: 1, InsertUserId: 1, IsActive: 1, LastDirectoryUpdate: 1, Password: 1, PasswordConfirm: 1, PasswordHash: 1, PasswordSalt: 1, Source: 1, UpdateDate: 1, UpdateUserId: 1, UserId: 1, UserImage: 1, Username: 1 }, UserPermission: { Granted: 1, PermissionKey: 1, User: 1, UserId: 1, UserPermissionId: 1, Username: 1 }, UserRole: { RoleId: 1, User: 1, UserId: 1, UserRoleId: 1, Username: 1 } }, Common: { UserPreference: { Name: 1, PreferenceType: 1, UserId: 1, UserPreferenceId: 1, Value: 1 } }, CuadroMandos: { Capital: { Capital: 1, CapitalId: 1 }, Estados: { Estado: 1, EstadoId: 1 }, Islas: { Isla: 1, IslaId: 1, NombreIsla: 1 }, Prescriptorinversor: { PrescriptorInversor: 1, PrescriptorInversorId: 1 }, Proyectos: { Capital: 1, CapitalId: 1, Captacion: 1, Contacto: 1, Denominacion: 1, Descripcion: 1, Email: 1, EmpleoReal: 1, Empleos: 1, Estado: 1, EstadoId: 1, Expediente: 1, FechaAmpliacion: 1, FechaAutorizacion: 1, FechaBaja: 1, FechaInicio: 1, FechaInscripcion: 1, FechaPresentacion: 1, Inversion: 1, InversionReal: 1, Isla: 1, IslaId: 1, Nace: 1, NombreTecnico: 1, PrescriptorInversor: 1, PrescriptorInversorId: 1, ProyectoId: 1, Sector: 1, SectorId: 1, Subsector: 1, SubsectorId: 1, SubsectorSectorId: 1, Tecnico: 1, TecnicoId: 1, Telefono: 1 }, Sectores: { Sector: 1, SectorId: 1 }, Subsectores: { Sector: 1, SectorId: 1, Subsector: 1, SubsectorId: 1 }, Tecnicos: { NombreTecnico: 1, Tecnico: 1, TecnicoId: 1 } }, Inmovilizado: { Inmovilizados: { Amortizacion: 1, Codigo: 1, Descripcion: 1, Factura: 1, FechaBaja: 1, FechaCompra: 1, Files: 1, GalleryImages: 1, Garantia: 1, InmovilizadoId: 1, NumeroSerie: 1, Pg: 1, Proveedor: 1, ProveedorId: 1, Sede: 1, SedeId: 1, SubTipo: 1, SubTipoInmovilizadoId: 1, Tipo: 1, TipoInmovilizadoId: 1, Ubicacion: 1, Valor: 1, ValorResidual: 1 }, Proveedores: { Contacto: 1, Email: 1, Proveedor: 1, ProveedorId: 1, Telefono: 1 }, Subtiposinmovilizado: { SubTipo: 1, SubTipoInmovilizadoId: 1, TipoInmovilizadoId: 1, TipoInmovilizadoTipo: 1 }, Tiposinmovilizado: { Tipo: 1, TipoInmovilizadoId: 1 } }, Intranet: { Departamentos: { Departamento: 1, DepartamentoId: 1 }, Sedes: { Sede: 1, SedeId: 1 }, Telefonos: { Contrato: 1, CortoMovil: 1, Departamento: 1, DepartamentoId: 1, ExtCorta: 1, Fijo: 1, Movil: 1, Multisim: 1, Nombre: 1, PUK: 1, Sede: 1, SedeId: 1, TelefonoId: 1 } }, Kairos: { Departamentos: { Codigo: 1, CodigoCliente: 1, Descripcion: 1, FechaBorrado: 1, Id: 1, SedeId: 1 }, Diario: { Empleado: 1, Entrada: 1, Fecha: 1, HoraEntrada: 1, HoraSalida: 1, Id: 1, IdDepartamento: 1, IdEmpleado: 1, Salida: 1, Sede: 1, SedeId: 1 }, EstadosExtras: { Descripcion: 1, EstadoId: 1 }, Extras: { CodigoCliente: 1, Convertidas: 1, Dia: 1, DptoId: 1, Empleado: 1, Estado: 1, EstadoDesc: 1, Fecha: 1, FechaAceptacionCancelacion: 1, Id: 1, IdAusenciaProgramadaTipo: 1, IdEmpleado: 1, IdHoraExtraCabecera: 1, IdHoraExtraCabeceraCodigo: 1, IdHoraExtraCabeceraCodigoCliente: 1, IdHoraExtraCabeceraDescripcion: 1, IdHoraExtraCabeceraFechaBorrado: 1, MotivoCancelacion: 1, Sede: 1, SedeId: 1, Tipo: 1, TotalHorasExtrasConvertidas: 1, TotalHorasExtrasReales: 1 }, Fichajes: { Anulado: 1, CodigoCliente: 1, Dispositivo: 1, DptoId: 1, Empleado: 1, EntradaSalida: 1, Fecha: 1, FechaHora: 1, Fichaje: 1, Files: 1, GpsAltitud: 1, GpsFechaHora: 1, GpsPosicionLatitud: 1, GpsPosicionLongitud: 1, GpsProveedor: 1, Hora: 1, Id: 1, IdDispositivoModelo: 1, IdDispositivoModeloCodigoCliente: 1, IdDispositivoModeloFabricante: 1, IdDispositivoModeloFechaBorrado: 1, IdDispositivoModeloMac: 1, IdDispositivoModeloMarca: 1, IdDispositivoModeloModelo: 1, IdEmpleado: 1, IdEmpresa: 1, IdTerminal: 1, IdTerminalCodigo: 1, IdTerminalCodigoCliente: 1, IdTerminalDescripcion: 1, IdTerminalDispositivoHuellaDactilar: 1, IdTerminalDispositivoHuellaDactilarDns: 1, IdTerminalDispositivoHuellaDactilarFirmware: 1, IdTerminalDispositivoHuellaDactilarIp: 1, IdTerminalDispositivoHuellaDactilarMarca: 1, IdTerminalDispositivoHuellaDactilarModelo: 1, IdTerminalDispositivoHuellaDactilarNumero: 1, IdTerminalDispositivoHuellaDactilarPuerto: 1, IdTerminalFechaActualizacion: 1, IdTerminalFechaBorrado: 1, IdTerminalIdDepartamento: 1, IdTerminalTipoDispositivo: 1, Modificado: 1, Observaciones: 1, Sede: 1, SedeId: 1, TipoDispositivo: 1, Validado: 1 }, HorasExtraConsumidas: { Dia: 1, FechaAutorizacion: 1, Id: 1, IdHoraExtra: 1, IdHoraExtraCodigoCliente: 1, IdHoraExtraDia: 1, IdHoraExtraEstado: 1, IdHoraExtraFecha: 1, IdHoraExtraFechaAceptacionCancelacion: 1, IdHoraExtraIdAusenciaProgramadaTipo: 1, IdHoraExtraIdEmpleado: 1, IdHoraExtraIdHoraExtraCabecera: 1, IdHoraExtraMotivoCancelacion: 1, IdHoraExtraTipo: 1, IdHoraExtraTotalHorasExtrasConvertidas: 1, IdHoraExtraTotalHorasExtrasReales: 1, Tiempo: 1 }, KrsEmpleados: { ClaveAccesoWeb: 1, CodigoCliente: 1, CodigoValidacion: 1, Email: 1, FechaActualizacion: 1, FechaBaja: 1, FechaBorrado: 1, Id: 1, IdDepartamento: 1, IdEmpresa: 1, IdEmpresaFichajeAutomatico: 1, IdHoraExtraCabecera: 1, IdHoraExtraCabeceraCodigo: 1, IdHoraExtraCabeceraCodigoCliente: 1, IdHoraExtraCabeceraDescripcion: 1, IdHoraExtraCabeceraFechaBorrado: 1, Nombre: 1, NumeroTarjetaFichaje: 1, PermiteFichajeAutomatico: 1, PermiteFichajeWeb: 1, PermiteRecordatorio: 1, Pin: 1, ProgramaExternoDescripcion: 1, ProgramaExternoIdEmpleado: 1, SacarFotoFichaje: 1, Tecnico: 1, UsoHorario: 1 }, TiposFichaje: { Id: 1, Tipo: 1 } }, Roezec: { Actividades: { Actividad: 1, Agencia: 1, AnyoExpediente: 1, Cif: 1, Codigo: 1, Cp: 1, Direccion: 1, Empresa: 1, Estado: 1, ExentaAreaAcotada: 1, FechaAlta: 1, FechaBaja: 1, FechaModificacion: 1, FormaJuridica: 1, Id: 1, IdEmpresa: 1, IdNace: 1, Isla: 1, MotivosExencion: 1, NotasMarginales: 1, NumExpediente: 1, ObjetivoEmpleo: 1, ObjetivoInversion: 1, ObservacionesEmpleo: 1, ObservacionesInversion: 1, Poblacion: 1, PreEmpleo: 1, PreInversion: 1, Provincia: 1, SituacionId: 1, Superficie: 1, Tecnico: 1, TrasEmpleo: 1, TrasInversion: 1, UsrAlta: 1, UsrBaja: 1, UsrModificacion: 1 }, Naces: { Actividad: 1, Codigo: 1, FechaAlta: 1, Id: 1, Nace: 1, UsrAlta: 1 }, Representantes: { Agencia: 1, AnyoExpediente: 1, Cif: 1, Cp: 1, Descripcion: 1, Direccion: 1, Doc: 1, Email: 1, Empresa: 1, Estado: 1, ExentaAreaAcotada: 1, FechaAlta: 1, FechaBaja: 1, FechaModificacion: 1, FormaJuridica: 1, Id: 1, IdEmpresa: 1, IdRepresentanteFisico: 1, Isla: 1, MotivoBaja: 1, MotivosExencion: 1, Nombre: 1, NotasMarginales: 1, NumExpediente: 1, ObjetivoEmpleo: 1, ObjetivoInversion: 1, ObservacionesEmpleo: 1, ObservacionesInversion: 1, Pais: 1, Poblacion: 1, PreEmpleo: 1, PreInversion: 1, Provincia: 1, SituacionId: 1, Superficie: 1, Tecnico: 1, Telefono: 1, TipoDoc: 1, TrasEmpleo: 1, TrasInversion: 1, UsrAlta: 1, UsrBaja: 1, UsrModificacion: 1 }, RoezecEmpresas: { Agencia: 1, AnyoExpediente: 1, Cif: 1, Cp: 1, DenominacionSocial: 1, Direccion: 1, Estado: 1, ExentaAreaAcotada: 1, FechaAlta: 1, FechaBaja: 1, FechaModificacion: 1, FormaJuridica: 1, Id: 1, Isla: 1, MotivosExencion: 1, NotasMarginales: 1, NumExpediente: 1, ObjetivoEmpleo: 1, ObjetivoInversion: 1, ObservacionesEmpleo: 1, ObservacionesInversion: 1, Poblacion: 1, PreEmpleo: 1, PreInversion: 1, Provincia: 1, SituacionId: 1, Superficie: 1, Tecnico: 1, TrasEmpleo: 1, TrasInversion: 1, UsrAlta: 1, UsrBaja: 1, UsrModificacion: 1 }, RoezecEstados: { Codigo: 1, Descripcion: 1 }, Socios: { Agencia: 1, AnyoExpediente: 1, Cif: 1, Cp: 1, Descripcion: 1, Direccion: 1, Doc: 1, Email: 1, Empresa: 1, Estado: 1, ExentaAreaAcotada: 1, FechaAlta: 1, FechaBaja: 1, FechaModificacion: 1, FormaJuridica: 1, Id: 1, IdEmpresa: 1, Isla: 1, MotivoBaja: 1, MotivosExencion: 1, Nombre: 1, NotasMarginales: 1, NumExpediente: 1, ObjetivoEmpleo: 1, ObjetivoInversion: 1, ObservacionesEmpleo: 1, ObservacionesInversion: 1, Pais: 1, Participacion: 1, Poblacion: 1, PreEmpleo: 1, PreInversion: 1, Provincia: 1, SituacionId: 1, Superficie: 1, Tecnico: 1, Telefono: 1, TipoDoc: 1, TipoPersona: 1, TrasEmpleo: 1, TrasInversion: 1, UsrAlta: 1, UsrBaja: 1, UsrModificacion: 1 } } }, Forms: { Membership: { ChangePassword: { FormTitle: 1, SubmitButton: 1, Success: 1 }, ForgotPassword: { BackToLogin: 1, FormInfo: 1, FormTitle: 1, SubmitButton: 1, Success: 1 }, Login: { FacebookButton: 1, ForgotPassword: 1, FormTitle: 1, GoogleButton: 1, OR: 1, RememberMe: 1, SignInButton: 1, SignUpButton: 1 }, ResetPassword: { BackToLogin: 1, EmailSubject: 1, FormTitle: 1, SubmitButton: 1, Success: 1 }, SignUp: { AcceptTerms: 1, ActivateEmailSubject: 1, ActivationCompleteMessage: 1, BackToLogin: 1, ConfirmEmail: 1, ConfirmPassword: 1, DisplayName: 1, Email: 1, FormInfo: 1, FormTitle: 1, Password: 1, SubmitButton: 1, Success: 1 } } }, Site: { AccessDenied: { ClickToChangeUser: 1, ClickToLogin: 1, LackPermissions: 1, NotLoggedIn: 1, PageTitle: 1 }, BasicProgressDialog: { CancelTitle: 1, PleaseWait: 1 }, BulkServiceAction: { AllHadErrorsFormat: 1, AllSuccessFormat: 1, ConfirmationFormat: 1, ErrorCount: 1, NothingToProcess: 1, SomeHadErrorsFormat: 1, SuccessCount: 1 }, Dashboard: { ContentDescription: 1 }, Layout: { FooterCopyright: 1, FooterInfo: 1, FooterRights: 1, GeneralSettings: 1, Language: 1, Theme: 1, ThemeBlack: 1, ThemeBlackLight: 1, ThemeBlue: 1, ThemeBlueLight: 1, ThemeGreen: 1, ThemeGreenLight: 1, ThemePurple: 1, ThemePurpleLight: 1, ThemeRed: 1, ThemeRedLight: 1, ThemeYellow: 1, ThemeYellowLight: 1 }, RolePermissionDialog: { DialogTitle: 1, EditButton: 1, SaveSuccess: 1 }, UserDialog: { EditPermissionsButton: 1, EditRolesButton: 1 }, UserPermissionDialog: { DialogTitle: 1, Grant: 1, Permission: 1, Revoke: 1, SaveSuccess: 1 }, UserRoleDialog: { DialogTitle: 1, SaveSuccess: 1 }, ValidationError: { Title: 1 } }, Validation: { AuthenticationError: 1, CantFindUserWithEmail: 1, CurrentPasswordMismatch: 1, DeleteForeignKeyError: 1, EmailConfirm: 1, EmailInUse: 1, InvalidActivateToken: 1, InvalidResetToken: 1, MinRequiredPasswordLength: 1, SavePrimaryKeyError: 1 } });
+        ProyectosZec['Texts'] = Q.proxyTexts(Texts, '', { Db: { Administration: { Language: { Id: 1, LanguageId: 1, LanguageName: 1 }, Role: { RoleId: 1, RoleName: 1 }, RolePermission: { PermissionKey: 1, RoleId: 1, RolePermissionId: 1, RoleRoleName: 1 }, Translation: { CustomText: 1, EntityPlural: 1, Key: 1, OverrideConfirmation: 1, SaveChangesButton: 1, SourceLanguage: 1, SourceText: 1, TargetLanguage: 1, TargetText: 1 }, User: { DisplayName: 1, Email: 1, InsertDate: 1, InsertUserId: 1, IsActive: 1, LastDirectoryUpdate: 1, Password: 1, PasswordConfirm: 1, PasswordHash: 1, PasswordSalt: 1, Source: 1, UpdateDate: 1, UpdateUserId: 1, UserId: 1, UserImage: 1, Username: 1 }, UserPermission: { Granted: 1, PermissionKey: 1, User: 1, UserId: 1, UserPermissionId: 1, Username: 1 }, UserRole: { RoleId: 1, User: 1, UserId: 1, UserRoleId: 1, Username: 1 } }, Common: { UserPreference: { Name: 1, PreferenceType: 1, UserId: 1, UserPreferenceId: 1, Value: 1 } }, CuadroMandos: { Capital: { Capital: 1, CapitalId: 1 }, Estados: { Estado: 1, EstadoId: 1 }, Islas: { Isla: 1, IslaId: 1, NombreIsla: 1 }, Prescriptorinversor: { PrescriptorInversor: 1, PrescriptorInversorId: 1 }, Proyectos: { Capital: 1, CapitalId: 1, Captacion: 1, Contacto: 1, Denominacion: 1, Descripcion: 1, Email: 1, EmpleoReal: 1, Empleos: 1, Estado: 1, EstadoId: 1, Expediente: 1, FechaAmpliacion: 1, FechaAutorizacion: 1, FechaBaja: 1, FechaInicio: 1, FechaInscripcion: 1, FechaPresentacion: 1, Inversion: 1, InversionReal: 1, Isla: 1, IslaId: 1, Nace: 1, NombreTecnico: 1, PrescriptorInversor: 1, PrescriptorInversorId: 1, ProyectoId: 1, Sector: 1, SectorId: 1, Subsector: 1, SubsectorId: 1, SubsectorSectorId: 1, Tecnico: 1, TecnicoId: 1, Telefono: 1 }, Sectores: { Sector: 1, SectorId: 1 }, Subsectores: { Sector: 1, SectorId: 1, Subsector: 1, SubsectorId: 1 }, Tecnicos: { NombreTecnico: 1, Tecnico: 1, TecnicoId: 1 } }, Inmovilizado: { Inmovilizados: { Amortizacion: 1, Codigo: 1, Descripcion: 1, Factura: 1, FechaBaja: 1, FechaCompra: 1, Files: 1, GalleryImages: 1, Garantia: 1, InmovilizadoId: 1, NumeroSerie: 1, Pg: 1, Proveedor: 1, ProveedorId: 1, Sede: 1, SedeId: 1, SubTipo: 1, SubTipoInmovilizadoId: 1, Tipo: 1, TipoInmovilizadoId: 1, Ubicacion: 1, Valor: 1, ValorResidual: 1 }, Proveedores: { Contacto: 1, Email: 1, Proveedor: 1, ProveedorId: 1, Telefono: 1 }, Subtiposinmovilizado: { SubTipo: 1, SubTipoInmovilizadoId: 1, TipoInmovilizadoId: 1, TipoInmovilizadoTipo: 1 }, Tiposinmovilizado: { Tipo: 1, TipoInmovilizadoId: 1 } }, Intranet: { Departamentos: { Departamento: 1, DepartamentoId: 1 }, Sedes: { Sede: 1, SedeId: 1 }, Telefonos: { Contrato: 1, CortoMovil: 1, Departamento: 1, DepartamentoId: 1, ExtCorta: 1, Fijo: 1, Movil: 1, Multisim: 1, Nombre: 1, PUK: 1, Sede: 1, SedeId: 1, TelefonoId: 1 } }, Kairos: { Departamentos: { Codigo: 1, CodigoCliente: 1, Descripcion: 1, FechaBorrado: 1, Id: 1, SedeId: 1 }, Diario: { Empleado: 1, Entrada: 1, Fecha: 1, HoraEntrada: 1, HoraSalida: 1, Id: 1, IdDepartamento: 1, IdEmpleado: 1, Salida: 1, Sede: 1, SedeId: 1 }, EstadosExtras: { Descripcion: 1, EstadoId: 1 }, Extras: { CodigoCliente: 1, Consumidas: 1, Convertidas: 1, Dia: 1, DptoId: 1, Empleado: 1, Estado: 1, EstadoDesc: 1, Fecha: 1, FechaAceptacionCancelacion: 1, Id: 1, IdAusenciaProgramadaTipo: 1, IdEmpleado: 1, IdHoraExtraCabecera: 1, IdHoraExtraCabeceraCodigo: 1, IdHoraExtraCabeceraCodigoCliente: 1, IdHoraExtraCabeceraDescripcion: 1, IdHoraExtraCabeceraFechaBorrado: 1, MotivoCancelacion: 1, Pendientes: 1, Sede: 1, SedeId: 1, Tipo: 1, TotalConsumidas: 1, TotalHorasExtrasConvertidas: 1, TotalHorasExtrasReales: 1 }, Fichajes: { Anulado: 1, CodigoCliente: 1, Dispositivo: 1, DptoId: 1, Empleado: 1, EntradaSalida: 1, Fecha: 1, FechaHora: 1, Fichaje: 1, Files: 1, GpsAltitud: 1, GpsFechaHora: 1, GpsPosicionLatitud: 1, GpsPosicionLongitud: 1, GpsProveedor: 1, Hora: 1, Id: 1, IdDispositivoModelo: 1, IdDispositivoModeloCodigoCliente: 1, IdDispositivoModeloFabricante: 1, IdDispositivoModeloFechaBorrado: 1, IdDispositivoModeloMac: 1, IdDispositivoModeloMarca: 1, IdDispositivoModeloModelo: 1, IdEmpleado: 1, IdEmpresa: 1, IdTerminal: 1, IdTerminalCodigo: 1, IdTerminalCodigoCliente: 1, IdTerminalDescripcion: 1, IdTerminalDispositivoHuellaDactilar: 1, IdTerminalDispositivoHuellaDactilarDns: 1, IdTerminalDispositivoHuellaDactilarFirmware: 1, IdTerminalDispositivoHuellaDactilarIp: 1, IdTerminalDispositivoHuellaDactilarMarca: 1, IdTerminalDispositivoHuellaDactilarModelo: 1, IdTerminalDispositivoHuellaDactilarNumero: 1, IdTerminalDispositivoHuellaDactilarPuerto: 1, IdTerminalFechaActualizacion: 1, IdTerminalFechaBorrado: 1, IdTerminalIdDepartamento: 1, IdTerminalTipoDispositivo: 1, Modificado: 1, Observaciones: 1, Sede: 1, SedeId: 1, TipoDispositivo: 1, Validado: 1 }, HorasExtraConsumidas: { Dia: 1, Empleado: 1, FechaAutorizacion: 1, Id: 1, IdEmpleado: 1, IdHoraExtra: 1, IdHoraExtraCodigoCliente: 1, IdHoraExtraDia: 1, IdHoraExtraEstado: 1, IdHoraExtraFecha: 1, IdHoraExtraFechaAceptacionCancelacion: 1, IdHoraExtraIdAusenciaProgramadaTipo: 1, IdHoraExtraIdEmpleado: 1, IdHoraExtraIdHoraExtraCabecera: 1, IdHoraExtraMotivoCancelacion: 1, IdHoraExtraTipo: 1, IdHoraExtraTotalHorasExtrasConvertidas: 1, IdHoraExtraTotalHorasExtrasReales: 1, Tiempo: 1 }, KrsEmpleados: { ClaveAccesoWeb: 1, CodigoCliente: 1, CodigoValidacion: 1, Email: 1, FechaActualizacion: 1, FechaBaja: 1, FechaBorrado: 1, Id: 1, IdDepartamento: 1, IdEmpresa: 1, IdEmpresaFichajeAutomatico: 1, IdHoraExtraCabecera: 1, IdHoraExtraCabeceraCodigo: 1, IdHoraExtraCabeceraCodigoCliente: 1, IdHoraExtraCabeceraDescripcion: 1, IdHoraExtraCabeceraFechaBorrado: 1, Nombre: 1, NumeroTarjetaFichaje: 1, PermiteFichajeAutomatico: 1, PermiteFichajeWeb: 1, PermiteRecordatorio: 1, Pin: 1, ProgramaExternoDescripcion: 1, ProgramaExternoIdEmpleado: 1, SacarFotoFichaje: 1, Tecnico: 1, UsoHorario: 1 }, TiposFichaje: { Id: 1, Tipo: 1 } }, Roezec: { Actividades: { Actividad: 1, Agencia: 1, AnyoExpediente: 1, Cif: 1, Codigo: 1, Cp: 1, Direccion: 1, Empresa: 1, Estado: 1, ExentaAreaAcotada: 1, FechaAlta: 1, FechaBaja: 1, FechaModificacion: 1, FormaJuridica: 1, Id: 1, IdEmpresa: 1, IdNace: 1, Isla: 1, MotivosExencion: 1, NotasMarginales: 1, NumExpediente: 1, ObjetivoEmpleo: 1, ObjetivoInversion: 1, ObservacionesEmpleo: 1, ObservacionesInversion: 1, Poblacion: 1, PreEmpleo: 1, PreInversion: 1, Provincia: 1, SituacionId: 1, Superficie: 1, Tecnico: 1, TrasEmpleo: 1, TrasInversion: 1, UsrAlta: 1, UsrBaja: 1, UsrModificacion: 1 }, Naces: { Actividad: 1, Codigo: 1, FechaAlta: 1, Id: 1, Nace: 1, UsrAlta: 1 }, Representantes: { Agencia: 1, AnyoExpediente: 1, Cif: 1, Cp: 1, Descripcion: 1, Direccion: 1, Doc: 1, Email: 1, Empresa: 1, Estado: 1, ExentaAreaAcotada: 1, FechaAlta: 1, FechaBaja: 1, FechaModificacion: 1, FormaJuridica: 1, Id: 1, IdEmpresa: 1, IdRepresentanteFisico: 1, Isla: 1, MotivoBaja: 1, MotivosExencion: 1, Nombre: 1, NotasMarginales: 1, NumExpediente: 1, ObjetivoEmpleo: 1, ObjetivoInversion: 1, ObservacionesEmpleo: 1, ObservacionesInversion: 1, Pais: 1, Poblacion: 1, PreEmpleo: 1, PreInversion: 1, Provincia: 1, SituacionId: 1, Superficie: 1, Tecnico: 1, Telefono: 1, TipoDoc: 1, TrasEmpleo: 1, TrasInversion: 1, UsrAlta: 1, UsrBaja: 1, UsrModificacion: 1 }, RoezecEmpresas: { Agencia: 1, AnyoExpediente: 1, Cif: 1, Cp: 1, DenominacionSocial: 1, Direccion: 1, Estado: 1, ExentaAreaAcotada: 1, FechaAlta: 1, FechaBaja: 1, FechaModificacion: 1, FormaJuridica: 1, Id: 1, Isla: 1, MotivosExencion: 1, NotasMarginales: 1, NumExpediente: 1, ObjetivoEmpleo: 1, ObjetivoInversion: 1, ObservacionesEmpleo: 1, ObservacionesInversion: 1, Poblacion: 1, PreEmpleo: 1, PreInversion: 1, Provincia: 1, SituacionId: 1, Superficie: 1, Tecnico: 1, TrasEmpleo: 1, TrasInversion: 1, UsrAlta: 1, UsrBaja: 1, UsrModificacion: 1 }, RoezecEstados: { Codigo: 1, Descripcion: 1 }, Socios: { Agencia: 1, AnyoExpediente: 1, Cif: 1, Cp: 1, Descripcion: 1, Direccion: 1, Doc: 1, Email: 1, Empresa: 1, Estado: 1, ExentaAreaAcotada: 1, FechaAlta: 1, FechaBaja: 1, FechaModificacion: 1, FormaJuridica: 1, Id: 1, IdEmpresa: 1, Isla: 1, MotivoBaja: 1, MotivosExencion: 1, Nombre: 1, NotasMarginales: 1, NumExpediente: 1, ObjetivoEmpleo: 1, ObjetivoInversion: 1, ObservacionesEmpleo: 1, ObservacionesInversion: 1, Pais: 1, Participacion: 1, Poblacion: 1, PreEmpleo: 1, PreInversion: 1, Provincia: 1, SituacionId: 1, Superficie: 1, Tecnico: 1, Telefono: 1, TipoDoc: 1, TipoPersona: 1, TrasEmpleo: 1, TrasInversion: 1, UsrAlta: 1, UsrBaja: 1, UsrModificacion: 1 } } }, Forms: { Membership: { ChangePassword: { FormTitle: 1, SubmitButton: 1, Success: 1 }, ForgotPassword: { BackToLogin: 1, FormInfo: 1, FormTitle: 1, SubmitButton: 1, Success: 1 }, Login: { FacebookButton: 1, ForgotPassword: 1, FormTitle: 1, GoogleButton: 1, OR: 1, RememberMe: 1, SignInButton: 1, SignUpButton: 1 }, ResetPassword: { BackToLogin: 1, EmailSubject: 1, FormTitle: 1, SubmitButton: 1, Success: 1 }, SignUp: { AcceptTerms: 1, ActivateEmailSubject: 1, ActivationCompleteMessage: 1, BackToLogin: 1, ConfirmEmail: 1, ConfirmPassword: 1, DisplayName: 1, Email: 1, FormInfo: 1, FormTitle: 1, Password: 1, SubmitButton: 1, Success: 1 } } }, Site: { AccessDenied: { ClickToChangeUser: 1, ClickToLogin: 1, LackPermissions: 1, NotLoggedIn: 1, PageTitle: 1 }, BasicProgressDialog: { CancelTitle: 1, PleaseWait: 1 }, BulkServiceAction: { AllHadErrorsFormat: 1, AllSuccessFormat: 1, ConfirmationFormat: 1, ErrorCount: 1, NothingToProcess: 1, SomeHadErrorsFormat: 1, SuccessCount: 1 }, Dashboard: { ContentDescription: 1 }, Layout: { FooterCopyright: 1, FooterInfo: 1, FooterRights: 1, GeneralSettings: 1, Language: 1, Theme: 1, ThemeBlack: 1, ThemeBlackLight: 1, ThemeBlue: 1, ThemeBlueLight: 1, ThemeGreen: 1, ThemeGreenLight: 1, ThemePurple: 1, ThemePurpleLight: 1, ThemeRed: 1, ThemeRedLight: 1, ThemeYellow: 1, ThemeYellowLight: 1 }, RolePermissionDialog: { DialogTitle: 1, EditButton: 1, SaveSuccess: 1 }, UserDialog: { EditPermissionsButton: 1, EditRolesButton: 1 }, UserPermissionDialog: { DialogTitle: 1, Grant: 1, Permission: 1, Revoke: 1, SaveSuccess: 1 }, UserRoleDialog: { DialogTitle: 1, SaveSuccess: 1 }, ValidationError: { Title: 1 } }, Validation: { AuthenticationError: 1, CantFindUserWithEmail: 1, CurrentPasswordMismatch: 1, DeleteForeignKeyError: 1, EmailConfirm: 1, EmailInUse: 1, InvalidActivateToken: 1, InvalidResetToken: 1, MinRequiredPasswordLength: 1, SavePrimaryKeyError: 1 } });
     })(Texts = ProyectosZec.Texts || (ProyectosZec.Texts = {}));
 })(ProyectosZec || (ProyectosZec = {}));
 var ProyectosZec;
@@ -6213,7 +6213,9 @@ var ProyectosZec;
                 this.view.setSummaryOptions({
                     aggregators: [
                         new Slick.Aggregators.Sum("TotalHorasExtrasReales" /* TotalHorasExtrasReales */),
-                        new Slick.Aggregators.Sum("TotalHorasExtrasConvertidas" /* TotalHorasExtrasConvertidas */)
+                        new Slick.Aggregators.Sum("TotalHorasExtrasConvertidas" /* TotalHorasExtrasConvertidas */),
+                        new Slick.Aggregators.Sum("Pendientes" /* Pendientes */),
+                        new Slick.Aggregators.Sum("TotalConsumidas" /* TotalConsumidas */)
                     ]
                 });
                 // Declaramos que el Grid puedes seleccionar fila
@@ -6249,6 +6251,8 @@ var ProyectosZec;
                     grid: this,
                     onViewSubmit: function () { return _this.onViewSubmit(); }
                 }));
+                // Quitamos boton de añadir para evitar que se añadan nuevas extras
+                buttons.splice(Q.indexOf(buttons, function (x) { return x.cssClass == "add-button"; }), 1);
                 return buttons;
                 // Fin añadidos
             };
@@ -6385,6 +6389,29 @@ var ProyectosZec;
         Kairos.HorasExtraConsumidasDialog = HorasExtraConsumidasDialog;
     })(Kairos = ProyectosZec.Kairos || (ProyectosZec.Kairos = {}));
 })(ProyectosZec || (ProyectosZec = {}));
+/// <reference path="../../Common/Helpers/GridEditorDialog.ts" />
+var ProyectosZec;
+(function (ProyectosZec) {
+    var Kairos;
+    (function (Kairos) {
+        var HorasExtraConsumidasEditDialog = /** @class */ (function (_super) {
+            __extends(HorasExtraConsumidasEditDialog, _super);
+            function HorasExtraConsumidasEditDialog() {
+                var _this = _super.call(this) || this;
+                _this.form = new Kairos.HorasExtraConsumidasForm(_this.idPrefix);
+                return _this;
+            }
+            HorasExtraConsumidasEditDialog.prototype.getFormKey = function () { return Kairos.HorasExtraConsumidasForm.formKey; };
+            HorasExtraConsumidasEditDialog.prototype.getNameProperty = function () { return Kairos.HorasExtraConsumidasRow.nameProperty; };
+            HorasExtraConsumidasEditDialog.prototype.getLocalTextPrefix = function () { return Kairos.HorasExtraConsumidasRow.localTextPrefix; };
+            HorasExtraConsumidasEditDialog = __decorate([
+                Serenity.Decorators.registerClass()
+            ], HorasExtraConsumidasEditDialog);
+            return HorasExtraConsumidasEditDialog;
+        }(ProyectosZec.Common.GridEditorDialog));
+        Kairos.HorasExtraConsumidasEditDialog = HorasExtraConsumidasEditDialog;
+    })(Kairos = ProyectosZec.Kairos || (ProyectosZec.Kairos = {}));
+})(ProyectosZec || (ProyectosZec = {}));
 /// <reference path="../../Common/Helpers/GridEditorBase.ts" />
 var ProyectosZec;
 (function (ProyectosZec) {
@@ -6398,6 +6425,9 @@ var ProyectosZec;
             HorasExtraConsumidasEditor.prototype.getColumnsKey = function () { return "Kairos.HorasExtraConsumidas"; };
             HorasExtraConsumidasEditor.prototype.getDialogType = function () { return Kairos.HorasExtraConsumidasDialog; };
             HorasExtraConsumidasEditor.prototype.getLocalTextPrefix = function () { return Kairos.HorasExtraConsumidasRow.localTextPrefix; };
+            HorasExtraConsumidasEditor.prototype.getAddButtonCaption = function () {
+                return "Añadir";
+            };
             HorasExtraConsumidasEditor = __decorate([
                 Serenity.Decorators.registerEditor()
             ], HorasExtraConsumidasEditor);
@@ -6421,6 +6451,25 @@ var ProyectosZec;
             HorasExtraConsumidasGrid.prototype.getInsertPermission = function () { return Kairos.HorasExtraConsumidasRow.insertPermission; };
             HorasExtraConsumidasGrid.prototype.getLocalTextPrefix = function () { return Kairos.HorasExtraConsumidasRow.localTextPrefix; };
             HorasExtraConsumidasGrid.prototype.getService = function () { return Kairos.HorasExtraConsumidasService.baseUrl; };
+            // Botones Excel y Pdf
+            HorasExtraConsumidasGrid.prototype.getButtons = function () {
+                var _this = this;
+                var buttons = _super.prototype.getButtons.call(this);
+                buttons.push(ProyectosZec.Common.ExcelExportHelper.createToolButton({
+                    grid: this,
+                    onViewSubmit: function () { return _this.onViewSubmit(); },
+                    service: 'Kairos/HorasExtraConsumidas/ListExcel',
+                    separator: true
+                }));
+                buttons.push(ProyectosZec.Common.PdfExportHelper.createToolButton({
+                    grid: this,
+                    onViewSubmit: function () { return _this.onViewSubmit(); }
+                }));
+                // Quitamos boton de añadir para evitar que se añadan nuevas extras
+                //            buttons.splice(Q.indexOf(buttons, x => x.cssClass == "add-button"), 1);
+                return buttons;
+                // Fin añadidos
+            };
             HorasExtraConsumidasGrid = __decorate([
                 Serenity.Decorators.registerClass()
             ], HorasExtraConsumidasGrid);

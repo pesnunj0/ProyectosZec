@@ -55,7 +55,7 @@ namespace ProyectosZec.Kairos.Entities
         }
 
         [DisplayName("Fecha Hora"), Column("fechaHora"), NotNull]
-        [DateTimeKind(DateTimeKind.Utc), DateTimeEditor]
+        [DateTimeKind(DateTimeKind.Local), DateTimeEditor]
         public DateTime? FechaHora
         {
             get { return Fields.FechaHora[this]; }
@@ -97,8 +97,6 @@ namespace ProyectosZec.Kairos.Entities
             get { return Fields.Sede[this]; }
             set { Fields.Sede[this] = value; }
         }
-
-
         [DisplayName("Gps Posicion Latitud"), Column("gps_Posicion_Latitud"), Size(100)]
         public String GpsPosicionLatitud
         {
@@ -114,6 +112,7 @@ namespace ProyectosZec.Kairos.Entities
         }
 
         [DisplayName("Gps Fecha Hora"), Column("gps_FechaHora")]
+        [DateTimeKind(DateTimeKind.Local), DateTimeEditor]
         public DateTime? GpsFechaHora
         {
             get { return Fields.GpsFechaHora[this]; }
