@@ -19,6 +19,7 @@ namespace ProyectosZec.Kairos.Columns
         [Hidden]
         public String IdHoraExtraDia { get; set; }
         public String Empleado { get; set; }
+        [DisplayFormat("#,##0.00")]
         public Decimal Tiempo { get; set; }
         [DisplayName("Dia"), QuickFilter, DisplayFormat("d")]
         public DateTime Dia { get; set; }

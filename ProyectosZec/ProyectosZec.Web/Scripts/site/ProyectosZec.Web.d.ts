@@ -1698,6 +1698,7 @@ declare namespace ProyectosZec.Kairos {
         SedeId?: number;
         Sede?: string;
         Convertidas?: string;
+        Pendienteshhmm?: string;
         EstadoDesc?: string;
         Consumidas?: HorasExtraConsumidasRow[];
         TotalConsumidas?: number;
@@ -1734,6 +1735,7 @@ declare namespace ProyectosZec.Kairos {
             SedeId = "SedeId",
             Sede = "Sede",
             Convertidas = "Convertidas",
+            Pendienteshhmm = "Pendienteshhmm",
             EstadoDesc = "EstadoDesc",
             Consumidas = "Consumidas",
             TotalConsumidas = "TotalConsumidas",

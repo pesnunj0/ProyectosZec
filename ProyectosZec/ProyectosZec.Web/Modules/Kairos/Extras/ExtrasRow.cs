@@ -107,13 +107,33 @@ namespace ProyectosZec.Kairos.Entities
             set { Fields.TotalConsumidas[this] = value; }
         }
 
-        [DisplayName("Pendientes"), Expression("(SELECT t0.[totalHorasExtrasConvertidas]-SUM(tiempo) FROM HorasExtraConsumidas WHERE HorasExtraConsumidas.idHoraExtra = t0.[id])")]
+        [DisplayName("Cons.HH:mm"), Expression("CAST(FLOOR((SELECT SUM(tiempo) FROM HorasExtraConsumidas WHERE HorasExtraConsumidas.idHoraExtra = t0.[id])) As VARCHAR(2)) + ':' + RIGHT('0' + CAST(FLOOR(((SELECT SUM(tiempo) FROM HorasExtraConsumidas WHERE HorasExtraConsumidas.idHoraExtra = t0.[id]) - FLOOR((SELECT SUM(tiempo) FROM HorasExtraConsumidas WHERE HorasExtraConsumidas.idHoraExtra = t0.[id]))) * 60)AS VARCHAR(2)), 2)")]
+        public String Consumidashhmm
+        {
+            get { return Fields.Consumidashhmm[this]; }
+            set { Fields.Consumidashhmm[this] = value; }
+        }
+
+        [DisplayName("Pendientes"), Expression("(SELECT totalHorasExtrasConvertidas-SUM(tiempo) FROM HorasExtraConsumidas WHERE HorasExtraConsumidas.idHoraExtra = t0.[id])")]
         public Decimal? Pendientes
         {
             get { return Fields.Pendientes[this]; }
             set { Fields.Pendientes[this] = value; }
         }
 
+        [DisplayName("Conv. HH:mm"), Expression("CAST(FLOOR(totalHorasExtrasConvertidas) As VARCHAR(2))+':'+RIGHT('0'+ CAST(FLOOR((totalHorasExtrasConvertidas-FLOOR(totalHorasExtrasConvertidas))*60)AS VARCHAR(2)),2)")]
+        public String Convertidas
+        {
+            get { return Fields.Convertidas[this]; }
+            set { Fields.Convertidas[this] = value; }
+        }
+
+        [DisplayName("Pend.HH:mm"), Expression("CAST(FLOOR((SELECT t0.[totalHorasExtrasConvertidas]-SUM(tiempo) FROM HorasExtraConsumidas WHERE HorasExtraConsumidas.idHoraExtra = t0.[id])) As VARCHAR(2))+':'+RIGHT('0'+ CAST(FLOOR(((SELECT t0.[totalHorasExtrasConvertidas]-SUM(tiempo) FROM HorasExtraConsumidas WHERE HorasExtraConsumidas.idHoraExtra = t0.[id])-FLOOR((SELECT t0.[totalHorasExtrasConvertidas]-SUM(tiempo) FROM HorasExtraConsumidas WHERE HorasExtraConsumidas.idHoraExtra = t0.[id])))*60)AS VARCHAR(2)),2) ")]
+        public String Pendienteshhmm
+        {
+            get { return Fields.Pendienteshhmm[this]; }
+            set { Fields.Pendienteshhmm[this] = value; }
+        }
         [DisplayName("Tipo"), Column("tipo"), NotNull]
 
         public Int32? Tipo
@@ -134,13 +154,6 @@ namespace ProyectosZec.Kairos.Entities
         {
             get { return Fields.TotalHorasExtrasConvertidas[this]; }
             set { Fields.TotalHorasExtrasConvertidas[this] = value; }
-        }
-
-        [DisplayName("Conv. HH:mm"), Expression("CAST(FLOOR(totalHorasExtrasConvertidas) As VARCHAR(2))+':'+RIGHT('0'+ CAST(FLOOR((totalHorasExtrasConvertidas-FLOOR(totalHorasExtrasConvertidas))*60)AS VARCHAR(2)),2)")]
-        public String Convertidas
-        {
-            get { return Fields.Convertidas[this]; }
-            set { Fields.Convertidas[this] = value; }
         }
 
         [DisplayName("Id Ausencia Tipo"), Column("idAusenciaProgramadaTipo")]
@@ -257,6 +270,8 @@ namespace ProyectosZec.Kairos.Entities
             public Int32Field SedeId;
             public StringField Sede;
             public StringField Convertidas;
+            public StringField Pendienteshhmm;
+            public StringField Consumidashhmm;
             public StringField EstadoDesc;
             public readonly RowListField<HorasExtraConsumidasRow> Consumidas;
             public DecimalField TotalConsumidas;

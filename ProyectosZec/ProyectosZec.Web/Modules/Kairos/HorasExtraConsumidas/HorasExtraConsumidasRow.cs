@@ -46,7 +46,7 @@ namespace ProyectosZec.Kairos.Entities
             set { Fields.Empleado[this] = value; }
         }
 
-        [DisplayName("Tiempo"), Column("tiempo"), Size(4), Scale(1)]
+        [DisplayName("Tiempo"), Column("tiempo"), Size(4), Scale(2)]
         public Decimal? Tiempo
         {
             get { return Fields.Tiempo[this]; }

@@ -14,6 +14,7 @@ namespace ProyectosZec.Kairos.Forms
     public class HorasExtraConsumidasForm
     {
         public Int64 IdHoraExtra { get; set; }
+        [DisplayFormat("#,##0.00")]
         public Decimal Tiempo { get; set; }
         public DateTime Dia { get; set; }
         
