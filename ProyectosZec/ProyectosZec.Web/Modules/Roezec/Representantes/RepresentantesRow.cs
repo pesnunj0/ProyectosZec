@@ -9,7 +9,7 @@ namespace ProyectosZec.Roezec.Entities
     using System.ComponentModel;
     using System.IO;
 
-    [ConnectionKey("Roezec"), Module("Roezec"), TableName("roezec_representantes")]
+    [ConnectionKey("Roezec_old"), Module("Roezec"), TableName("roezec_representantes")]
     [DisplayName("Representantes"), InstanceName("Representantes")]
     [ReadPermission("Roezec:Read")]
     [ModifyPermission("Roezec:Modify")]

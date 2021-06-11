@@ -1470,6 +1470,94 @@ declare namespace ProyectosZec.Intranet {
 declare namespace ProyectosZec.Kairos {
 }
 declare namespace ProyectosZec.Kairos {
+    interface AusenciasProgramadasForm {
+        CodigoCliente: Serenity.StringEditor;
+        IdEmpleado: Serenity.LookupEditor;
+        IdAusenciaProgramadaTipo: Serenity.LookupEditor;
+        FechaDesde: Serenity.DateEditor;
+        FechaHasta: Serenity.DateEditor;
+        FechaBorrado: Serenity.DateEditor;
+        TotalHoras: Serenity.DecimalEditor;
+        TotalDias: Serenity.IntegerEditor;
+    }
+    class AusenciasProgramadasForm extends Serenity.PrefixedContext {
+        static formKey: string;
+        private static init;
+        constructor(prefix: string);
+    }
+}
+declare namespace ProyectosZec.Kairos {
+    interface AusenciasProgramadasRow {
+        Id?: number;
+        CodigoCliente?: number;
+        IdEmpleado?: number;
+        IdAusenciaProgramadaTipo?: number;
+        FechaDesde?: string;
+        FechaHasta?: string;
+        FechaBorrado?: string;
+        TotalHoras?: number;
+        TotalDias?: number;
+        Empleado?: string;
+        IdAusenciaProgramadaTipoCodigoCliente?: number;
+        IdAusenciaProgramadaTipoCodigo?: string;
+        Descripcion?: string;
+        IdAusenciaProgramadaTipoColorFondo?: string;
+        IdAusenciaProgramadaTipoColorLetra?: string;
+        IdAusenciaProgramadaTipoFechaBorrado?: string;
+        IdAusenciaProgramadaTipoPermitirSolicitud?: boolean;
+        IdAusenciaProgramadaTipoFechaActualizacion?: string;
+        IdAusenciaProgramadaTipoContabilizarTiempo?: boolean;
+    }
+    namespace AusenciasProgramadasRow {
+        const idProperty = "Id";
+        const localTextPrefix = "Kairos.AusenciasProgramadas";
+        const deletePermission = "Kairos:Delete";
+        const insertPermission = "Kairos:Insert";
+        const readPermission = "Kairos:Read";
+        const updatePermission = "Kairos:Admin";
+        const enum Fields {
+            Id = "Id",
+            CodigoCliente = "CodigoCliente",
+            IdEmpleado = "IdEmpleado",
+            IdAusenciaProgramadaTipo = "IdAusenciaProgramadaTipo",
+            FechaDesde = "FechaDesde",
+            FechaHasta = "FechaHasta",
+            FechaBorrado = "FechaBorrado",
+            TotalHoras = "TotalHoras",
+            TotalDias = "TotalDias",
+            Empleado = "Empleado",
+            IdAusenciaProgramadaTipoCodigoCliente = "IdAusenciaProgramadaTipoCodigoCliente",
+            IdAusenciaProgramadaTipoCodigo = "IdAusenciaProgramadaTipoCodigo",
+            Descripcion = "Descripcion",
+            IdAusenciaProgramadaTipoColorFondo = "IdAusenciaProgramadaTipoColorFondo",
+            IdAusenciaProgramadaTipoColorLetra = "IdAusenciaProgramadaTipoColorLetra",
+            IdAusenciaProgramadaTipoFechaBorrado = "IdAusenciaProgramadaTipoFechaBorrado",
+            IdAusenciaProgramadaTipoPermitirSolicitud = "IdAusenciaProgramadaTipoPermitirSolicitud",
+            IdAusenciaProgramadaTipoFechaActualizacion = "IdAusenciaProgramadaTipoFechaActualizacion",
+            IdAusenciaProgramadaTipoContabilizarTiempo = "IdAusenciaProgramadaTipoContabilizarTiempo"
+        }
+    }
+}
+declare namespace ProyectosZec.Kairos {
+    namespace AusenciasProgramadasService {
+        const baseUrl = "Kairos/AusenciasProgramadas";
+        function Create(request: Serenity.SaveRequest<AusenciasProgramadasRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Update(request: Serenity.SaveRequest<AusenciasProgramadasRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<AusenciasProgramadasRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<AusenciasProgramadasRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        const enum Methods {
+            Create = "Kairos/AusenciasProgramadas/Create",
+            Update = "Kairos/AusenciasProgramadas/Update",
+            Delete = "Kairos/AusenciasProgramadas/Delete",
+            Retrieve = "Kairos/AusenciasProgramadas/Retrieve",
+            List = "Kairos/AusenciasProgramadas/List"
+        }
+    }
+}
+declare namespace ProyectosZec.Kairos {
+}
+declare namespace ProyectosZec.Kairos {
     interface DepartamentosForm {
         CodigoCliente: Serenity.StringEditor;
         Codigo: Serenity.StringEditor;
@@ -1699,6 +1787,7 @@ declare namespace ProyectosZec.Kairos {
         Sede?: string;
         Convertidas?: string;
         Pendienteshhmm?: string;
+        Consumidashhmm?: string;
         EstadoDesc?: string;
         Consumidas?: HorasExtraConsumidasRow[];
         TotalConsumidas?: number;
@@ -1736,6 +1825,7 @@ declare namespace ProyectosZec.Kairos {
             Sede = "Sede",
             Convertidas = "Convertidas",
             Pendienteshhmm = "Pendienteshhmm",
+            Consumidashhmm = "Consumidashhmm",
             EstadoDesc = "EstadoDesc",
             Consumidas = "Consumidas",
             TotalConsumidas = "TotalConsumidas",
@@ -1997,6 +2087,80 @@ declare namespace ProyectosZec.Kairos {
             Delete = "Kairos/HorasExtraConsumidas/Delete",
             Retrieve = "Kairos/HorasExtraConsumidas/Retrieve",
             List = "Kairos/HorasExtraConsumidas/List"
+        }
+    }
+}
+declare namespace ProyectosZec.Kairos {
+}
+declare namespace ProyectosZec.Kairos {
+    interface KrsAusenciasProgramadasTiposForm {
+        CodigoCliente: Serenity.StringEditor;
+        Codigo: Serenity.StringEditor;
+        Descripcion: Serenity.StringEditor;
+        ColorFondo: Serenity.StringEditor;
+        ColorLetra: Serenity.StringEditor;
+        FechaBorrado: Serenity.DateEditor;
+        PermitirSolicitud: Serenity.BooleanEditor;
+        FechaActualizacion: Serenity.DateEditor;
+        ContabilizarTiempo: Serenity.BooleanEditor;
+    }
+    class KrsAusenciasProgramadasTiposForm extends Serenity.PrefixedContext {
+        static formKey: string;
+        private static init;
+        constructor(prefix: string);
+    }
+}
+declare namespace ProyectosZec.Kairos {
+    interface KrsAusenciasProgramadasTiposRow {
+        Id?: number;
+        CodigoCliente?: number;
+        Codigo?: string;
+        Descripcion?: string;
+        ColorFondo?: string;
+        ColorLetra?: string;
+        FechaBorrado?: string;
+        PermitirSolicitud?: boolean;
+        FechaActualizacion?: string;
+        ContabilizarTiempo?: boolean;
+    }
+    namespace KrsAusenciasProgramadasTiposRow {
+        const idProperty = "Id";
+        const nameProperty = "Descripcion";
+        const localTextPrefix = "Kairos.KrsAusenciasProgramadasTipos";
+        const lookupKey = "Kairos.TiposSolicitud";
+        function getLookup(): Q.Lookup<KrsAusenciasProgramadasTiposRow>;
+        const deletePermission = "Kairos:Delete";
+        const insertPermission = "Kairos:Insert";
+        const readPermission = "Kairos:Read";
+        const updatePermission = "Kairos:Modify";
+        const enum Fields {
+            Id = "Id",
+            CodigoCliente = "CodigoCliente",
+            Codigo = "Codigo",
+            Descripcion = "Descripcion",
+            ColorFondo = "ColorFondo",
+            ColorLetra = "ColorLetra",
+            FechaBorrado = "FechaBorrado",
+            PermitirSolicitud = "PermitirSolicitud",
+            FechaActualizacion = "FechaActualizacion",
+            ContabilizarTiempo = "ContabilizarTiempo"
+        }
+    }
+}
+declare namespace ProyectosZec.Kairos {
+    namespace KrsAusenciasProgramadasTiposService {
+        const baseUrl = "Kairos/KrsAusenciasProgramadasTipos";
+        function Create(request: Serenity.SaveRequest<KrsAusenciasProgramadasTiposRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Update(request: Serenity.SaveRequest<KrsAusenciasProgramadasTiposRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<KrsAusenciasProgramadasTiposRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<KrsAusenciasProgramadasTiposRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        const enum Methods {
+            Create = "Kairos/KrsAusenciasProgramadasTipos/Create",
+            Update = "Kairos/KrsAusenciasProgramadasTipos/Update",
+            Delete = "Kairos/KrsAusenciasProgramadasTipos/Delete",
+            Retrieve = "Kairos/KrsAusenciasProgramadasTipos/Retrieve",
+            List = "Kairos/KrsAusenciasProgramadasTipos/List"
         }
     }
 }
@@ -3795,6 +3959,33 @@ declare namespace ProyectosZec.Intranet {
     }
 }
 declare namespace ProyectosZec.Kairos {
+    class AusenciasProgramadasDialog extends Serenity.EntityDialog<AusenciasProgramadasRow, any> {
+        protected getFormKey(): string;
+        protected getIdProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected getService(): string;
+        protected getDeletePermission(): string;
+        protected getInsertPermission(): string;
+        protected getUpdatePermission(): string;
+        protected form: AusenciasProgramadasForm;
+    }
+}
+declare namespace ProyectosZec.Kairos {
+    class AusenciasProgramadasGrid extends Serenity.EntityGrid<AusenciasProgramadasRow, any> {
+        protected getColumnsKey(): string;
+        protected getDialogType(): typeof AusenciasProgramadasDialog;
+        protected getIdProperty(): string;
+        protected getInsertPermission(): string;
+        protected getLocalTextPrefix(): string;
+        protected getService(): string;
+        constructor(container: JQuery);
+        protected createSlickGrid(): Slick.Grid;
+        protected getSlickOptions(): Slick.GridOptions;
+        protected usePager(): boolean;
+        getButtons(): Serenity.ToolButton[];
+    }
+}
+declare namespace ProyectosZec.Kairos {
     class DepartamentosDialog extends Serenity.EntityDialog<DepartamentosRow, any> {
         protected getFormKey(): string;
         protected getIdProperty(): string;
@@ -3979,6 +4170,30 @@ declare namespace ProyectosZec.Kairos {
         protected getService(): string;
         constructor(container: JQuery);
         getButtons(): Serenity.ToolButton[];
+    }
+}
+declare namespace ProyectosZec.Kairos {
+    class KrsAusenciasProgramadasTiposDialog extends Serenity.EntityDialog<KrsAusenciasProgramadasTiposRow, any> {
+        protected getFormKey(): string;
+        protected getIdProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected getNameProperty(): string;
+        protected getService(): string;
+        protected getDeletePermission(): string;
+        protected getInsertPermission(): string;
+        protected getUpdatePermission(): string;
+        protected form: KrsAusenciasProgramadasTiposForm;
+    }
+}
+declare namespace ProyectosZec.Kairos {
+    class KrsAusenciasProgramadasTiposGrid extends Serenity.EntityGrid<KrsAusenciasProgramadasTiposRow, any> {
+        protected getColumnsKey(): string;
+        protected getDialogType(): typeof KrsAusenciasProgramadasTiposDialog;
+        protected getIdProperty(): string;
+        protected getInsertPermission(): string;
+        protected getLocalTextPrefix(): string;
+        protected getService(): string;
+        constructor(container: JQuery);
     }
 }
 declare namespace ProyectosZec.Kairos {

@@ -591,6 +591,10 @@
     <Content Include="fonts\ionicons.svg" />
     <Content Include="fonts\Simple-Line-Icons.svg" />
     <EmbeddedResource Include="Migrations\ProyectosDB\DropDatabaseProyectosDBScript_MySql.sql" />
+    <Content Include="Migrations\RoezecDB\DropDatabaseRoezecDBScript_MySql.sql" />
+    <Content Include="Migrations\RoezecDB\RoezecDB_Nace_dataScript_Mysql.sql" />
+    <Content Include="Migrations\RoezecDB\RoezecDB_paises_DataScript_Mysql.sql" />
+    <Content Include="Migrations\RoezecDB\RoezecDB_Script_Mysql.sql" />
     <Content Include="Readme.CodeGenerator.txt" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -1102,6 +1106,9 @@
     <TypeScriptCompile Include="Imports\ServerTypings\Intranet.TelefonosColumns.ts">
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\Kairos.AusenciasProgramadasColumns.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
     <TypeScriptCompile Include="Imports\ServerTypings\Kairos.DepartamentosColumns.ts">
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
@@ -1127,6 +1134,9 @@
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
     <TypeScriptCompile Include="Imports\ServerTypings\Kairos.HorasExtraConsumidasService.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\Kairos.KrsAusenciasProgramadasTiposColumns.ts">
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
     <TypeScriptCompile Include="Imports\ServerTypings\Kairos.KrsEmpleadosColumns.ts">
@@ -2076,6 +2086,30 @@
     <Content Include="Modules\Kairos\HorasExtraConsumidas\HorasExtraConsumidasIndex.cshtml" />
     <TypeScriptCompile Include="Modules\Kairos\HorasExtraConsumidas\HorasExtraConsumidasDialog.ts" />
     <TypeScriptCompile Include="Modules\Kairos\HorasExtraConsumidas\HorasExtraConsumidasGrid.ts" />
+    <TypeScriptCompile Include="Imports\ServerTypings\Kairos.AusenciasProgramadasRow.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\Kairos.AusenciasProgramadasService.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <Content Include="Modules\Kairos\AusenciasProgramadas\AusenciasProgramadasIndex.cshtml" />
+    <TypeScriptCompile Include="Modules\Kairos\AusenciasProgramadas\AusenciasProgramadasDialog.ts" />
+    <TypeScriptCompile Include="Modules\Kairos\AusenciasProgramadas\AusenciasProgramadasGrid.ts" />
+    <TypeScriptCompile Include="Imports\ServerTypings\Kairos.AusenciasProgramadasForm.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\Kairos.KrsAusenciasProgramadasTiposRow.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\Kairos.KrsAusenciasProgramadasTiposService.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <Content Include="Modules\Kairos\KrsAusenciasProgramadasTipos\KrsAusenciasProgramadasTiposIndex.cshtml" />
+    <TypeScriptCompile Include="Modules\Kairos\KrsAusenciasProgramadasTipos\KrsAusenciasProgramadasTiposDialog.ts" />
+    <TypeScriptCompile Include="Modules\Kairos\KrsAusenciasProgramadasTipos\KrsAusenciasProgramadasTiposGrid.ts" />
+    <TypeScriptCompile Include="Imports\ServerTypings\Kairos.KrsAusenciasProgramadasTiposForm.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Global.asax" />
@@ -2101,6 +2135,8 @@
     <Compile Include="Migrations\DefaultDB\DefaultDB_20200303_130000_Telefonos.cs" />
     <Compile Include="Migrations\ProyectosDB\ProyectosDB_20200219_000000_Proyectos.cs" />
     <Compile Include="Migrations\ProyectosDB\ProyectosDB_20200101_000000_Initial.cs" />
+    <Compile Include="Migrations\RoezecDB\RoezecDB_20210426_140000_Initial.cs" />
+    <Compile Include="Migrations\RoezecDB\RoezecDB_20210510_140000_Empresas.cs" />
     <Compile Include="Modules\Administration\AdministrationNavigation.cs" />
     <Compile Include="Modules\Administration\Language\LanguageLookup.cs" />
     <Compile Include="Modules\Administration\RolePermission\RolePermissionUpdateRequest.cs" />
@@ -2401,6 +2437,18 @@
     <Compile Include="Modules\Kairos\HorasExtraConsumidas\HorasExtraConsumidasPage.cs" />
     <Compile Include="Modules\Kairos\HorasExtraConsumidas\HorasExtraConsumidasColumns.cs" />
     <Compile Include="Modules\Kairos\HorasExtraConsumidas\HorasExtraConsumidasForm.cs" />
+    <Compile Include="Modules\Kairos\AusenciasProgramadas\AusenciasProgramadasRow.cs" />
+    <Compile Include="Modules\Kairos\AusenciasProgramadas\AusenciasProgramadasRepository.cs" />
+    <Compile Include="Modules\Kairos\AusenciasProgramadas\AusenciasProgramadasEndpoint.cs" />
+    <Compile Include="Modules\Kairos\AusenciasProgramadas\AusenciasProgramadasPage.cs" />
+    <Compile Include="Modules\Kairos\AusenciasProgramadas\AusenciasProgramadasColumns.cs" />
+    <Compile Include="Modules\Kairos\AusenciasProgramadas\AusenciasProgramadasForm.cs" />
+    <Compile Include="Modules\Kairos\KrsAusenciasProgramadasTipos\KrsAusenciasProgramadasTiposRow.cs" />
+    <Compile Include="Modules\Kairos\KrsAusenciasProgramadasTipos\KrsAusenciasProgramadasTiposRepository.cs" />
+    <Compile Include="Modules\Kairos\KrsAusenciasProgramadasTipos\KrsAusenciasProgramadasTiposEndpoint.cs" />
+    <Compile Include="Modules\Kairos\KrsAusenciasProgramadasTipos\KrsAusenciasProgramadasTiposPage.cs" />
+    <Compile Include="Modules\Kairos\KrsAusenciasProgramadasTipos\KrsAusenciasProgramadasTiposColumns.cs" />
+    <Compile Include="Modules\Kairos\KrsAusenciasProgramadasTipos\KrsAusenciasProgramadasTiposForm.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\upload\" />

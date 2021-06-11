@@ -141,6 +141,11 @@ namespace MVC
 
         public static class Kairos
         {
+            public static class AusenciasProgramadas
+            {
+                public const string AusenciasProgramadasIndex = "~/Modules/Kairos/AusenciasProgramadas/AusenciasProgramadasIndex.cshtml";
+            }
+
             public static class Departamentos
             {
                 public const string DepartamentosIndex = "~/Modules/Kairos/Departamentos/DepartamentosIndex.cshtml";
@@ -169,6 +174,11 @@ namespace MVC
             public static class HorasExtraConsumidas
             {
                 public const string HorasExtraConsumidasIndex = "~/Modules/Kairos/HorasExtraConsumidas/HorasExtraConsumidasIndex.cshtml";
+            }
+
+            public static class KrsAusenciasProgramadasTipos
+            {
+                public const string KrsAusenciasProgramadasTiposIndex = "~/Modules/Kairos/KrsAusenciasProgramadasTipos/KrsAusenciasProgramadasTiposIndex.cshtml";
             }
 
             public static class KrsEmpleados

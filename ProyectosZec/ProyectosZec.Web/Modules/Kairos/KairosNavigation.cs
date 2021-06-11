@@ -8,3 +8,5 @@ using MyPages = ProyectosZec.Kairos.Pages;
 [assembly: NavigationLink(int.MaxValue, "Kairos/Horas Extra", typeof(MyPages.ExtrasController), icon: "fa-calendar-check-o")]
 //[assembly: NavigationLink(int.MaxValue, "Kairos/Estados Extras", typeof(MyPages.EstadosExtrasController), icon: null)]
 [assembly: NavigationLink(int.MaxValue, "Kairos/Horas Extra Consumidas", typeof(MyPages.HorasExtraConsumidasController), icon: "fa-ship")]
+[assembly: NavigationLink(int.MaxValue, "Kairos/Solicitudes", typeof(MyPages.AusenciasProgramadasController), icon: "fa-plane")]
+//[assembly: NavigationLink(int.MaxValue, "Kairos/Krs Ausencias Programadas Tipos", typeof(MyPages.KrsAusenciasProgramadasTiposController), icon: null)]

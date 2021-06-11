@@ -7802,3 +7802,15 @@ section.content > .s-DataGrid {
 .s-Kairos-HorasExtraConsumidasEditDialog .s-PropertyGrid .categories {
   height: 120px;
 }
+.s-Kairos-AusenciasProgramadasDialog > .size {
+  width: 650px;
+}
+.s-Kairos-AusenciasProgramadasDialog .caption {
+  width: 150px;
+}
+.s-Kairos-KrsAusenciasProgramadasTiposDialog > .size {
+  width: 650px;
+}
+.s-Kairos-KrsAusenciasProgramadasTiposDialog .caption {
+  width: 150px;
+}

@@ -23,6 +23,7 @@
         Sede?: string;
         Convertidas?: string;
         Pendienteshhmm?: string;
+        Consumidashhmm?: string;
         EstadoDesc?: string;
         Consumidas?: HorasExtraConsumidasRow[];
         TotalConsumidas?: number;
@@ -62,6 +63,7 @@
             Sede = "Sede",
             Convertidas = "Convertidas",
             Pendienteshhmm = "Pendienteshhmm",
+            Consumidashhmm = "Consumidashhmm",
             EstadoDesc = "EstadoDesc",
             Consumidas = "Consumidas",
             TotalConsumidas = "TotalConsumidas",

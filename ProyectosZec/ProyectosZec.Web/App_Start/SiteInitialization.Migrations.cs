@@ -15,6 +15,7 @@
         private static string[] databaseKeys = new[] {
             "Default"
             , "Proyectos"
+            ,"Roezec"
         };
 
         /// <summary>

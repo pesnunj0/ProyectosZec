@@ -123,3 +123,129 @@ C:\Users\administrador.CONSORCIOLP\source\repos\ProyectosZec\ProyectosZec\Proyec
 C:\Users\administrador.CONSORCIOLP\source\repos\ProyectosZec\ProyectosZec\ProyectosZec.Web\obj\Debug\ProyectosZec.Web.csproj.CopyComplete
 C:\Users\administrador.CONSORCIOLP\source\repos\ProyectosZec\ProyectosZec\ProyectosZec.Web\obj\Debug\ProyectosZec.Web.dll
 C:\Users\administrador.CONSORCIOLP\source\repos\ProyectosZec\ProyectosZec\ProyectosZec.Web\obj\Debug\ProyectosZec.Web.pdb
+C:\Users\administrador.CONSORCIOLP\source\repos\ProyectosZec - copia\ProyectosZec\ProyectosZec.Web\bin\wkhtmltopdf.exe
+C:\Users\administrador.CONSORCIOLP\source\repos\ProyectosZec - copia\ProyectosZec\ProyectosZec.Web\bin\Content\site\images\serenity-logo-40.png
+C:\Users\administrador.CONSORCIOLP\source\repos\ProyectosZec - copia\ProyectosZec\ProyectosZec.Web\bin\Content\site\images\serenity-logo-g-40.png
+C:\Users\administrador.CONSORCIOLP\source\repos\ProyectosZec - copia\ProyectosZec\ProyectosZec.Web\bin\Content\site\images\serenity-logo-w-128.png
+C:\Users\administrador.CONSORCIOLP\source\repos\ProyectosZec - copia\ProyectosZec\ProyectosZec.Web\bin\Content\site\images\serenity-logo-w-40.png
+C:\Users\administrador.CONSORCIOLP\source\repos\ProyectosZec - copia\ProyectosZec\ProyectosZec.Web\bin\ProyectosZec.Web.dll.config
+C:\Users\administrador.CONSORCIOLP\source\repos\ProyectosZec - copia\ProyectosZec\ProyectosZec.Web\bin\ProyectosZec.Web.dll
+C:\Users\administrador.CONSORCIOLP\source\repos\ProyectosZec - copia\ProyectosZec\ProyectosZec.Web\bin\ProyectosZec.Web.pdb
+C:\Users\administrador.CONSORCIOLP\source\repos\ProyectosZec - copia\ProyectosZec\ProyectosZec.Web\bin\CsQuery.dll
+C:\Users\administrador.CONSORCIOLP\source\repos\ProyectosZec - copia\ProyectosZec\ProyectosZec.Web\bin\Dapper.dll
+C:\Users\administrador.CONSORCIOLP\source\repos\ProyectosZec - copia\ProyectosZec\ProyectosZec.Web\bin\EPPlus.dll
+C:\Users\administrador.CONSORCIOLP\source\repos\ProyectosZec - copia\ProyectosZec\ProyectosZec.Web\bin\FluentMigrator.dll
+C:\Users\administrador.CONSORCIOLP\source\repos\ProyectosZec - copia\ProyectosZec\ProyectosZec.Web\bin\FluentMigrator.Runner.dll
+C:\Users\administrador.CONSORCIOLP\source\repos\ProyectosZec - copia\ProyectosZec\ProyectosZec.Web\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\administrador.CONSORCIOLP\source\repos\ProyectosZec - copia\ProyectosZec\ProyectosZec.Web\bin\Mono.Cecil.dll
+C:\Users\administrador.CONSORCIOLP\source\repos\ProyectosZec - copia\ProyectosZec\ProyectosZec.Web\bin\MySql.Data.dll
+C:\Users\administrador.CONSORCIOLP\source\repos\ProyectosZec - copia\ProyectosZec\ProyectosZec.Web\bin\Newtonsoft.Json.dll
+C:\Users\administrador.CONSORCIOLP\source\repos\ProyectosZec - copia\ProyectosZec\ProyectosZec.Web\bin\NUglify.dll
+C:\Users\administrador.CONSORCIOLP\source\repos\ProyectosZec - copia\ProyectosZec\ProyectosZec.Web\bin\Serenity.Core.dll
+C:\Users\administrador.CONSORCIOLP\source\repos\ProyectosZec - copia\ProyectosZec\ProyectosZec.Web\bin\Serenity.Data.dll
+C:\Users\administrador.CONSORCIOLP\source\repos\ProyectosZec - copia\ProyectosZec\ProyectosZec.Web\bin\Serenity.Data.Entity.dll
+C:\Users\administrador.CONSORCIOLP\source\repos\ProyectosZec - copia\ProyectosZec\ProyectosZec.Web\bin\Serenity.Services.dll
+C:\Users\administrador.CONSORCIOLP\source\repos\ProyectosZec - copia\ProyectosZec\ProyectosZec.Web\bin\Serenity.Web.dll
+C:\Users\administrador.CONSORCIOLP\source\repos\ProyectosZec - copia\ProyectosZec\ProyectosZec.Web\bin\StackExchange.Exceptional.dll
+C:\Users\administrador.CONSORCIOLP\source\repos\ProyectosZec - copia\ProyectosZec\ProyectosZec.Web\bin\System.Web.Helpers.dll
+C:\Users\administrador.CONSORCIOLP\source\repos\ProyectosZec - copia\ProyectosZec\ProyectosZec.Web\bin\System.Web.Mvc.dll
+C:\Users\administrador.CONSORCIOLP\source\repos\ProyectosZec - copia\ProyectosZec\ProyectosZec.Web\bin\System.Web.Razor.dll
+C:\Users\administrador.CONSORCIOLP\source\repos\ProyectosZec - copia\ProyectosZec\ProyectosZec.Web\bin\System.Web.WebPages.Deployment.dll
+C:\Users\administrador.CONSORCIOLP\source\repos\ProyectosZec - copia\ProyectosZec\ProyectosZec.Web\bin\System.Web.WebPages.dll
+C:\Users\administrador.CONSORCIOLP\source\repos\ProyectosZec - copia\ProyectosZec\ProyectosZec.Web\bin\System.Web.WebPages.Razor.dll
+C:\Users\administrador.CONSORCIOLP\source\repos\ProyectosZec - copia\ProyectosZec\ProyectosZec.Web\bin\Google.Protobuf.dll
+C:\Users\administrador.CONSORCIOLP\source\repos\ProyectosZec - copia\ProyectosZec\ProyectosZec.Web\bin\BouncyCastle.Crypto.dll
+C:\Users\administrador.CONSORCIOLP\source\repos\ProyectosZec - copia\ProyectosZec\ProyectosZec.Web\bin\Ubiety.Dns.Core.dll
+C:\Users\administrador.CONSORCIOLP\source\repos\ProyectosZec - copia\ProyectosZec\ProyectosZec.Web\bin\Renci.SshNet.dll
+C:\Users\administrador.CONSORCIOLP\source\repos\ProyectosZec - copia\ProyectosZec\ProyectosZec.Web\bin\CsQuery.xml
+C:\Users\administrador.CONSORCIOLP\source\repos\ProyectosZec - copia\ProyectosZec\ProyectosZec.Web\bin\Dapper.pdb
+C:\Users\administrador.CONSORCIOLP\source\repos\ProyectosZec - copia\ProyectosZec\ProyectosZec.Web\bin\Dapper.xml
+C:\Users\administrador.CONSORCIOLP\source\repos\ProyectosZec - copia\ProyectosZec\ProyectosZec.Web\bin\EPPlus.xml
+C:\Users\administrador.CONSORCIOLP\source\repos\ProyectosZec - copia\ProyectosZec\ProyectosZec.Web\bin\FluentMigrator.pdb
+C:\Users\administrador.CONSORCIOLP\source\repos\ProyectosZec - copia\ProyectosZec\ProyectosZec.Web\bin\FluentMigrator.xml
+C:\Users\administrador.CONSORCIOLP\source\repos\ProyectosZec - copia\ProyectosZec\ProyectosZec.Web\bin\FluentMigrator.Runner.pdb
+C:\Users\administrador.CONSORCIOLP\source\repos\ProyectosZec - copia\ProyectosZec\ProyectosZec.Web\bin\MySql.Data.xml
+C:\Users\administrador.CONSORCIOLP\source\repos\ProyectosZec - copia\ProyectosZec\ProyectosZec.Web\bin\Newtonsoft.Json.xml
+C:\Users\administrador.CONSORCIOLP\source\repos\ProyectosZec - copia\ProyectosZec\ProyectosZec.Web\bin\NUglify.xml
+C:\Users\administrador.CONSORCIOLP\source\repos\ProyectosZec - copia\ProyectosZec\ProyectosZec.Web\bin\Serenity.Core.pdb
+C:\Users\administrador.CONSORCIOLP\source\repos\ProyectosZec - copia\ProyectosZec\ProyectosZec.Web\bin\Serenity.Core.xml
+C:\Users\administrador.CONSORCIOLP\source\repos\ProyectosZec - copia\ProyectosZec\ProyectosZec.Web\bin\Serenity.Data.pdb
+C:\Users\administrador.CONSORCIOLP\source\repos\ProyectosZec - copia\ProyectosZec\ProyectosZec.Web\bin\Serenity.Data.xml
+C:\Users\administrador.CONSORCIOLP\source\repos\ProyectosZec - copia\ProyectosZec\ProyectosZec.Web\bin\Serenity.Data.Entity.pdb
+C:\Users\administrador.CONSORCIOLP\source\repos\ProyectosZec - copia\ProyectosZec\ProyectosZec.Web\bin\Serenity.Services.pdb
+C:\Users\administrador.CONSORCIOLP\source\repos\ProyectosZec - copia\ProyectosZec\ProyectosZec.Web\bin\Serenity.Web.pdb
+C:\Users\administrador.CONSORCIOLP\source\repos\ProyectosZec - copia\ProyectosZec\ProyectosZec.Web\bin\StackExchange.Exceptional.xml
+C:\Users\administrador.CONSORCIOLP\source\repos\ProyectosZec - copia\ProyectosZec\ProyectosZec.Web\bin\System.Web.Helpers.xml
+C:\Users\administrador.CONSORCIOLP\source\repos\ProyectosZec - copia\ProyectosZec\ProyectosZec.Web\bin\System.Web.Mvc.xml
+C:\Users\administrador.CONSORCIOLP\source\repos\ProyectosZec - copia\ProyectosZec\ProyectosZec.Web\bin\System.Web.Razor.xml
+C:\Users\administrador.CONSORCIOLP\source\repos\ProyectosZec - copia\ProyectosZec\ProyectosZec.Web\bin\System.Web.WebPages.xml
+C:\Users\administrador.CONSORCIOLP\source\repos\ProyectosZec - copia\ProyectosZec\ProyectosZec.Web\bin\System.Web.WebPages.Deployment.xml
+C:\Users\administrador.CONSORCIOLP\source\repos\ProyectosZec - copia\ProyectosZec\ProyectosZec.Web\bin\System.Web.WebPages.Razor.xml
+C:\Users\administrador.CONSORCIOLP\source\repos\ProyectosZec - copia\ProyectosZec\ProyectosZec.Web\obj\Debug\ProyectosZec.Web.csprojAssemblyReference.cache
+C:\Users\administrador.CONSORCIOLP\source\repos\ProyectosZec - copia\ProyectosZec\ProyectosZec.Web\obj\Debug\ProyectosZec.Web.csproj.CoreCompileInputs.cache
+C:\Users\administrador.CONSORCIOLP\source\repos\ProyectosZec - copia\ProyectosZec\ProyectosZec.Web\obj\Debug\ProyectosZec.Web.csproj.CopyComplete
+C:\Users\administrador.CONSORCIOLP\source\repos\ProyectosZec - copia\ProyectosZec\ProyectosZec.Web\obj\Debug\ProyectosZec.Web.dll
+C:\Users\administrador.CONSORCIOLP\source\repos\ProyectosZec - copia\ProyectosZec\ProyectosZec.Web\obj\Debug\ProyectosZec.Web.pdb
+C:\Users\administrador.CONSORCIOLP\source\repos\ProyectosZec_MVC_bien\ProyectosZec\ProyectosZec.Web\bin\FluentMigrator.dll
+C:\Users\administrador.CONSORCIOLP\source\repos\ProyectosZec_MVC_bien\ProyectosZec\ProyectosZec.Web\bin\Newtonsoft.Json.dll
+C:\Users\administrador.CONSORCIOLP\source\repos\ProyectosZec_MVC_bien\ProyectosZec\ProyectosZec.Web\bin\Serenity.Core.dll
+C:\Users\administrador.CONSORCIOLP\source\repos\ProyectosZec_MVC_bien\ProyectosZec\ProyectosZec.Web\bin\Serenity.Data.dll
+C:\Users\administrador.CONSORCIOLP\source\repos\ProyectosZec_MVC_bien\ProyectosZec\ProyectosZec.Web\bin\Serenity.Data.Entity.dll
+C:\Users\administrador.CONSORCIOLP\source\repos\ProyectosZec_MVC_bien\ProyectosZec\ProyectosZec.Web\bin\Serenity.Services.dll
+C:\Users\administrador.CONSORCIOLP\source\repos\ProyectosZec_MVC_bien\ProyectosZec\ProyectosZec.Web\bin\Serenity.Web.dll
+C:\Users\administrador.CONSORCIOLP\source\repos\ProyectosZec_MVC_bien\ProyectosZec\ProyectosZec.Web\bin\StackExchange.Exceptional.dll
+C:\Users\administrador.CONSORCIOLP\source\repos\ProyectosZec_MVC_bien\ProyectosZec\ProyectosZec.Web\bin\System.Web.Mvc.dll
+C:\Users\administrador.CONSORCIOLP\source\repos\ProyectosZec_MVC_bien\ProyectosZec\ProyectosZec.Web\bin\wkhtmltopdf.exe
+C:\Users\administrador.CONSORCIOLP\source\repos\ProyectosZec_MVC_bien\ProyectosZec\ProyectosZec.Web\bin\Content\site\images\serenity-logo-40.png
+C:\Users\administrador.CONSORCIOLP\source\repos\ProyectosZec_MVC_bien\ProyectosZec\ProyectosZec.Web\bin\Content\site\images\serenity-logo-g-40.png
+C:\Users\administrador.CONSORCIOLP\source\repos\ProyectosZec_MVC_bien\ProyectosZec\ProyectosZec.Web\bin\Content\site\images\serenity-logo-w-128.png
+C:\Users\administrador.CONSORCIOLP\source\repos\ProyectosZec_MVC_bien\ProyectosZec\ProyectosZec.Web\bin\Content\site\images\serenity-logo-w-40.png
+C:\Users\administrador.CONSORCIOLP\source\repos\ProyectosZec_MVC_bien\ProyectosZec\ProyectosZec.Web\bin\ProyectosZec.Web.dll.config
+C:\Users\administrador.CONSORCIOLP\source\repos\ProyectosZec_MVC_bien\ProyectosZec\ProyectosZec.Web\bin\ProyectosZec.Web.dll
+C:\Users\administrador.CONSORCIOLP\source\repos\ProyectosZec_MVC_bien\ProyectosZec\ProyectosZec.Web\bin\ProyectosZec.Web.pdb
+C:\Users\administrador.CONSORCIOLP\source\repos\ProyectosZec_MVC_bien\ProyectosZec\ProyectosZec.Web\bin\CsQuery.dll
+C:\Users\administrador.CONSORCIOLP\source\repos\ProyectosZec_MVC_bien\ProyectosZec\ProyectosZec.Web\bin\Dapper.dll
+C:\Users\administrador.CONSORCIOLP\source\repos\ProyectosZec_MVC_bien\ProyectosZec\ProyectosZec.Web\bin\EPPlus.dll
+C:\Users\administrador.CONSORCIOLP\source\repos\ProyectosZec_MVC_bien\ProyectosZec\ProyectosZec.Web\bin\FluentMigrator.Runner.dll
+C:\Users\administrador.CONSORCIOLP\source\repos\ProyectosZec_MVC_bien\ProyectosZec\ProyectosZec.Web\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\administrador.CONSORCIOLP\source\repos\ProyectosZec_MVC_bien\ProyectosZec\ProyectosZec.Web\bin\Mono.Cecil.dll
+C:\Users\administrador.CONSORCIOLP\source\repos\ProyectosZec_MVC_bien\ProyectosZec\ProyectosZec.Web\bin\MySql.Data.dll
+C:\Users\administrador.CONSORCIOLP\source\repos\ProyectosZec_MVC_bien\ProyectosZec\ProyectosZec.Web\bin\NUglify.dll
+C:\Users\administrador.CONSORCIOLP\source\repos\ProyectosZec_MVC_bien\ProyectosZec\ProyectosZec.Web\bin\System.Web.Helpers.dll
+C:\Users\administrador.CONSORCIOLP\source\repos\ProyectosZec_MVC_bien\ProyectosZec\ProyectosZec.Web\bin\System.Web.Razor.dll
+C:\Users\administrador.CONSORCIOLP\source\repos\ProyectosZec_MVC_bien\ProyectosZec\ProyectosZec.Web\bin\System.Web.WebPages.Deployment.dll
+C:\Users\administrador.CONSORCIOLP\source\repos\ProyectosZec_MVC_bien\ProyectosZec\ProyectosZec.Web\bin\System.Web.WebPages.dll
+C:\Users\administrador.CONSORCIOLP\source\repos\ProyectosZec_MVC_bien\ProyectosZec\ProyectosZec.Web\bin\System.Web.WebPages.Razor.dll
+C:\Users\administrador.CONSORCIOLP\source\repos\ProyectosZec_MVC_bien\ProyectosZec\ProyectosZec.Web\bin\Google.Protobuf.dll
+C:\Users\administrador.CONSORCIOLP\source\repos\ProyectosZec_MVC_bien\ProyectosZec\ProyectosZec.Web\bin\BouncyCastle.Crypto.dll
+C:\Users\administrador.CONSORCIOLP\source\repos\ProyectosZec_MVC_bien\ProyectosZec\ProyectosZec.Web\bin\Ubiety.Dns.Core.dll
+C:\Users\administrador.CONSORCIOLP\source\repos\ProyectosZec_MVC_bien\ProyectosZec\ProyectosZec.Web\bin\Renci.SshNet.dll
+C:\Users\administrador.CONSORCIOLP\source\repos\ProyectosZec_MVC_bien\ProyectosZec\ProyectosZec.Web\bin\CsQuery.xml
+C:\Users\administrador.CONSORCIOLP\source\repos\ProyectosZec_MVC_bien\ProyectosZec\ProyectosZec.Web\bin\Dapper.pdb
+C:\Users\administrador.CONSORCIOLP\source\repos\ProyectosZec_MVC_bien\ProyectosZec\ProyectosZec.Web\bin\Dapper.xml
+C:\Users\administrador.CONSORCIOLP\source\repos\ProyectosZec_MVC_bien\ProyectosZec\ProyectosZec.Web\bin\EPPlus.xml
+C:\Users\administrador.CONSORCIOLP\source\repos\ProyectosZec_MVC_bien\ProyectosZec\ProyectosZec.Web\bin\FluentMigrator.pdb
+C:\Users\administrador.CONSORCIOLP\source\repos\ProyectosZec_MVC_bien\ProyectosZec\ProyectosZec.Web\bin\FluentMigrator.xml
+C:\Users\administrador.CONSORCIOLP\source\repos\ProyectosZec_MVC_bien\ProyectosZec\ProyectosZec.Web\bin\FluentMigrator.Runner.pdb
+C:\Users\administrador.CONSORCIOLP\source\repos\ProyectosZec_MVC_bien\ProyectosZec\ProyectosZec.Web\bin\MySql.Data.xml
+C:\Users\administrador.CONSORCIOLP\source\repos\ProyectosZec_MVC_bien\ProyectosZec\ProyectosZec.Web\bin\Newtonsoft.Json.xml
+C:\Users\administrador.CONSORCIOLP\source\repos\ProyectosZec_MVC_bien\ProyectosZec\ProyectosZec.Web\bin\NUglify.xml
+C:\Users\administrador.CONSORCIOLP\source\repos\ProyectosZec_MVC_bien\ProyectosZec\ProyectosZec.Web\bin\Serenity.Core.pdb
+C:\Users\administrador.CONSORCIOLP\source\repos\ProyectosZec_MVC_bien\ProyectosZec\ProyectosZec.Web\bin\Serenity.Core.xml
+C:\Users\administrador.CONSORCIOLP\source\repos\ProyectosZec_MVC_bien\ProyectosZec\ProyectosZec.Web\bin\Serenity.Data.pdb
+C:\Users\administrador.CONSORCIOLP\source\repos\ProyectosZec_MVC_bien\ProyectosZec\ProyectosZec.Web\bin\Serenity.Data.xml
+C:\Users\administrador.CONSORCIOLP\source\repos\ProyectosZec_MVC_bien\ProyectosZec\ProyectosZec.Web\bin\Serenity.Data.Entity.pdb
+C:\Users\administrador.CONSORCIOLP\source\repos\ProyectosZec_MVC_bien\ProyectosZec\ProyectosZec.Web\bin\Serenity.Services.pdb
+C:\Users\administrador.CONSORCIOLP\source\repos\ProyectosZec_MVC_bien\ProyectosZec\ProyectosZec.Web\bin\Serenity.Web.pdb
+C:\Users\administrador.CONSORCIOLP\source\repos\ProyectosZec_MVC_bien\ProyectosZec\ProyectosZec.Web\bin\StackExchange.Exceptional.xml
+C:\Users\administrador.CONSORCIOLP\source\repos\ProyectosZec_MVC_bien\ProyectosZec\ProyectosZec.Web\bin\System.Web.Helpers.xml
+C:\Users\administrador.CONSORCIOLP\source\repos\ProyectosZec_MVC_bien\ProyectosZec\ProyectosZec.Web\bin\System.Web.Mvc.xml
+C:\Users\administrador.CONSORCIOLP\source\repos\ProyectosZec_MVC_bien\ProyectosZec\ProyectosZec.Web\bin\System.Web.Razor.xml
+C:\Users\administrador.CONSORCIOLP\source\repos\ProyectosZec_MVC_bien\ProyectosZec\ProyectosZec.Web\bin\System.Web.WebPages.xml
+C:\Users\administrador.CONSORCIOLP\source\repos\ProyectosZec_MVC_bien\ProyectosZec\ProyectosZec.Web\bin\System.Web.WebPages.Deployment.xml
+C:\Users\administrador.CONSORCIOLP\source\repos\ProyectosZec_MVC_bien\ProyectosZec\ProyectosZec.Web\bin\System.Web.WebPages.Razor.xml
+C:\Users\administrador.CONSORCIOLP\source\repos\ProyectosZec_MVC_bien\ProyectosZec\ProyectosZec.Web\obj\Debug\ProyectosZec.Web.csproj.AssemblyReference.cache
+C:\Users\administrador.CONSORCIOLP\source\repos\ProyectosZec_MVC_bien\ProyectosZec\ProyectosZec.Web\obj\Debug\ProyectosZec.Web.csproj.CoreCompileInputs.cache
+C:\Users\administrador.CONSORCIOLP\source\repos\ProyectosZec_MVC_bien\ProyectosZec\ProyectosZec.Web\obj\Debug\ProyectosZec.Web.csproj.CopyComplete
+C:\Users\administrador.CONSORCIOLP\source\repos\ProyectosZec_MVC_bien\ProyectosZec\ProyectosZec.Web\obj\Debug\ProyectosZec.Web.dll
+C:\Users\administrador.CONSORCIOLP\source\repos\ProyectosZec_MVC_bien\ProyectosZec\ProyectosZec.Web\obj\Debug\ProyectosZec.Web.pdb
