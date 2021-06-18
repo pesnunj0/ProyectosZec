@@ -30,11 +30,12 @@ using FluentMigrator;
 using System.IO;
 using System;
 
-namespace Nuevo_Roezec.Migrations.RoezecDB
+namespace ProyectosZec.Migrations.RoezecDB
 {
     [Migration(20210426140000)]
     public class RoezecDB_20210426_140000_Initial : Migration
     {
+
         private string GetScript(string name)
         {
             using (var sr = new StreamReader(this.GetType().Assembly.GetManifestResourceStream(name)))
@@ -96,8 +97,9 @@ namespace Nuevo_Roezec.Migrations.RoezecDB
                 .WithColumn("Fecha").AsDate().NotNullable()
                 .WithColumn("Descripcion").AsString(250)
                 .WithColumn("TipoAccionId").AsInt32().NotNullable()
-                .ForeignKey("FK_Acciones_promocionales_TipoAccionId", "Tipos_acciones_promocionales", "TipoAccionId")
-                .WithColumn("PaisId").AsInt32().ForeignKey("FK_PaisId", "Paises", "PaisId")
+                .ForeignKey("FK_tipoAccionId","Tipos_acciones_promocionales", "TipoAccionId")
+                .WithColumn("PaisId").AsInt32()
+                .ForeignKey("Paises", "PaisId")
                 .WithColumn("Coste").AsDecimal(9,2);
 
             /* Tabla Tecnicos. */
@@ -139,9 +141,9 @@ namespace Nuevo_Roezec.Migrations.RoezecDB
                 .WithColumn("ColorText").AsString(50).Nullable() /* The color that should be used for the event text (overrides all others). */
                 .WithColumn("ColorBorder").AsString(50).Nullable() /* The color that should be used for the event border (overrides all others). */
                 .WithColumn("RepeatEery").AsInt32().WithDefaultValue(0) /* States how often the event should repeat (0 = Never, 1 = Every Day, 2 = Every Week, 3 = Every Month, 4 = Every Year). */
-                .WithColumn("TecnicoId").AsInt32().Nullable()
-                .WithColumn("OrganizerName").AsString(70).Nullable()
+                .WithColumn("TecnicoId").AsInt32().Nullable()               
                 .ForeignKey("Tecnicos","TecnicoId")
+                .WithColumn("OrganizerName").AsString(70).Nullable()
                 .WithColumn("Created").AsDateTime().Nullable()
                 .WithColumn("ContactoId").AsInt32().Nullable()
                 .ForeignKey("Contactos","ContactoId"); 
@@ -640,12 +642,11 @@ namespace Nuevo_Roezec.Migrations.RoezecDB
 
             IfDatabase("MySql")
                 //Carga de datos de paises
-                .Execute.Sql(GetScript("Nuevo_Roezec.Web.Migrations.RoezecDB.RoezecDB_paises_DataScript_Mysql.sql"));
+                .Execute.EmbeddedScript("ProyectosZec.Migrations.RoezecDB.RoezecDB_paises_DataScript_Mysql");
 
             IfDatabase("MySql")
                  //Carga de datos de Naces 
-                 .Execute.Sql(GetScript("Nuevo_Roezec.Web.Migrations.RoezecDB.RoezecDB_Nace_dataScript_Mysql.sql"));
-
+                 .Execute.EmbeddedScript("ProyectosZec.Migrations.RoezecDB.RoezecDB_Nace_dataScript_Mysql.sql");
             
         }
         public override void Down()

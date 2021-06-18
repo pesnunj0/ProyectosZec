@@ -592,9 +592,9 @@
     <Content Include="fonts\Simple-Line-Icons.svg" />
     <EmbeddedResource Include="Migrations\ProyectosDB\DropDatabaseProyectosDBScript_MySql.sql" />
     <Content Include="Migrations\RoezecDB\DropDatabaseRoezecDBScript_MySql.sql" />
-    <Content Include="Migrations\RoezecDB\RoezecDB_Nace_dataScript_Mysql.sql" />
-    <Content Include="Migrations\RoezecDB\RoezecDB_paises_DataScript_Mysql.sql" />
-    <Content Include="Migrations\RoezecDB\RoezecDB_Script_Mysql.sql" />
+    <EmbeddedResource Include="Migrations\RoezecDB\RoezecDB_Nace_dataScript_Mysql.sql" />
+    <EmbeddedResource Include="Migrations\RoezecDB\RoezecDB_paises_DataScript_Mysql.sql" />
+    <EmbeddedResource Include="Migrations\RoezecDB\RoezecDB_Script_Mysql.sql" />
     <Content Include="Readme.CodeGenerator.txt" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
