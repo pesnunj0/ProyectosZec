@@ -248,3 +248,4 @@ C:\Users\administrador.CONSORCIOLP\source\repos\ProyectosZec_MVC_bien\ProyectosZ
 C:\Users\administrador.CONSORCIOLP\source\repos\ProyectosZec_MVC_bien\ProyectosZec\ProyectosZec.Web\obj\Debug\ProyectosZec.Web.csproj.CopyComplete
 C:\Users\administrador.CONSORCIOLP\source\repos\ProyectosZec_MVC_bien\ProyectosZec\ProyectosZec.Web\obj\Debug\ProyectosZec.Web.dll
 C:\Users\administrador.CONSORCIOLP\source\repos\ProyectosZec_MVC_bien\ProyectosZec\ProyectosZec.Web\obj\Debug\ProyectosZec.Web.pdb
+C:\Users\administrador.CONSORCIOLP\source\repos\ProyectosZec_MVC_bien\ProyectosZec\ProyectosZec.Web\obj\Debug\ProyectosZec.Web.csproj.AssemblyReference.cache

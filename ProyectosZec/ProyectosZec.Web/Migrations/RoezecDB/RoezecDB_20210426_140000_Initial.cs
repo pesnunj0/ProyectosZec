@@ -63,6 +63,7 @@ namespace ProyectosZec.Migrations.RoezecDB
                 .WithColumn("ContactoId").AsInt32().Identity().PrimaryKey().NotNullable()
                 .WithColumn("Nombre").AsString(45).NotNullable()
                 .WithColumn("Apellidos").AsString(45).NotNullable()
+                .WithColumn("NIF").AsString(20).Nullable()
                 .WithColumn("Telefono_fijo").AsString(20).Nullable()
                 .WithColumn("Movil").AsString(20).Nullable()
                 .WithColumn("IdiomaId").AsInt32().Nullable()
@@ -401,6 +402,13 @@ namespace ProyectosZec.Migrations.RoezecDB
                 Tecnico = "SJJ",
                 NombreTecnico = "Sabita Jagtani Jagtani"
             });
+
+            Insert.IntoTable("Tecnicos").Row(new
+            {
+                Tecnico = "OMP",
+                NombreTecnico = "Oga Martín Pascual"
+            });
+
 
             Insert.IntoTable("Tecnicos").Row(new
             {
