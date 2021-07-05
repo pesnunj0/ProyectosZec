@@ -7,10 +7,11 @@ edite el archivo MSBuild. Visite https://go.microsoft.com/fwlink/?LinkID=208121 
   <PropertyGroup>
     <TimeStampOfAssociatedLegacyPublishXmlFile />
     <_PublishTargetUrl>C:\inetpub\wwwroot\ProyectosZec</_PublishTargetUrl>
+    <History>True|2021-07-01T08:56:09.6069647Z;True|2021-07-01T09:51:07.4437277+01:00;</History>
   </PropertyGroup>
   <ItemGroup>
     <File Include="bin/BouncyCastle.Crypto.dll">
-      <publishTime>11/08/2018 10:03:48</publishTime>
+      <publishTime>08/11/2018 10:03:48</publishTime>
     </File>
     <File Include="bin/Content/site/images/serenity-logo-40.png">
       <publishTime>11/20/2020 15:15:59</publishTime>
@@ -49,16 +50,16 @@ edite el archivo MSBuild. Visite https://go.microsoft.com/fwlink/?LinkID=208121 
       <publishTime>11/20/2020 15:16:01</publishTime>
     </File>
     <File Include="bin/Google.Protobuf.dll">
-      <publishTime>10/08/2018 18:51:54</publishTime>
+      <publishTime>08/10/2018 18:51:54</publishTime>
     </File>
     <File Include="bin/Microsoft.Web.Infrastructure.dll">
       <publishTime>11/20/2020 15:16:02</publishTime>
     </File>
     <File Include="bin/Mono.Cecil.dll">
-      <publishTime>04/11/2019 20:18:38</publishTime>
+      <publishTime>11/04/2019 20:18:38</publishTime>
     </File>
     <File Include="bin/MySql.Data.dll">
-      <publishTime>03/12/2019 10:13:46</publishTime>
+      <publishTime>12/03/2019 10:13:46</publishTime>
     </File>
     <File Include="bin/Newtonsoft.Json.dll">
       <publishTime>11/20/2020 15:16:02</publishTime>
@@ -67,10 +68,10 @@ edite el archivo MSBuild. Visite https://go.microsoft.com/fwlink/?LinkID=208121 
       <publishTime>11/20/2020 15:16:02</publishTime>
     </File>
     <File Include="bin/ProyectosZec.Web.dll">
-      <publishTime>06/11/2021 14:29:50</publishTime>
+      <publishTime>07/01/2021 13:43:23</publishTime>
     </File>
     <File Include="bin/ProyectosZec.Web.pdb">
-      <publishTime>06/11/2021 14:29:50</publishTime>
+      <publishTime>07/01/2021 13:43:23</publishTime>
     </File>
     <File Include="bin/Renci.SshNet.dll">
       <publishTime>10/16/2017 20:53:06</publishTime>
@@ -127,7 +128,7 @@ edite el archivo MSBuild. Visite https://go.microsoft.com/fwlink/?LinkID=208121 
       <publishTime>11/20/2020 15:16:01</publishTime>
     </File>
     <File Include="bin/Ubiety.Dns.Core.dll">
-      <publishTime>03/12/2019 10:13:46</publishTime>
+      <publishTime>12/03/2019 10:13:46</publishTime>
     </File>
     <File Include="bin/wkhtmltopdf.exe">
       <publishTime>11/20/2020 15:16:03</publishTime>
@@ -1891,7 +1892,7 @@ edite el archivo MSBuild. Visite https://go.microsoft.com/fwlink/?LinkID=208121 
       <publishTime>11/20/2020 15:15:59</publishTime>
     </File>
     <File Include="Content/site/site.css">
-      <publishTime>06/08/2021 11:55:02</publishTime>
+      <publishTime>07/01/2021 09:50:37</publishTime>
     </File>
     <File Include="Content/site/site.cuadromandos.css">
       <publishTime>11/20/2020 15:15:59</publishTime>
@@ -1912,7 +1913,7 @@ edite el archivo MSBuild. Visite https://go.microsoft.com/fwlink/?LinkID=208121 
       <publishTime>11/20/2020 15:15:59</publishTime>
     </File>
     <File Include="Content/site/site.inmovilizado.less">
-      <publishTime>01/03/2021 14:44:46</publishTime>
+      <publishTime>03/01/2021 14:44:46</publishTime>
     </File>
     <File Include="Content/site/site.inmovilizado.min.css">
       <publishTime>11/20/2020 15:15:59</publishTime>
@@ -1930,7 +1931,7 @@ edite el archivo MSBuild. Visite https://go.microsoft.com/fwlink/?LinkID=208121 
       <publishTime>02/12/2021 09:01:32</publishTime>
     </File>
     <File Include="Content/site/site.less">
-      <publishTime>01/22/2021 12:51:18</publishTime>
+      <publishTime>06/30/2021 12:57:46</publishTime>
     </File>
     <File Include="Content/site/site.membership.less">
       <publishTime>11/20/2020 15:15:59</publishTime>
@@ -1940,6 +1941,9 @@ edite el archivo MSBuild. Visite https://go.microsoft.com/fwlink/?LinkID=208121 
     </File>
     <File Include="Content/site/site.northwind.less">
       <publishTime>11/20/2020 15:15:59</publishTime>
+    </File>
+    <File Include="Content/site/site.nuevo_roezec.less">
+      <publishTime>07/01/2021 09:44:35</publishTime>
     </File>
     <File Include="Content/site/site.roezec.less">
       <publishTime>02/19/2021 14:30:53</publishTime>
@@ -2197,7 +2201,7 @@ edite el archivo MSBuild. Visite https://go.microsoft.com/fwlink/?LinkID=208121 
       <publishTime>11/20/2020 15:15:59</publishTime>
     </File>
     <File Include="Imports/ClientTypes/ClientTypes.log">
-      <publishTime>06/09/2021 10:33:36</publishTime>
+      <publishTime>07/01/2021 13:42:55</publishTime>
     </File>
     <File Include="Imports/CodeGenerationHelpers.ttinclude">
       <publishTime>11/20/2020 15:15:59</publishTime>
@@ -2372,6 +2376,48 @@ edite el archivo MSBuild. Visite https://go.microsoft.com/fwlink/?LinkID=208121 
     </File>
     <File Include="Modules/Membership/_ViewStart.cshtml">
       <publishTime>11/20/2020 15:15:59</publishTime>
+    </File>
+    <File Include="Modules/Nuevo_Roezec/Capital/CapitalIndex.cshtml">
+      <publishTime>06/30/2021 12:57:46</publishTime>
+    </File>
+    <File Include="Modules/Nuevo_Roezec/Contactos/ContactosIndex.cshtml">
+      <publishTime>06/30/2021 12:57:47</publishTime>
+    </File>
+    <File Include="Modules/Nuevo_Roezec/EstadosEmpresa/EstadosEmpresaIndex.cshtml">
+      <publishTime>06/30/2021 12:57:48</publishTime>
+    </File>
+    <File Include="Modules/Nuevo_Roezec/FormasJuridicas/FormasJuridicasIndex.cshtml">
+      <publishTime>06/30/2021 12:57:48</publishTime>
+    </File>
+    <File Include="Modules/Nuevo_Roezec/Islas/IslasIndex.cshtml">
+      <publishTime>06/30/2021 12:57:49</publishTime>
+    </File>
+    <File Include="Modules/Nuevo_Roezec/Naces/NacesIndex.cshtml">
+      <publishTime>06/30/2021 12:57:49</publishTime>
+    </File>
+    <File Include="Modules/Nuevo_Roezec/Paises/PaisesIndex.cshtml">
+      <publishTime>06/30/2021 12:57:50</publishTime>
+    </File>
+    <File Include="Modules/Nuevo_Roezec/Procedimientos/ProcedimientosIndex.cshtml">
+      <publishTime>07/01/2021 09:44:35</publishTime>
+    </File>
+    <File Include="Modules/Nuevo_Roezec/Sectores/SectoresIndex.cshtml">
+      <publishTime>06/30/2021 12:57:51</publishTime>
+    </File>
+    <File Include="Modules/Nuevo_Roezec/Subsectores/SubsectoresIndex.cshtml">
+      <publishTime>06/30/2021 12:57:51</publishTime>
+    </File>
+    <File Include="Modules/Nuevo_Roezec/Tecnicos/TecnicosIndex.cshtml">
+      <publishTime>06/30/2021 12:57:52</publishTime>
+    </File>
+    <File Include="Modules/Nuevo_Roezec/TipologiasCapital/TipologiasCapitalIndex.cshtml">
+      <publishTime>06/30/2021 12:57:53</publishTime>
+    </File>
+    <File Include="Modules/Nuevo_Roezec/TiposContacto/TiposContactoIndex.cshtml">
+      <publishTime>06/30/2021 12:57:54</publishTime>
+    </File>
+    <File Include="Modules/Nuevo_Roezec/TiposGarantiaTasas/TiposGarantiaTasasIndex.cshtml">
+      <publishTime>06/30/2021 12:57:55</publishTime>
     </File>
     <File Include="Modules/Roezec/Actividades/ActividadesIndex.cshtml">
       <publishTime>11/20/2020 15:15:59</publishTime>
@@ -3802,7 +3848,7 @@ edite el archivo MSBuild. Visite https://go.microsoft.com/fwlink/?LinkID=208121 
       <publishTime>11/20/2020 15:15:59</publishTime>
     </File>
     <File Include="Scripts/site/ProyectosZec.Web.js">
-      <publishTime>06/08/2021 15:22:27</publishTime>
+      <publishTime>07/01/2021 09:59:57</publishTime>
     </File>
     <File Include="Scripts/site/ScriptBundles.json">
       <publishTime>11/20/2020 15:15:59</publishTime>
@@ -4255,7 +4301,7 @@ edite el archivo MSBuild. Visite https://go.microsoft.com/fwlink/?LinkID=208121 
       <publishTime>11/20/2020 15:15:59</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>06/10/2021 11:50:29</publishTime>
+      <publishTime>07/01/2021 09:50:53</publishTime>
     </File>
     <File Include="Welcome.htm">
       <publishTime>11/20/2020 15:15:59</publishTime>

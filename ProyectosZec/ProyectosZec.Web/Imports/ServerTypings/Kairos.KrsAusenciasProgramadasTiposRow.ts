@@ -16,10 +16,10 @@
         export const idProperty = 'Id';
         export const nameProperty = 'Descripcion';
         export const localTextPrefix = 'Kairos.KrsAusenciasProgramadasTipos';
-        export const lookupKey = 'Kairos.TiposSolicitud';
+        export const lookupKey = 'Kairos.KrsAusenciasProgramadasTipos';
 
         export function getLookup(): Q.Lookup<KrsAusenciasProgramadasTiposRow> {
-            return Q.getLookup<KrsAusenciasProgramadasTiposRow>('Kairos.TiposSolicitud');
+            return Q.getLookup<KrsAusenciasProgramadasTiposRow>('Kairos.KrsAusenciasProgramadasTipos');
         }
         export const deletePermission = 'Kairos:Delete';
         export const insertPermission = 'Kairos:Insert';

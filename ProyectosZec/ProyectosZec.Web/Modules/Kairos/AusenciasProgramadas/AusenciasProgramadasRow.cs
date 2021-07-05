@@ -31,7 +31,7 @@ namespace ProyectosZec.Kairos.Entities
             set { Fields.CodigoCliente[this] = value; }
         }
 
-        [DisplayName("Empleado"), Column("idEmpleado"), NotNull,ForeignKey("[dbo].Krs_Empleados", "Id"), LeftJoin("jEmpleados")]
+        [DisplayName("Empleado"), Column("idEmpleado"), NotNull,ForeignKey("[dbo].Krs_Empleados", "Id"), LeftJoin("jEmpleados"),LookupInclude]
         [LookupEditor("Kairos.KrsEmpleados")]
         public Int64? IdEmpleado
         {
@@ -46,8 +46,8 @@ namespace ProyectosZec.Kairos.Entities
             set { Fields.Empleado[this] = value; }
         }
 
-        [DisplayName("Tipo de Solicitud"), Column("idAusenciaProgramadaTipo"), NotNull, ForeignKey("[dbo].[KRS_AusenciasProgramadasTipos]", "id"), LeftJoin("jIdAusenciaProgramadaTipo")]
-        [LookupEditor("Kairos.TiposSolicitud")]
+        [DisplayName("Tipo de Solicitud"), Column("idAusenciaProgramadaTipo"), NotNull, ForeignKey("[dbo].[KRS_AusenciasProgramadasTipos]", "id"), LeftJoin("jIdAusenciaProgramadaTipo"),LookupInclude, TextualField("descripcion")]
+        [LookupEditor(typeof(Entities.KrsAusenciasProgramadasTiposRow))]
         public Int64? IdAusenciaProgramadaTipo
         {
             get { return Fields.IdAusenciaProgramadaTipo[this]; }
@@ -103,7 +103,7 @@ namespace ProyectosZec.Kairos.Entities
             set { Fields.IdAusenciaProgramadaTipoCodigo[this] = value; }
         }
 
-        [DisplayName("Tipo Solicitud"), Expression("jIdAusenciaProgramadaTipo.[descripcion]"), QuickSearch]
+        [DisplayName("Tipo Solicitud"), Expression("jIdAusenciaProgramadaTipo.[descripcion]")]
         public String Descripcion
         {
             get { return Fields.Descripcion[this]; }

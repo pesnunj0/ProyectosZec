@@ -227,6 +227,80 @@ namespace MVC
 
         }
 
+        public static class Nuevo_Roezec
+        {
+            public static class Capital
+            {
+                public const string CapitalIndex = "~/Modules/Nuevo_Roezec/Capital/CapitalIndex.cshtml";
+            }
+
+            public static class Contactos
+            {
+                public const string ContactosIndex = "~/Modules/Nuevo_Roezec/Contactos/ContactosIndex.cshtml";
+            }
+
+            public static class EstadosEmpresa
+            {
+                public const string EstadosEmpresaIndex = "~/Modules/Nuevo_Roezec/EstadosEmpresa/EstadosEmpresaIndex.cshtml";
+            }
+
+            public static class FormasJuridicas
+            {
+                public const string FormasJuridicasIndex = "~/Modules/Nuevo_Roezec/FormasJuridicas/FormasJuridicasIndex.cshtml";
+            }
+
+            public static class Islas
+            {
+                public const string IslasIndex = "~/Modules/Nuevo_Roezec/Islas/IslasIndex.cshtml";
+            }
+
+            public static class Naces
+            {
+                public const string NacesIndex = "~/Modules/Nuevo_Roezec/Naces/NacesIndex.cshtml";
+            }
+
+            public static class Paises
+            {
+                public const string PaisesIndex = "~/Modules/Nuevo_Roezec/Paises/PaisesIndex.cshtml";
+            }
+
+            public static class Procedimientos
+            {
+                public const string ProcedimientosIndex = "~/Modules/Nuevo_Roezec/Procedimientos/ProcedimientosIndex.cshtml";
+            }
+
+            public static class Sectores
+            {
+                public const string SectoresIndex = "~/Modules/Nuevo_Roezec/Sectores/SectoresIndex.cshtml";
+            }
+
+            public static class Subsectores
+            {
+                public const string SubsectoresIndex = "~/Modules/Nuevo_Roezec/Subsectores/SubsectoresIndex.cshtml";
+            }
+
+            public static class Tecnicos
+            {
+                public const string TecnicosIndex = "~/Modules/Nuevo_Roezec/Tecnicos/TecnicosIndex.cshtml";
+            }
+
+            public static class TipologiasCapital
+            {
+                public const string TipologiasCapitalIndex = "~/Modules/Nuevo_Roezec/TipologiasCapital/TipologiasCapitalIndex.cshtml";
+            }
+
+            public static class TiposContacto
+            {
+                public const string TiposContactoIndex = "~/Modules/Nuevo_Roezec/TiposContacto/TiposContactoIndex.cshtml";
+            }
+
+            public static class TiposGarantiaTasas
+            {
+                public const string TiposGarantiaTasasIndex = "~/Modules/Nuevo_Roezec/TiposGarantiaTasas/TiposGarantiaTasasIndex.cshtml";
+            }
+
+        }
+
         public static class Roezec
         {
             public static class Actividades

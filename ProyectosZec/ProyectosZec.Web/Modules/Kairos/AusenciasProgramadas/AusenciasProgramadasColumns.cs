@@ -18,7 +18,7 @@ namespace ProyectosZec.Kairos.Columns
        
         [DisplayName("Empleado")]
         public String Empleado { get; set; }
-        [DisplayName("Tipo Solicitud"),QuickFilter,Width(300)]
+        [DisplayName("Tipo Solicitud"),Width(300)]
         public String  Descripcion { get; set; }
         [DisplayName("Desde"), DisplayFormat("dd/MM/yyyy HH:mm"),QuickFilter,Width(120)]
         public DateTime FechaDesde { get; set; }

@@ -15,7 +15,7 @@ namespace ProyectosZec.Kairos.Entities
     [ModifyPermission("Kairos:Modify")]
     [InsertPermission("Kairos:Insert")]
     [DeletePermission("Kairos:Delete")]
-    [LookupScript("Kairos.TiposSolicitud")]
+    [LookupScript("Kairos.KrsAusenciasProgramadasTipos")]
     public sealed class KrsAusenciasProgramadasTiposRow : Row, IIdRow, INameRow
     {
         [DisplayName("Id"), Column("id"), Identity]

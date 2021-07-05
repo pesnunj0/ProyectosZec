@@ -57,7 +57,7 @@ namespace ProyectosZec.Migrations.RoezecDB
                 .ForeignKey("Tecnicos", "TecnicoId")
                 .WithColumn("Cif").AsString(20).NotNullable()
                 .WithColumn("Direccion").AsString(60).Nullable()
-                .WithColumn("Polblacion").AsString(100).Nullable()
+                .WithColumn("Poblacion").AsString(100).Nullable()
                 .WithColumn("IslaId").AsInt32().Nullable()
                 .ForeignKey("Islas", "IslaId")
                 .WithColumn("Telefono_fijo").AsString(20)
@@ -160,10 +160,12 @@ namespace ProyectosZec.Migrations.RoezecDB
                 .ForeignKey("FK_HistEmpresas_ProcedimientoId", "Procedimientos", "ProcedimientoId")
                 .WithColumn("Fecha_Inicio").AsDate().NotNullable()
                 .WithColumn("Fecha_Resolucion").AsDate().Nullable()
+                .WithColumn("Sentido_Resolucion").AsBoolean().Nullable()
                 .WithColumn("Acuse_Inicio").AsDate().Nullable()
                 .WithColumn("Persona_Acuse_Incio").AsInt32().Nullable()
                 .WithColumn("Acuse_Resolucion").AsDate().Nullable()
-                .WithColumn("Persona_Acuse_Resolucion").AsInt32().Nullable()
+                .WithColumn("Fecha_Efecto").AsDate().Nullable()
+                .WithColumn("Persona_Acuse_Resolucion").AsInt32().Nullable()              
                 .WithColumn("Observaciones").AsString(200).Nullable()
                 .WithColumn("Ficheros").AsString(1000).Nullable();
 
