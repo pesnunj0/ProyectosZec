@@ -15,18 +15,17 @@ namespace ProyectosZec.Nuevo_Roezec.Columns
     {
         [EditLink, DisplayName("Db.Shared.RecordId"), AlignRight]
         public Int32 HistorialId { get; set; }
+        [EditLink]
         public String EmpresaRazon { get; set; }
+        [EditLink]
         public String Procedimiento { get; set; }
         public DateTime FechaInicio { get; set; }
         public DateTime FechaResolucion { get; set; }
-        public Int16 SentidoResolucion { get; set; }
+        public Boolean SentidoResolucion { get; set; }
         public DateTime FechaEfecto { get; set; }
         public DateTime AcuseInicio { get; set; }
         public String PersonaAcuseIncioNombre { get; set; }
         public DateTime AcuseResolucion { get; set; }
         public String PersonaAcuseResolucionNombre { get; set; }
-        [EditLink]
-        public String Observaciones { get; set; }
-        public String Ficheros { get; set; }
     }
 }

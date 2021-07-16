@@ -15,7 +15,7 @@ namespace ProyectosZec.Kairos.Entities
     [ModifyPermission("Kairos:Admin")]
     [InsertPermission("Kairos:Admin")]
     [DeletePermission("Kairos:Admin")]
-    public sealed class HorasExtraConsumidasRow : Row, IIdRow
+    public sealed class HorasExtraConsumidasRow : Row, IIdRow, INameRow
     {
         [DisplayName("Id"), Column("id"), Identity]
         public Int64? Id
@@ -154,6 +154,11 @@ namespace ProyectosZec.Kairos.Entities
         IIdField IIdRow.IdField
         {
             get { return Fields.Id; }
+        }
+
+        StringField INameRow.NameField
+        {
+            get { return Fields.Empleado; }
         }
 
         public static readonly RowFields Fields = new RowFields().Init();

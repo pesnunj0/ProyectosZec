@@ -23,6 +23,7 @@
 
     export namespace HorasExtraConsumidasRow {
         export const idProperty = 'Id';
+        export const nameProperty = 'Empleado';
         export const localTextPrefix = 'Kairos.HorasExtraConsumidas';
         export const deletePermission = 'Kairos:Admin';
         export const insertPermission = 'Kairos:Admin';

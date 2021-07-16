@@ -119,6 +119,10 @@
     <Reference Include="System.DirectoryServices" />
     <Reference Include="System.DirectoryServices.AccountManagement" />
     <Reference Include="System.DirectoryServices.Protocols" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.AspNet.WebApi.Client.5.2.7\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
     <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
@@ -130,6 +134,12 @@
     <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.Helpers.dll</HintPath>
       <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Http, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.AspNet.WebApi.Core.5.2.7\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.7\lib\net45\System.Web.Http.WebHost.dll</HintPath>
     </Reference>
     <Reference Include="System.Web.Mvc, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Microsoft.AspNet.Mvc.5.2.7\lib\net45\System.Web.Mvc.dll</HintPath>
@@ -536,6 +546,12 @@
     </Content>
     <Content Include="Content\site\site.kairos.min.css">
       <DependentUpon>site.kairos.css</DependentUpon>
+    </Content>
+    <Content Include="Content\site\site.nuevo_roezec.css">
+      <DependentUpon>site.nuevo_roezec.less</DependentUpon>
+    </Content>
+    <Content Include="Content\site\site.nuevo_roezec.min.css">
+      <DependentUpon>site.nuevo_roezec.css</DependentUpon>
     </Content>
     <Content Include="Content\slick-default-theme.css" />
     <Content Include="Content\slick.columnpicker.css" />
@@ -1151,10 +1167,31 @@
     <TypeScriptCompile Include="Imports\ServerTypings\Nuevo_Roezec.ContactosColumns.ts">
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\Nuevo_Roezec.ContinentesColumns.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\Nuevo_Roezec.EmpresasColumns.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\Nuevo_Roezec.EmpresasContactosColumns.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\Nuevo_Roezec.EmpresasNaceColumns.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
     <TypeScriptCompile Include="Imports\ServerTypings\Nuevo_Roezec.EstadosEmpresaColumns.ts">
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
     <TypeScriptCompile Include="Imports\ServerTypings\Nuevo_Roezec.FormasJuridicasColumns.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\Nuevo_Roezec.HistorialEmpresasColumns.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\Nuevo_Roezec.HistorialListRequest.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\Nuevo_Roezec.IdiomasColumns.ts">
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
     <TypeScriptCompile Include="Imports\ServerTypings\Nuevo_Roezec.IslasColumns.ts">
@@ -1230,6 +1267,8 @@
     <TypeScriptCompile Include="Modules\CuadroMandos\Presentadas\PresentadasGrid.ts" />
     <TypeScriptCompile Include="Modules\Kairos\HorasExtraConsumidas\HorasExtraConsumidasEditDialog.ts" />
     <TypeScriptCompile Include="Modules\Kairos\HorasExtraConsumidas\HorasExtraConsumidasEditor.ts" />
+    <TypeScriptCompile Include="Modules\Nuevo_Roezec\HistorialEmpresas\HistorialEmpresasEditDialog.ts" />
+    <TypeScriptCompile Include="Modules\Nuevo_Roezec\HistorialEmpresas\HistorialEmpresasEditor.ts" />
     <TypeScriptCompile Include="node_modules\%40types\jquery\index.d.ts" />
     <TypeScriptCompile Include="node_modules\%40types\jqueryui\index.d.ts" />
     <TypeScriptCompile Include="node_modules\%40types\jquery.blockui\index.d.ts" />
@@ -2321,36 +2360,78 @@
     <Content Include="Modules\Nuevo_Roezec\Procedimientos\ProcedimientosIndex.cshtml" />
     <TypeScriptCompile Include="Modules\Nuevo_Roezec\Procedimientos\ProcedimientosDialog.ts" />
     <TypeScriptCompile Include="Modules\Nuevo_Roezec\Procedimientos\ProcedimientosGrid.ts" />
-    <TypeScriptCompile Include="Imports\ServerTypings\Nuevo_Roezec.ContinentesRow.ts">  <DependentUpon>ServerTypings.tt</DependentUpon></TypeScriptCompile>
-    <TypeScriptCompile Include="Imports\ServerTypings\Nuevo_Roezec.ContinentesService.ts">  <DependentUpon>ServerTypings.tt</DependentUpon></TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\Nuevo_Roezec.ContinentesRow.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\Nuevo_Roezec.ContinentesService.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
     <Content Include="Modules\Nuevo_Roezec\Continentes\ContinentesIndex.cshtml" />
     <TypeScriptCompile Include="Modules\Nuevo_Roezec\Continentes\ContinentesDialog.ts" />
     <TypeScriptCompile Include="Modules\Nuevo_Roezec\Continentes\ContinentesGrid.ts" />
-    <TypeScriptCompile Include="Imports\ServerTypings\Nuevo_Roezec.ContinentesForm.ts">  <DependentUpon>ServerTypings.tt</DependentUpon></TypeScriptCompile>
-    <TypeScriptCompile Include="Imports\ServerTypings\Nuevo_Roezec.EmpresasContactosRow.ts">  <DependentUpon>ServerTypings.tt</DependentUpon></TypeScriptCompile>
-    <TypeScriptCompile Include="Imports\ServerTypings\Nuevo_Roezec.EmpresasContactosService.ts">  <DependentUpon>ServerTypings.tt</DependentUpon></TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\Nuevo_Roezec.ContinentesForm.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\Nuevo_Roezec.EmpresasContactosRow.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\Nuevo_Roezec.EmpresasContactosService.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
     <Content Include="Modules\Nuevo_Roezec\EmpresasContactos\EmpresasContactosIndex.cshtml" />
     <TypeScriptCompile Include="Modules\Nuevo_Roezec\EmpresasContactos\EmpresasContactosDialog.ts" />
     <TypeScriptCompile Include="Modules\Nuevo_Roezec\EmpresasContactos\EmpresasContactosGrid.ts" />
-    <TypeScriptCompile Include="Imports\ServerTypings\Nuevo_Roezec.EmpresasContactosForm.ts">  <DependentUpon>ServerTypings.tt</DependentUpon></TypeScriptCompile>
-    <TypeScriptCompile Include="Imports\ServerTypings\Nuevo_Roezec.EmpresasNaceRow.ts">  <DependentUpon>ServerTypings.tt</DependentUpon></TypeScriptCompile>
-    <TypeScriptCompile Include="Imports\ServerTypings\Nuevo_Roezec.EmpresasNaceService.ts">  <DependentUpon>ServerTypings.tt</DependentUpon></TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\Nuevo_Roezec.EmpresasContactosForm.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\Nuevo_Roezec.EmpresasNaceRow.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\Nuevo_Roezec.EmpresasNaceService.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
     <Content Include="Modules\Nuevo_Roezec\EmpresasNace\EmpresasNaceIndex.cshtml" />
     <TypeScriptCompile Include="Modules\Nuevo_Roezec\EmpresasNace\EmpresasNaceDialog.ts" />
     <TypeScriptCompile Include="Modules\Nuevo_Roezec\EmpresasNace\EmpresasNaceGrid.ts" />
-    <TypeScriptCompile Include="Imports\ServerTypings\Nuevo_Roezec.EmpresasNaceForm.ts">  <DependentUpon>ServerTypings.tt</DependentUpon></TypeScriptCompile>
-    <TypeScriptCompile Include="Imports\ServerTypings\Nuevo_Roezec.HistorialEmpresasRow.ts">  <DependentUpon>ServerTypings.tt</DependentUpon></TypeScriptCompile>
-    <TypeScriptCompile Include="Imports\ServerTypings\Nuevo_Roezec.HistorialEmpresasService.ts">  <DependentUpon>ServerTypings.tt</DependentUpon></TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\Nuevo_Roezec.EmpresasNaceForm.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\Nuevo_Roezec.HistorialEmpresasRow.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\Nuevo_Roezec.HistorialEmpresasService.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
     <Content Include="Modules\Nuevo_Roezec\HistorialEmpresas\HistorialEmpresasIndex.cshtml" />
     <TypeScriptCompile Include="Modules\Nuevo_Roezec\HistorialEmpresas\HistorialEmpresasDialog.ts" />
     <TypeScriptCompile Include="Modules\Nuevo_Roezec\HistorialEmpresas\HistorialEmpresasGrid.ts" />
-    <TypeScriptCompile Include="Imports\ServerTypings\Nuevo_Roezec.HistorialEmpresasForm.ts">  <DependentUpon>ServerTypings.tt</DependentUpon></TypeScriptCompile>
-    <TypeScriptCompile Include="Imports\ServerTypings\Nuevo_Roezec.EmpresasRow.ts">  <DependentUpon>ServerTypings.tt</DependentUpon></TypeScriptCompile>
-    <TypeScriptCompile Include="Imports\ServerTypings\Nuevo_Roezec.EmpresasService.ts">  <DependentUpon>ServerTypings.tt</DependentUpon></TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\Nuevo_Roezec.HistorialEmpresasForm.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\Nuevo_Roezec.EmpresasRow.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\Nuevo_Roezec.EmpresasService.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
     <Content Include="Modules\Nuevo_Roezec\Empresas\EmpresasIndex.cshtml" />
     <TypeScriptCompile Include="Modules\Nuevo_Roezec\Empresas\EmpresasDialog.ts" />
     <TypeScriptCompile Include="Modules\Nuevo_Roezec\Empresas\EmpresasGrid.ts" />
-    <TypeScriptCompile Include="Imports\ServerTypings\Nuevo_Roezec.EmpresasForm.ts">  <DependentUpon>ServerTypings.tt</DependentUpon></TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\Nuevo_Roezec.EmpresasForm.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\Nuevo_Roezec.IdiomasRow.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\Nuevo_Roezec.IdiomasService.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <Content Include="Modules\Nuevo_Roezec\Idiomas\IdiomasIndex.cshtml" />
+    <TypeScriptCompile Include="Modules\Nuevo_Roezec\Idiomas\IdiomasDialog.ts" />
+    <TypeScriptCompile Include="Modules\Nuevo_Roezec\Idiomas\IdiomasGrid.ts" />
+    <TypeScriptCompile Include="Imports\ServerTypings\Nuevo_Roezec.IdiomasForm.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Global.asax" />
@@ -2369,6 +2450,9 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Imports\ClientTypes\Kairos.HorasExtraConsumidasEditorAttribute.cs">
+      <DependentUpon>ClientTypes.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Imports\ClientTypes\Nuevo_Roezec.HistorialEmpresasEditorAttribute.cs">
       <DependentUpon>ClientTypes.tt</DependentUpon>
     </Compile>
     <Compile Include="Migrations\DefaultDB\DefaultDB_20200903_130000_Inmovilizado_cambios.cs" />
@@ -2462,6 +2546,7 @@
     <Compile Include="Modules\Common\UserPreference\UserPreferenceRow.cs" />
     <Compile Include="Modules\Common\Helpers\GetNextNumberHelper.cs" />
     <Compile Include="Modules\Common\Helpers\GetNextNumberRequest.cs" />
+    <Compile Include="Modules\Nuevo_Roezec\Empresas\HistorialListRequest.cs" />
     <Compile Include="Modules\Texts.cs" />
     <Compile Include="Modules\Membership\Account\AccountPage.cs" />
     <Compile Include="Modules\Administration\User\Authentication\AuthorizationService.cs" />
@@ -2805,6 +2890,12 @@
     <Compile Include="Modules\Nuevo_Roezec\Empresas\EmpresasPage.cs" />
     <Compile Include="Modules\Nuevo_Roezec\Empresas\EmpresasColumns.cs" />
     <Compile Include="Modules\Nuevo_Roezec\Empresas\EmpresasForm.cs" />
+    <Compile Include="Modules\Nuevo_Roezec\Idiomas\IdiomasRow.cs" />
+    <Compile Include="Modules\Nuevo_Roezec\Idiomas\IdiomasRepository.cs" />
+    <Compile Include="Modules\Nuevo_Roezec\Idiomas\IdiomasEndpoint.cs" />
+    <Compile Include="Modules\Nuevo_Roezec\Idiomas\IdiomasPage.cs" />
+    <Compile Include="Modules\Nuevo_Roezec\Idiomas\IdiomasColumns.cs" />
+    <Compile Include="Modules\Nuevo_Roezec\Idiomas\IdiomasForm.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\upload\" />

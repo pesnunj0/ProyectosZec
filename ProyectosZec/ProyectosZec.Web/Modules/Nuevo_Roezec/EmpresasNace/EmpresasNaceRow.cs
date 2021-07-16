@@ -197,89 +197,89 @@ namespace ProyectosZec.Nuevo_Roezec.Entities
             set { Fields.EmpresaEstadoEmpresaId[this] = value; }
         }
 
-        [DisplayName("Empresa Fecha Alta Registro"), Expression("jEmpresa.[Fecha_Alta_Registro]")]
-        public DateTime? EmpresaFechaAltaRegistro
-        {
-            get { return Fields.EmpresaFechaAltaRegistro[this]; }
-            set { Fields.EmpresaFechaAltaRegistro[this] = value; }
-        }
+        //[DisplayName("Empresa Fecha Alta Registro"), Expression("jEmpresa.[Fecha_Alta_Registro]")]
+        //public DateTime? EmpresaFechaAltaRegistro
+        //{
+        //    get { return Fields.EmpresaFechaAltaRegistro[this]; }
+        //    set { Fields.EmpresaFechaAltaRegistro[this] = value; }
+        //}
 
-        [DisplayName("Empresa Fecha Baja Registro"), Expression("jEmpresa.[Fecha_Baja_Registro]")]
-        public DateTime? EmpresaFechaBajaRegistro
-        {
-            get { return Fields.EmpresaFechaBajaRegistro[this]; }
-            set { Fields.EmpresaFechaBajaRegistro[this] = value; }
-        }
+        //[DisplayName("Empresa Fecha Baja Registro"), Expression("jEmpresa.[Fecha_Baja_Registro]")]
+        //public DateTime? EmpresaFechaBajaRegistro
+        //{
+        //    get { return Fields.EmpresaFechaBajaRegistro[this]; }
+        //    set { Fields.EmpresaFechaBajaRegistro[this] = value; }
+        //}
 
-        [DisplayName("Empresa Fecha Baja Efecto"), Expression("jEmpresa.[Fecha_Baja_Efecto]")]
-        public DateTime? EmpresaFechaBajaEfecto
-        {
-            get { return Fields.EmpresaFechaBajaEfecto[this]; }
-            set { Fields.EmpresaFechaBajaEfecto[this] = value; }
-        }
+        //[DisplayName("Empresa Fecha Baja Efecto"), Expression("jEmpresa.[Fecha_Baja_Efecto]")]
+        //public DateTime? EmpresaFechaBajaEfecto
+        //{
+        //    get { return Fields.EmpresaFechaBajaEfecto[this]; }
+        //    set { Fields.EmpresaFechaBajaEfecto[this] = value; }
+        //}
 
-        [DisplayName("Empresa Fecha Remision Ct"), Expression("jEmpresa.[Fecha_Remision_CT]")]
-        public DateTime? EmpresaFechaRemisionCt
-        {
-            get { return Fields.EmpresaFechaRemisionCt[this]; }
-            set { Fields.EmpresaFechaRemisionCt[this] = value; }
-        }
+        //[DisplayName("Empresa Fecha Remision Ct"), Expression("jEmpresa.[Fecha_Remision_CT]")]
+        //public DateTime? EmpresaFechaRemisionCt
+        //{
+        //    get { return Fields.EmpresaFechaRemisionCt[this]; }
+        //    set { Fields.EmpresaFechaRemisionCt[this] = value; }
+        //}
 
-        [DisplayName("Empresa Fecha Informe Ct"), Expression("jEmpresa.[Fecha_Informe_CT]")]
-        public DateTime? EmpresaFechaInformeCt
-        {
-            get { return Fields.EmpresaFechaInformeCt[this]; }
-            set { Fields.EmpresaFechaInformeCt[this] = value; }
-        }
+        //[DisplayName("Empresa Fecha Informe Ct"), Expression("jEmpresa.[Fecha_Informe_CT]")]
+        //public DateTime? EmpresaFechaInformeCt
+        //{
+        //    get { return Fields.EmpresaFechaInformeCt[this]; }
+        //    set { Fields.EmpresaFechaInformeCt[this] = value; }
+        //}
 
-        [DisplayName("Empresa Fecha Remision Cr"), Expression("jEmpresa.[Fecha_Remision_CR]")]
-        public DateTime? EmpresaFechaRemisionCr
-        {
-            get { return Fields.EmpresaFechaRemisionCr[this]; }
-            set { Fields.EmpresaFechaRemisionCr[this] = value; }
-        }
+        //[DisplayName("Empresa Fecha Remision Cr"), Expression("jEmpresa.[Fecha_Remision_CR]")]
+        //public DateTime? EmpresaFechaRemisionCr
+        //{
+        //    get { return Fields.EmpresaFechaRemisionCr[this]; }
+        //    set { Fields.EmpresaFechaRemisionCr[this] = value; }
+        //}
 
-        [DisplayName("Empresa Fecha Caducidad Inscripcion"), Expression("jEmpresa.[Fecha_Caducidad_Inscripcion]")]
-        public DateTime? EmpresaFechaCaducidadInscripcion
-        {
-            get { return Fields.EmpresaFechaCaducidadInscripcion[this]; }
-            set { Fields.EmpresaFechaCaducidadInscripcion[this] = value; }
-        }
+        //[DisplayName("Empresa Fecha Caducidad Inscripcion"), Expression("jEmpresa.[Fecha_Caducidad_Inscripcion]")]
+        //public DateTime? EmpresaFechaCaducidadInscripcion
+        //{
+        //    get { return Fields.EmpresaFechaCaducidadInscripcion[this]; }
+        //    set { Fields.EmpresaFechaCaducidadInscripcion[this] = value; }
+        //}
 
-        [DisplayName("Empresa Sentido Cr"), Expression("jEmpresa.[Sentido_CR]")]
-        public Int16? EmpresaSentidoCr
-        {
-            get { return Fields.EmpresaSentidoCr[this]; }
-            set { Fields.EmpresaSentidoCr[this] = value; }
-        }
+        //[DisplayName("Empresa Sentido Cr"), Expression("jEmpresa.[Sentido_CR]")]
+        //public Int16? EmpresaSentidoCr
+        //{
+        //    get { return Fields.EmpresaSentidoCr[this]; }
+        //    set { Fields.EmpresaSentidoCr[this] = value; }
+        //}
 
-        [DisplayName("Empresa Sentido Ct"), Expression("jEmpresa.[Sentido_CT]")]
-        public Int16? EmpresaSentidoCt
-        {
-            get { return Fields.EmpresaSentidoCt[this]; }
-            set { Fields.EmpresaSentidoCt[this] = value; }
-        }
+        //[DisplayName("Empresa Sentido Ct"), Expression("jEmpresa.[Sentido_CT]")]
+        //public Int16? EmpresaSentidoCt
+        //{
+        //    get { return Fields.EmpresaSentidoCt[this]; }
+        //    set { Fields.EmpresaSentidoCt[this] = value; }
+        //}
 
-        [DisplayName("Empresa Fecha Ins Solicitud"), Expression("jEmpresa.[Fecha_Ins_Solicitud]")]
-        public DateTime? EmpresaFechaInsSolicitud
-        {
-            get { return Fields.EmpresaFechaInsSolicitud[this]; }
-            set { Fields.EmpresaFechaInsSolicitud[this] = value; }
-        }
+        //[DisplayName("Empresa Fecha Ins Solicitud"), Expression("jEmpresa.[Fecha_Ins_Solicitud]")]
+        //public DateTime? EmpresaFechaInsSolicitud
+        //{
+        //    get { return Fields.EmpresaFechaInsSolicitud[this]; }
+        //    set { Fields.EmpresaFechaInsSolicitud[this] = value; }
+        //}
 
-        [DisplayName("Empresa Fecha Ins Resolucion"), Expression("jEmpresa.[Fecha_Ins_Resolucion]")]
-        public DateTime? EmpresaFechaInsResolucion
-        {
-            get { return Fields.EmpresaFechaInsResolucion[this]; }
-            set { Fields.EmpresaFechaInsResolucion[this] = value; }
-        }
+        //[DisplayName("Empresa Fecha Ins Resolucion"), Expression("jEmpresa.[Fecha_Ins_Resolucion]")]
+        //public DateTime? EmpresaFechaInsResolucion
+        //{
+        //    get { return Fields.EmpresaFechaInsResolucion[this]; }
+        //    set { Fields.EmpresaFechaInsResolucion[this] = value; }
+        //}
 
-        [DisplayName("Empresa Fecha Ins Notificacion"), Expression("jEmpresa.[Fecha_Ins_Notificacion]")]
-        public DateTime? EmpresaFechaInsNotificacion
-        {
-            get { return Fields.EmpresaFechaInsNotificacion[this]; }
-            set { Fields.EmpresaFechaInsNotificacion[this] = value; }
-        }
+        //[DisplayName("Empresa Fecha Ins Notificacion"), Expression("jEmpresa.[Fecha_Ins_Notificacion]")]
+        //public DateTime? EmpresaFechaInsNotificacion
+        //{
+        //    get { return Fields.EmpresaFechaInsNotificacion[this]; }
+        //    set { Fields.EmpresaFechaInsNotificacion[this] = value; }
+        //}
 
         [DisplayName("Empresa Num Tasa Liquidacion"), Expression("jEmpresa.[Num_Tasa_Liquidacion]")]
         public String EmpresaNumTasaLiquidacion
@@ -357,18 +357,18 @@ namespace ProyectosZec.Nuevo_Roezec.Entities
             public DecimalField EmpresaInversionTraspasada;
             public DecimalField EmpresaInversion2Anos;
             public Int32Field EmpresaEstadoEmpresaId;
-            public DateTimeField EmpresaFechaAltaRegistro;
-            public DateTimeField EmpresaFechaBajaRegistro;
-            public DateTimeField EmpresaFechaBajaEfecto;
-            public DateTimeField EmpresaFechaRemisionCt;
-            public DateTimeField EmpresaFechaInformeCt;
-            public DateTimeField EmpresaFechaRemisionCr;
-            public DateTimeField EmpresaFechaCaducidadInscripcion;
-            public Int16Field EmpresaSentidoCr;
-            public Int16Field EmpresaSentidoCt;
-            public DateTimeField EmpresaFechaInsSolicitud;
-            public DateTimeField EmpresaFechaInsResolucion;
-            public DateTimeField EmpresaFechaInsNotificacion;
+            //public DateTimeField EmpresaFechaAltaRegistro;
+            //public DateTimeField EmpresaFechaBajaRegistro;
+            //public DateTimeField EmpresaFechaBajaEfecto;
+            //public DateTimeField EmpresaFechaRemisionCt;
+            //public DateTimeField EmpresaFechaInformeCt;
+            //public DateTimeField EmpresaFechaRemisionCr;
+            //public DateTimeField EmpresaFechaCaducidadInscripcion;
+            //public Int16Field EmpresaSentidoCr;
+            //public Int16Field EmpresaSentidoCt;
+            //public DateTimeField EmpresaFechaInsSolicitud;
+            //public DateTimeField EmpresaFechaInsResolucion;
+            //public DateTimeField EmpresaFechaInsNotificacion;
             public StringField EmpresaNumTasaLiquidacion;
 
             public StringField Nace;

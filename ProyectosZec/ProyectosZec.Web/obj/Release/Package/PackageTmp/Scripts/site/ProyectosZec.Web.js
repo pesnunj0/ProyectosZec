@@ -1962,6 +1962,7 @@ var ProyectosZec;
         var HorasExtraConsumidasRow;
         (function (HorasExtraConsumidasRow) {
             HorasExtraConsumidasRow.idProperty = 'Id';
+            HorasExtraConsumidasRow.nameProperty = 'Empleado';
             HorasExtraConsumidasRow.localTextPrefix = 'Kairos.HorasExtraConsumidas';
             HorasExtraConsumidasRow.deletePermission = 'Kairos:Admin';
             HorasExtraConsumidasRow.insertPermission = 'Kairos:Admin';
@@ -2034,9 +2035,9 @@ var ProyectosZec;
             KrsAusenciasProgramadasTiposRow.idProperty = 'Id';
             KrsAusenciasProgramadasTiposRow.nameProperty = 'Descripcion';
             KrsAusenciasProgramadasTiposRow.localTextPrefix = 'Kairos.KrsAusenciasProgramadasTipos';
-            KrsAusenciasProgramadasTiposRow.lookupKey = 'Kairos.TiposSolicitud';
+            KrsAusenciasProgramadasTiposRow.lookupKey = 'Kairos.KrsAusenciasProgramadasTipos';
             function getLookup() {
-                return Q.getLookup('Kairos.TiposSolicitud');
+                return Q.getLookup('Kairos.KrsAusenciasProgramadasTipos');
             }
             KrsAusenciasProgramadasTiposRow.getLookup = getLookup;
             KrsAusenciasProgramadasTiposRow.deletePermission = 'Kairos:Delete';
@@ -2432,7 +2433,7 @@ var ProyectosZec;
                     ContactosForm.init = true;
                     var s = Serenity;
                     var w0 = s.StringEditor;
-                    var w1 = s.IntegerEditor;
+                    var w1 = s.LookupEditor;
                     Q.initFormType(ContactosForm, [
                         'Nombre', w0,
                         'Apellidos', w0,
@@ -2458,7 +2459,7 @@ var ProyectosZec;
         var ContactosRow;
         (function (ContactosRow) {
             ContactosRow.idProperty = 'ContactoId';
-            ContactosRow.nameProperty = 'Nombre';
+            ContactosRow.nameProperty = 'Fullname';
             ContactosRow.localTextPrefix = 'Nuevo_Roezec.Contactos';
             ContactosRow.lookupKey = 'Nuevo_Roezec.Contactos';
             function getLookup() {
@@ -2491,6 +2492,292 @@ var ProyectosZec;
                 };
             });
         })(ContactosService = Nuevo_Roezec.ContactosService || (Nuevo_Roezec.ContactosService = {}));
+    })(Nuevo_Roezec = ProyectosZec.Nuevo_Roezec || (ProyectosZec.Nuevo_Roezec = {}));
+})(ProyectosZec || (ProyectosZec = {}));
+var ProyectosZec;
+(function (ProyectosZec) {
+    var Nuevo_Roezec;
+    (function (Nuevo_Roezec) {
+        var ContinentesForm = /** @class */ (function (_super) {
+            __extends(ContinentesForm, _super);
+            function ContinentesForm(prefix) {
+                var _this = _super.call(this, prefix) || this;
+                if (!ContinentesForm.init) {
+                    ContinentesForm.init = true;
+                    var s = Serenity;
+                    var w0 = s.StringEditor;
+                    Q.initFormType(ContinentesForm, [
+                        'Continente', w0
+                    ]);
+                }
+                return _this;
+            }
+            ContinentesForm.formKey = 'Nuevo_Roezec.Continentes';
+            return ContinentesForm;
+        }(Serenity.PrefixedContext));
+        Nuevo_Roezec.ContinentesForm = ContinentesForm;
+    })(Nuevo_Roezec = ProyectosZec.Nuevo_Roezec || (ProyectosZec.Nuevo_Roezec = {}));
+})(ProyectosZec || (ProyectosZec = {}));
+var ProyectosZec;
+(function (ProyectosZec) {
+    var Nuevo_Roezec;
+    (function (Nuevo_Roezec) {
+        var ContinentesRow;
+        (function (ContinentesRow) {
+            ContinentesRow.idProperty = 'ContinenteId';
+            ContinentesRow.nameProperty = 'Continente';
+            ContinentesRow.localTextPrefix = 'Nuevo_Roezec.Continentes';
+            ContinentesRow.lookupKey = 'Nuevo_Roezec.Continentes';
+            function getLookup() {
+                return Q.getLookup('Nuevo_Roezec.Continentes');
+            }
+            ContinentesRow.getLookup = getLookup;
+            ContinentesRow.deletePermission = 'Roezec:Modify';
+            ContinentesRow.insertPermission = 'Roezec:Modify';
+            ContinentesRow.readPermission = 'Roezec:Read';
+            ContinentesRow.updatePermission = 'Roezec:Modify';
+        })(ContinentesRow = Nuevo_Roezec.ContinentesRow || (Nuevo_Roezec.ContinentesRow = {}));
+    })(Nuevo_Roezec = ProyectosZec.Nuevo_Roezec || (ProyectosZec.Nuevo_Roezec = {}));
+})(ProyectosZec || (ProyectosZec = {}));
+var ProyectosZec;
+(function (ProyectosZec) {
+    var Nuevo_Roezec;
+    (function (Nuevo_Roezec) {
+        var ContinentesService;
+        (function (ContinentesService) {
+            ContinentesService.baseUrl = 'Nuevo_Roezec/Continentes';
+            [
+                'Create',
+                'Update',
+                'Delete',
+                'Retrieve',
+                'List'
+            ].forEach(function (x) {
+                ContinentesService[x] = function (r, s, o) {
+                    return Q.serviceRequest(ContinentesService.baseUrl + '/' + x, r, s, o);
+                };
+            });
+        })(ContinentesService = Nuevo_Roezec.ContinentesService || (Nuevo_Roezec.ContinentesService = {}));
+    })(Nuevo_Roezec = ProyectosZec.Nuevo_Roezec || (ProyectosZec.Nuevo_Roezec = {}));
+})(ProyectosZec || (ProyectosZec = {}));
+var ProyectosZec;
+(function (ProyectosZec) {
+    var Nuevo_Roezec;
+    (function (Nuevo_Roezec) {
+        var EmpresasContactosForm = /** @class */ (function (_super) {
+            __extends(EmpresasContactosForm, _super);
+            function EmpresasContactosForm(prefix) {
+                var _this = _super.call(this, prefix) || this;
+                if (!EmpresasContactosForm.init) {
+                    EmpresasContactosForm.init = true;
+                    var s = Serenity;
+                    var w0 = s.LookupEditor;
+                    var w1 = s.DateEditor;
+                    Q.initFormType(EmpresasContactosForm, [
+                        'EmpresaId', w0,
+                        'ContactoId', w0,
+                        'TipoContactoId', w0,
+                        'FechaBaja', w1
+                    ]);
+                }
+                return _this;
+            }
+            EmpresasContactosForm.formKey = 'Nuevo_Roezec.EmpresasContactos';
+            return EmpresasContactosForm;
+        }(Serenity.PrefixedContext));
+        Nuevo_Roezec.EmpresasContactosForm = EmpresasContactosForm;
+    })(Nuevo_Roezec = ProyectosZec.Nuevo_Roezec || (ProyectosZec.Nuevo_Roezec = {}));
+})(ProyectosZec || (ProyectosZec = {}));
+var ProyectosZec;
+(function (ProyectosZec) {
+    var Nuevo_Roezec;
+    (function (Nuevo_Roezec) {
+        var EmpresasContactosRow;
+        (function (EmpresasContactosRow) {
+            EmpresasContactosRow.idProperty = 'EmpresaContactoId';
+            EmpresasContactosRow.localTextPrefix = 'Nuevo_Roezec.EmpresasContactos';
+            EmpresasContactosRow.deletePermission = 'Roezec:Modify';
+            EmpresasContactosRow.insertPermission = 'Roezec:Modify';
+            EmpresasContactosRow.readPermission = 'Roezec:Read';
+            EmpresasContactosRow.updatePermission = 'Roezec:Modify';
+        })(EmpresasContactosRow = Nuevo_Roezec.EmpresasContactosRow || (Nuevo_Roezec.EmpresasContactosRow = {}));
+    })(Nuevo_Roezec = ProyectosZec.Nuevo_Roezec || (ProyectosZec.Nuevo_Roezec = {}));
+})(ProyectosZec || (ProyectosZec = {}));
+var ProyectosZec;
+(function (ProyectosZec) {
+    var Nuevo_Roezec;
+    (function (Nuevo_Roezec) {
+        var EmpresasContactosService;
+        (function (EmpresasContactosService) {
+            EmpresasContactosService.baseUrl = 'Nuevo_Roezec/EmpresasContactos';
+            [
+                'Create',
+                'Update',
+                'Delete',
+                'Retrieve',
+                'List'
+            ].forEach(function (x) {
+                EmpresasContactosService[x] = function (r, s, o) {
+                    return Q.serviceRequest(EmpresasContactosService.baseUrl + '/' + x, r, s, o);
+                };
+            });
+        })(EmpresasContactosService = Nuevo_Roezec.EmpresasContactosService || (Nuevo_Roezec.EmpresasContactosService = {}));
+    })(Nuevo_Roezec = ProyectosZec.Nuevo_Roezec || (ProyectosZec.Nuevo_Roezec = {}));
+})(ProyectosZec || (ProyectosZec = {}));
+var ProyectosZec;
+(function (ProyectosZec) {
+    var Nuevo_Roezec;
+    (function (Nuevo_Roezec) {
+        var EmpresasForm = /** @class */ (function (_super) {
+            __extends(EmpresasForm, _super);
+            function EmpresasForm(prefix) {
+                var _this = _super.call(this, prefix) || this;
+                if (!EmpresasForm.init) {
+                    EmpresasForm.init = true;
+                    var s = Serenity;
+                    var w0 = s.StringEditor;
+                    var w1 = s.LookupEditor;
+                    var w2 = s.IntegerEditor;
+                    var w3 = s.EmailEditor;
+                    var w4 = s.DecimalEditor;
+                    var w5 = Nuevo_Roezec.HistorialEmpresasEditor;
+                    Q.initFormType(EmpresasForm, [
+                        'Razon', w0,
+                        'FormaJuridicaId', w1,
+                        'TecnicoId', w1,
+                        'Cif', w0,
+                        'ProyectoId', w2,
+                        'Expediente', w0,
+                        'MotivoExencion', w0,
+                        'TipologiaCapitalId', w1,
+                        'TipoGarantiaTasaId', w1,
+                        'EstadoEmpresaId', w1,
+                        'Direccion', w0,
+                        'Poblacion', w0,
+                        'Cp', w0,
+                        'IslaId', w1,
+                        'TelefonoFijo', w0,
+                        'Movil', w0,
+                        'Email', w3,
+                        'EmpleoTraspasado', w2,
+                        'Empleo6Meses', w2,
+                        'EmpleoPromedio', w2,
+                        'EmpleoPromedio2Anos', w2,
+                        'InversionTraspasada', w4,
+                        'Inversion2Anos', w4,
+                        'NumTasaLiquidacion', w0,
+                        'HistorialList', w5
+                    ]);
+                }
+                return _this;
+            }
+            EmpresasForm.formKey = 'Nuevo_Roezec.Empresas';
+            return EmpresasForm;
+        }(Serenity.PrefixedContext));
+        Nuevo_Roezec.EmpresasForm = EmpresasForm;
+    })(Nuevo_Roezec = ProyectosZec.Nuevo_Roezec || (ProyectosZec.Nuevo_Roezec = {}));
+})(ProyectosZec || (ProyectosZec = {}));
+var ProyectosZec;
+(function (ProyectosZec) {
+    var Nuevo_Roezec;
+    (function (Nuevo_Roezec) {
+        var EmpresasNaceForm = /** @class */ (function (_super) {
+            __extends(EmpresasNaceForm, _super);
+            function EmpresasNaceForm(prefix) {
+                var _this = _super.call(this, prefix) || this;
+                if (!EmpresasNaceForm.init) {
+                    EmpresasNaceForm.init = true;
+                    var s = Serenity;
+                    var w0 = s.IntegerEditor;
+                    Q.initFormType(EmpresasNaceForm, [
+                        'EmpresaId', w0,
+                        'NaceId', w0
+                    ]);
+                }
+                return _this;
+            }
+            EmpresasNaceForm.formKey = 'Nuevo_Roezec.EmpresasNace';
+            return EmpresasNaceForm;
+        }(Serenity.PrefixedContext));
+        Nuevo_Roezec.EmpresasNaceForm = EmpresasNaceForm;
+    })(Nuevo_Roezec = ProyectosZec.Nuevo_Roezec || (ProyectosZec.Nuevo_Roezec = {}));
+})(ProyectosZec || (ProyectosZec = {}));
+var ProyectosZec;
+(function (ProyectosZec) {
+    var Nuevo_Roezec;
+    (function (Nuevo_Roezec) {
+        var EmpresasNaceRow;
+        (function (EmpresasNaceRow) {
+            EmpresasNaceRow.idProperty = 'EmpresaNaceId';
+            EmpresasNaceRow.localTextPrefix = 'Nuevo_Roezec.EmpresasNace';
+            EmpresasNaceRow.deletePermission = 'Roezec:Modify';
+            EmpresasNaceRow.insertPermission = 'Roezec:Modify';
+            EmpresasNaceRow.readPermission = 'Roezec:Read';
+            EmpresasNaceRow.updatePermission = 'Roezec:Modify';
+        })(EmpresasNaceRow = Nuevo_Roezec.EmpresasNaceRow || (Nuevo_Roezec.EmpresasNaceRow = {}));
+    })(Nuevo_Roezec = ProyectosZec.Nuevo_Roezec || (ProyectosZec.Nuevo_Roezec = {}));
+})(ProyectosZec || (ProyectosZec = {}));
+var ProyectosZec;
+(function (ProyectosZec) {
+    var Nuevo_Roezec;
+    (function (Nuevo_Roezec) {
+        var EmpresasNaceService;
+        (function (EmpresasNaceService) {
+            EmpresasNaceService.baseUrl = 'Nuevo_Roezec/EmpresasNace';
+            [
+                'Create',
+                'Update',
+                'Delete',
+                'Retrieve',
+                'List'
+            ].forEach(function (x) {
+                EmpresasNaceService[x] = function (r, s, o) {
+                    return Q.serviceRequest(EmpresasNaceService.baseUrl + '/' + x, r, s, o);
+                };
+            });
+        })(EmpresasNaceService = Nuevo_Roezec.EmpresasNaceService || (Nuevo_Roezec.EmpresasNaceService = {}));
+    })(Nuevo_Roezec = ProyectosZec.Nuevo_Roezec || (ProyectosZec.Nuevo_Roezec = {}));
+})(ProyectosZec || (ProyectosZec = {}));
+var ProyectosZec;
+(function (ProyectosZec) {
+    var Nuevo_Roezec;
+    (function (Nuevo_Roezec) {
+        var EmpresasRow;
+        (function (EmpresasRow) {
+            EmpresasRow.idProperty = 'EmpresaId';
+            EmpresasRow.nameProperty = 'Razon';
+            EmpresasRow.localTextPrefix = 'Nuevo_Roezec.Empresas';
+            EmpresasRow.lookupKey = 'Nuevo_Roezec.Empresas';
+            function getLookup() {
+                return Q.getLookup('Nuevo_Roezec.Empresas');
+            }
+            EmpresasRow.getLookup = getLookup;
+            EmpresasRow.deletePermission = 'Roezec:Modify';
+            EmpresasRow.insertPermission = 'Roezec:Modify';
+            EmpresasRow.readPermission = 'Roezec:Read';
+            EmpresasRow.updatePermission = 'Roezec:Modify';
+        })(EmpresasRow = Nuevo_Roezec.EmpresasRow || (Nuevo_Roezec.EmpresasRow = {}));
+    })(Nuevo_Roezec = ProyectosZec.Nuevo_Roezec || (ProyectosZec.Nuevo_Roezec = {}));
+})(ProyectosZec || (ProyectosZec = {}));
+var ProyectosZec;
+(function (ProyectosZec) {
+    var Nuevo_Roezec;
+    (function (Nuevo_Roezec) {
+        var EmpresasService;
+        (function (EmpresasService) {
+            EmpresasService.baseUrl = 'Nuevo_Roezec/Empresas';
+            [
+                'Create',
+                'Update',
+                'Delete',
+                'Retrieve',
+                'List'
+            ].forEach(function (x) {
+                EmpresasService[x] = function (r, s, o) {
+                    return Q.serviceRequest(EmpresasService.baseUrl + '/' + x, r, s, o);
+                };
+            });
+        })(EmpresasService = Nuevo_Roezec.EmpresasService || (Nuevo_Roezec.EmpresasService = {}));
     })(Nuevo_Roezec = ProyectosZec.Nuevo_Roezec || (ProyectosZec.Nuevo_Roezec = {}));
 })(ProyectosZec || (ProyectosZec = {}));
 var ProyectosZec;
@@ -2623,6 +2910,150 @@ var ProyectosZec;
                 };
             });
         })(FormasJuridicasService = Nuevo_Roezec.FormasJuridicasService || (Nuevo_Roezec.FormasJuridicasService = {}));
+    })(Nuevo_Roezec = ProyectosZec.Nuevo_Roezec || (ProyectosZec.Nuevo_Roezec = {}));
+})(ProyectosZec || (ProyectosZec = {}));
+var ProyectosZec;
+(function (ProyectosZec) {
+    var Nuevo_Roezec;
+    (function (Nuevo_Roezec) {
+        var HistorialEmpresasForm = /** @class */ (function (_super) {
+            __extends(HistorialEmpresasForm, _super);
+            function HistorialEmpresasForm(prefix) {
+                var _this = _super.call(this, prefix) || this;
+                if (!HistorialEmpresasForm.init) {
+                    HistorialEmpresasForm.init = true;
+                    var s = Serenity;
+                    var w0 = s.IntegerEditor;
+                    var w1 = s.LookupEditor;
+                    var w2 = s.DateEditor;
+                    var w3 = s.BooleanEditor;
+                    var w4 = s.TextAreaEditor;
+                    var w5 = s.MultipleImageUploadEditor;
+                    Q.initFormType(HistorialEmpresasForm, [
+                        'EmpresaId', w0,
+                        'ProcedimientoId', w1,
+                        'FechaInicio', w2,
+                        'FechaResolucion', w2,
+                        'SentidoResolucion', w3,
+                        'FechaEfecto', w2,
+                        'AcuseInicio', w2,
+                        'PersonaAcuseIncioId', w0,
+                        'AcuseResolucion', w2,
+                        'PersonaAcuseResolucionId', w0,
+                        'Observaciones', w4,
+                        'Ficheros', w5
+                    ]);
+                }
+                return _this;
+            }
+            HistorialEmpresasForm.formKey = 'Nuevo_Roezec.HistorialEmpresas';
+            return HistorialEmpresasForm;
+        }(Serenity.PrefixedContext));
+        Nuevo_Roezec.HistorialEmpresasForm = HistorialEmpresasForm;
+    })(Nuevo_Roezec = ProyectosZec.Nuevo_Roezec || (ProyectosZec.Nuevo_Roezec = {}));
+})(ProyectosZec || (ProyectosZec = {}));
+var ProyectosZec;
+(function (ProyectosZec) {
+    var Nuevo_Roezec;
+    (function (Nuevo_Roezec) {
+        var HistorialEmpresasRow;
+        (function (HistorialEmpresasRow) {
+            HistorialEmpresasRow.idProperty = 'HistorialId';
+            HistorialEmpresasRow.nameProperty = 'Observaciones';
+            HistorialEmpresasRow.localTextPrefix = 'Nuevo_Roezec.HistorialEmpresas';
+            HistorialEmpresasRow.deletePermission = 'Roezec:Modify';
+            HistorialEmpresasRow.insertPermission = 'Roezec:Modify';
+            HistorialEmpresasRow.readPermission = 'Roezec:Read';
+            HistorialEmpresasRow.updatePermission = 'Roezec:Modify';
+        })(HistorialEmpresasRow = Nuevo_Roezec.HistorialEmpresasRow || (Nuevo_Roezec.HistorialEmpresasRow = {}));
+    })(Nuevo_Roezec = ProyectosZec.Nuevo_Roezec || (ProyectosZec.Nuevo_Roezec = {}));
+})(ProyectosZec || (ProyectosZec = {}));
+var ProyectosZec;
+(function (ProyectosZec) {
+    var Nuevo_Roezec;
+    (function (Nuevo_Roezec) {
+        var HistorialEmpresasService;
+        (function (HistorialEmpresasService) {
+            HistorialEmpresasService.baseUrl = 'Nuevo_Roezec/HistorialEmpresas';
+            [
+                'Create',
+                'Update',
+                'Delete',
+                'Retrieve',
+                'List'
+            ].forEach(function (x) {
+                HistorialEmpresasService[x] = function (r, s, o) {
+                    return Q.serviceRequest(HistorialEmpresasService.baseUrl + '/' + x, r, s, o);
+                };
+            });
+        })(HistorialEmpresasService = Nuevo_Roezec.HistorialEmpresasService || (Nuevo_Roezec.HistorialEmpresasService = {}));
+    })(Nuevo_Roezec = ProyectosZec.Nuevo_Roezec || (ProyectosZec.Nuevo_Roezec = {}));
+})(ProyectosZec || (ProyectosZec = {}));
+var ProyectosZec;
+(function (ProyectosZec) {
+    var Nuevo_Roezec;
+    (function (Nuevo_Roezec) {
+        var IdiomasForm = /** @class */ (function (_super) {
+            __extends(IdiomasForm, _super);
+            function IdiomasForm(prefix) {
+                var _this = _super.call(this, prefix) || this;
+                if (!IdiomasForm.init) {
+                    IdiomasForm.init = true;
+                    var s = Serenity;
+                    var w0 = s.StringEditor;
+                    Q.initFormType(IdiomasForm, [
+                        'Idioma', w0,
+                        'NombreIdioma', w0
+                    ]);
+                }
+                return _this;
+            }
+            IdiomasForm.formKey = 'Nuevo_Roezec.Idiomas';
+            return IdiomasForm;
+        }(Serenity.PrefixedContext));
+        Nuevo_Roezec.IdiomasForm = IdiomasForm;
+    })(Nuevo_Roezec = ProyectosZec.Nuevo_Roezec || (ProyectosZec.Nuevo_Roezec = {}));
+})(ProyectosZec || (ProyectosZec = {}));
+var ProyectosZec;
+(function (ProyectosZec) {
+    var Nuevo_Roezec;
+    (function (Nuevo_Roezec) {
+        var IdiomasRow;
+        (function (IdiomasRow) {
+            IdiomasRow.idProperty = 'IdiomaId';
+            IdiomasRow.nameProperty = 'NombreIdioma';
+            IdiomasRow.localTextPrefix = 'Nuevo_Roezec.Idiomas';
+            IdiomasRow.lookupKey = 'Nuevo_Roezec.Idiomas';
+            function getLookup() {
+                return Q.getLookup('Nuevo_Roezec.Idiomas');
+            }
+            IdiomasRow.getLookup = getLookup;
+            IdiomasRow.deletePermission = 'Roezec:Modify';
+            IdiomasRow.insertPermission = 'Roezec:Modify';
+            IdiomasRow.readPermission = 'Roezec:Read';
+            IdiomasRow.updatePermission = 'Roezec:Modify';
+        })(IdiomasRow = Nuevo_Roezec.IdiomasRow || (Nuevo_Roezec.IdiomasRow = {}));
+    })(Nuevo_Roezec = ProyectosZec.Nuevo_Roezec || (ProyectosZec.Nuevo_Roezec = {}));
+})(ProyectosZec || (ProyectosZec = {}));
+var ProyectosZec;
+(function (ProyectosZec) {
+    var Nuevo_Roezec;
+    (function (Nuevo_Roezec) {
+        var IdiomasService;
+        (function (IdiomasService) {
+            IdiomasService.baseUrl = 'Nuevo_Roezec/Idiomas';
+            [
+                'Create',
+                'Update',
+                'Delete',
+                'Retrieve',
+                'List'
+            ].forEach(function (x) {
+                IdiomasService[x] = function (r, s, o) {
+                    return Q.serviceRequest(IdiomasService.baseUrl + '/' + x, r, s, o);
+                };
+            });
+        })(IdiomasService = Nuevo_Roezec.IdiomasService || (Nuevo_Roezec.IdiomasService = {}));
     })(Nuevo_Roezec = ProyectosZec.Nuevo_Roezec || (ProyectosZec.Nuevo_Roezec = {}));
 })(ProyectosZec || (ProyectosZec = {}));
 var ProyectosZec;
@@ -3767,7 +4198,7 @@ var ProyectosZec;
 (function (ProyectosZec) {
     var Texts;
     (function (Texts) {
-        ProyectosZec['Texts'] = Q.proxyTexts(Texts, '', { Db: { Administration: { Language: { Id: 1, LanguageId: 1, LanguageName: 1 }, Role: { RoleId: 1, RoleName: 1 }, RolePermission: { PermissionKey: 1, RoleId: 1, RolePermissionId: 1, RoleRoleName: 1 }, Translation: { CustomText: 1, EntityPlural: 1, Key: 1, OverrideConfirmation: 1, SaveChangesButton: 1, SourceLanguage: 1, SourceText: 1, TargetLanguage: 1, TargetText: 1 }, User: { DisplayName: 1, Email: 1, InsertDate: 1, InsertUserId: 1, IsActive: 1, LastDirectoryUpdate: 1, Password: 1, PasswordConfirm: 1, PasswordHash: 1, PasswordSalt: 1, Source: 1, UpdateDate: 1, UpdateUserId: 1, UserId: 1, UserImage: 1, Username: 1 }, UserPermission: { Granted: 1, PermissionKey: 1, User: 1, UserId: 1, UserPermissionId: 1, Username: 1 }, UserRole: { RoleId: 1, User: 1, UserId: 1, UserRoleId: 1, Username: 1 } }, Common: { UserPreference: { Name: 1, PreferenceType: 1, UserId: 1, UserPreferenceId: 1, Value: 1 } }, CuadroMandos: { Capital: { Capital: 1, CapitalId: 1 }, Estados: { Estado: 1, EstadoId: 1 }, Islas: { Isla: 1, IslaId: 1, NombreIsla: 1 }, Prescriptorinversor: { PrescriptorInversor: 1, PrescriptorInversorId: 1 }, Proyectos: { Capital: 1, CapitalId: 1, Captacion: 1, Contacto: 1, Denominacion: 1, Descripcion: 1, Email: 1, EmpleoReal: 1, Empleos: 1, Estado: 1, EstadoId: 1, Expediente: 1, FechaAmpliacion: 1, FechaAutorizacion: 1, FechaBaja: 1, FechaInicio: 1, FechaInscripcion: 1, FechaPresentacion: 1, Inversion: 1, InversionReal: 1, Isla: 1, IslaId: 1, Nace: 1, NombreTecnico: 1, PrescriptorInversor: 1, PrescriptorInversorId: 1, ProyectoId: 1, Sector: 1, SectorId: 1, Subsector: 1, SubsectorId: 1, SubsectorSectorId: 1, Tecnico: 1, TecnicoId: 1, Telefono: 1 }, Sectores: { Sector: 1, SectorId: 1 }, Subsectores: { Sector: 1, SectorId: 1, Subsector: 1, SubsectorId: 1 }, Tecnicos: { NombreTecnico: 1, Tecnico: 1, TecnicoId: 1 } }, Inmovilizado: { Inmovilizados: { Amortizacion: 1, Codigo: 1, Descripcion: 1, Factura: 1, FechaBaja: 1, FechaCompra: 1, Files: 1, GalleryImages: 1, Garantia: 1, InmovilizadoId: 1, NumeroSerie: 1, Pg: 1, Proveedor: 1, ProveedorId: 1, Sede: 1, SedeId: 1, SubTipo: 1, SubTipoInmovilizadoId: 1, Tipo: 1, TipoInmovilizadoId: 1, Ubicacion: 1, Valor: 1, ValorResidual: 1 }, Proveedores: { Contacto: 1, Email: 1, Proveedor: 1, ProveedorId: 1, Telefono: 1 }, Subtiposinmovilizado: { SubTipo: 1, SubTipoInmovilizadoId: 1, TipoInmovilizadoId: 1, TipoInmovilizadoTipo: 1 }, Tiposinmovilizado: { Tipo: 1, TipoInmovilizadoId: 1 } }, Intranet: { Departamentos: { Departamento: 1, DepartamentoId: 1 }, Sedes: { Sede: 1, SedeId: 1 }, Telefonos: { Contrato: 1, CortoMovil: 1, Departamento: 1, DepartamentoId: 1, ExtCorta: 1, Fijo: 1, Movil: 1, Multisim: 1, Nombre: 1, PUK: 1, Sede: 1, SedeId: 1, TelefonoId: 1 } }, Kairos: { AusenciasProgramadas: { CodigoCliente: 1, Descripcion: 1, Empleado: 1, FechaBorrado: 1, FechaDesde: 1, FechaHasta: 1, Id: 1, IdAusenciaProgramadaTipo: 1, IdAusenciaProgramadaTipoCodigo: 1, IdAusenciaProgramadaTipoCodigoCliente: 1, IdAusenciaProgramadaTipoColorFondo: 1, IdAusenciaProgramadaTipoColorLetra: 1, IdAusenciaProgramadaTipoContabilizarTiempo: 1, IdAusenciaProgramadaTipoFechaActualizacion: 1, IdAusenciaProgramadaTipoFechaBorrado: 1, IdAusenciaProgramadaTipoPermitirSolicitud: 1, IdEmpleado: 1, TotalDias: 1, TotalHoras: 1 }, Departamentos: { Codigo: 1, CodigoCliente: 1, Descripcion: 1, FechaBorrado: 1, Id: 1, SedeId: 1 }, Diario: { Empleado: 1, Entrada: 1, Fecha: 1, HoraEntrada: 1, HoraSalida: 1, Id: 1, IdDepartamento: 1, IdEmpleado: 1, Salida: 1, Sede: 1, SedeId: 1 }, EstadosExtras: { Descripcion: 1, EstadoId: 1 }, Extras: { CodigoCliente: 1, Consumidas: 1, Consumidashhmm: 1, Convertidas: 1, Dia: 1, DptoId: 1, Empleado: 1, Estado: 1, EstadoDesc: 1, Fecha: 1, FechaAceptacionCancelacion: 1, Id: 1, IdAusenciaProgramadaTipo: 1, IdEmpleado: 1, IdHoraExtraCabecera: 1, IdHoraExtraCabeceraCodigo: 1, IdHoraExtraCabeceraCodigoCliente: 1, IdHoraExtraCabeceraDescripcion: 1, IdHoraExtraCabeceraFechaBorrado: 1, MotivoCancelacion: 1, Pendientes: 1, Pendienteshhmm: 1, Sede: 1, SedeId: 1, Tipo: 1, TotalConsumidas: 1, TotalHorasExtrasConvertidas: 1, TotalHorasExtrasReales: 1 }, Fichajes: { Anulado: 1, CodigoCliente: 1, Dispositivo: 1, DptoId: 1, Empleado: 1, EntradaSalida: 1, Fecha: 1, FechaHora: 1, Fichaje: 1, Files: 1, GpsAltitud: 1, GpsFechaHora: 1, GpsPosicionLatitud: 1, GpsPosicionLongitud: 1, GpsProveedor: 1, Hora: 1, Id: 1, IdDispositivoModelo: 1, IdDispositivoModeloCodigoCliente: 1, IdDispositivoModeloFabricante: 1, IdDispositivoModeloFechaBorrado: 1, IdDispositivoModeloMac: 1, IdDispositivoModeloMarca: 1, IdDispositivoModeloModelo: 1, IdEmpleado: 1, IdEmpresa: 1, IdTerminal: 1, IdTerminalCodigo: 1, IdTerminalCodigoCliente: 1, IdTerminalDescripcion: 1, IdTerminalDispositivoHuellaDactilar: 1, IdTerminalDispositivoHuellaDactilarDns: 1, IdTerminalDispositivoHuellaDactilarFirmware: 1, IdTerminalDispositivoHuellaDactilarIp: 1, IdTerminalDispositivoHuellaDactilarMarca: 1, IdTerminalDispositivoHuellaDactilarModelo: 1, IdTerminalDispositivoHuellaDactilarNumero: 1, IdTerminalDispositivoHuellaDactilarPuerto: 1, IdTerminalFechaActualizacion: 1, IdTerminalFechaBorrado: 1, IdTerminalIdDepartamento: 1, IdTerminalTipoDispositivo: 1, Modificado: 1, Observaciones: 1, Sede: 1, SedeId: 1, TipoDispositivo: 1, Validado: 1 }, HorasExtraConsumidas: { Dia: 1, Empleado: 1, FechaAutorizacion: 1, Id: 1, IdEmpleado: 1, IdHoraExtra: 1, IdHoraExtraCodigoCliente: 1, IdHoraExtraDia: 1, IdHoraExtraEstado: 1, IdHoraExtraFecha: 1, IdHoraExtraFechaAceptacionCancelacion: 1, IdHoraExtraIdAusenciaProgramadaTipo: 1, IdHoraExtraIdEmpleado: 1, IdHoraExtraIdHoraExtraCabecera: 1, IdHoraExtraMotivoCancelacion: 1, IdHoraExtraTipo: 1, IdHoraExtraTotalHorasExtrasConvertidas: 1, IdHoraExtraTotalHorasExtrasReales: 1, Tiempo: 1 }, KrsAusenciasProgramadasTipos: { Codigo: 1, CodigoCliente: 1, ColorFondo: 1, ColorLetra: 1, ContabilizarTiempo: 1, Descripcion: 1, FechaActualizacion: 1, FechaBorrado: 1, Id: 1, PermitirSolicitud: 1 }, KrsEmpleados: { ClaveAccesoWeb: 1, CodigoCliente: 1, CodigoValidacion: 1, Email: 1, FechaActualizacion: 1, FechaBaja: 1, FechaBorrado: 1, Id: 1, IdDepartamento: 1, IdEmpresa: 1, IdEmpresaFichajeAutomatico: 1, IdHoraExtraCabecera: 1, IdHoraExtraCabeceraCodigo: 1, IdHoraExtraCabeceraCodigoCliente: 1, IdHoraExtraCabeceraDescripcion: 1, IdHoraExtraCabeceraFechaBorrado: 1, Nombre: 1, NumeroTarjetaFichaje: 1, PermiteFichajeAutomatico: 1, PermiteFichajeWeb: 1, PermiteRecordatorio: 1, Pin: 1, ProgramaExternoDescripcion: 1, ProgramaExternoIdEmpleado: 1, SacarFotoFichaje: 1, Tecnico: 1, UsoHorario: 1 }, TiposFichaje: { Id: 1, Tipo: 1 } }, Nuevo_Roezec: { Capital: { Capital: 1, CapitalId: 1 }, Contactos: { Apellidos: 1, ContactoId: 1, Email: 1, Idioma: 1, IdiomaId: 1, IdiomaNombreIdioma: 1, Movil: 1, Nif: 1, Nombre: 1, TelefonoFijo: 1 }, EstadosEmpresa: { Estado: 1, EstadoEmpresaId: 1 }, FormasJuridicas: { Juridica: 1, JuridicaId: 1 }, Islas: { Isla: 1, IslaId: 1, NombreIsla: 1 }, Naces: { Codigo: 1, Descripcion: 1, Nace: 1, NaceId: 1, Sector: 1, SectorId: 1, Subsector: 1, SubsectorId: 1 }, Paises: { Capital: 1, ContinenteId: 1, Pais: 1, PaisId: 1 }, Procedimientos: { Procedimiento: 1, ProcedimientoId: 1 }, Sectores: { Sector: 1, SectorId: 1 }, Subsectores: { Sector: 1, SectorId: 1, Subsector: 1, SubsectorId: 1 }, Tecnicos: { NombreTecnico: 1, Tecnico: 1, TecnicoId: 1 }, TipologiasCapital: { Capital: 1, CapitalId: 1 }, TiposContacto: { Contacto: 1, ContactoId: 1 }, TiposGarantiaTasas: { GarantiaTasa: 1, GarantiaTasaId: 1 } }, Roezec: { Actividades: { Actividad: 1, Agencia: 1, AnyoExpediente: 1, Cif: 1, Codigo: 1, Cp: 1, Direccion: 1, Empresa: 1, Estado: 1, ExentaAreaAcotada: 1, FechaAlta: 1, FechaBaja: 1, FechaModificacion: 1, FormaJuridica: 1, Id: 1, IdEmpresa: 1, IdNace: 1, Isla: 1, MotivosExencion: 1, NotasMarginales: 1, NumExpediente: 1, ObjetivoEmpleo: 1, ObjetivoInversion: 1, ObservacionesEmpleo: 1, ObservacionesInversion: 1, Poblacion: 1, PreEmpleo: 1, PreInversion: 1, Provincia: 1, SituacionId: 1, Superficie: 1, Tecnico: 1, TrasEmpleo: 1, TrasInversion: 1, UsrAlta: 1, UsrBaja: 1, UsrModificacion: 1 }, Naces: { Actividad: 1, Codigo: 1, FechaAlta: 1, Id: 1, Nace: 1, UsrAlta: 1 }, Representantes: { Agencia: 1, AnyoExpediente: 1, Cif: 1, Cp: 1, Descripcion: 1, Direccion: 1, Doc: 1, Email: 1, Empresa: 1, Estado: 1, ExentaAreaAcotada: 1, FechaAlta: 1, FechaBaja: 1, FechaModificacion: 1, FormaJuridica: 1, Id: 1, IdEmpresa: 1, IdRepresentanteFisico: 1, Isla: 1, MotivoBaja: 1, MotivosExencion: 1, Nombre: 1, NotasMarginales: 1, NumExpediente: 1, ObjetivoEmpleo: 1, ObjetivoInversion: 1, ObservacionesEmpleo: 1, ObservacionesInversion: 1, Pais: 1, Poblacion: 1, PreEmpleo: 1, PreInversion: 1, Provincia: 1, SituacionId: 1, Superficie: 1, Tecnico: 1, Telefono: 1, TipoDoc: 1, TrasEmpleo: 1, TrasInversion: 1, UsrAlta: 1, UsrBaja: 1, UsrModificacion: 1 }, RoezecEmpresas: { Agencia: 1, AnyoExpediente: 1, Cif: 1, Cp: 1, DenominacionSocial: 1, Direccion: 1, Estado: 1, ExentaAreaAcotada: 1, FechaAlta: 1, FechaBaja: 1, FechaModificacion: 1, FormaJuridica: 1, Id: 1, Isla: 1, MotivosExencion: 1, NotasMarginales: 1, NumExpediente: 1, ObjetivoEmpleo: 1, ObjetivoInversion: 1, ObservacionesEmpleo: 1, ObservacionesInversion: 1, Poblacion: 1, PreEmpleo: 1, PreInversion: 1, Provincia: 1, SituacionId: 1, Superficie: 1, Tecnico: 1, TrasEmpleo: 1, TrasInversion: 1, UsrAlta: 1, UsrBaja: 1, UsrModificacion: 1 }, RoezecEstados: { Codigo: 1, Descripcion: 1 }, Socios: { Agencia: 1, AnyoExpediente: 1, Cif: 1, Cp: 1, Descripcion: 1, Direccion: 1, Doc: 1, Email: 1, Empresa: 1, Estado: 1, ExentaAreaAcotada: 1, FechaAlta: 1, FechaBaja: 1, FechaModificacion: 1, FormaJuridica: 1, Id: 1, IdEmpresa: 1, Isla: 1, MotivoBaja: 1, MotivosExencion: 1, Nombre: 1, NotasMarginales: 1, NumExpediente: 1, ObjetivoEmpleo: 1, ObjetivoInversion: 1, ObservacionesEmpleo: 1, ObservacionesInversion: 1, Pais: 1, Participacion: 1, Poblacion: 1, PreEmpleo: 1, PreInversion: 1, Provincia: 1, SituacionId: 1, Superficie: 1, Tecnico: 1, Telefono: 1, TipoDoc: 1, TipoPersona: 1, TrasEmpleo: 1, TrasInversion: 1, UsrAlta: 1, UsrBaja: 1, UsrModificacion: 1 } } }, Forms: { Membership: { ChangePassword: { FormTitle: 1, SubmitButton: 1, Success: 1 }, ForgotPassword: { BackToLogin: 1, FormInfo: 1, FormTitle: 1, SubmitButton: 1, Success: 1 }, Login: { FacebookButton: 1, ForgotPassword: 1, FormTitle: 1, GoogleButton: 1, OR: 1, RememberMe: 1, SignInButton: 1, SignUpButton: 1 }, ResetPassword: { BackToLogin: 1, EmailSubject: 1, FormTitle: 1, SubmitButton: 1, Success: 1 }, SignUp: { AcceptTerms: 1, ActivateEmailSubject: 1, ActivationCompleteMessage: 1, BackToLogin: 1, ConfirmEmail: 1, ConfirmPassword: 1, DisplayName: 1, Email: 1, FormInfo: 1, FormTitle: 1, Password: 1, SubmitButton: 1, Success: 1 } } }, Site: { AccessDenied: { ClickToChangeUser: 1, ClickToLogin: 1, LackPermissions: 1, NotLoggedIn: 1, PageTitle: 1 }, BasicProgressDialog: { CancelTitle: 1, PleaseWait: 1 }, BulkServiceAction: { AllHadErrorsFormat: 1, AllSuccessFormat: 1, ConfirmationFormat: 1, ErrorCount: 1, NothingToProcess: 1, SomeHadErrorsFormat: 1, SuccessCount: 1 }, Dashboard: { ContentDescription: 1 }, Layout: { FooterCopyright: 1, FooterInfo: 1, FooterRights: 1, GeneralSettings: 1, Language: 1, Theme: 1, ThemeBlack: 1, ThemeBlackLight: 1, ThemeBlue: 1, ThemeBlueLight: 1, ThemeGreen: 1, ThemeGreenLight: 1, ThemePurple: 1, ThemePurpleLight: 1, ThemeRed: 1, ThemeRedLight: 1, ThemeYellow: 1, ThemeYellowLight: 1 }, RolePermissionDialog: { DialogTitle: 1, EditButton: 1, SaveSuccess: 1 }, UserDialog: { EditPermissionsButton: 1, EditRolesButton: 1 }, UserPermissionDialog: { DialogTitle: 1, Grant: 1, Permission: 1, Revoke: 1, SaveSuccess: 1 }, UserRoleDialog: { DialogTitle: 1, SaveSuccess: 1 }, ValidationError: { Title: 1 } }, Validation: { AuthenticationError: 1, CantFindUserWithEmail: 1, CurrentPasswordMismatch: 1, DeleteForeignKeyError: 1, EmailConfirm: 1, EmailInUse: 1, InvalidActivateToken: 1, InvalidResetToken: 1, MinRequiredPasswordLength: 1, SavePrimaryKeyError: 1 } });
+        ProyectosZec['Texts'] = Q.proxyTexts(Texts, '', { Db: { Administration: { Language: { Id: 1, LanguageId: 1, LanguageName: 1 }, Role: { RoleId: 1, RoleName: 1 }, RolePermission: { PermissionKey: 1, RoleId: 1, RolePermissionId: 1, RoleRoleName: 1 }, Translation: { CustomText: 1, EntityPlural: 1, Key: 1, OverrideConfirmation: 1, SaveChangesButton: 1, SourceLanguage: 1, SourceText: 1, TargetLanguage: 1, TargetText: 1 }, User: { DisplayName: 1, Email: 1, InsertDate: 1, InsertUserId: 1, IsActive: 1, LastDirectoryUpdate: 1, Password: 1, PasswordConfirm: 1, PasswordHash: 1, PasswordSalt: 1, Source: 1, UpdateDate: 1, UpdateUserId: 1, UserId: 1, UserImage: 1, Username: 1 }, UserPermission: { Granted: 1, PermissionKey: 1, User: 1, UserId: 1, UserPermissionId: 1, Username: 1 }, UserRole: { RoleId: 1, User: 1, UserId: 1, UserRoleId: 1, Username: 1 } }, Common: { UserPreference: { Name: 1, PreferenceType: 1, UserId: 1, UserPreferenceId: 1, Value: 1 } }, CuadroMandos: { Capital: { Capital: 1, CapitalId: 1 }, Estados: { Estado: 1, EstadoId: 1 }, Islas: { Isla: 1, IslaId: 1, NombreIsla: 1 }, Prescriptorinversor: { PrescriptorInversor: 1, PrescriptorInversorId: 1 }, Proyectos: { Capital: 1, CapitalId: 1, Captacion: 1, Contacto: 1, Denominacion: 1, Descripcion: 1, Email: 1, EmpleoReal: 1, Empleos: 1, Estado: 1, EstadoId: 1, Expediente: 1, FechaAmpliacion: 1, FechaAutorizacion: 1, FechaBaja: 1, FechaInicio: 1, FechaInscripcion: 1, FechaPresentacion: 1, Inversion: 1, InversionReal: 1, Isla: 1, IslaId: 1, Nace: 1, NombreTecnico: 1, PrescriptorInversor: 1, PrescriptorInversorId: 1, ProyectoId: 1, Sector: 1, SectorId: 1, Subsector: 1, SubsectorId: 1, SubsectorSectorId: 1, Tecnico: 1, TecnicoId: 1, Telefono: 1 }, Sectores: { Sector: 1, SectorId: 1 }, Subsectores: { Sector: 1, SectorId: 1, Subsector: 1, SubsectorId: 1 }, Tecnicos: { NombreTecnico: 1, Tecnico: 1, TecnicoId: 1 } }, Inmovilizado: { Inmovilizados: { Amortizacion: 1, Codigo: 1, Descripcion: 1, Factura: 1, FechaBaja: 1, FechaCompra: 1, Files: 1, GalleryImages: 1, Garantia: 1, InmovilizadoId: 1, NumeroSerie: 1, Pg: 1, Proveedor: 1, ProveedorId: 1, Sede: 1, SedeId: 1, SubTipo: 1, SubTipoInmovilizadoId: 1, Tipo: 1, TipoInmovilizadoId: 1, Ubicacion: 1, Valor: 1, ValorResidual: 1 }, Proveedores: { Contacto: 1, Email: 1, Proveedor: 1, ProveedorId: 1, Telefono: 1 }, Subtiposinmovilizado: { SubTipo: 1, SubTipoInmovilizadoId: 1, TipoInmovilizadoId: 1, TipoInmovilizadoTipo: 1 }, Tiposinmovilizado: { Tipo: 1, TipoInmovilizadoId: 1 } }, Intranet: { Departamentos: { Departamento: 1, DepartamentoId: 1 }, Sedes: { Sede: 1, SedeId: 1 }, Telefonos: { Contrato: 1, CortoMovil: 1, Departamento: 1, DepartamentoId: 1, ExtCorta: 1, Fijo: 1, Movil: 1, Multisim: 1, Nombre: 1, PUK: 1, Sede: 1, SedeId: 1, TelefonoId: 1 } }, Kairos: { AusenciasProgramadas: { CodigoCliente: 1, Descripcion: 1, Empleado: 1, FechaBorrado: 1, FechaDesde: 1, FechaHasta: 1, Id: 1, IdAusenciaProgramadaTipo: 1, IdAusenciaProgramadaTipoCodigo: 1, IdAusenciaProgramadaTipoCodigoCliente: 1, IdAusenciaProgramadaTipoColorFondo: 1, IdAusenciaProgramadaTipoColorLetra: 1, IdAusenciaProgramadaTipoContabilizarTiempo: 1, IdAusenciaProgramadaTipoFechaActualizacion: 1, IdAusenciaProgramadaTipoFechaBorrado: 1, IdAusenciaProgramadaTipoPermitirSolicitud: 1, IdEmpleado: 1, TotalDias: 1, TotalHoras: 1 }, Departamentos: { Codigo: 1, CodigoCliente: 1, Descripcion: 1, FechaBorrado: 1, Id: 1, SedeId: 1 }, Diario: { Empleado: 1, Entrada: 1, Fecha: 1, HoraEntrada: 1, HoraSalida: 1, Id: 1, IdDepartamento: 1, IdEmpleado: 1, Salida: 1, Sede: 1, SedeId: 1 }, EstadosExtras: { Descripcion: 1, EstadoId: 1 }, Extras: { CodigoCliente: 1, Consumidas: 1, Consumidashhmm: 1, Convertidas: 1, Dia: 1, DptoId: 1, Empleado: 1, Estado: 1, EstadoDesc: 1, Fecha: 1, FechaAceptacionCancelacion: 1, Id: 1, IdAusenciaProgramadaTipo: 1, IdEmpleado: 1, IdHoraExtraCabecera: 1, IdHoraExtraCabeceraCodigo: 1, IdHoraExtraCabeceraCodigoCliente: 1, IdHoraExtraCabeceraDescripcion: 1, IdHoraExtraCabeceraFechaBorrado: 1, MotivoCancelacion: 1, Pendientes: 1, Pendienteshhmm: 1, Sede: 1, SedeId: 1, Tipo: 1, TotalConsumidas: 1, TotalHorasExtrasConvertidas: 1, TotalHorasExtrasReales: 1 }, Fichajes: { Anulado: 1, CodigoCliente: 1, Dispositivo: 1, DptoId: 1, Empleado: 1, EntradaSalida: 1, Fecha: 1, FechaHora: 1, Fichaje: 1, Files: 1, GpsAltitud: 1, GpsFechaHora: 1, GpsPosicionLatitud: 1, GpsPosicionLongitud: 1, GpsProveedor: 1, Hora: 1, Id: 1, IdDispositivoModelo: 1, IdDispositivoModeloCodigoCliente: 1, IdDispositivoModeloFabricante: 1, IdDispositivoModeloFechaBorrado: 1, IdDispositivoModeloMac: 1, IdDispositivoModeloMarca: 1, IdDispositivoModeloModelo: 1, IdEmpleado: 1, IdEmpresa: 1, IdTerminal: 1, IdTerminalCodigo: 1, IdTerminalCodigoCliente: 1, IdTerminalDescripcion: 1, IdTerminalDispositivoHuellaDactilar: 1, IdTerminalDispositivoHuellaDactilarDns: 1, IdTerminalDispositivoHuellaDactilarFirmware: 1, IdTerminalDispositivoHuellaDactilarIp: 1, IdTerminalDispositivoHuellaDactilarMarca: 1, IdTerminalDispositivoHuellaDactilarModelo: 1, IdTerminalDispositivoHuellaDactilarNumero: 1, IdTerminalDispositivoHuellaDactilarPuerto: 1, IdTerminalFechaActualizacion: 1, IdTerminalFechaBorrado: 1, IdTerminalIdDepartamento: 1, IdTerminalTipoDispositivo: 1, Modificado: 1, Observaciones: 1, Sede: 1, SedeId: 1, TipoDispositivo: 1, Validado: 1 }, HorasExtraConsumidas: { Dia: 1, Empleado: 1, FechaAutorizacion: 1, Id: 1, IdEmpleado: 1, IdHoraExtra: 1, IdHoraExtraCodigoCliente: 1, IdHoraExtraDia: 1, IdHoraExtraEstado: 1, IdHoraExtraFecha: 1, IdHoraExtraFechaAceptacionCancelacion: 1, IdHoraExtraIdAusenciaProgramadaTipo: 1, IdHoraExtraIdEmpleado: 1, IdHoraExtraIdHoraExtraCabecera: 1, IdHoraExtraMotivoCancelacion: 1, IdHoraExtraTipo: 1, IdHoraExtraTotalHorasExtrasConvertidas: 1, IdHoraExtraTotalHorasExtrasReales: 1, Tiempo: 1 }, KrsAusenciasProgramadasTipos: { Codigo: 1, CodigoCliente: 1, ColorFondo: 1, ColorLetra: 1, ContabilizarTiempo: 1, Descripcion: 1, FechaActualizacion: 1, FechaBorrado: 1, Id: 1, PermitirSolicitud: 1 }, KrsEmpleados: { ClaveAccesoWeb: 1, CodigoCliente: 1, CodigoValidacion: 1, Email: 1, FechaActualizacion: 1, FechaBaja: 1, FechaBorrado: 1, Id: 1, IdDepartamento: 1, IdEmpresa: 1, IdEmpresaFichajeAutomatico: 1, IdHoraExtraCabecera: 1, IdHoraExtraCabeceraCodigo: 1, IdHoraExtraCabeceraCodigoCliente: 1, IdHoraExtraCabeceraDescripcion: 1, IdHoraExtraCabeceraFechaBorrado: 1, Nombre: 1, NumeroTarjetaFichaje: 1, PermiteFichajeAutomatico: 1, PermiteFichajeWeb: 1, PermiteRecordatorio: 1, Pin: 1, ProgramaExternoDescripcion: 1, ProgramaExternoIdEmpleado: 1, SacarFotoFichaje: 1, Tecnico: 1, UsoHorario: 1 }, TiposFichaje: { Id: 1, Tipo: 1 } }, Nuevo_Roezec: { Capital: { Capital: 1, CapitalId: 1 }, Contactos: { Apellidos: 1, ContactoId: 1, Email: 1, Fullname: 1, Idioma: 1, IdiomaId: 1, IdiomaNombreIdioma: 1, Movil: 1, Nif: 1, Nombre: 1, TelefonoFijo: 1 }, Continentes: { Continente: 1, ContinenteId: 1 }, Empresas: { Cif: 1, ContactosList: 1, Cp: 1, Direccion: 1, Email: 1, Empleo6Meses: 1, EmpleoPromedio: 1, EmpleoPromedio2Anos: 1, EmpleoTraspasado: 1, EmpresaId: 1, EstadoEmpresaEstado: 1, EstadoEmpresaId: 1, Expediente: 1, FormaJuridicaId: 1, FormaJuridicaJuridica: 1, HistorialList: 1, Inversion2Anos: 1, InversionTraspasada: 1, Isla: 1, IslaId: 1, IslaNombreIsla: 1, MotivoExencion: 1, Movil: 1, NacesList: 1, NumTasaLiquidacion: 1, Poblacion: 1, Proyecto: 1, ProyectoAccionId: 1, ProyectoConfidencial: 1, ProyectoContactoPrincipalId: 1, ProyectoDescripcion: 1, ProyectoEstadoProyectoId: 1, ProyectoFechaModificacion: 1, ProyectoFechaPrimerContacto: 1, ProyectoId: 1, ProyectoInversion: 1, ProyectoOrigenId: 1, ProyectoPrescriptorId: 1, ProyectoTecnicoId: 1, ProyectoUserId: 1, Razon: 1, Tecnico: 1, TecnicoId: 1, TecnicoNombreTecnico: 1, TelefonoFijo: 1, TipoGarantiaTasaGarantiaTasa: 1, TipoGarantiaTasaId: 1, TipologiaCapitalCapital: 1, TipologiaCapitalId: 1 }, EmpresasContactos: { ContactoApellidos: 1, ContactoEmail: 1, ContactoId: 1, ContactoIdiomaId: 1, ContactoMovil: 1, ContactoNif: 1, ContactoNombre: 1, ContactoTelefonoFijo: 1, EmpresaCif: 1, EmpresaContactoId: 1, EmpresaDireccion: 1, EmpresaEmail: 1, EmpresaEmpleo6Meses: 1, EmpresaEmpleoPromedio: 1, EmpresaEmpleoPromedio2Anos: 1, EmpresaEmpleoTraspasado: 1, EmpresaEstadoEmpresaId: 1, EmpresaExpediente: 1, EmpresaFormaJuridicaId: 1, EmpresaId: 1, EmpresaInversion2Anos: 1, EmpresaInversionTraspasada: 1, EmpresaIslaId: 1, EmpresaMotivoExencion: 1, EmpresaMovil: 1, EmpresaNExpediente: 1, EmpresaNumTasaLiquidacion: 1, EmpresaPoblacion: 1, EmpresaProyectoId: 1, EmpresaRazon: 1, EmpresaTecnicoId: 1, EmpresaTelefonoFijo: 1, EmpresaTipoGarantiaTasaId: 1, EmpresaTipologiaCapitalId: 1, FechaBaja: 1, Fullname: 1, TipoContactoContacto: 1, TipoContactoId: 1 }, EmpresasNace: { EmpresaCif: 1, EmpresaDireccion: 1, EmpresaEmail: 1, EmpresaEmpleo6Meses: 1, EmpresaEmpleoPromedio: 1, EmpresaEmpleoPromedio2Anos: 1, EmpresaEmpleoTraspasado: 1, EmpresaEstadoEmpresaId: 1, EmpresaExpediente: 1, EmpresaFormaJuridicaId: 1, EmpresaId: 1, EmpresaInversion2Anos: 1, EmpresaInversionTraspasada: 1, EmpresaIslaId: 1, EmpresaMotivoExencion: 1, EmpresaMovil: 1, EmpresaNExpediente: 1, EmpresaNaceId: 1, EmpresaNumTasaLiquidacion: 1, EmpresaPoblacion: 1, EmpresaProyectoId: 1, EmpresaRazon: 1, EmpresaTecnicoId: 1, EmpresaTelefonoFijo: 1, EmpresaTipoGarantiaTasaId: 1, EmpresaTipologiaCapitalId: 1, Nace: 1, NaceCodigo: 1, NaceDescripcion: 1, NaceId: 1, NaceSubsectorId: 1 }, EstadosEmpresa: { Estado: 1, EstadoEmpresaId: 1 }, FormasJuridicas: { Juridica: 1, JuridicaId: 1 }, HistorialEmpresas: { AcuseInicio: 1, AcuseResolucion: 1, EmpresaCif: 1, EmpresaDireccion: 1, EmpresaEmail: 1, EmpresaEmpleo6Meses: 1, EmpresaEmpleoPromedio: 1, EmpresaEmpleoPromedio2Anos: 1, EmpresaEmpleoTraspasado: 1, EmpresaEstadoEmpresaId: 1, EmpresaExpediente: 1, EmpresaFormaJuridicaId: 1, EmpresaId: 1, EmpresaInversion2Anos: 1, EmpresaInversionTraspasada: 1, EmpresaIslaId: 1, EmpresaMotivoExencion: 1, EmpresaMovil: 1, EmpresaNExpediente: 1, EmpresaNumTasaLiquidacion: 1, EmpresaPoblacion: 1, EmpresaProyectoId: 1, EmpresaRazon: 1, EmpresaTecnicoId: 1, EmpresaTelefonoFijo: 1, EmpresaTipoGarantiaTasaId: 1, EmpresaTipologiaCapitalId: 1, FechaEfecto: 1, FechaInicio: 1, FechaResolucion: 1, Ficheros: 1, HistorialId: 1, Observaciones: 1, PersonaAcuseIncioApellidos: 1, PersonaAcuseIncioEmail: 1, PersonaAcuseIncioId: 1, PersonaAcuseIncioIdiomaId: 1, PersonaAcuseIncioMovil: 1, PersonaAcuseIncioNif: 1, PersonaAcuseIncioNombre: 1, PersonaAcuseIncioTelefonoFijo: 1, PersonaAcuseResolucionApellidos: 1, PersonaAcuseResolucionEmail: 1, PersonaAcuseResolucionId: 1, PersonaAcuseResolucionIdiomaId: 1, PersonaAcuseResolucionMovil: 1, PersonaAcuseResolucionNif: 1, PersonaAcuseResolucionNombre: 1, PersonaAcuseResolucionTelefonoFijo: 1, Procedimiento: 1, ProcedimientoId: 1, SentidoResolucion: 1 }, Idiomas: { Idioma: 1, IdiomaId: 1, NombreIdioma: 1 }, Islas: { Isla: 1, IslaId: 1, NombreIsla: 1 }, Naces: { Codigo: 1, Descripcion: 1, Nace: 1, NaceId: 1, Sector: 1, SectorId: 1, Subsector: 1, SubsectorId: 1 }, Paises: { Capital: 1, ContinenteId: 1, Pais: 1, PaisId: 1 }, Procedimientos: { Procedimiento: 1, ProcedimientoId: 1 }, Sectores: { Sector: 1, SectorId: 1 }, Subsectores: { Sector: 1, SectorId: 1, Subsector: 1, SubsectorId: 1 }, Tecnicos: { NombreTecnico: 1, Tecnico: 1, TecnicoId: 1 }, TipologiasCapital: { Capital: 1, CapitalId: 1 }, TiposContacto: { Contacto: 1, ContactoId: 1 }, TiposGarantiaTasas: { GarantiaTasa: 1, GarantiaTasaId: 1 } }, Roezec: { Actividades: { Actividad: 1, Agencia: 1, AnyoExpediente: 1, Cif: 1, Codigo: 1, Cp: 1, Direccion: 1, Empresa: 1, Estado: 1, ExentaAreaAcotada: 1, FechaAlta: 1, FechaBaja: 1, FechaModificacion: 1, FormaJuridica: 1, Id: 1, IdEmpresa: 1, IdNace: 1, Isla: 1, MotivosExencion: 1, NotasMarginales: 1, NumExpediente: 1, ObjetivoEmpleo: 1, ObjetivoInversion: 1, ObservacionesEmpleo: 1, ObservacionesInversion: 1, Poblacion: 1, PreEmpleo: 1, PreInversion: 1, Provincia: 1, SituacionId: 1, Superficie: 1, Tecnico: 1, TrasEmpleo: 1, TrasInversion: 1, UsrAlta: 1, UsrBaja: 1, UsrModificacion: 1 }, Naces: { Actividad: 1, Codigo: 1, FechaAlta: 1, Id: 1, Nace: 1, UsrAlta: 1 }, Representantes: { Agencia: 1, AnyoExpediente: 1, Cif: 1, Cp: 1, Descripcion: 1, Direccion: 1, Doc: 1, Email: 1, Empresa: 1, Estado: 1, ExentaAreaAcotada: 1, FechaAlta: 1, FechaBaja: 1, FechaModificacion: 1, FormaJuridica: 1, Id: 1, IdEmpresa: 1, IdRepresentanteFisico: 1, Isla: 1, MotivoBaja: 1, MotivosExencion: 1, Nombre: 1, NotasMarginales: 1, NumExpediente: 1, ObjetivoEmpleo: 1, ObjetivoInversion: 1, ObservacionesEmpleo: 1, ObservacionesInversion: 1, Pais: 1, Poblacion: 1, PreEmpleo: 1, PreInversion: 1, Provincia: 1, SituacionId: 1, Superficie: 1, Tecnico: 1, Telefono: 1, TipoDoc: 1, TrasEmpleo: 1, TrasInversion: 1, UsrAlta: 1, UsrBaja: 1, UsrModificacion: 1 }, RoezecEmpresas: { Agencia: 1, AnyoExpediente: 1, Cif: 1, Cp: 1, DenominacionSocial: 1, Direccion: 1, Estado: 1, ExentaAreaAcotada: 1, FechaAlta: 1, FechaBaja: 1, FechaModificacion: 1, FormaJuridica: 1, Id: 1, Isla: 1, MotivosExencion: 1, NotasMarginales: 1, NumExpediente: 1, ObjetivoEmpleo: 1, ObjetivoInversion: 1, ObservacionesEmpleo: 1, ObservacionesInversion: 1, Poblacion: 1, PreEmpleo: 1, PreInversion: 1, Provincia: 1, SituacionId: 1, Superficie: 1, Tecnico: 1, TrasEmpleo: 1, TrasInversion: 1, UsrAlta: 1, UsrBaja: 1, UsrModificacion: 1 }, RoezecEstados: { Codigo: 1, Descripcion: 1 }, Socios: { Agencia: 1, AnyoExpediente: 1, Cif: 1, Cp: 1, Descripcion: 1, Direccion: 1, Doc: 1, Email: 1, Empresa: 1, Estado: 1, ExentaAreaAcotada: 1, FechaAlta: 1, FechaBaja: 1, FechaModificacion: 1, FormaJuridica: 1, Id: 1, IdEmpresa: 1, Isla: 1, MotivoBaja: 1, MotivosExencion: 1, Nombre: 1, NotasMarginales: 1, NumExpediente: 1, ObjetivoEmpleo: 1, ObjetivoInversion: 1, ObservacionesEmpleo: 1, ObservacionesInversion: 1, Pais: 1, Participacion: 1, Poblacion: 1, PreEmpleo: 1, PreInversion: 1, Provincia: 1, SituacionId: 1, Superficie: 1, Tecnico: 1, Telefono: 1, TipoDoc: 1, TipoPersona: 1, TrasEmpleo: 1, TrasInversion: 1, UsrAlta: 1, UsrBaja: 1, UsrModificacion: 1 } } }, Forms: { Membership: { ChangePassword: { FormTitle: 1, SubmitButton: 1, Success: 1 }, ForgotPassword: { BackToLogin: 1, FormInfo: 1, FormTitle: 1, SubmitButton: 1, Success: 1 }, Login: { FacebookButton: 1, ForgotPassword: 1, FormTitle: 1, GoogleButton: 1, OR: 1, RememberMe: 1, SignInButton: 1, SignUpButton: 1 }, ResetPassword: { BackToLogin: 1, EmailSubject: 1, FormTitle: 1, SubmitButton: 1, Success: 1 }, SignUp: { AcceptTerms: 1, ActivateEmailSubject: 1, ActivationCompleteMessage: 1, BackToLogin: 1, ConfirmEmail: 1, ConfirmPassword: 1, DisplayName: 1, Email: 1, FormInfo: 1, FormTitle: 1, Password: 1, SubmitButton: 1, Success: 1 } } }, Site: { AccessDenied: { ClickToChangeUser: 1, ClickToLogin: 1, LackPermissions: 1, NotLoggedIn: 1, PageTitle: 1 }, BasicProgressDialog: { CancelTitle: 1, PleaseWait: 1 }, BulkServiceAction: { AllHadErrorsFormat: 1, AllSuccessFormat: 1, ConfirmationFormat: 1, ErrorCount: 1, NothingToProcess: 1, SomeHadErrorsFormat: 1, SuccessCount: 1 }, Dashboard: { ContentDescription: 1 }, Layout: { FooterCopyright: 1, FooterInfo: 1, FooterRights: 1, GeneralSettings: 1, Language: 1, Theme: 1, ThemeBlack: 1, ThemeBlackLight: 1, ThemeBlue: 1, ThemeBlueLight: 1, ThemeGreen: 1, ThemeGreenLight: 1, ThemePurple: 1, ThemePurpleLight: 1, ThemeRed: 1, ThemeRedLight: 1, ThemeYellow: 1, ThemeYellowLight: 1 }, RolePermissionDialog: { DialogTitle: 1, EditButton: 1, SaveSuccess: 1 }, UserDialog: { EditPermissionsButton: 1, EditRolesButton: 1 }, UserPermissionDialog: { DialogTitle: 1, Grant: 1, Permission: 1, Revoke: 1, SaveSuccess: 1 }, UserRoleDialog: { DialogTitle: 1, SaveSuccess: 1 }, ValidationError: { Title: 1 } }, Validation: { AuthenticationError: 1, CantFindUserWithEmail: 1, CurrentPasswordMismatch: 1, DeleteForeignKeyError: 1, EmailConfirm: 1, EmailInUse: 1, InvalidActivateToken: 1, InvalidResetToken: 1, MinRequiredPasswordLength: 1, SavePrimaryKeyError: 1 } });
     })(Texts = ProyectosZec.Texts || (ProyectosZec.Texts = {}));
 })(ProyectosZec || (ProyectosZec = {}));
 var ProyectosZec;
@@ -8102,6 +8533,253 @@ var ProyectosZec;
 (function (ProyectosZec) {
     var Nuevo_Roezec;
     (function (Nuevo_Roezec) {
+        var ContinentesDialog = /** @class */ (function (_super) {
+            __extends(ContinentesDialog, _super);
+            function ContinentesDialog() {
+                var _this = _super !== null && _super.apply(this, arguments) || this;
+                _this.form = new Nuevo_Roezec.ContinentesForm(_this.idPrefix);
+                return _this;
+            }
+            ContinentesDialog.prototype.getFormKey = function () { return Nuevo_Roezec.ContinentesForm.formKey; };
+            ContinentesDialog.prototype.getIdProperty = function () { return Nuevo_Roezec.ContinentesRow.idProperty; };
+            ContinentesDialog.prototype.getLocalTextPrefix = function () { return Nuevo_Roezec.ContinentesRow.localTextPrefix; };
+            ContinentesDialog.prototype.getNameProperty = function () { return Nuevo_Roezec.ContinentesRow.nameProperty; };
+            ContinentesDialog.prototype.getService = function () { return Nuevo_Roezec.ContinentesService.baseUrl; };
+            ContinentesDialog.prototype.getDeletePermission = function () { return Nuevo_Roezec.ContinentesRow.deletePermission; };
+            ContinentesDialog.prototype.getInsertPermission = function () { return Nuevo_Roezec.ContinentesRow.insertPermission; };
+            ContinentesDialog.prototype.getUpdatePermission = function () { return Nuevo_Roezec.ContinentesRow.updatePermission; };
+            ContinentesDialog = __decorate([
+                Serenity.Decorators.registerClass()
+            ], ContinentesDialog);
+            return ContinentesDialog;
+        }(Serenity.EntityDialog));
+        Nuevo_Roezec.ContinentesDialog = ContinentesDialog;
+    })(Nuevo_Roezec = ProyectosZec.Nuevo_Roezec || (ProyectosZec.Nuevo_Roezec = {}));
+})(ProyectosZec || (ProyectosZec = {}));
+var ProyectosZec;
+(function (ProyectosZec) {
+    var Nuevo_Roezec;
+    (function (Nuevo_Roezec) {
+        var ContinentesGrid = /** @class */ (function (_super) {
+            __extends(ContinentesGrid, _super);
+            function ContinentesGrid(container) {
+                return _super.call(this, container) || this;
+            }
+            ContinentesGrid.prototype.getColumnsKey = function () { return 'Nuevo_Roezec.Continentes'; };
+            ContinentesGrid.prototype.getDialogType = function () { return Nuevo_Roezec.ContinentesDialog; };
+            ContinentesGrid.prototype.getIdProperty = function () { return Nuevo_Roezec.ContinentesRow.idProperty; };
+            ContinentesGrid.prototype.getInsertPermission = function () { return Nuevo_Roezec.ContinentesRow.insertPermission; };
+            ContinentesGrid.prototype.getLocalTextPrefix = function () { return Nuevo_Roezec.ContinentesRow.localTextPrefix; };
+            ContinentesGrid.prototype.getService = function () { return Nuevo_Roezec.ContinentesService.baseUrl; };
+            ContinentesGrid = __decorate([
+                Serenity.Decorators.registerClass()
+            ], ContinentesGrid);
+            return ContinentesGrid;
+        }(Serenity.EntityGrid));
+        Nuevo_Roezec.ContinentesGrid = ContinentesGrid;
+    })(Nuevo_Roezec = ProyectosZec.Nuevo_Roezec || (ProyectosZec.Nuevo_Roezec = {}));
+})(ProyectosZec || (ProyectosZec = {}));
+var ProyectosZec;
+(function (ProyectosZec) {
+    var Nuevo_Roezec;
+    (function (Nuevo_Roezec) {
+        var EmpresasDialog = /** @class */ (function (_super) {
+            __extends(EmpresasDialog, _super);
+            function EmpresasDialog() {
+                var _this = _super !== null && _super.apply(this, arguments) || this;
+                _this.form = new Nuevo_Roezec.EmpresasForm(_this.idPrefix);
+                return _this;
+            }
+            EmpresasDialog.prototype.getFormKey = function () { return Nuevo_Roezec.EmpresasForm.formKey; };
+            EmpresasDialog.prototype.getIdProperty = function () { return Nuevo_Roezec.EmpresasRow.idProperty; };
+            EmpresasDialog.prototype.getLocalTextPrefix = function () { return Nuevo_Roezec.EmpresasRow.localTextPrefix; };
+            EmpresasDialog.prototype.getNameProperty = function () { return Nuevo_Roezec.EmpresasRow.nameProperty; };
+            EmpresasDialog.prototype.getService = function () { return Nuevo_Roezec.EmpresasService.baseUrl; };
+            EmpresasDialog.prototype.getDeletePermission = function () { return Nuevo_Roezec.EmpresasRow.deletePermission; };
+            EmpresasDialog.prototype.getInsertPermission = function () { return Nuevo_Roezec.EmpresasRow.insertPermission; };
+            EmpresasDialog.prototype.getUpdatePermission = function () { return Nuevo_Roezec.EmpresasRow.updatePermission; };
+            EmpresasDialog = __decorate([
+                Serenity.Decorators.registerClass()
+            ], EmpresasDialog);
+            return EmpresasDialog;
+        }(Serenity.EntityDialog));
+        Nuevo_Roezec.EmpresasDialog = EmpresasDialog;
+    })(Nuevo_Roezec = ProyectosZec.Nuevo_Roezec || (ProyectosZec.Nuevo_Roezec = {}));
+})(ProyectosZec || (ProyectosZec = {}));
+var ProyectosZec;
+(function (ProyectosZec) {
+    var Nuevo_Roezec;
+    (function (Nuevo_Roezec) {
+        var EmpresasGrid = /** @class */ (function (_super) {
+            __extends(EmpresasGrid, _super);
+            function EmpresasGrid(container) {
+                return _super.call(this, container) || this;
+            }
+            EmpresasGrid.prototype.getColumnsKey = function () { return 'Nuevo_Roezec.Empresas'; };
+            EmpresasGrid.prototype.getDialogType = function () { return Nuevo_Roezec.EmpresasDialog; };
+            EmpresasGrid.prototype.getIdProperty = function () { return Nuevo_Roezec.EmpresasRow.idProperty; };
+            EmpresasGrid.prototype.getInsertPermission = function () { return Nuevo_Roezec.EmpresasRow.insertPermission; };
+            EmpresasGrid.prototype.getLocalTextPrefix = function () { return Nuevo_Roezec.EmpresasRow.localTextPrefix; };
+            EmpresasGrid.prototype.getService = function () { return Nuevo_Roezec.EmpresasService.baseUrl; };
+            EmpresasGrid.prototype.getQuickFilters = function () {
+                var filters = _super.prototype.getQuickFilters.call(this);
+                //filters.push({
+                //    type: Serenity.LookupEditor,
+                //    options: {
+                //        lookupKey: ProcedimientosRow.lookupKey
+                //    },
+                //    field: 'ProcedimientoId',
+                //    title: 'Tiene Procedimiento en Historial',
+                //    handler: w => {
+                //        (this.view.params as ProyectosZec.Nuevo_Roezec.HistorialListRequest).ProcedimientoId = Q.toId(w.value);
+                //    },
+                //});
+                return filters;
+            };
+            // Botones Excel y Pdf
+            EmpresasGrid.prototype.getButtons = function () {
+                var _this = this;
+                var buttons = _super.prototype.getButtons.call(this);
+                buttons.push(ProyectosZec.Common.ExcelExportHelper.createToolButton({
+                    grid: this,
+                    onViewSubmit: function () { return _this.onViewSubmit(); },
+                    service: 'Nuevo_Roezec/Empresas/ListExcel',
+                    separator: true
+                }));
+                buttons.push(ProyectosZec.Common.PdfExportHelper.createToolButton({
+                    grid: this,
+                    onViewSubmit: function () { return _this.onViewSubmit(); }
+                }));
+                buttons.push({
+                    title: 'Técnico',
+                    cssClass: 'expand-all-button',
+                    onClick: function () { return _this.view.setGrouping([{
+                            formatter: function (x) { return 'Técnico: ' + x.value + ' (' + x.count + ' Empresas)'; },
+                            getter: "Tecnico" /* Tecnico */
+                        }]); }
+                });
+                buttons.push({
+                    title: 'Desagrupar',
+                    cssClass: 'collapse-all-button',
+                    onClick: function () { return _this.view.setGrouping([]); }
+                });
+                return buttons;
+                // Fin añadidos
+            };
+            EmpresasGrid = __decorate([
+                Serenity.Decorators.registerClass()
+                // Añadido para los filtros multiples
+                ,
+                Serenity.Decorators.filterable()
+                // Fin Añadido
+            ], EmpresasGrid);
+            return EmpresasGrid;
+        }(Serenity.EntityGrid));
+        Nuevo_Roezec.EmpresasGrid = EmpresasGrid;
+    })(Nuevo_Roezec = ProyectosZec.Nuevo_Roezec || (ProyectosZec.Nuevo_Roezec = {}));
+})(ProyectosZec || (ProyectosZec = {}));
+var ProyectosZec;
+(function (ProyectosZec) {
+    var Nuevo_Roezec;
+    (function (Nuevo_Roezec) {
+        var EmpresasContactosDialog = /** @class */ (function (_super) {
+            __extends(EmpresasContactosDialog, _super);
+            function EmpresasContactosDialog() {
+                var _this = _super !== null && _super.apply(this, arguments) || this;
+                _this.form = new Nuevo_Roezec.EmpresasContactosForm(_this.idPrefix);
+                return _this;
+            }
+            EmpresasContactosDialog.prototype.getFormKey = function () { return Nuevo_Roezec.EmpresasContactosForm.formKey; };
+            EmpresasContactosDialog.prototype.getIdProperty = function () { return Nuevo_Roezec.EmpresasContactosRow.idProperty; };
+            EmpresasContactosDialog.prototype.getLocalTextPrefix = function () { return Nuevo_Roezec.EmpresasContactosRow.localTextPrefix; };
+            EmpresasContactosDialog.prototype.getService = function () { return Nuevo_Roezec.EmpresasContactosService.baseUrl; };
+            EmpresasContactosDialog.prototype.getDeletePermission = function () { return Nuevo_Roezec.EmpresasContactosRow.deletePermission; };
+            EmpresasContactosDialog.prototype.getInsertPermission = function () { return Nuevo_Roezec.EmpresasContactosRow.insertPermission; };
+            EmpresasContactosDialog.prototype.getUpdatePermission = function () { return Nuevo_Roezec.EmpresasContactosRow.updatePermission; };
+            EmpresasContactosDialog = __decorate([
+                Serenity.Decorators.registerClass()
+            ], EmpresasContactosDialog);
+            return EmpresasContactosDialog;
+        }(Serenity.EntityDialog));
+        Nuevo_Roezec.EmpresasContactosDialog = EmpresasContactosDialog;
+    })(Nuevo_Roezec = ProyectosZec.Nuevo_Roezec || (ProyectosZec.Nuevo_Roezec = {}));
+})(ProyectosZec || (ProyectosZec = {}));
+var ProyectosZec;
+(function (ProyectosZec) {
+    var Nuevo_Roezec;
+    (function (Nuevo_Roezec) {
+        var EmpresasContactosGrid = /** @class */ (function (_super) {
+            __extends(EmpresasContactosGrid, _super);
+            function EmpresasContactosGrid(container) {
+                return _super.call(this, container) || this;
+            }
+            EmpresasContactosGrid.prototype.getColumnsKey = function () { return 'Nuevo_Roezec.EmpresasContactos'; };
+            EmpresasContactosGrid.prototype.getDialogType = function () { return Nuevo_Roezec.EmpresasContactosDialog; };
+            EmpresasContactosGrid.prototype.getIdProperty = function () { return Nuevo_Roezec.EmpresasContactosRow.idProperty; };
+            EmpresasContactosGrid.prototype.getInsertPermission = function () { return Nuevo_Roezec.EmpresasContactosRow.insertPermission; };
+            EmpresasContactosGrid.prototype.getLocalTextPrefix = function () { return Nuevo_Roezec.EmpresasContactosRow.localTextPrefix; };
+            EmpresasContactosGrid.prototype.getService = function () { return Nuevo_Roezec.EmpresasContactosService.baseUrl; };
+            EmpresasContactosGrid = __decorate([
+                Serenity.Decorators.registerClass()
+            ], EmpresasContactosGrid);
+            return EmpresasContactosGrid;
+        }(Serenity.EntityGrid));
+        Nuevo_Roezec.EmpresasContactosGrid = EmpresasContactosGrid;
+    })(Nuevo_Roezec = ProyectosZec.Nuevo_Roezec || (ProyectosZec.Nuevo_Roezec = {}));
+})(ProyectosZec || (ProyectosZec = {}));
+var ProyectosZec;
+(function (ProyectosZec) {
+    var Nuevo_Roezec;
+    (function (Nuevo_Roezec) {
+        var EmpresasNaceDialog = /** @class */ (function (_super) {
+            __extends(EmpresasNaceDialog, _super);
+            function EmpresasNaceDialog() {
+                var _this = _super !== null && _super.apply(this, arguments) || this;
+                _this.form = new Nuevo_Roezec.EmpresasNaceForm(_this.idPrefix);
+                return _this;
+            }
+            EmpresasNaceDialog.prototype.getFormKey = function () { return Nuevo_Roezec.EmpresasNaceForm.formKey; };
+            EmpresasNaceDialog.prototype.getIdProperty = function () { return Nuevo_Roezec.EmpresasNaceRow.idProperty; };
+            EmpresasNaceDialog.prototype.getLocalTextPrefix = function () { return Nuevo_Roezec.EmpresasNaceRow.localTextPrefix; };
+            EmpresasNaceDialog.prototype.getService = function () { return Nuevo_Roezec.EmpresasNaceService.baseUrl; };
+            EmpresasNaceDialog.prototype.getDeletePermission = function () { return Nuevo_Roezec.EmpresasNaceRow.deletePermission; };
+            EmpresasNaceDialog.prototype.getInsertPermission = function () { return Nuevo_Roezec.EmpresasNaceRow.insertPermission; };
+            EmpresasNaceDialog.prototype.getUpdatePermission = function () { return Nuevo_Roezec.EmpresasNaceRow.updatePermission; };
+            EmpresasNaceDialog = __decorate([
+                Serenity.Decorators.registerClass()
+            ], EmpresasNaceDialog);
+            return EmpresasNaceDialog;
+        }(Serenity.EntityDialog));
+        Nuevo_Roezec.EmpresasNaceDialog = EmpresasNaceDialog;
+    })(Nuevo_Roezec = ProyectosZec.Nuevo_Roezec || (ProyectosZec.Nuevo_Roezec = {}));
+})(ProyectosZec || (ProyectosZec = {}));
+var ProyectosZec;
+(function (ProyectosZec) {
+    var Nuevo_Roezec;
+    (function (Nuevo_Roezec) {
+        var EmpresasNaceGrid = /** @class */ (function (_super) {
+            __extends(EmpresasNaceGrid, _super);
+            function EmpresasNaceGrid(container) {
+                return _super.call(this, container) || this;
+            }
+            EmpresasNaceGrid.prototype.getColumnsKey = function () { return 'Nuevo_Roezec.EmpresasNace'; };
+            EmpresasNaceGrid.prototype.getDialogType = function () { return Nuevo_Roezec.EmpresasNaceDialog; };
+            EmpresasNaceGrid.prototype.getIdProperty = function () { return Nuevo_Roezec.EmpresasNaceRow.idProperty; };
+            EmpresasNaceGrid.prototype.getInsertPermission = function () { return Nuevo_Roezec.EmpresasNaceRow.insertPermission; };
+            EmpresasNaceGrid.prototype.getLocalTextPrefix = function () { return Nuevo_Roezec.EmpresasNaceRow.localTextPrefix; };
+            EmpresasNaceGrid.prototype.getService = function () { return Nuevo_Roezec.EmpresasNaceService.baseUrl; };
+            EmpresasNaceGrid = __decorate([
+                Serenity.Decorators.registerClass()
+            ], EmpresasNaceGrid);
+            return EmpresasNaceGrid;
+        }(Serenity.EntityGrid));
+        Nuevo_Roezec.EmpresasNaceGrid = EmpresasNaceGrid;
+    })(Nuevo_Roezec = ProyectosZec.Nuevo_Roezec || (ProyectosZec.Nuevo_Roezec = {}));
+})(ProyectosZec || (ProyectosZec = {}));
+var ProyectosZec;
+(function (ProyectosZec) {
+    var Nuevo_Roezec;
+    (function (Nuevo_Roezec) {
         var EstadosEmpresaDialog = /** @class */ (function (_super) {
             __extends(EstadosEmpresaDialog, _super);
             function EstadosEmpresaDialog() {
@@ -8196,6 +8874,153 @@ var ProyectosZec;
             return FormasJuridicasGrid;
         }(Serenity.EntityGrid));
         Nuevo_Roezec.FormasJuridicasGrid = FormasJuridicasGrid;
+    })(Nuevo_Roezec = ProyectosZec.Nuevo_Roezec || (ProyectosZec.Nuevo_Roezec = {}));
+})(ProyectosZec || (ProyectosZec = {}));
+var ProyectosZec;
+(function (ProyectosZec) {
+    var Nuevo_Roezec;
+    (function (Nuevo_Roezec) {
+        var HistorialEmpresasDialog = /** @class */ (function (_super) {
+            __extends(HistorialEmpresasDialog, _super);
+            function HistorialEmpresasDialog() {
+                var _this = _super !== null && _super.apply(this, arguments) || this;
+                _this.form = new Nuevo_Roezec.HistorialEmpresasForm(_this.idPrefix);
+                return _this;
+            }
+            HistorialEmpresasDialog.prototype.getFormKey = function () { return Nuevo_Roezec.HistorialEmpresasForm.formKey; };
+            HistorialEmpresasDialog.prototype.getIdProperty = function () { return Nuevo_Roezec.HistorialEmpresasRow.idProperty; };
+            HistorialEmpresasDialog.prototype.getLocalTextPrefix = function () { return Nuevo_Roezec.HistorialEmpresasRow.localTextPrefix; };
+            HistorialEmpresasDialog.prototype.getNameProperty = function () { return Nuevo_Roezec.HistorialEmpresasRow.nameProperty; };
+            HistorialEmpresasDialog.prototype.getService = function () { return Nuevo_Roezec.HistorialEmpresasService.baseUrl; };
+            HistorialEmpresasDialog.prototype.getDeletePermission = function () { return Nuevo_Roezec.HistorialEmpresasRow.deletePermission; };
+            HistorialEmpresasDialog.prototype.getInsertPermission = function () { return Nuevo_Roezec.HistorialEmpresasRow.insertPermission; };
+            HistorialEmpresasDialog.prototype.getUpdatePermission = function () { return Nuevo_Roezec.HistorialEmpresasRow.updatePermission; };
+            HistorialEmpresasDialog = __decorate([
+                Serenity.Decorators.registerClass()
+            ], HistorialEmpresasDialog);
+            return HistorialEmpresasDialog;
+        }(Serenity.EntityDialog));
+        Nuevo_Roezec.HistorialEmpresasDialog = HistorialEmpresasDialog;
+    })(Nuevo_Roezec = ProyectosZec.Nuevo_Roezec || (ProyectosZec.Nuevo_Roezec = {}));
+})(ProyectosZec || (ProyectosZec = {}));
+/// <reference path="../../Common/Helpers/GridEditorDialog.ts" />
+var ProyectosZec;
+(function (ProyectosZec) {
+    var Nuevo_Roezec;
+    (function (Nuevo_Roezec) {
+        var HistorialEmpresasEditDialog = /** @class */ (function (_super) {
+            __extends(HistorialEmpresasEditDialog, _super);
+            function HistorialEmpresasEditDialog() {
+                var _this = _super.call(this) || this;
+                _this.form = new Nuevo_Roezec.HistorialEmpresasForm(_this.idPrefix);
+                return _this;
+            }
+            HistorialEmpresasEditDialog.prototype.getFormKey = function () { return Nuevo_Roezec.HistorialEmpresasForm.formKey; };
+            HistorialEmpresasEditDialog.prototype.getNameProperty = function () { return Nuevo_Roezec.HistorialEmpresasRow.nameProperty; };
+            HistorialEmpresasEditDialog.prototype.getLocalTextPrefix = function () { return Nuevo_Roezec.HistorialEmpresasRow.localTextPrefix; };
+            HistorialEmpresasEditDialog = __decorate([
+                Serenity.Decorators.registerClass()
+            ], HistorialEmpresasEditDialog);
+            return HistorialEmpresasEditDialog;
+        }(ProyectosZec.Common.GridEditorDialog));
+        Nuevo_Roezec.HistorialEmpresasEditDialog = HistorialEmpresasEditDialog;
+    })(Nuevo_Roezec = ProyectosZec.Nuevo_Roezec || (ProyectosZec.Nuevo_Roezec = {}));
+})(ProyectosZec || (ProyectosZec = {}));
+/// <reference path="../../Common/Helpers/GridEditorBase.ts" />
+var ProyectosZec;
+(function (ProyectosZec) {
+    var Nuevo_Roezec;
+    (function (Nuevo_Roezec) {
+        var HistorialEmpresasEditor = /** @class */ (function (_super) {
+            __extends(HistorialEmpresasEditor, _super);
+            function HistorialEmpresasEditor(container) {
+                return _super.call(this, container) || this;
+            }
+            HistorialEmpresasEditor.prototype.getColumnsKey = function () { return "Nuevo_Roezec.HistorialEmpresas"; };
+            HistorialEmpresasEditor.prototype.getDialogType = function () { return Nuevo_Roezec.HistorialEmpresasEditDialog; };
+            HistorialEmpresasEditor.prototype.getLocalTextPrefix = function () { return Nuevo_Roezec.HistorialEmpresasRow.localTextPrefix; };
+            HistorialEmpresasEditor.prototype.getAddButtonCaption = function () {
+                return "Añadir Procedimiento";
+            };
+            HistorialEmpresasEditor = __decorate([
+                Serenity.Decorators.registerClass()
+            ], HistorialEmpresasEditor);
+            return HistorialEmpresasEditor;
+        }(ProyectosZec.Common.GridEditorBase));
+        Nuevo_Roezec.HistorialEmpresasEditor = HistorialEmpresasEditor;
+    })(Nuevo_Roezec = ProyectosZec.Nuevo_Roezec || (ProyectosZec.Nuevo_Roezec = {}));
+})(ProyectosZec || (ProyectosZec = {}));
+var ProyectosZec;
+(function (ProyectosZec) {
+    var Nuevo_Roezec;
+    (function (Nuevo_Roezec) {
+        var HistorialEmpresasGrid = /** @class */ (function (_super) {
+            __extends(HistorialEmpresasGrid, _super);
+            function HistorialEmpresasGrid(container) {
+                return _super.call(this, container) || this;
+            }
+            HistorialEmpresasGrid.prototype.getColumnsKey = function () { return 'Nuevo_Roezec.HistorialEmpresas'; };
+            HistorialEmpresasGrid.prototype.getDialogType = function () { return Nuevo_Roezec.HistorialEmpresasDialog; };
+            HistorialEmpresasGrid.prototype.getIdProperty = function () { return Nuevo_Roezec.HistorialEmpresasRow.idProperty; };
+            HistorialEmpresasGrid.prototype.getInsertPermission = function () { return Nuevo_Roezec.HistorialEmpresasRow.insertPermission; };
+            HistorialEmpresasGrid.prototype.getLocalTextPrefix = function () { return Nuevo_Roezec.HistorialEmpresasRow.localTextPrefix; };
+            HistorialEmpresasGrid.prototype.getService = function () { return Nuevo_Roezec.HistorialEmpresasService.baseUrl; };
+            HistorialEmpresasGrid = __decorate([
+                Serenity.Decorators.registerClass()
+            ], HistorialEmpresasGrid);
+            return HistorialEmpresasGrid;
+        }(Serenity.EntityGrid));
+        Nuevo_Roezec.HistorialEmpresasGrid = HistorialEmpresasGrid;
+    })(Nuevo_Roezec = ProyectosZec.Nuevo_Roezec || (ProyectosZec.Nuevo_Roezec = {}));
+})(ProyectosZec || (ProyectosZec = {}));
+var ProyectosZec;
+(function (ProyectosZec) {
+    var Nuevo_Roezec;
+    (function (Nuevo_Roezec) {
+        var IdiomasDialog = /** @class */ (function (_super) {
+            __extends(IdiomasDialog, _super);
+            function IdiomasDialog() {
+                var _this = _super !== null && _super.apply(this, arguments) || this;
+                _this.form = new Nuevo_Roezec.IdiomasForm(_this.idPrefix);
+                return _this;
+            }
+            IdiomasDialog.prototype.getFormKey = function () { return Nuevo_Roezec.IdiomasForm.formKey; };
+            IdiomasDialog.prototype.getIdProperty = function () { return Nuevo_Roezec.IdiomasRow.idProperty; };
+            IdiomasDialog.prototype.getLocalTextPrefix = function () { return Nuevo_Roezec.IdiomasRow.localTextPrefix; };
+            IdiomasDialog.prototype.getNameProperty = function () { return Nuevo_Roezec.IdiomasRow.nameProperty; };
+            IdiomasDialog.prototype.getService = function () { return Nuevo_Roezec.IdiomasService.baseUrl; };
+            IdiomasDialog.prototype.getDeletePermission = function () { return Nuevo_Roezec.IdiomasRow.deletePermission; };
+            IdiomasDialog.prototype.getInsertPermission = function () { return Nuevo_Roezec.IdiomasRow.insertPermission; };
+            IdiomasDialog.prototype.getUpdatePermission = function () { return Nuevo_Roezec.IdiomasRow.updatePermission; };
+            IdiomasDialog = __decorate([
+                Serenity.Decorators.registerClass()
+            ], IdiomasDialog);
+            return IdiomasDialog;
+        }(Serenity.EntityDialog));
+        Nuevo_Roezec.IdiomasDialog = IdiomasDialog;
+    })(Nuevo_Roezec = ProyectosZec.Nuevo_Roezec || (ProyectosZec.Nuevo_Roezec = {}));
+})(ProyectosZec || (ProyectosZec = {}));
+var ProyectosZec;
+(function (ProyectosZec) {
+    var Nuevo_Roezec;
+    (function (Nuevo_Roezec) {
+        var IdiomasGrid = /** @class */ (function (_super) {
+            __extends(IdiomasGrid, _super);
+            function IdiomasGrid(container) {
+                return _super.call(this, container) || this;
+            }
+            IdiomasGrid.prototype.getColumnsKey = function () { return 'Nuevo_Roezec.Idiomas'; };
+            IdiomasGrid.prototype.getDialogType = function () { return Nuevo_Roezec.IdiomasDialog; };
+            IdiomasGrid.prototype.getIdProperty = function () { return Nuevo_Roezec.IdiomasRow.idProperty; };
+            IdiomasGrid.prototype.getInsertPermission = function () { return Nuevo_Roezec.IdiomasRow.insertPermission; };
+            IdiomasGrid.prototype.getLocalTextPrefix = function () { return Nuevo_Roezec.IdiomasRow.localTextPrefix; };
+            IdiomasGrid.prototype.getService = function () { return Nuevo_Roezec.IdiomasService.baseUrl; };
+            IdiomasGrid = __decorate([
+                Serenity.Decorators.registerClass()
+            ], IdiomasGrid);
+            return IdiomasGrid;
+        }(Serenity.EntityGrid));
+        Nuevo_Roezec.IdiomasGrid = IdiomasGrid;
     })(Nuevo_Roezec = ProyectosZec.Nuevo_Roezec || (ProyectosZec.Nuevo_Roezec = {}));
 })(ProyectosZec || (ProyectosZec = {}));
 var ProyectosZec;

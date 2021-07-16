@@ -1,18 +1,18 @@
 ﻿
 namespace ProyectosZec.Nuevo_Roezec.Entities
 {
-    using Serenity;
     using Serenity.ComponentModel;
     using Serenity.Data;
     using Serenity.Data.Mapping;
     using System;
+    using System.Collections.Generic;
     using System.ComponentModel;
-    using System.IO;
 
     [ConnectionKey("Roezec"), Module("Nuevo_Roezec"), TableName("empresas")]
     [DisplayName("Empresas"), InstanceName("Empresas")]
     [ReadPermission("Roezec:Read")]
     [ModifyPermission("Roezec:Modify")]
+    [LookupScript("Nuevo_Roezec.Empresas")]
     public sealed class EmpresasRow : Row, IIdRow, INameRow
     {
         [DisplayName("Empresa Id"), Identity]
@@ -37,11 +37,11 @@ namespace ProyectosZec.Nuevo_Roezec.Entities
             set { Fields.FormaJuridicaId[this] = value; }
         }
 
-        [DisplayName("N Expediente"), Column("N_Expediente"), Size(25)]
-        public String NExpediente
+        [DisplayName("Expediente"), Size(25)]
+        public String Expediente
         {
-            get { return Fields.NExpediente[this]; }
-            set { Fields.NExpediente[this] = value; }
+            get { return Fields.Expediente[this]; }
+            set { Fields.Expediente[this] = value; }
         }
 
         [DisplayName("Tecnico"), ForeignKey("tecnicos", "TecnicoId"), LeftJoin("jTecnico"), TextualField("TecnicoNombreTecnico"),LookupInclude,QuickSearch]
@@ -59,21 +59,28 @@ namespace ProyectosZec.Nuevo_Roezec.Entities
             set { Fields.Cif[this] = value; }
         }
 
-        [DisplayName("Direccion"), Size(60)]
+        [DisplayName("Direccion"), Size(60),NotNull]
         public String Direccion
         {
             get { return Fields.Direccion[this]; }
             set { Fields.Direccion[this] = value; }
         }
 
-        [DisplayName("Poblacion"), Size(100)]
+        [DisplayName("Poblacion"), Size(100),NotNull]
         public String Poblacion
         {
             get { return Fields.Poblacion[this]; }
             set { Fields.Poblacion[this] = value; }
         }
 
-        [DisplayName("IslaId"), ForeignKey("islas", "IslaId"), LeftJoin("jIsla"), TextualField("IslaNombreIsla"),QuickSearch,LookupInclude]
+        [DisplayName("CP"), Size(7), NotNull]
+        public String Cp
+        {
+            get { return Fields.Cp[this]; }
+            set { Fields.Cp[this] = value; }
+        }
+
+        [DisplayName("Isla"), ForeignKey("islas", "IslaId"), LeftJoin("jIsla"), TextualField("IslaNombreIsla"),QuickSearch,LookupInclude,NotNull]
         [LookupEditor(typeof(Entities.IslasRow))]
         public Int32? IslaId
         {
@@ -109,12 +116,6 @@ namespace ProyectosZec.Nuevo_Roezec.Entities
             set { Fields.ProyectoId[this] = value; }
         }
 
-        [DisplayName("Expediente"), Size(25)]
-        public String Expediente
-        {
-            get { return Fields.Expediente[this]; }
-            set { Fields.Expediente[this] = value; }
-        }
 
         [DisplayName("Motivo Exencion"), Column("Motivo_Exencion"), Size(100)]
         public String MotivoExencion
@@ -123,7 +124,7 @@ namespace ProyectosZec.Nuevo_Roezec.Entities
             set { Fields.MotivoExencion[this] = value; }
         }
 
-        [DisplayName("Tipologia Capital"), Column("Tipologia_CapitalId"), ForeignKey("tipologias_capital", "Tipologia_CapitalId"), LeftJoin("jTipologiaCapital"), TextualField("TipologiaCapitalCapital"),LookupInclude,QuickSearch]
+        [DisplayName("Tipologia Capital"), Column("Tipologia_CapitalId"), ForeignKey("tipologias_capital", "Tipologia_CapitalId"), LeftJoin("jTipologiaCapital"), TextualField("TipologiaCapitalCapital"),LookupInclude,QuickSearch,NotNull]
         [LookupEditor(typeof(Entities.TipologiasCapitalRow), InplaceAdd = true)]
         public Int32? TipologiaCapitalId
         {
@@ -131,7 +132,7 @@ namespace ProyectosZec.Nuevo_Roezec.Entities
             set { Fields.TipologiaCapitalId[this] = value; }
         }
 
-        [DisplayName("Tipo Garantia Tasa"), Column("Tipo_Garantia_TasaId"), ForeignKey("tipos_garantia_tasas", "Tipo_Garantia_TasaId"), LeftJoin("jTipoGarantiaTasa"), TextualField("TipoGarantiaTasaGarantiaTasa"),LookupInclude,QuickSearch]
+        [DisplayName("Tipo Garantia Tasa"), Column("Tipo_Garantia_TasaId"), ForeignKey("tipos_garantia_tasas", "Tipo_Garantia_TasaId"), LeftJoin("jTipoGarantiaTasa"), TextualField("TipoGarantiaTasaGarantiaTasa"),LookupInclude,QuickSearch,NotNull]
         [LookupEditor(typeof(Entities.TiposGarantiaTasasRow), InplaceAdd = true)]
         public Int32? TipoGarantiaTasaId
         {
@@ -139,138 +140,139 @@ namespace ProyectosZec.Nuevo_Roezec.Entities
             set { Fields.TipoGarantiaTasaId[this] = value; }
         }
 
-        [DisplayName("Empleo Traspasado"), Column("Empleo_Traspasado")]
+        [DisplayName("Empleo Traspasado"), Column("Empleo_Traspasado"), Size(4),NotNull]
         public Int32? EmpleoTraspasado
         {
             get { return Fields.EmpleoTraspasado[this]; }
             set { Fields.EmpleoTraspasado[this] = value; }
         }
 
-        [DisplayName("Empleo 6 Meses"), Column("Empleo_6_meses")]
+        [DisplayName("Empleo 6 Meses"), Column("Empleo_6_meses"), Size(4),NotNull]
         public Int32? Empleo6Meses
         {
             get { return Fields.Empleo6Meses[this]; }
             set { Fields.Empleo6Meses[this] = value; }
         }
 
-        [DisplayName("Empleo Promedio"), Column("Empleo_promedio")]
+        [DisplayName("Empleo Promedio"), Column("Empleo_promedio"), Size(4),NotNull]
         public Int32? EmpleoPromedio
         {
             get { return Fields.EmpleoPromedio[this]; }
             set { Fields.EmpleoPromedio[this] = value; }
         }
 
-        [DisplayName("Empleo Promedio 2 Anos"), Column("Empleo_promedio_2_anos")]
+        [DisplayName("Empleo 2 Años"), Column("Empleo_promedio_2_anos"),Size(4),NotNull]
         public Int32? EmpleoPromedio2Anos
         {
             get { return Fields.EmpleoPromedio2Anos[this]; }
             set { Fields.EmpleoPromedio2Anos[this] = value; }
         }
 
-        [DisplayName("Inversion Traspasada"), Column("Inversion_traspasada"), Size(10), Scale(2)]
+        [DisplayName("Inversion Traspasada"), Column("Inversion_traspasada"), Size(10), Scale(2),NotNull]
         public Decimal? InversionTraspasada
         {
             get { return Fields.InversionTraspasada[this]; }
             set { Fields.InversionTraspasada[this] = value; }
         }
 
-        [DisplayName("Inversion 2 Anos"), Column("Inversion_2_anos"), Size(10), Scale(2)]
+        [DisplayName("Inversion 2 Años"), Column("Inversion_2_anos"), Size(10), Scale(2),NotNull]
         public Decimal? Inversion2Anos
         {
             get { return Fields.Inversion2Anos[this]; }
             set { Fields.Inversion2Anos[this] = value; }
         }
 
-        [DisplayName("Estado Empresa"), ForeignKey("estados_empresa", "EstadoEmpresaId"), LeftJoin("jEstadoEmpresa"), TextualField("EstadoEmpresaEstado")]
+        [DisplayName("Estado Empresa"), ForeignKey("estados_empresa", "EstadoEmpresaId"), LeftJoin("jEstadoEmpresa"), TextualField("EstadoEmpresaEstado"),LookupInclude,NotNull]
+        [LookupEditor(typeof(Entities.EstadosEmpresaRow),InplaceAdd =true)]
         public Int32? EstadoEmpresaId
         {
             get { return Fields.EstadoEmpresaId[this]; }
             set { Fields.EstadoEmpresaId[this] = value; }
         }
 
-        [DisplayName("Fecha Alta Registro"), Column("Fecha_Alta_Registro")]
-        public DateTime? FechaAltaRegistro
-        {
-            get { return Fields.FechaAltaRegistro[this]; }
-            set { Fields.FechaAltaRegistro[this] = value; }
-        }
+        //[DisplayName("Fecha Alta Registro"), Column("Fecha_Alta_Registro")]
+        //public DateTime? FechaAltaRegistro
+        //{
+        //    get { return Fields.FechaAltaRegistro[this]; }
+        //    set { Fields.FechaAltaRegistro[this] = value; }
+        //}
 
-        [DisplayName("Fecha Baja Registro"), Column("Fecha_Baja_Registro")]
-        public DateTime? FechaBajaRegistro
-        {
-            get { return Fields.FechaBajaRegistro[this]; }
-            set { Fields.FechaBajaRegistro[this] = value; }
-        }
+        //[DisplayName("Fecha Baja Registro"), Column("Fecha_Baja_Registro")]
+        //public DateTime? FechaBajaRegistro
+        //{
+        //    get { return Fields.FechaBajaRegistro[this]; }
+        //    set { Fields.FechaBajaRegistro[this] = value; }
+        //}
 
-        [DisplayName("Fecha Baja Efecto"), Column("Fecha_Baja_Efecto")]
-        public DateTime? FechaBajaEfecto
-        {
-            get { return Fields.FechaBajaEfecto[this]; }
-            set { Fields.FechaBajaEfecto[this] = value; }
-        }
+        //[DisplayName("Fecha Baja Efecto"), Column("Fecha_Baja_Efecto")]
+        //public DateTime? FechaBajaEfecto
+        //{
+        //    get { return Fields.FechaBajaEfecto[this]; }
+        //    set { Fields.FechaBajaEfecto[this] = value; }
+        //}
 
-        [DisplayName("Fecha Remision Ct"), Column("Fecha_Remision_CT")]
-        public DateTime? FechaRemisionCt
-        {
-            get { return Fields.FechaRemisionCt[this]; }
-            set { Fields.FechaRemisionCt[this] = value; }
-        }
+        //[DisplayName("Fecha Remision Ct"), Column("Fecha_Remision_CT")]
+        //public DateTime? FechaRemisionCt
+        //{
+        //    get { return Fields.FechaRemisionCt[this]; }
+        //    set { Fields.FechaRemisionCt[this] = value; }
+        //}
 
-        [DisplayName("Fecha Informe Ct"), Column("Fecha_Informe_CT")]
-        public DateTime? FechaInformeCt
-        {
-            get { return Fields.FechaInformeCt[this]; }
-            set { Fields.FechaInformeCt[this] = value; }
-        }
+        //[DisplayName("Fecha Informe Ct"), Column("Fecha_Informe_CT")]
+        //public DateTime? FechaInformeCt
+        //{
+        //    get { return Fields.FechaInformeCt[this]; }
+        //    set { Fields.FechaInformeCt[this] = value; }
+        //}
 
-        [DisplayName("Fecha Remision Cr"), Column("Fecha_Remision_CR")]
-        public DateTime? FechaRemisionCr
-        {
-            get { return Fields.FechaRemisionCr[this]; }
-            set { Fields.FechaRemisionCr[this] = value; }
-        }
+        //[DisplayName("Fecha Remision Cr"), Column("Fecha_Remision_CR")]
+        //public DateTime? FechaRemisionCr
+        //{
+        //    get { return Fields.FechaRemisionCr[this]; }
+        //    set { Fields.FechaRemisionCr[this] = value; }
+        //}
 
-        [DisplayName("Fecha Caducidad Inscripcion"), Column("Fecha_Caducidad_Inscripcion")]
-        public DateTime? FechaCaducidadInscripcion
-        {
-            get { return Fields.FechaCaducidadInscripcion[this]; }
-            set { Fields.FechaCaducidadInscripcion[this] = value; }
-        }
+        //[DisplayName("Fecha Caducidad Inscripcion"), Column("Fecha_Caducidad_Inscripcion")]
+        //public DateTime? FechaCaducidadInscripcion
+        //{
+        //    get { return Fields.FechaCaducidadInscripcion[this]; }
+        //    set { Fields.FechaCaducidadInscripcion[this] = value; }
+        //}
 
-        [DisplayName("Sentido Cr"), Column("Sentido_CR"), NotNull]
-        public Int16? SentidoCr
-        {
-            get { return Fields.SentidoCr[this]; }
-            set { Fields.SentidoCr[this] = value; }
-        }
+        //[DisplayName("Sentido Cr"), Column("Sentido_CR"), NotNull]
+        //public Int16? SentidoCr
+        //{
+        //    get { return Fields.SentidoCr[this]; }
+        //    set { Fields.SentidoCr[this] = value; }
+        //}
 
-        [DisplayName("Sentido Ct"), Column("Sentido_CT"), NotNull]
-        public Int16? SentidoCt
-        {
-            get { return Fields.SentidoCt[this]; }
-            set { Fields.SentidoCt[this] = value; }
-        }
+        //[DisplayName("Sentido Ct"), Column("Sentido_CT"), NotNull]
+        //public Int16? SentidoCt
+        //{
+        //    get { return Fields.SentidoCt[this]; }
+        //    set { Fields.SentidoCt[this] = value; }
+        //}
 
-        [DisplayName("Fecha Ins Solicitud"), Column("Fecha_Ins_Solicitud")]
-        public DateTime? FechaInsSolicitud
-        {
-            get { return Fields.FechaInsSolicitud[this]; }
-            set { Fields.FechaInsSolicitud[this] = value; }
-        }
+        //[DisplayName("Fecha Ins Solicitud"), Column("Fecha_Ins_Solicitud")]
+        //public DateTime? FechaInsSolicitud
+        //{
+        //    get { return Fields.FechaInsSolicitud[this]; }
+        //    set { Fields.FechaInsSolicitud[this] = value; }
+        //}
 
-        [DisplayName("Fecha Ins Resolucion"), Column("Fecha_Ins_Resolucion")]
-        public DateTime? FechaInsResolucion
-        {
-            get { return Fields.FechaInsResolucion[this]; }
-            set { Fields.FechaInsResolucion[this] = value; }
-        }
+        //[DisplayName("Fecha Ins Resolucion"), Column("Fecha_Ins_Resolucion")]
+        //public DateTime? FechaInsResolucion
+        //{
+        //    get { return Fields.FechaInsResolucion[this]; }
+        //    set { Fields.FechaInsResolucion[this] = value; }
+        //}
 
-        [DisplayName("Fecha Ins Notificacion"), Column("Fecha_Ins_Notificacion")]
-        public DateTime? FechaInsNotificacion
-        {
-            get { return Fields.FechaInsNotificacion[this]; }
-            set { Fields.FechaInsNotificacion[this] = value; }
-        }
+        //[DisplayName("Fecha Ins Notificacion"), Column("Fecha_Ins_Notificacion")]
+        //public DateTime? FechaInsNotificacion
+        //{
+        //    get { return Fields.FechaInsNotificacion[this]; }
+        //    set { Fields.FechaInsNotificacion[this] = value; }
+        //}
 
         [DisplayName("Num Tasa Liquidacion"), Column("Num_Tasa_Liquidacion"), Size(20)]
         public String NumTasaLiquidacion
@@ -279,14 +281,14 @@ namespace ProyectosZec.Nuevo_Roezec.Entities
             set { Fields.NumTasaLiquidacion[this] = value; }
         }
 
-        [DisplayName("Forma Juridica Juridica"), Expression("jFormaJuridica.[Forma_Juridica]")]
+        [DisplayName("Forma Juridica"), Expression("jFormaJuridica.[Forma_Juridica]")]
         public String FormaJuridicaJuridica
         {
             get { return Fields.FormaJuridicaJuridica[this]; }
             set { Fields.FormaJuridicaJuridica[this] = value; }
         }
 
-        [DisplayName("Tecnico Nombre Tecnico"), Expression("jTecnico.[NombreTecnico]")]
+        [DisplayName("Tecnico"), Expression("jTecnico.[NombreTecnico]")]
         public String TecnicoNombreTecnico
         {
             get { return Fields.TecnicoNombreTecnico[this]; }
@@ -300,7 +302,7 @@ namespace ProyectosZec.Nuevo_Roezec.Entities
             set { Fields.Tecnico[this] = value; }
         }
 
-        [DisplayName("Isla Nombre Isla"), Expression("jIsla.[NombreIsla]")]
+        [DisplayName("Isla"), Expression("jIsla.[NombreIsla]")]
         public String IslaNombreIsla
         {
             get { return Fields.IslaNombreIsla[this]; }
@@ -321,42 +323,42 @@ namespace ProyectosZec.Nuevo_Roezec.Entities
             set { Fields.Proyecto[this] = value; }
         }
 
-        [DisplayName("Proyecto Descripcion"), Expression("jProyecto.[Descripcion]")]
+        [DisplayName("Descripcion"), Expression("jProyecto.[Descripcion]")]
         public String ProyectoDescripcion
         {
             get { return Fields.ProyectoDescripcion[this]; }
             set { Fields.ProyectoDescripcion[this] = value; }
         }
 
-        [DisplayName("Proyecto Fecha Primer Contacto"), Expression("jProyecto.[FechaPrimerContacto]")]
+        [DisplayName("Fecha Primer Contacto"), Expression("jProyecto.[FechaPrimerContacto]")]
         public DateTime? ProyectoFechaPrimerContacto
         {
             get { return Fields.ProyectoFechaPrimerContacto[this]; }
             set { Fields.ProyectoFechaPrimerContacto[this] = value; }
         }
 
-        [DisplayName("Proyecto Origen Id"), Expression("jProyecto.[OrigenId]")]
+        [DisplayName("Origen"), Expression("jProyecto.[OrigenId]")]
         public Int32? ProyectoOrigenId
         {
             get { return Fields.ProyectoOrigenId[this]; }
             set { Fields.ProyectoOrigenId[this] = value; }
         }
 
-        [DisplayName("Proyecto Estado Proyecto Id"), Expression("jProyecto.[EstadoProyectoId]")]
+        [DisplayName("Estado"), Expression("jProyecto.[EstadoProyectoId]")]
         public Int32? ProyectoEstadoProyectoId
         {
             get { return Fields.ProyectoEstadoProyectoId[this]; }
             set { Fields.ProyectoEstadoProyectoId[this] = value; }
         }
 
-        [DisplayName("Proyecto Tecnico Id"), Expression("jProyecto.[TecnicoId]")]
+        [DisplayName("Tecnico Id"), Expression("jProyecto.[TecnicoId]")]
         public Int32? ProyectoTecnicoId
         {
             get { return Fields.ProyectoTecnicoId[this]; }
             set { Fields.ProyectoTecnicoId[this] = value; }
         }
 
-        [DisplayName("Proyecto Confidencial"), Expression("jProyecto.[Confidencial]")]
+        [DisplayName("Confidencial"), Expression("jProyecto.[Confidencial]")]
         public Int16? ProyectoConfidencial
         {
             get { return Fields.ProyectoConfidencial[this]; }
@@ -419,11 +421,33 @@ namespace ProyectosZec.Nuevo_Roezec.Entities
             set { Fields.TipoGarantiaTasaGarantiaTasa[this] = value; }
         }
 
-        [DisplayName("Estado Empresa Estado"), Expression("jEstadoEmpresa.[Estado]")]
+        [DisplayName("Estado"), Expression("jEstadoEmpresa.[Estado]")]
         public String EstadoEmpresaEstado
         {
             get { return Fields.EstadoEmpresaEstado[this]; }
             set { Fields.EstadoEmpresaEstado[this] = value; }
+        }
+
+        [DisplayName("Contactos"), MasterDetailRelation(foreignKey: "EmpresaID"), NotMapped]
+
+        public List<EmpresasContactosRow> ContactosList
+        {
+            get { return Fields.ContactosList[this]; }
+            set { Fields.ContactosList[this] = value; }
+        }
+
+        [DisplayName("Naces"), MasterDetailRelation(foreignKey: "EmpresaID"), NotMapped]
+
+        public List<EmpresasNaceRow> NacesList
+        {
+            get { return Fields.NacesList[this]; }
+            set { Fields.NacesList[this] = value; }
+        }
+        [DisplayName("Procedimientos")]
+        public List<HistorialEmpresasRow> HistorialList
+        {
+            get { return Fields.HistorialList[this]; }
+            set { Fields.HistorialList[this] = value; }
         }
 
         IIdField IIdRow.IdField
@@ -448,11 +472,11 @@ namespace ProyectosZec.Nuevo_Roezec.Entities
             public Int32Field EmpresaId;
             public StringField Razon;
             public Int32Field FormaJuridicaId;
-            public StringField NExpediente;
             public Int32Field TecnicoId;
             public StringField Cif;
             public StringField Direccion;
             public StringField Poblacion;
+            public StringField Cp;
             public Int32Field IslaId;
             public StringField TelefonoFijo;
             public StringField Movil;
@@ -469,18 +493,18 @@ namespace ProyectosZec.Nuevo_Roezec.Entities
             public DecimalField InversionTraspasada;
             public DecimalField Inversion2Anos;
             public Int32Field EstadoEmpresaId;
-            public DateTimeField FechaAltaRegistro;
-            public DateTimeField FechaBajaRegistro;
-            public DateTimeField FechaBajaEfecto;
-            public DateTimeField FechaRemisionCt;
-            public DateTimeField FechaInformeCt;
-            public DateTimeField FechaRemisionCr;
-            public DateTimeField FechaCaducidadInscripcion;
-            public Int16Field SentidoCr;
-            public Int16Field SentidoCt;
-            public DateTimeField FechaInsSolicitud;
-            public DateTimeField FechaInsResolucion;
-            public DateTimeField FechaInsNotificacion;
+            //public DateTimeField FechaAltaRegistro;
+            //public DateTimeField FechaBajaRegistro;
+            //public DateTimeField FechaBajaEfecto;
+            //public DateTimeField FechaRemisionCt;
+            //public DateTimeField FechaInformeCt;
+            //public DateTimeField FechaRemisionCr;
+            //public DateTimeField FechaCaducidadInscripcion;
+            //public Int16Field SentidoCr;
+            //public Int16Field SentidoCt;
+            //public DateTimeField FechaInsSolicitud;
+            //public DateTimeField FechaInsResolucion;
+            //public DateTimeField FechaInsNotificacion;
             public StringField NumTasaLiquidacion;
 
             public StringField FormaJuridicaJuridica;
@@ -510,6 +534,10 @@ namespace ProyectosZec.Nuevo_Roezec.Entities
             public StringField TipoGarantiaTasaGarantiaTasa;
 
             public StringField EstadoEmpresaEstado;
+
+            public RowListField<EmpresasContactosRow> ContactosList;
+            public RowListField<EmpresasNaceRow> NacesList;
+            public RowListField<HistorialEmpresasRow> HistorialList;
         }
     }
 }

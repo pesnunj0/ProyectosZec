@@ -17,12 +17,13 @@ namespace ProyectosZec.Nuevo_Roezec.Forms
         public Int32 ProcedimientoId { get; set; }
         public DateTime FechaInicio { get; set; }
         public DateTime FechaResolucion { get; set; }
-        public Int16 SentidoResolucion { get; set; }
+        public Boolean SentidoResolucion { get; set; }
         public DateTime FechaEfecto { get; set; }
         public DateTime AcuseInicio { get; set; }
         public Int32 PersonaAcuseIncioId { get; set; }
         public DateTime AcuseResolucion { get; set; }
         public Int32 PersonaAcuseResolucionId { get; set; }
+        [TextAreaEditor(Rows = 3)]
         public String Observaciones { get; set; }
         public String Ficheros { get; set; }
     }

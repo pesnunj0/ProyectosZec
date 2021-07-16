@@ -1,5 +1,4 @@
-﻿
-namespace ProyectosZec.Nuevo_Roezec {
+﻿namespace ProyectosZec.Nuevo_Roezec {
     export namespace ContinentesService {
         export const baseUrl = 'Nuevo_Roezec/Continentes';
 
@@ -9,12 +8,12 @@ namespace ProyectosZec.Nuevo_Roezec {
         export declare function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<ContinentesRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
         export declare function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<ContinentesRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
 
-        export namespace Methods {
-            export declare const Create: string;
-            export declare const Update: string;
-            export declare const Delete: string;
-            export declare const Retrieve: string;
-            export declare const List: string;
+        export declare const enum Methods {
+            Create = "Nuevo_Roezec/Continentes/Create",
+            Update = "Nuevo_Roezec/Continentes/Update",
+            Delete = "Nuevo_Roezec/Continentes/Delete",
+            Retrieve = "Nuevo_Roezec/Continentes/Retrieve",
+            List = "Nuevo_Roezec/Continentes/List"
         }
 
         [
@@ -24,10 +23,10 @@ namespace ProyectosZec.Nuevo_Roezec {
             'Retrieve', 
             'List'
         ].forEach(x => {
-            (<any>ContinentesService)[x] = function (r, s, o) { 
-                return Q.serviceRequest(baseUrl + '/' + x, r, s, o); 
+            (<any>ContinentesService)[x] = function (r, s, o) {
+                return Q.serviceRequest(baseUrl + '/' + x, r, s, o);
             };
-            (<any>Methods)[x] = baseUrl + '/' + x;
         });
     }
 }
+

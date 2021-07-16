@@ -2045,6 +2045,7 @@ declare namespace ProyectosZec.Kairos {
     }
     namespace HorasExtraConsumidasRow {
         const idProperty = "Id";
+        const nameProperty = "Empleado";
         const localTextPrefix = "Kairos.HorasExtraConsumidas";
         const deletePermission = "Kairos:Admin";
         const insertPermission = "Kairos:Admin";
@@ -2484,7 +2485,7 @@ declare namespace ProyectosZec.Nuevo_Roezec {
         Nif: Serenity.StringEditor;
         TelefonoFijo: Serenity.StringEditor;
         Movil: Serenity.StringEditor;
-        IdiomaId: Serenity.IntegerEditor;
+        IdiomaId: Serenity.LookupEditor;
         Email: Serenity.StringEditor;
     }
     class ContactosForm extends Serenity.PrefixedContext {
@@ -2498,6 +2499,7 @@ declare namespace ProyectosZec.Nuevo_Roezec {
         ContactoId?: number;
         Nombre?: string;
         Apellidos?: string;
+        Fullname?: string;
         Nif?: string;
         TelefonoFijo?: string;
         Movil?: string;
@@ -2508,7 +2510,7 @@ declare namespace ProyectosZec.Nuevo_Roezec {
     }
     namespace ContactosRow {
         const idProperty = "ContactoId";
-        const nameProperty = "Nombre";
+        const nameProperty = "Fullname";
         const localTextPrefix = "Nuevo_Roezec.Contactos";
         const lookupKey = "Nuevo_Roezec.Contactos";
         function getLookup(): Q.Lookup<ContactosRow>;
@@ -2520,6 +2522,7 @@ declare namespace ProyectosZec.Nuevo_Roezec {
             ContactoId = "ContactoId",
             Nombre = "Nombre",
             Apellidos = "Apellidos",
+            Fullname = "Fullname",
             Nif = "Nif",
             TelefonoFijo = "TelefonoFijo",
             Movil = "Movil",
@@ -2548,11 +2551,15 @@ declare namespace ProyectosZec.Nuevo_Roezec {
     }
 }
 declare namespace ProyectosZec.Nuevo_Roezec {
-    class ContinentesForm extends Serenity.PrefixedContext {
-        static formKey: string;
-    }
+}
+declare namespace ProyectosZec.Nuevo_Roezec {
     interface ContinentesForm {
         Continente: Serenity.StringEditor;
+    }
+    class ContinentesForm extends Serenity.PrefixedContext {
+        static formKey: string;
+        private static init;
+        constructor(prefix: string);
     }
 }
 declare namespace ProyectosZec.Nuevo_Roezec {
@@ -2564,13 +2571,15 @@ declare namespace ProyectosZec.Nuevo_Roezec {
         const idProperty = "ContinenteId";
         const nameProperty = "Continente";
         const localTextPrefix = "Nuevo_Roezec.Continentes";
-        const deletePermission = "Roezec:General";
-        const insertPermission = "Roezec:General";
-        const readPermission = "Roezec:General";
-        const updatePermission = "Roezec:General";
-        namespace Fields {
-            const ContinenteId: any;
-            const Continente: any;
+        const lookupKey = "Nuevo_Roezec.Continentes";
+        function getLookup(): Q.Lookup<ContinentesRow>;
+        const deletePermission = "Roezec:Modify";
+        const insertPermission = "Roezec:Modify";
+        const readPermission = "Roezec:Read";
+        const updatePermission = "Roezec:Modify";
+        const enum Fields {
+            ContinenteId = "ContinenteId",
+            Continente = "Continente"
         }
     }
 }
@@ -2582,24 +2591,30 @@ declare namespace ProyectosZec.Nuevo_Roezec {
         function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
         function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<ContinentesRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
         function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<ContinentesRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
-        namespace Methods {
-            const Create: string;
-            const Update: string;
-            const Delete: string;
-            const Retrieve: string;
-            const List: string;
+        const enum Methods {
+            Create = "Nuevo_Roezec/Continentes/Create",
+            Update = "Nuevo_Roezec/Continentes/Update",
+            Delete = "Nuevo_Roezec/Continentes/Delete",
+            Retrieve = "Nuevo_Roezec/Continentes/Retrieve",
+            List = "Nuevo_Roezec/Continentes/List"
         }
     }
 }
 declare namespace ProyectosZec.Nuevo_Roezec {
+}
+declare namespace ProyectosZec.Nuevo_Roezec {
+}
+declare namespace ProyectosZec.Nuevo_Roezec {
+    interface EmpresasContactosForm {
+        EmpresaId: Serenity.LookupEditor;
+        ContactoId: Serenity.LookupEditor;
+        TipoContactoId: Serenity.LookupEditor;
+        FechaBaja: Serenity.DateEditor;
+    }
     class EmpresasContactosForm extends Serenity.PrefixedContext {
         static formKey: string;
-    }
-    interface EmpresasContactosForm {
-        EmpresaId: Serenity.IntegerEditor;
-        ContactoId: Serenity.IntegerEditor;
-        TipoContactoId: Serenity.IntegerEditor;
-        FechaBaja: Serenity.DateEditor;
+        private static init;
+        constructor(prefix: string);
     }
 }
 declare namespace ProyectosZec.Nuevo_Roezec {
@@ -2615,7 +2630,7 @@ declare namespace ProyectosZec.Nuevo_Roezec {
         EmpresaTecnicoId?: number;
         EmpresaCif?: string;
         EmpresaDireccion?: string;
-        EmpresaPolblacion?: string;
+        EmpresaPoblacion?: string;
         EmpresaIslaId?: number;
         EmpresaTelefonoFijo?: string;
         EmpresaMovil?: string;
@@ -2632,18 +2647,7 @@ declare namespace ProyectosZec.Nuevo_Roezec {
         EmpresaInversionTraspasada?: number;
         EmpresaInversion2Anos?: number;
         EmpresaEstadoEmpresaId?: number;
-        EmpresaFechaAltaRegistro?: string;
-        EmpresaFechaBajaRegistro?: string;
-        EmpresaFechaBajaEfecto?: string;
-        EmpresaFechaRemisionCt?: string;
-        EmpresaFechaInformeCt?: string;
-        EmpresaFechaRemisionCr?: string;
-        EmpresaFechaCaducidadInscripcion?: string;
-        EmpresaSentidoCr?: number;
-        EmpresaSentidoCt?: number;
-        EmpresaFechaInsSolicitud?: string;
-        EmpresaFechaInsResolucion?: string;
-        EmpresaFechaInsNotificacion?: string;
+        Fullname?: string;
         EmpresaNumTasaLiquidacion?: string;
         ContactoNombre?: string;
         ContactoApellidos?: string;
@@ -2657,60 +2661,49 @@ declare namespace ProyectosZec.Nuevo_Roezec {
     namespace EmpresasContactosRow {
         const idProperty = "EmpresaContactoId";
         const localTextPrefix = "Nuevo_Roezec.EmpresasContactos";
-        const deletePermission = "Roezec:General";
-        const insertPermission = "Roezec:General";
-        const readPermission = "Roezec:General";
-        const updatePermission = "Roezec:General";
-        namespace Fields {
-            const EmpresaContactoId: any;
-            const EmpresaId: any;
-            const ContactoId: any;
-            const TipoContactoId: any;
-            const FechaBaja: any;
-            const EmpresaRazon: any;
-            const EmpresaFormaJuridicaId: any;
-            const EmpresaNExpediente: any;
-            const EmpresaTecnicoId: any;
-            const EmpresaCif: any;
-            const EmpresaDireccion: any;
-            const EmpresaPolblacion: any;
-            const EmpresaIslaId: any;
-            const EmpresaTelefonoFijo: any;
-            const EmpresaMovil: any;
-            const EmpresaEmail: any;
-            const EmpresaProyectoId: any;
-            const EmpresaExpediente: any;
-            const EmpresaMotivoExencion: any;
-            const EmpresaTipologiaCapitalId: any;
-            const EmpresaTipoGarantiaTasaId: any;
-            const EmpresaEmpleoTraspasado: any;
-            const EmpresaEmpleo6Meses: any;
-            const EmpresaEmpleoPromedio: any;
-            const EmpresaEmpleoPromedio2Anos: any;
-            const EmpresaInversionTraspasada: any;
-            const EmpresaInversion2Anos: any;
-            const EmpresaEstadoEmpresaId: any;
-            const EmpresaFechaAltaRegistro: any;
-            const EmpresaFechaBajaRegistro: any;
-            const EmpresaFechaBajaEfecto: any;
-            const EmpresaFechaRemisionCt: any;
-            const EmpresaFechaInformeCt: any;
-            const EmpresaFechaRemisionCr: any;
-            const EmpresaFechaCaducidadInscripcion: any;
-            const EmpresaSentidoCr: any;
-            const EmpresaSentidoCt: any;
-            const EmpresaFechaInsSolicitud: any;
-            const EmpresaFechaInsResolucion: any;
-            const EmpresaFechaInsNotificacion: any;
-            const EmpresaNumTasaLiquidacion: any;
-            const ContactoNombre: any;
-            const ContactoApellidos: any;
-            const ContactoNif: any;
-            const ContactoTelefonoFijo: any;
-            const ContactoMovil: any;
-            const ContactoIdiomaId: any;
-            const ContactoEmail: any;
-            const TipoContactoContacto: any;
+        const deletePermission = "Roezec:Modify";
+        const insertPermission = "Roezec:Modify";
+        const readPermission = "Roezec:Read";
+        const updatePermission = "Roezec:Modify";
+        const enum Fields {
+            EmpresaContactoId = "EmpresaContactoId",
+            EmpresaId = "EmpresaId",
+            ContactoId = "ContactoId",
+            TipoContactoId = "TipoContactoId",
+            FechaBaja = "FechaBaja",
+            EmpresaRazon = "EmpresaRazon",
+            EmpresaFormaJuridicaId = "EmpresaFormaJuridicaId",
+            EmpresaNExpediente = "EmpresaNExpediente",
+            EmpresaTecnicoId = "EmpresaTecnicoId",
+            EmpresaCif = "EmpresaCif",
+            EmpresaDireccion = "EmpresaDireccion",
+            EmpresaPoblacion = "EmpresaPoblacion",
+            EmpresaIslaId = "EmpresaIslaId",
+            EmpresaTelefonoFijo = "EmpresaTelefonoFijo",
+            EmpresaMovil = "EmpresaMovil",
+            EmpresaEmail = "EmpresaEmail",
+            EmpresaProyectoId = "EmpresaProyectoId",
+            EmpresaExpediente = "EmpresaExpediente",
+            EmpresaMotivoExencion = "EmpresaMotivoExencion",
+            EmpresaTipologiaCapitalId = "EmpresaTipologiaCapitalId",
+            EmpresaTipoGarantiaTasaId = "EmpresaTipoGarantiaTasaId",
+            EmpresaEmpleoTraspasado = "EmpresaEmpleoTraspasado",
+            EmpresaEmpleo6Meses = "EmpresaEmpleo6Meses",
+            EmpresaEmpleoPromedio = "EmpresaEmpleoPromedio",
+            EmpresaEmpleoPromedio2Anos = "EmpresaEmpleoPromedio2Anos",
+            EmpresaInversionTraspasada = "EmpresaInversionTraspasada",
+            EmpresaInversion2Anos = "EmpresaInversion2Anos",
+            EmpresaEstadoEmpresaId = "EmpresaEstadoEmpresaId",
+            Fullname = "Fullname",
+            EmpresaNumTasaLiquidacion = "EmpresaNumTasaLiquidacion",
+            ContactoNombre = "ContactoNombre",
+            ContactoApellidos = "ContactoApellidos",
+            ContactoNif = "ContactoNif",
+            ContactoTelefonoFijo = "ContactoTelefonoFijo",
+            ContactoMovil = "ContactoMovil",
+            ContactoIdiomaId = "ContactoIdiomaId",
+            ContactoEmail = "ContactoEmail",
+            TipoContactoContacto = "TipoContactoContacto"
         }
     }
 }
@@ -2722,65 +2715,60 @@ declare namespace ProyectosZec.Nuevo_Roezec {
         function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
         function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<EmpresasContactosRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
         function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<EmpresasContactosRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
-        namespace Methods {
-            const Create: string;
-            const Update: string;
-            const Delete: string;
-            const Retrieve: string;
-            const List: string;
+        const enum Methods {
+            Create = "Nuevo_Roezec/EmpresasContactos/Create",
+            Update = "Nuevo_Roezec/EmpresasContactos/Update",
+            Delete = "Nuevo_Roezec/EmpresasContactos/Delete",
+            Retrieve = "Nuevo_Roezec/EmpresasContactos/Retrieve",
+            List = "Nuevo_Roezec/EmpresasContactos/List"
         }
     }
 }
 declare namespace ProyectosZec.Nuevo_Roezec {
-    class EmpresasForm extends Serenity.PrefixedContext {
-        static formKey: string;
-    }
     interface EmpresasForm {
         Razon: Serenity.StringEditor;
-        FormaJuridicaId: Serenity.IntegerEditor;
-        NExpediente: Serenity.StringEditor;
-        TecnicoId: Serenity.IntegerEditor;
+        FormaJuridicaId: Serenity.LookupEditor;
+        TecnicoId: Serenity.LookupEditor;
         Cif: Serenity.StringEditor;
-        Direccion: Serenity.StringEditor;
-        Polblacion: Serenity.StringEditor;
-        IslaId: Serenity.IntegerEditor;
-        TelefonoFijo: Serenity.StringEditor;
-        Movil: Serenity.StringEditor;
-        Email: Serenity.StringEditor;
         ProyectoId: Serenity.IntegerEditor;
         Expediente: Serenity.StringEditor;
         MotivoExencion: Serenity.StringEditor;
-        TipologiaCapitalId: Serenity.IntegerEditor;
-        TipoGarantiaTasaId: Serenity.IntegerEditor;
+        TipologiaCapitalId: Serenity.LookupEditor;
+        TipoGarantiaTasaId: Serenity.LookupEditor;
+        EstadoEmpresaId: Serenity.LookupEditor;
+        Direccion: Serenity.StringEditor;
+        Poblacion: Serenity.StringEditor;
+        Cp: Serenity.StringEditor;
+        IslaId: Serenity.LookupEditor;
+        TelefonoFijo: Serenity.StringEditor;
+        Movil: Serenity.StringEditor;
+        Email: Serenity.EmailEditor;
         EmpleoTraspasado: Serenity.IntegerEditor;
         Empleo6Meses: Serenity.IntegerEditor;
         EmpleoPromedio: Serenity.IntegerEditor;
         EmpleoPromedio2Anos: Serenity.IntegerEditor;
         InversionTraspasada: Serenity.DecimalEditor;
         Inversion2Anos: Serenity.DecimalEditor;
-        EstadoEmpresaId: Serenity.IntegerEditor;
-        FechaAltaRegistro: Serenity.DateEditor;
-        FechaBajaRegistro: Serenity.DateEditor;
-        FechaBajaEfecto: Serenity.DateEditor;
-        FechaRemisionCt: Serenity.DateEditor;
-        FechaInformeCt: Serenity.DateEditor;
-        FechaRemisionCr: Serenity.DateEditor;
-        FechaCaducidadInscripcion: Serenity.DateEditor;
-        SentidoCr: Serenity.IntegerEditor;
-        SentidoCt: Serenity.IntegerEditor;
-        FechaInsSolicitud: Serenity.DateEditor;
-        FechaInsResolucion: Serenity.DateEditor;
-        FechaInsNotificacion: Serenity.DateEditor;
         NumTasaLiquidacion: Serenity.StringEditor;
+        HistorialList: HistorialEmpresasEditor;
+    }
+    class EmpresasForm extends Serenity.PrefixedContext {
+        static formKey: string;
+        private static init;
+        constructor(prefix: string);
     }
 }
 declare namespace ProyectosZec.Nuevo_Roezec {
-    class EmpresasNaceForm extends Serenity.PrefixedContext {
-        static formKey: string;
-    }
+}
+declare namespace ProyectosZec.Nuevo_Roezec {
     interface EmpresasNaceForm {
         EmpresaId: Serenity.IntegerEditor;
         NaceId: Serenity.IntegerEditor;
+    }
+    class EmpresasNaceForm extends Serenity.PrefixedContext {
+        static formKey: string;
+        private static init;
+        constructor(prefix: string);
     }
 }
 declare namespace ProyectosZec.Nuevo_Roezec {
@@ -2794,7 +2782,7 @@ declare namespace ProyectosZec.Nuevo_Roezec {
         EmpresaTecnicoId?: number;
         EmpresaCif?: string;
         EmpresaDireccion?: string;
-        EmpresaPolblacion?: string;
+        EmpresaPoblacion?: string;
         EmpresaIslaId?: number;
         EmpresaTelefonoFijo?: string;
         EmpresaMovil?: string;
@@ -2811,18 +2799,6 @@ declare namespace ProyectosZec.Nuevo_Roezec {
         EmpresaInversionTraspasada?: number;
         EmpresaInversion2Anos?: number;
         EmpresaEstadoEmpresaId?: number;
-        EmpresaFechaAltaRegistro?: string;
-        EmpresaFechaBajaRegistro?: string;
-        EmpresaFechaBajaEfecto?: string;
-        EmpresaFechaRemisionCt?: string;
-        EmpresaFechaInformeCt?: string;
-        EmpresaFechaRemisionCr?: string;
-        EmpresaFechaCaducidadInscripcion?: string;
-        EmpresaSentidoCr?: number;
-        EmpresaSentidoCt?: number;
-        EmpresaFechaInsSolicitud?: string;
-        EmpresaFechaInsResolucion?: string;
-        EmpresaFechaInsNotificacion?: string;
         EmpresaNumTasaLiquidacion?: string;
         Nace?: string;
         NaceCodigo?: string;
@@ -2832,54 +2808,42 @@ declare namespace ProyectosZec.Nuevo_Roezec {
     namespace EmpresasNaceRow {
         const idProperty = "EmpresaNaceId";
         const localTextPrefix = "Nuevo_Roezec.EmpresasNace";
-        const deletePermission = "Roezec:General";
-        const insertPermission = "Roezec:General";
-        const readPermission = "Roezec:General";
-        const updatePermission = "Roezec:General";
-        namespace Fields {
-            const EmpresaNaceId: any;
-            const EmpresaId: any;
-            const NaceId: any;
-            const EmpresaRazon: any;
-            const EmpresaFormaJuridicaId: any;
-            const EmpresaNExpediente: any;
-            const EmpresaTecnicoId: any;
-            const EmpresaCif: any;
-            const EmpresaDireccion: any;
-            const EmpresaPolblacion: any;
-            const EmpresaIslaId: any;
-            const EmpresaTelefonoFijo: any;
-            const EmpresaMovil: any;
-            const EmpresaEmail: any;
-            const EmpresaProyectoId: any;
-            const EmpresaExpediente: any;
-            const EmpresaMotivoExencion: any;
-            const EmpresaTipologiaCapitalId: any;
-            const EmpresaTipoGarantiaTasaId: any;
-            const EmpresaEmpleoTraspasado: any;
-            const EmpresaEmpleo6Meses: any;
-            const EmpresaEmpleoPromedio: any;
-            const EmpresaEmpleoPromedio2Anos: any;
-            const EmpresaInversionTraspasada: any;
-            const EmpresaInversion2Anos: any;
-            const EmpresaEstadoEmpresaId: any;
-            const EmpresaFechaAltaRegistro: any;
-            const EmpresaFechaBajaRegistro: any;
-            const EmpresaFechaBajaEfecto: any;
-            const EmpresaFechaRemisionCt: any;
-            const EmpresaFechaInformeCt: any;
-            const EmpresaFechaRemisionCr: any;
-            const EmpresaFechaCaducidadInscripcion: any;
-            const EmpresaSentidoCr: any;
-            const EmpresaSentidoCt: any;
-            const EmpresaFechaInsSolicitud: any;
-            const EmpresaFechaInsResolucion: any;
-            const EmpresaFechaInsNotificacion: any;
-            const EmpresaNumTasaLiquidacion: any;
-            const Nace: any;
-            const NaceCodigo: any;
-            const NaceDescripcion: any;
-            const NaceSubsectorId: any;
+        const deletePermission = "Roezec:Modify";
+        const insertPermission = "Roezec:Modify";
+        const readPermission = "Roezec:Read";
+        const updatePermission = "Roezec:Modify";
+        const enum Fields {
+            EmpresaNaceId = "EmpresaNaceId",
+            EmpresaId = "EmpresaId",
+            NaceId = "NaceId",
+            EmpresaRazon = "EmpresaRazon",
+            EmpresaFormaJuridicaId = "EmpresaFormaJuridicaId",
+            EmpresaNExpediente = "EmpresaNExpediente",
+            EmpresaTecnicoId = "EmpresaTecnicoId",
+            EmpresaCif = "EmpresaCif",
+            EmpresaDireccion = "EmpresaDireccion",
+            EmpresaPoblacion = "EmpresaPoblacion",
+            EmpresaIslaId = "EmpresaIslaId",
+            EmpresaTelefonoFijo = "EmpresaTelefonoFijo",
+            EmpresaMovil = "EmpresaMovil",
+            EmpresaEmail = "EmpresaEmail",
+            EmpresaProyectoId = "EmpresaProyectoId",
+            EmpresaExpediente = "EmpresaExpediente",
+            EmpresaMotivoExencion = "EmpresaMotivoExencion",
+            EmpresaTipologiaCapitalId = "EmpresaTipologiaCapitalId",
+            EmpresaTipoGarantiaTasaId = "EmpresaTipoGarantiaTasaId",
+            EmpresaEmpleoTraspasado = "EmpresaEmpleoTraspasado",
+            EmpresaEmpleo6Meses = "EmpresaEmpleo6Meses",
+            EmpresaEmpleoPromedio = "EmpresaEmpleoPromedio",
+            EmpresaEmpleoPromedio2Anos = "EmpresaEmpleoPromedio2Anos",
+            EmpresaInversionTraspasada = "EmpresaInversionTraspasada",
+            EmpresaInversion2Anos = "EmpresaInversion2Anos",
+            EmpresaEstadoEmpresaId = "EmpresaEstadoEmpresaId",
+            EmpresaNumTasaLiquidacion = "EmpresaNumTasaLiquidacion",
+            Nace = "Nace",
+            NaceCodigo = "NaceCodigo",
+            NaceDescripcion = "NaceDescripcion",
+            NaceSubsectorId = "NaceSubsectorId"
         }
     }
 }
@@ -2891,12 +2855,12 @@ declare namespace ProyectosZec.Nuevo_Roezec {
         function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
         function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<EmpresasNaceRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
         function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<EmpresasNaceRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
-        namespace Methods {
-            const Create: string;
-            const Update: string;
-            const Delete: string;
-            const Retrieve: string;
-            const List: string;
+        const enum Methods {
+            Create = "Nuevo_Roezec/EmpresasNace/Create",
+            Update = "Nuevo_Roezec/EmpresasNace/Update",
+            Delete = "Nuevo_Roezec/EmpresasNace/Delete",
+            Retrieve = "Nuevo_Roezec/EmpresasNace/Retrieve",
+            List = "Nuevo_Roezec/EmpresasNace/List"
         }
     }
 }
@@ -2905,11 +2869,11 @@ declare namespace ProyectosZec.Nuevo_Roezec {
         EmpresaId?: number;
         Razon?: string;
         FormaJuridicaId?: number;
-        NExpediente?: string;
         TecnicoId?: number;
         Cif?: string;
         Direccion?: string;
-        Polblacion?: string;
+        Poblacion?: string;
+        Cp?: string;
         IslaId?: number;
         TelefonoFijo?: string;
         Movil?: string;
@@ -2926,18 +2890,6 @@ declare namespace ProyectosZec.Nuevo_Roezec {
         InversionTraspasada?: number;
         Inversion2Anos?: number;
         EstadoEmpresaId?: number;
-        FechaAltaRegistro?: string;
-        FechaBajaRegistro?: string;
-        FechaBajaEfecto?: string;
-        FechaRemisionCt?: string;
-        FechaInformeCt?: string;
-        FechaRemisionCr?: string;
-        FechaCaducidadInscripcion?: string;
-        SentidoCr?: number;
-        SentidoCt?: number;
-        FechaInsSolicitud?: string;
-        FechaInsResolucion?: string;
-        FechaInsNotificacion?: string;
         NumTasaLiquidacion?: string;
         FormaJuridicaJuridica?: string;
         TecnicoNombreTecnico?: string;
@@ -2960,74 +2912,70 @@ declare namespace ProyectosZec.Nuevo_Roezec {
         TipologiaCapitalCapital?: string;
         TipoGarantiaTasaGarantiaTasa?: string;
         EstadoEmpresaEstado?: string;
+        ContactosList?: EmpresasContactosRow[];
+        NacesList?: EmpresasNaceRow[];
+        HistorialList?: HistorialEmpresasRow[];
     }
     namespace EmpresasRow {
         const idProperty = "EmpresaId";
         const nameProperty = "Razon";
         const localTextPrefix = "Nuevo_Roezec.Empresas";
-        const deletePermission = "Roezec:General";
-        const insertPermission = "Roezec:General";
-        const readPermission = "Roezec:General";
-        const updatePermission = "Roezec:General";
-        namespace Fields {
-            const EmpresaId: any;
-            const Razon: any;
-            const FormaJuridicaId: any;
-            const NExpediente: any;
-            const TecnicoId: any;
-            const Cif: any;
-            const Direccion: any;
-            const Polblacion: any;
-            const IslaId: any;
-            const TelefonoFijo: any;
-            const Movil: any;
-            const Email: any;
-            const ProyectoId: any;
-            const Expediente: any;
-            const MotivoExencion: any;
-            const TipologiaCapitalId: any;
-            const TipoGarantiaTasaId: any;
-            const EmpleoTraspasado: any;
-            const Empleo6Meses: any;
-            const EmpleoPromedio: any;
-            const EmpleoPromedio2Anos: any;
-            const InversionTraspasada: any;
-            const Inversion2Anos: any;
-            const EstadoEmpresaId: any;
-            const FechaAltaRegistro: any;
-            const FechaBajaRegistro: any;
-            const FechaBajaEfecto: any;
-            const FechaRemisionCt: any;
-            const FechaInformeCt: any;
-            const FechaRemisionCr: any;
-            const FechaCaducidadInscripcion: any;
-            const SentidoCr: any;
-            const SentidoCt: any;
-            const FechaInsSolicitud: any;
-            const FechaInsResolucion: any;
-            const FechaInsNotificacion: any;
-            const NumTasaLiquidacion: any;
-            const FormaJuridicaJuridica: any;
-            const TecnicoNombreTecnico: any;
-            const Tecnico: any;
-            const IslaNombreIsla: any;
-            const Isla: any;
-            const Proyecto: any;
-            const ProyectoDescripcion: any;
-            const ProyectoFechaPrimerContacto: any;
-            const ProyectoOrigenId: any;
-            const ProyectoEstadoProyectoId: any;
-            const ProyectoTecnicoId: any;
-            const ProyectoConfidencial: any;
-            const ProyectoContactoPrincipalId: any;
-            const ProyectoPrescriptorId: any;
-            const ProyectoAccionId: any;
-            const ProyectoInversion: any;
-            const ProyectoUserId: any;
-            const ProyectoFechaModificacion: any;
-            const TipologiaCapitalCapital: any;
-            const TipoGarantiaTasaGarantiaTasa: any;
-            const EstadoEmpresaEstado: any;
+        const lookupKey = "Nuevo_Roezec.Empresas";
+        function getLookup(): Q.Lookup<EmpresasRow>;
+        const deletePermission = "Roezec:Modify";
+        const insertPermission = "Roezec:Modify";
+        const readPermission = "Roezec:Read";
+        const updatePermission = "Roezec:Modify";
+        const enum Fields {
+            EmpresaId = "EmpresaId",
+            Razon = "Razon",
+            FormaJuridicaId = "FormaJuridicaId",
+            TecnicoId = "TecnicoId",
+            Cif = "Cif",
+            Direccion = "Direccion",
+            Poblacion = "Poblacion",
+            Cp = "Cp",
+            IslaId = "IslaId",
+            TelefonoFijo = "TelefonoFijo",
+            Movil = "Movil",
+            Email = "Email",
+            ProyectoId = "ProyectoId",
+            Expediente = "Expediente",
+            MotivoExencion = "MotivoExencion",
+            TipologiaCapitalId = "TipologiaCapitalId",
+            TipoGarantiaTasaId = "TipoGarantiaTasaId",
+            EmpleoTraspasado = "EmpleoTraspasado",
+            Empleo6Meses = "Empleo6Meses",
+            EmpleoPromedio = "EmpleoPromedio",
+            EmpleoPromedio2Anos = "EmpleoPromedio2Anos",
+            InversionTraspasada = "InversionTraspasada",
+            Inversion2Anos = "Inversion2Anos",
+            EstadoEmpresaId = "EstadoEmpresaId",
+            NumTasaLiquidacion = "NumTasaLiquidacion",
+            FormaJuridicaJuridica = "FormaJuridicaJuridica",
+            TecnicoNombreTecnico = "TecnicoNombreTecnico",
+            Tecnico = "Tecnico",
+            IslaNombreIsla = "IslaNombreIsla",
+            Isla = "Isla",
+            Proyecto = "Proyecto",
+            ProyectoDescripcion = "ProyectoDescripcion",
+            ProyectoFechaPrimerContacto = "ProyectoFechaPrimerContacto",
+            ProyectoOrigenId = "ProyectoOrigenId",
+            ProyectoEstadoProyectoId = "ProyectoEstadoProyectoId",
+            ProyectoTecnicoId = "ProyectoTecnicoId",
+            ProyectoConfidencial = "ProyectoConfidencial",
+            ProyectoContactoPrincipalId = "ProyectoContactoPrincipalId",
+            ProyectoPrescriptorId = "ProyectoPrescriptorId",
+            ProyectoAccionId = "ProyectoAccionId",
+            ProyectoInversion = "ProyectoInversion",
+            ProyectoUserId = "ProyectoUserId",
+            ProyectoFechaModificacion = "ProyectoFechaModificacion",
+            TipologiaCapitalCapital = "TipologiaCapitalCapital",
+            TipoGarantiaTasaGarantiaTasa = "TipoGarantiaTasaGarantiaTasa",
+            EstadoEmpresaEstado = "EstadoEmpresaEstado",
+            ContactosList = "ContactosList",
+            NacesList = "NacesList",
+            HistorialList = "HistorialList"
         }
     }
 }
@@ -3039,12 +2987,12 @@ declare namespace ProyectosZec.Nuevo_Roezec {
         function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
         function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<EmpresasRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
         function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<EmpresasRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
-        namespace Methods {
-            const Create: string;
-            const Update: string;
-            const Delete: string;
-            const Retrieve: string;
-            const List: string;
+        const enum Methods {
+            Create = "Nuevo_Roezec/Empresas/Create",
+            Update = "Nuevo_Roezec/Empresas/Update",
+            Delete = "Nuevo_Roezec/Empresas/Delete",
+            Retrieve = "Nuevo_Roezec/Empresas/Retrieve",
+            List = "Nuevo_Roezec/Empresas/List"
         }
     }
 }
@@ -3149,22 +3097,26 @@ declare namespace ProyectosZec.Nuevo_Roezec {
     }
 }
 declare namespace ProyectosZec.Nuevo_Roezec {
-    class HistorialEmpresasForm extends Serenity.PrefixedContext {
-        static formKey: string;
-    }
+}
+declare namespace ProyectosZec.Nuevo_Roezec {
     interface HistorialEmpresasForm {
         EmpresaId: Serenity.IntegerEditor;
-        ProcedimientoId: Serenity.IntegerEditor;
+        ProcedimientoId: Serenity.LookupEditor;
         FechaInicio: Serenity.DateEditor;
         FechaResolucion: Serenity.DateEditor;
-        SentidoResolucion: Serenity.IntegerEditor;
+        SentidoResolucion: Serenity.BooleanEditor;
         FechaEfecto: Serenity.DateEditor;
         AcuseInicio: Serenity.DateEditor;
         PersonaAcuseIncioId: Serenity.IntegerEditor;
         AcuseResolucion: Serenity.DateEditor;
         PersonaAcuseResolucionId: Serenity.IntegerEditor;
-        Observaciones: Serenity.StringEditor;
-        Ficheros: Serenity.StringEditor;
+        Observaciones: Serenity.TextAreaEditor;
+        Ficheros: Serenity.MultipleImageUploadEditor;
+    }
+    class HistorialEmpresasForm extends Serenity.PrefixedContext {
+        static formKey: string;
+        private static init;
+        constructor(prefix: string);
     }
 }
 declare namespace ProyectosZec.Nuevo_Roezec {
@@ -3174,7 +3126,7 @@ declare namespace ProyectosZec.Nuevo_Roezec {
         ProcedimientoId?: number;
         FechaInicio?: string;
         FechaResolucion?: string;
-        SentidoResolucion?: number;
+        SentidoResolucion?: boolean;
         FechaEfecto?: string;
         AcuseInicio?: string;
         PersonaAcuseIncioId?: number;
@@ -3188,7 +3140,7 @@ declare namespace ProyectosZec.Nuevo_Roezec {
         EmpresaTecnicoId?: number;
         EmpresaCif?: string;
         EmpresaDireccion?: string;
-        EmpresaPolblacion?: string;
+        EmpresaPoblacion?: string;
         EmpresaIslaId?: number;
         EmpresaTelefonoFijo?: string;
         EmpresaMovil?: string;
@@ -3205,18 +3157,6 @@ declare namespace ProyectosZec.Nuevo_Roezec {
         EmpresaInversionTraspasada?: number;
         EmpresaInversion2Anos?: number;
         EmpresaEstadoEmpresaId?: number;
-        EmpresaFechaAltaRegistro?: string;
-        EmpresaFechaBajaRegistro?: string;
-        EmpresaFechaBajaEfecto?: string;
-        EmpresaFechaRemisionCt?: string;
-        EmpresaFechaInformeCt?: string;
-        EmpresaFechaRemisionCr?: string;
-        EmpresaFechaCaducidadInscripcion?: string;
-        EmpresaSentidoCr?: number;
-        EmpresaSentidoCt?: number;
-        EmpresaFechaInsSolicitud?: string;
-        EmpresaFechaInsResolucion?: string;
-        EmpresaFechaInsNotificacion?: string;
         EmpresaNumTasaLiquidacion?: string;
         Procedimiento?: string;
         PersonaAcuseIncioNombre?: string;
@@ -3238,75 +3178,63 @@ declare namespace ProyectosZec.Nuevo_Roezec {
         const idProperty = "HistorialId";
         const nameProperty = "Observaciones";
         const localTextPrefix = "Nuevo_Roezec.HistorialEmpresas";
-        const deletePermission = "Roezec:General";
-        const insertPermission = "Roezec:General";
-        const readPermission = "Roezec:General";
-        const updatePermission = "Roezec:General";
-        namespace Fields {
-            const HistorialId: any;
-            const EmpresaId: any;
-            const ProcedimientoId: any;
-            const FechaInicio: any;
-            const FechaResolucion: any;
-            const SentidoResolucion: any;
-            const FechaEfecto: any;
-            const AcuseInicio: any;
-            const PersonaAcuseIncioId: any;
-            const AcuseResolucion: any;
-            const PersonaAcuseResolucionId: any;
-            const Observaciones: any;
-            const Ficheros: any;
-            const EmpresaRazon: any;
-            const EmpresaFormaJuridicaId: any;
-            const EmpresaNExpediente: any;
-            const EmpresaTecnicoId: any;
-            const EmpresaCif: any;
-            const EmpresaDireccion: any;
-            const EmpresaPolblacion: any;
-            const EmpresaIslaId: any;
-            const EmpresaTelefonoFijo: any;
-            const EmpresaMovil: any;
-            const EmpresaEmail: any;
-            const EmpresaProyectoId: any;
-            const EmpresaExpediente: any;
-            const EmpresaMotivoExencion: any;
-            const EmpresaTipologiaCapitalId: any;
-            const EmpresaTipoGarantiaTasaId: any;
-            const EmpresaEmpleoTraspasado: any;
-            const EmpresaEmpleo6Meses: any;
-            const EmpresaEmpleoPromedio: any;
-            const EmpresaEmpleoPromedio2Anos: any;
-            const EmpresaInversionTraspasada: any;
-            const EmpresaInversion2Anos: any;
-            const EmpresaEstadoEmpresaId: any;
-            const EmpresaFechaAltaRegistro: any;
-            const EmpresaFechaBajaRegistro: any;
-            const EmpresaFechaBajaEfecto: any;
-            const EmpresaFechaRemisionCt: any;
-            const EmpresaFechaInformeCt: any;
-            const EmpresaFechaRemisionCr: any;
-            const EmpresaFechaCaducidadInscripcion: any;
-            const EmpresaSentidoCr: any;
-            const EmpresaSentidoCt: any;
-            const EmpresaFechaInsSolicitud: any;
-            const EmpresaFechaInsResolucion: any;
-            const EmpresaFechaInsNotificacion: any;
-            const EmpresaNumTasaLiquidacion: any;
-            const Procedimiento: any;
-            const PersonaAcuseIncioNombre: any;
-            const PersonaAcuseIncioApellidos: any;
-            const PersonaAcuseIncioNif: any;
-            const PersonaAcuseIncioTelefonoFijo: any;
-            const PersonaAcuseIncioMovil: any;
-            const PersonaAcuseIncioIdiomaId: any;
-            const PersonaAcuseIncioEmail: any;
-            const PersonaAcuseResolucionNombre: any;
-            const PersonaAcuseResolucionApellidos: any;
-            const PersonaAcuseResolucionNif: any;
-            const PersonaAcuseResolucionTelefonoFijo: any;
-            const PersonaAcuseResolucionMovil: any;
-            const PersonaAcuseResolucionIdiomaId: any;
-            const PersonaAcuseResolucionEmail: any;
+        const deletePermission = "Roezec:Modify";
+        const insertPermission = "Roezec:Modify";
+        const readPermission = "Roezec:Read";
+        const updatePermission = "Roezec:Modify";
+        const enum Fields {
+            HistorialId = "HistorialId",
+            EmpresaId = "EmpresaId",
+            ProcedimientoId = "ProcedimientoId",
+            FechaInicio = "FechaInicio",
+            FechaResolucion = "FechaResolucion",
+            SentidoResolucion = "SentidoResolucion",
+            FechaEfecto = "FechaEfecto",
+            AcuseInicio = "AcuseInicio",
+            PersonaAcuseIncioId = "PersonaAcuseIncioId",
+            AcuseResolucion = "AcuseResolucion",
+            PersonaAcuseResolucionId = "PersonaAcuseResolucionId",
+            Observaciones = "Observaciones",
+            Ficheros = "Ficheros",
+            EmpresaRazon = "EmpresaRazon",
+            EmpresaFormaJuridicaId = "EmpresaFormaJuridicaId",
+            EmpresaNExpediente = "EmpresaNExpediente",
+            EmpresaTecnicoId = "EmpresaTecnicoId",
+            EmpresaCif = "EmpresaCif",
+            EmpresaDireccion = "EmpresaDireccion",
+            EmpresaPoblacion = "EmpresaPoblacion",
+            EmpresaIslaId = "EmpresaIslaId",
+            EmpresaTelefonoFijo = "EmpresaTelefonoFijo",
+            EmpresaMovil = "EmpresaMovil",
+            EmpresaEmail = "EmpresaEmail",
+            EmpresaProyectoId = "EmpresaProyectoId",
+            EmpresaExpediente = "EmpresaExpediente",
+            EmpresaMotivoExencion = "EmpresaMotivoExencion",
+            EmpresaTipologiaCapitalId = "EmpresaTipologiaCapitalId",
+            EmpresaTipoGarantiaTasaId = "EmpresaTipoGarantiaTasaId",
+            EmpresaEmpleoTraspasado = "EmpresaEmpleoTraspasado",
+            EmpresaEmpleo6Meses = "EmpresaEmpleo6Meses",
+            EmpresaEmpleoPromedio = "EmpresaEmpleoPromedio",
+            EmpresaEmpleoPromedio2Anos = "EmpresaEmpleoPromedio2Anos",
+            EmpresaInversionTraspasada = "EmpresaInversionTraspasada",
+            EmpresaInversion2Anos = "EmpresaInversion2Anos",
+            EmpresaEstadoEmpresaId = "EmpresaEstadoEmpresaId",
+            EmpresaNumTasaLiquidacion = "EmpresaNumTasaLiquidacion",
+            Procedimiento = "Procedimiento",
+            PersonaAcuseIncioNombre = "PersonaAcuseIncioNombre",
+            PersonaAcuseIncioApellidos = "PersonaAcuseIncioApellidos",
+            PersonaAcuseIncioNif = "PersonaAcuseIncioNif",
+            PersonaAcuseIncioTelefonoFijo = "PersonaAcuseIncioTelefonoFijo",
+            PersonaAcuseIncioMovil = "PersonaAcuseIncioMovil",
+            PersonaAcuseIncioIdiomaId = "PersonaAcuseIncioIdiomaId",
+            PersonaAcuseIncioEmail = "PersonaAcuseIncioEmail",
+            PersonaAcuseResolucionNombre = "PersonaAcuseResolucionNombre",
+            PersonaAcuseResolucionApellidos = "PersonaAcuseResolucionApellidos",
+            PersonaAcuseResolucionNif = "PersonaAcuseResolucionNif",
+            PersonaAcuseResolucionTelefonoFijo = "PersonaAcuseResolucionTelefonoFijo",
+            PersonaAcuseResolucionMovil = "PersonaAcuseResolucionMovil",
+            PersonaAcuseResolucionIdiomaId = "PersonaAcuseResolucionIdiomaId",
+            PersonaAcuseResolucionEmail = "PersonaAcuseResolucionEmail"
         }
     }
 }
@@ -3318,12 +3246,70 @@ declare namespace ProyectosZec.Nuevo_Roezec {
         function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
         function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<HistorialEmpresasRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
         function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<HistorialEmpresasRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
-        namespace Methods {
-            const Create: string;
-            const Update: string;
-            const Delete: string;
-            const Retrieve: string;
-            const List: string;
+        const enum Methods {
+            Create = "Nuevo_Roezec/HistorialEmpresas/Create",
+            Update = "Nuevo_Roezec/HistorialEmpresas/Update",
+            Delete = "Nuevo_Roezec/HistorialEmpresas/Delete",
+            Retrieve = "Nuevo_Roezec/HistorialEmpresas/Retrieve",
+            List = "Nuevo_Roezec/HistorialEmpresas/List"
+        }
+    }
+}
+declare namespace ProyectosZec.Nuevo_Roezec {
+    interface HistorialListRequest extends Serenity.ListRequest {
+        ProcedimientoId?: number;
+    }
+}
+declare namespace ProyectosZec.Nuevo_Roezec {
+}
+declare namespace ProyectosZec.Nuevo_Roezec {
+    interface IdiomasForm {
+        Idioma: Serenity.StringEditor;
+        NombreIdioma: Serenity.StringEditor;
+    }
+    class IdiomasForm extends Serenity.PrefixedContext {
+        static formKey: string;
+        private static init;
+        constructor(prefix: string);
+    }
+}
+declare namespace ProyectosZec.Nuevo_Roezec {
+    interface IdiomasRow {
+        IdiomaId?: number;
+        Idioma?: string;
+        NombreIdioma?: string;
+    }
+    namespace IdiomasRow {
+        const idProperty = "IdiomaId";
+        const nameProperty = "NombreIdioma";
+        const localTextPrefix = "Nuevo_Roezec.Idiomas";
+        const lookupKey = "Nuevo_Roezec.Idiomas";
+        function getLookup(): Q.Lookup<IdiomasRow>;
+        const deletePermission = "Roezec:Modify";
+        const insertPermission = "Roezec:Modify";
+        const readPermission = "Roezec:Read";
+        const updatePermission = "Roezec:Modify";
+        const enum Fields {
+            IdiomaId = "IdiomaId",
+            Idioma = "Idioma",
+            NombreIdioma = "NombreIdioma"
+        }
+    }
+}
+declare namespace ProyectosZec.Nuevo_Roezec {
+    namespace IdiomasService {
+        const baseUrl = "Nuevo_Roezec/Idiomas";
+        function Create(request: Serenity.SaveRequest<IdiomasRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Update(request: Serenity.SaveRequest<IdiomasRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<IdiomasRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<IdiomasRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        const enum Methods {
+            Create = "Nuevo_Roezec/Idiomas/Create",
+            Update = "Nuevo_Roezec/Idiomas/Update",
+            Delete = "Nuevo_Roezec/Idiomas/Delete",
+            Retrieve = "Nuevo_Roezec/Idiomas/Retrieve",
+            List = "Nuevo_Roezec/Idiomas/List"
         }
     }
 }
@@ -5580,7 +5566,7 @@ declare namespace ProyectosZec.Kairos {
 declare namespace ProyectosZec.Kairos {
     class HorasExtraConsumidasEditDialog extends Common.GridEditorDialog<HorasExtraConsumidasRow> {
         protected getFormKey(): string;
-        protected getNameProperty(): any;
+        protected getNameProperty(): string;
         protected getLocalTextPrefix(): string;
         protected form: HorasExtraConsumidasForm;
         constructor();
@@ -5801,6 +5787,8 @@ declare namespace ProyectosZec.Nuevo_Roezec {
         protected getLocalTextPrefix(): string;
         protected getService(): string;
         constructor(container: JQuery);
+        protected getQuickFilters(): Serenity.QuickFilter<Serenity.Widget<any>, any>[];
+        getButtons(): Serenity.ToolButton[];
     }
 }
 declare namespace ProyectosZec.Nuevo_Roezec {
@@ -5911,9 +5899,51 @@ declare namespace ProyectosZec.Nuevo_Roezec {
     }
 }
 declare namespace ProyectosZec.Nuevo_Roezec {
+    class HistorialEmpresasEditDialog extends Common.GridEditorDialog<HistorialEmpresasRow> {
+        protected getFormKey(): string;
+        protected getNameProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected form: HistorialEmpresasForm;
+        constructor();
+    }
+}
+declare namespace ProyectosZec.Nuevo_Roezec {
+    class HistorialEmpresasEditor extends Common.GridEditorBase<HistorialEmpresasRow> {
+        protected getColumnsKey(): string;
+        protected getDialogType(): typeof HistorialEmpresasEditDialog;
+        protected getLocalTextPrefix(): string;
+        constructor(container: JQuery);
+        protected getAddButtonCaption(): string;
+    }
+}
+declare namespace ProyectosZec.Nuevo_Roezec {
     class HistorialEmpresasGrid extends Serenity.EntityGrid<HistorialEmpresasRow, any> {
         protected getColumnsKey(): string;
         protected getDialogType(): typeof HistorialEmpresasDialog;
+        protected getIdProperty(): string;
+        protected getInsertPermission(): string;
+        protected getLocalTextPrefix(): string;
+        protected getService(): string;
+        constructor(container: JQuery);
+    }
+}
+declare namespace ProyectosZec.Nuevo_Roezec {
+    class IdiomasDialog extends Serenity.EntityDialog<IdiomasRow, any> {
+        protected getFormKey(): string;
+        protected getIdProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected getNameProperty(): string;
+        protected getService(): string;
+        protected getDeletePermission(): string;
+        protected getInsertPermission(): string;
+        protected getUpdatePermission(): string;
+        protected form: IdiomasForm;
+    }
+}
+declare namespace ProyectosZec.Nuevo_Roezec {
+    class IdiomasGrid extends Serenity.EntityGrid<IdiomasRow, any> {
+        protected getColumnsKey(): string;
+        protected getDialogType(): typeof IdiomasDialog;
         protected getIdProperty(): string;
         protected getInsertPermission(): string;
         protected getLocalTextPrefix(): string;

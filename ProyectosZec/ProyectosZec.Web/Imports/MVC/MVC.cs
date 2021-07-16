@@ -239,6 +239,26 @@ namespace MVC
                 public const string ContactosIndex = "~/Modules/Nuevo_Roezec/Contactos/ContactosIndex.cshtml";
             }
 
+            public static class Continentes
+            {
+                public const string ContinentesIndex = "~/Modules/Nuevo_Roezec/Continentes/ContinentesIndex.cshtml";
+            }
+
+            public static class Empresas
+            {
+                public const string EmpresasIndex = "~/Modules/Nuevo_Roezec/Empresas/EmpresasIndex.cshtml";
+            }
+
+            public static class EmpresasContactos
+            {
+                public const string EmpresasContactosIndex = "~/Modules/Nuevo_Roezec/EmpresasContactos/EmpresasContactosIndex.cshtml";
+            }
+
+            public static class EmpresasNace
+            {
+                public const string EmpresasNaceIndex = "~/Modules/Nuevo_Roezec/EmpresasNace/EmpresasNaceIndex.cshtml";
+            }
+
             public static class EstadosEmpresa
             {
                 public const string EstadosEmpresaIndex = "~/Modules/Nuevo_Roezec/EstadosEmpresa/EstadosEmpresaIndex.cshtml";
@@ -247,6 +267,16 @@ namespace MVC
             public static class FormasJuridicas
             {
                 public const string FormasJuridicasIndex = "~/Modules/Nuevo_Roezec/FormasJuridicas/FormasJuridicasIndex.cshtml";
+            }
+
+            public static class HistorialEmpresas
+            {
+                public const string HistorialEmpresasIndex = "~/Modules/Nuevo_Roezec/HistorialEmpresas/HistorialEmpresasIndex.cshtml";
+            }
+
+            public static class Idiomas
+            {
+                public const string IdiomasIndex = "~/Modules/Nuevo_Roezec/Idiomas/IdiomasIndex.cshtml";
             }
 
             public static class Islas

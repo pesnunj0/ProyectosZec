@@ -33,5 +33,6 @@ namespace ProyectosZec.Roezec {
             }));
             return buttons;
             // Fin añadidos
+        }
     }
 }

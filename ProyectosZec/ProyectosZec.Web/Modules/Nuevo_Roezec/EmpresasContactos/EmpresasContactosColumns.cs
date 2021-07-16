@@ -15,9 +15,15 @@ namespace ProyectosZec.Nuevo_Roezec.Columns
     {
         [EditLink, DisplayName("Db.Shared.RecordId"), AlignRight]
         public Int32 EmpresaContactoId { get; set; }
+        [Width(100)]
         public String EmpresaRazon { get; set; }
-        public String ContactoNombre { get; set; }
+        [Width(150),EditLink]
+        public String Fullname { get; set; }
+        [Width(100),QuickFilter]
         public String TipoContactoContacto { get; set; }
+        [Hidden, Width(130)]
+        public String ContactoEmail { get; set; }
+        [Width(100),Hidden]
         public DateTime FechaBaja { get; set; }
     }
 }

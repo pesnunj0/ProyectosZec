@@ -5,7 +5,7 @@
         Nif: Serenity.StringEditor;
         TelefonoFijo: Serenity.StringEditor;
         Movil: Serenity.StringEditor;
-        IdiomaId: Serenity.IntegerEditor;
+        IdiomaId: Serenity.LookupEditor;
         Email: Serenity.StringEditor;
     }
 
@@ -21,7 +21,7 @@
 
                 var s = Serenity;
                 var w0 = s.StringEditor;
-                var w1 = s.IntegerEditor;
+                var w1 = s.LookupEditor;
 
                 Q.initFormType(ContactosForm, [
                     'Nombre', w0,

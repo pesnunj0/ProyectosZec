@@ -1,90 +1,79 @@
-﻿
-namespace ProyectosZec.Nuevo_Roezec {
-    export class EmpresasForm extends Serenity.PrefixedContext {
-        static formKey = 'Nuevo_Roezec.Empresas';
-    }
-
+﻿namespace ProyectosZec.Nuevo_Roezec {
     export interface EmpresasForm {
         Razon: Serenity.StringEditor;
-        FormaJuridicaId: Serenity.IntegerEditor;
-        NExpediente: Serenity.StringEditor;
-        TecnicoId: Serenity.IntegerEditor;
+        FormaJuridicaId: Serenity.LookupEditor;
+        TecnicoId: Serenity.LookupEditor;
         Cif: Serenity.StringEditor;
-        Direccion: Serenity.StringEditor;
-        Polblacion: Serenity.StringEditor;
-        IslaId: Serenity.IntegerEditor;
-        TelefonoFijo: Serenity.StringEditor;
-        Movil: Serenity.StringEditor;
-        Email: Serenity.StringEditor;
         ProyectoId: Serenity.IntegerEditor;
         Expediente: Serenity.StringEditor;
         MotivoExencion: Serenity.StringEditor;
-        TipologiaCapitalId: Serenity.IntegerEditor;
-        TipoGarantiaTasaId: Serenity.IntegerEditor;
+        TipologiaCapitalId: Serenity.LookupEditor;
+        TipoGarantiaTasaId: Serenity.LookupEditor;
+        EstadoEmpresaId: Serenity.LookupEditor;
+        Direccion: Serenity.StringEditor;
+        Poblacion: Serenity.StringEditor;
+        Cp: Serenity.StringEditor;
+        IslaId: Serenity.LookupEditor;
+        TelefonoFijo: Serenity.StringEditor;
+        Movil: Serenity.StringEditor;
+        Email: Serenity.EmailEditor;
         EmpleoTraspasado: Serenity.IntegerEditor;
         Empleo6Meses: Serenity.IntegerEditor;
         EmpleoPromedio: Serenity.IntegerEditor;
         EmpleoPromedio2Anos: Serenity.IntegerEditor;
         InversionTraspasada: Serenity.DecimalEditor;
         Inversion2Anos: Serenity.DecimalEditor;
-        EstadoEmpresaId: Serenity.IntegerEditor;
-        FechaAltaRegistro: Serenity.DateEditor;
-        FechaBajaRegistro: Serenity.DateEditor;
-        FechaBajaEfecto: Serenity.DateEditor;
-        FechaRemisionCt: Serenity.DateEditor;
-        FechaInformeCt: Serenity.DateEditor;
-        FechaRemisionCr: Serenity.DateEditor;
-        FechaCaducidadInscripcion: Serenity.DateEditor;
-        SentidoCr: Serenity.IntegerEditor;
-        SentidoCt: Serenity.IntegerEditor;
-        FechaInsSolicitud: Serenity.DateEditor;
-        FechaInsResolucion: Serenity.DateEditor;
-        FechaInsNotificacion: Serenity.DateEditor;
         NumTasaLiquidacion: Serenity.StringEditor;
+        HistorialList: HistorialEmpresasEditor;
     }
 
-    [,
-        ['Razon', () => Serenity.StringEditor],
-        ['FormaJuridicaId', () => Serenity.IntegerEditor],
-        ['NExpediente', () => Serenity.StringEditor],
-        ['TecnicoId', () => Serenity.IntegerEditor],
-        ['Cif', () => Serenity.StringEditor],
-        ['Direccion', () => Serenity.StringEditor],
-        ['Polblacion', () => Serenity.StringEditor],
-        ['IslaId', () => Serenity.IntegerEditor],
-        ['TelefonoFijo', () => Serenity.StringEditor],
-        ['Movil', () => Serenity.StringEditor],
-        ['Email', () => Serenity.StringEditor],
-        ['ProyectoId', () => Serenity.IntegerEditor],
-        ['Expediente', () => Serenity.StringEditor],
-        ['MotivoExencion', () => Serenity.StringEditor],
-        ['TipologiaCapitalId', () => Serenity.IntegerEditor],
-        ['TipoGarantiaTasaId', () => Serenity.IntegerEditor],
-        ['EmpleoTraspasado', () => Serenity.IntegerEditor],
-        ['Empleo6Meses', () => Serenity.IntegerEditor],
-        ['EmpleoPromedio', () => Serenity.IntegerEditor],
-        ['EmpleoPromedio2Anos', () => Serenity.IntegerEditor],
-        ['InversionTraspasada', () => Serenity.DecimalEditor],
-        ['Inversion2Anos', () => Serenity.DecimalEditor],
-        ['EstadoEmpresaId', () => Serenity.IntegerEditor],
-        ['FechaAltaRegistro', () => Serenity.DateEditor],
-        ['FechaBajaRegistro', () => Serenity.DateEditor],
-        ['FechaBajaEfecto', () => Serenity.DateEditor],
-        ['FechaRemisionCt', () => Serenity.DateEditor],
-        ['FechaInformeCt', () => Serenity.DateEditor],
-        ['FechaRemisionCr', () => Serenity.DateEditor],
-        ['FechaCaducidadInscripcion', () => Serenity.DateEditor],
-        ['SentidoCr', () => Serenity.IntegerEditor],
-        ['SentidoCt', () => Serenity.IntegerEditor],
-        ['FechaInsSolicitud', () => Serenity.DateEditor],
-        ['FechaInsResolucion', () => Serenity.DateEditor],
-        ['FechaInsNotificacion', () => Serenity.DateEditor],
-        ['NumTasaLiquidacion', () => Serenity.StringEditor]
-    ].forEach(x => Object.defineProperty(EmpresasForm.prototype, <string>x[0], {
-        get: function () {
-            return this.w(x[0], (x[1] as any)());
-        },
-        enumerable: true,
-        configurable: true
-    }));
+    export class EmpresasForm extends Serenity.PrefixedContext {
+        static formKey = 'Nuevo_Roezec.Empresas';
+        private static init: boolean;
+
+        constructor(prefix: string) {
+            super(prefix);
+
+            if (!EmpresasForm.init)  {
+                EmpresasForm.init = true;
+
+                var s = Serenity;
+                var w0 = s.StringEditor;
+                var w1 = s.LookupEditor;
+                var w2 = s.IntegerEditor;
+                var w3 = s.EmailEditor;
+                var w4 = s.DecimalEditor;
+                var w5 = HistorialEmpresasEditor;
+
+                Q.initFormType(EmpresasForm, [
+                    'Razon', w0,
+                    'FormaJuridicaId', w1,
+                    'TecnicoId', w1,
+                    'Cif', w0,
+                    'ProyectoId', w2,
+                    'Expediente', w0,
+                    'MotivoExencion', w0,
+                    'TipologiaCapitalId', w1,
+                    'TipoGarantiaTasaId', w1,
+                    'EstadoEmpresaId', w1,
+                    'Direccion', w0,
+                    'Poblacion', w0,
+                    'Cp', w0,
+                    'IslaId', w1,
+                    'TelefonoFijo', w0,
+                    'Movil', w0,
+                    'Email', w3,
+                    'EmpleoTraspasado', w2,
+                    'Empleo6Meses', w2,
+                    'EmpleoPromedio', w2,
+                    'EmpleoPromedio2Anos', w2,
+                    'InversionTraspasada', w4,
+                    'Inversion2Anos', w4,
+                    'NumTasaLiquidacion', w0,
+                    'HistorialList', w5
+                ]);
+            }
+        }
+    }
 }
+

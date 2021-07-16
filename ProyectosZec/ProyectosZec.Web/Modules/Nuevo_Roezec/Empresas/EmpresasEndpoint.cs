@@ -9,6 +9,13 @@ namespace ProyectosZec.Nuevo_Roezec.Endpoints
     using MyRepository = Repositories.EmpresasRepository;
     using MyRow = Entities.EmpresasRow;
 
+    // Añadidos
+    using ProyectosZec;
+    using System;
+    using Serenity.Reporting;
+    using Serenity.Web;
+    // Fin Añadidos
+
     [RoutePrefix("Services/Nuevo_Roezec/Empresas"), Route("{action}")]
     [ConnectionKey(typeof(MyRow)), ServiceAuthorize(typeof(MyRow))]
     public class EmpresasController : ServiceEndpoint
@@ -41,6 +48,16 @@ namespace ProyectosZec.Nuevo_Roezec.Endpoints
         public ListResponse<MyRow> List(IDbConnection connection, ListRequest request)
         {
             return new MyRepository().List(connection, request);
+        }
+        // Añadidos Excel
+        [HttpPost]
+        public FileContentResult ListExcel(IDbConnection connection, ListRequest request)
+        {
+            var data = List(connection, request).Entities;
+            var report = new DynamicDataReport(data, request.IncludeColumns, typeof(Columns.EmpresasColumns));
+            var bytes = new ReportRepository().Render(report);
+            return ExcelContentResult.Create(bytes, "EmpresasList_" +
+                DateTime.Now.ToString("yyyyMMdd_HHmmss") + ".xlsx");
         }
     }
 }

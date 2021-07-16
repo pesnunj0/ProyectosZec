@@ -1,22 +1,28 @@
-﻿
-namespace ProyectosZec.Nuevo_Roezec {
-    export class EmpresasNaceForm extends Serenity.PrefixedContext {
-        static formKey = 'Nuevo_Roezec.EmpresasNace';
-    }
-
+﻿namespace ProyectosZec.Nuevo_Roezec {
     export interface EmpresasNaceForm {
         EmpresaId: Serenity.IntegerEditor;
         NaceId: Serenity.IntegerEditor;
     }
 
-    [,
-        ['EmpresaId', () => Serenity.IntegerEditor],
-        ['NaceId', () => Serenity.IntegerEditor]
-    ].forEach(x => Object.defineProperty(EmpresasNaceForm.prototype, <string>x[0], {
-        get: function () {
-            return this.w(x[0], (x[1] as any)());
-        },
-        enumerable: true,
-        configurable: true
-    }));
+    export class EmpresasNaceForm extends Serenity.PrefixedContext {
+        static formKey = 'Nuevo_Roezec.EmpresasNace';
+        private static init: boolean;
+
+        constructor(prefix: string) {
+            super(prefix);
+
+            if (!EmpresasNaceForm.init)  {
+                EmpresasNaceForm.init = true;
+
+                var s = Serenity;
+                var w0 = s.IntegerEditor;
+
+                Q.initFormType(EmpresasNaceForm, [
+                    'EmpresaId', w0,
+                    'NaceId', w0
+                ]);
+            }
+        }
+    }
 }
+

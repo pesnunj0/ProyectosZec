@@ -26,7 +26,7 @@ namespace ProyectosZec.Roezec {
             // sumamos Objetivo Empleo y de Inversión
             this.view.setSummaryOptions({
                 aggregators: [
-                    
+
                     new Slick.Aggregators.Sum(RoezecEmpresasRow.Fields.ObjetivoEmpleo),
                     new Slick.Aggregators.Sum(RoezecEmpresasRow.Fields.ObjetivoInversion)
                 ]
@@ -83,7 +83,7 @@ namespace ProyectosZec.Roezec {
                             getter: RoezecEmpresasRow.Fields.AnyoExpediente
                         }, {
                             formatter: x => 'Técnico: ' + x.value + ' (' + x.count + ' Empresas)',
-                                getter: RoezecEmpresasRow.Fields.Tecnico
+                            getter: RoezecEmpresasRow.Fields.Tecnico
                         }])
                 }
             );
@@ -97,5 +97,6 @@ namespace ProyectosZec.Roezec {
 
             return buttons;
             // Fin añadidos
+        }
     }
 }

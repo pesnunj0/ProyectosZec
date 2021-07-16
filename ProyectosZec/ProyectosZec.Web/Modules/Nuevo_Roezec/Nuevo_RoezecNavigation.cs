@@ -2,13 +2,13 @@
 using MyPages = ProyectosZec.Nuevo_Roezec.Pages;
 
 [assembly: NavigationMenu(int.MaxValue, "Nuevo Roezec", icon: "fa-database")]
-[assembly: NavigationLink(int.MaxValue, "Nuevo Roezec/Empresas", typeof(MyPages.EmpresasController), icon: null)]
+[assembly: NavigationLink(int.MaxValue, "Nuevo Roezec/Empresas", typeof(MyPages.EmpresasController), icon:"fa-building")]
 //[assembly: NavigationLink(int.MaxValue, "Nuevo Roezec/Capital", typeof(MyPages.CapitalController), icon: null)]
-[assembly: NavigationLink(int.MaxValue, "Nuevo Roezec/Contactos", typeof(MyPages.ContactosController), icon: null)]
+[assembly: NavigationLink(int.MaxValue, "Nuevo Roezec/Contactos", typeof(MyPages.ContactosController), icon: "fa-user-plus")]
 //[assembly: NavigationLink(int.MaxValue, "Nuevo Roezec/Estados Empresa", typeof(MyPages.EstadosEmpresaController), icon: null)]
 //[assembly: NavigationLink(int.MaxValue, "Nuevo Roezec/Formas Juridicas", typeof(MyPages.FormasJuridicasController), icon: null)]
 //[assembly: NavigationLink(int.MaxValue, "Nuevo Roezec/Islas", typeof(MyPages.IslasController), icon: null)]
-//[assembly: NavigationLink(int.MaxValue, "Nuevo Roezec/Naces", typeof(MyPages.NacesController), icon: null)]
+[assembly: NavigationLink(int.MaxValue, "Nuevo Roezec/Naces", typeof(MyPages.NacesController), icon: "fa-industry")]
 //[assembly: NavigationLink(int.MaxValue, "Nuevo Roezec/Paises", typeof(MyPages.PaisesController), icon: null)]
 //[assembly: NavigationLink(int.MaxValue, "Nuevo Roezec/Sectores", typeof(MyPages.SectoresController), icon: null)]
 //[assembly: NavigationLink(int.MaxValue, "Nuevo Roezec/Subsectores", typeof(MyPages.SubsectoresController), icon: null)]
@@ -21,3 +21,4 @@ using MyPages = ProyectosZec.Nuevo_Roezec.Pages;
 [assembly: NavigationLink(int.MaxValue, "Nuevo Roezec/Empresas Contactos", typeof(MyPages.EmpresasContactosController), icon: null)]
 [assembly: NavigationLink(int.MaxValue, "Nuevo Roezec/Empresas Nace", typeof(MyPages.EmpresasNaceController), icon: null)]
 [assembly: NavigationLink(int.MaxValue, "Nuevo Roezec/Historial Empresas", typeof(MyPages.HistorialEmpresasController), icon: null)]
+//[assembly: NavigationLink(int.MaxValue, "Nuevo_Roezec/Idiomas", typeof(MyPages.IdiomasController), icon: null)]

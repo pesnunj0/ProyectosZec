@@ -3,6 +3,7 @@
         ContactoId?: number;
         Nombre?: string;
         Apellidos?: string;
+        Fullname?: string;
         Nif?: string;
         TelefonoFijo?: string;
         Movil?: string;
@@ -14,7 +15,7 @@
 
     export namespace ContactosRow {
         export const idProperty = 'ContactoId';
-        export const nameProperty = 'Nombre';
+        export const nameProperty = 'Fullname';
         export const localTextPrefix = 'Nuevo_Roezec.Contactos';
         export const lookupKey = 'Nuevo_Roezec.Contactos';
 
@@ -30,6 +31,7 @@
             ContactoId = "ContactoId",
             Nombre = "Nombre",
             Apellidos = "Apellidos",
+            Fullname = "Fullname",
             Nif = "Nif",
             TelefonoFijo = "TelefonoFijo",
             Movil = "Movil",

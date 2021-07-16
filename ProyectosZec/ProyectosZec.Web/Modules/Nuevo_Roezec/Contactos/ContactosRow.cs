@@ -23,7 +23,7 @@ namespace ProyectosZec.Nuevo_Roezec.Entities
             set { Fields.ContactoId[this] = value; }
         }
 
-        [DisplayName("Nombre"), Size(45), NotNull, QuickSearch]
+        [DisplayName("Nombre"), Size(45), NotNull]
         public String Nombre
         {
             get { return Fields.Nombre[this]; }
@@ -35,6 +35,13 @@ namespace ProyectosZec.Nuevo_Roezec.Entities
         {
             get { return Fields.Apellidos[this]; }
             set { Fields.Apellidos[this] = value; }
+        }
+
+        [DisplayName("Nombre Completo"),Expression("(CONCAT(t0.Nombre, ' ', t0.Apellidos))"), QuickSearch]
+        public String Fullname
+        {
+            get { return Fields.Fullname[this]; }
+            set { Fields.Fullname[this] = value; }
         }
 
         [DisplayName("Nif"), Size(20)]
@@ -58,7 +65,8 @@ namespace ProyectosZec.Nuevo_Roezec.Entities
             set { Fields.Movil[this] = value; }
         }
 
-        [DisplayName("Idioma"), ForeignKey("idiomas", "IdiomaId"), LeftJoin("jIdioma"), TextualField("Idioma")]
+        [DisplayName("Idioma"), ForeignKey("idiomas", "IdiomaId"), LeftJoin("jIdioma"), TextualField("Idioma"),LookupInclude]
+        [LookupEditor(typeof(Entities.IdiomasRow))]
         public Int32? IdiomaId
         {
             get { return Fields.IdiomaId[this]; }
@@ -93,7 +101,7 @@ namespace ProyectosZec.Nuevo_Roezec.Entities
 
         StringField INameRow.NameField
         {
-            get { return Fields.Nombre; }
+            get { return Fields.Fullname; }
         }
 
         public static readonly RowFields Fields = new RowFields().Init();
@@ -108,6 +116,7 @@ namespace ProyectosZec.Nuevo_Roezec.Entities
             public Int32Field ContactoId;
             public StringField Nombre;
             public StringField Apellidos;
+            public StringField Fullname;
             public StringField Nif;
             public StringField TelefonoFijo;
             public StringField Movil;

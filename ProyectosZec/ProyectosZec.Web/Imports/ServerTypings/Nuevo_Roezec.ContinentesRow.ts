@@ -1,5 +1,4 @@
-﻿
-namespace ProyectosZec.Nuevo_Roezec {
+﻿namespace ProyectosZec.Nuevo_Roezec {
     export interface ContinentesRow {
         ContinenteId?: number;
         Continente?: string;
@@ -9,19 +8,20 @@ namespace ProyectosZec.Nuevo_Roezec {
         export const idProperty = 'ContinenteId';
         export const nameProperty = 'Continente';
         export const localTextPrefix = 'Nuevo_Roezec.Continentes';
-        export const deletePermission = 'Roezec:General';
-        export const insertPermission = 'Roezec:General';
-        export const readPermission = 'Roezec:General';
-        export const updatePermission = 'Roezec:General';
+        export const lookupKey = 'Nuevo_Roezec.Continentes';
 
-        export namespace Fields {
-            export declare const ContinenteId;
-            export declare const Continente;
+        export function getLookup(): Q.Lookup<ContinentesRow> {
+            return Q.getLookup<ContinentesRow>('Nuevo_Roezec.Continentes');
         }
+        export const deletePermission = 'Roezec:Modify';
+        export const insertPermission = 'Roezec:Modify';
+        export const readPermission = 'Roezec:Read';
+        export const updatePermission = 'Roezec:Modify';
 
-        [
-            'ContinenteId',
-            'Continente'
-        ].forEach(x => (<any>Fields)[x] = x);
+        export declare const enum Fields {
+            ContinenteId = "ContinenteId",
+            Continente = "Continente"
+        }
     }
 }
+

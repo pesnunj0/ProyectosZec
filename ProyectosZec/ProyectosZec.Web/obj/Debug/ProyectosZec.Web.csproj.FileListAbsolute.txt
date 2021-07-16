@@ -186,15 +186,6 @@ C:\Users\administrador.CONSORCIOLP\source\repos\ProyectosZec - copia\ProyectosZe
 C:\Users\administrador.CONSORCIOLP\source\repos\ProyectosZec - copia\ProyectosZec\ProyectosZec.Web\obj\Debug\ProyectosZec.Web.csproj.CopyComplete
 C:\Users\administrador.CONSORCIOLP\source\repos\ProyectosZec - copia\ProyectosZec\ProyectosZec.Web\obj\Debug\ProyectosZec.Web.dll
 C:\Users\administrador.CONSORCIOLP\source\repos\ProyectosZec - copia\ProyectosZec\ProyectosZec.Web\obj\Debug\ProyectosZec.Web.pdb
-C:\Users\administrador.CONSORCIOLP\source\repos\ProyectosZec_MVC_bien\ProyectosZec\ProyectosZec.Web\bin\FluentMigrator.dll
-C:\Users\administrador.CONSORCIOLP\source\repos\ProyectosZec_MVC_bien\ProyectosZec\ProyectosZec.Web\bin\Newtonsoft.Json.dll
-C:\Users\administrador.CONSORCIOLP\source\repos\ProyectosZec_MVC_bien\ProyectosZec\ProyectosZec.Web\bin\Serenity.Core.dll
-C:\Users\administrador.CONSORCIOLP\source\repos\ProyectosZec_MVC_bien\ProyectosZec\ProyectosZec.Web\bin\Serenity.Data.dll
-C:\Users\administrador.CONSORCIOLP\source\repos\ProyectosZec_MVC_bien\ProyectosZec\ProyectosZec.Web\bin\Serenity.Data.Entity.dll
-C:\Users\administrador.CONSORCIOLP\source\repos\ProyectosZec_MVC_bien\ProyectosZec\ProyectosZec.Web\bin\Serenity.Services.dll
-C:\Users\administrador.CONSORCIOLP\source\repos\ProyectosZec_MVC_bien\ProyectosZec\ProyectosZec.Web\bin\Serenity.Web.dll
-C:\Users\administrador.CONSORCIOLP\source\repos\ProyectosZec_MVC_bien\ProyectosZec\ProyectosZec.Web\bin\StackExchange.Exceptional.dll
-C:\Users\administrador.CONSORCIOLP\source\repos\ProyectosZec_MVC_bien\ProyectosZec\ProyectosZec.Web\bin\System.Web.Mvc.dll
 C:\Users\administrador.CONSORCIOLP\source\repos\ProyectosZec_MVC_bien\ProyectosZec\ProyectosZec.Web\bin\wkhtmltopdf.exe
 C:\Users\administrador.CONSORCIOLP\source\repos\ProyectosZec_MVC_bien\ProyectosZec\ProyectosZec.Web\bin\Content\site\images\serenity-logo-40.png
 C:\Users\administrador.CONSORCIOLP\source\repos\ProyectosZec_MVC_bien\ProyectosZec\ProyectosZec.Web\bin\Content\site\images\serenity-logo-g-40.png
@@ -206,12 +197,21 @@ C:\Users\administrador.CONSORCIOLP\source\repos\ProyectosZec_MVC_bien\ProyectosZ
 C:\Users\administrador.CONSORCIOLP\source\repos\ProyectosZec_MVC_bien\ProyectosZec\ProyectosZec.Web\bin\CsQuery.dll
 C:\Users\administrador.CONSORCIOLP\source\repos\ProyectosZec_MVC_bien\ProyectosZec\ProyectosZec.Web\bin\Dapper.dll
 C:\Users\administrador.CONSORCIOLP\source\repos\ProyectosZec_MVC_bien\ProyectosZec\ProyectosZec.Web\bin\EPPlus.dll
+C:\Users\administrador.CONSORCIOLP\source\repos\ProyectosZec_MVC_bien\ProyectosZec\ProyectosZec.Web\bin\FluentMigrator.dll
 C:\Users\administrador.CONSORCIOLP\source\repos\ProyectosZec_MVC_bien\ProyectosZec\ProyectosZec.Web\bin\FluentMigrator.Runner.dll
 C:\Users\administrador.CONSORCIOLP\source\repos\ProyectosZec_MVC_bien\ProyectosZec\ProyectosZec.Web\bin\Microsoft.Web.Infrastructure.dll
 C:\Users\administrador.CONSORCIOLP\source\repos\ProyectosZec_MVC_bien\ProyectosZec\ProyectosZec.Web\bin\Mono.Cecil.dll
 C:\Users\administrador.CONSORCIOLP\source\repos\ProyectosZec_MVC_bien\ProyectosZec\ProyectosZec.Web\bin\MySql.Data.dll
+C:\Users\administrador.CONSORCIOLP\source\repos\ProyectosZec_MVC_bien\ProyectosZec\ProyectosZec.Web\bin\Newtonsoft.Json.dll
 C:\Users\administrador.CONSORCIOLP\source\repos\ProyectosZec_MVC_bien\ProyectosZec\ProyectosZec.Web\bin\NUglify.dll
+C:\Users\administrador.CONSORCIOLP\source\repos\ProyectosZec_MVC_bien\ProyectosZec\ProyectosZec.Web\bin\Serenity.Core.dll
+C:\Users\administrador.CONSORCIOLP\source\repos\ProyectosZec_MVC_bien\ProyectosZec\ProyectosZec.Web\bin\Serenity.Data.dll
+C:\Users\administrador.CONSORCIOLP\source\repos\ProyectosZec_MVC_bien\ProyectosZec\ProyectosZec.Web\bin\Serenity.Data.Entity.dll
+C:\Users\administrador.CONSORCIOLP\source\repos\ProyectosZec_MVC_bien\ProyectosZec\ProyectosZec.Web\bin\Serenity.Services.dll
+C:\Users\administrador.CONSORCIOLP\source\repos\ProyectosZec_MVC_bien\ProyectosZec\ProyectosZec.Web\bin\Serenity.Web.dll
+C:\Users\administrador.CONSORCIOLP\source\repos\ProyectosZec_MVC_bien\ProyectosZec\ProyectosZec.Web\bin\StackExchange.Exceptional.dll
 C:\Users\administrador.CONSORCIOLP\source\repos\ProyectosZec_MVC_bien\ProyectosZec\ProyectosZec.Web\bin\System.Web.Helpers.dll
+C:\Users\administrador.CONSORCIOLP\source\repos\ProyectosZec_MVC_bien\ProyectosZec\ProyectosZec.Web\bin\System.Web.Mvc.dll
 C:\Users\administrador.CONSORCIOLP\source\repos\ProyectosZec_MVC_bien\ProyectosZec\ProyectosZec.Web\bin\System.Web.Razor.dll
 C:\Users\administrador.CONSORCIOLP\source\repos\ProyectosZec_MVC_bien\ProyectosZec\ProyectosZec.Web\bin\System.Web.WebPages.Deployment.dll
 C:\Users\administrador.CONSORCIOLP\source\repos\ProyectosZec_MVC_bien\ProyectosZec\ProyectosZec.Web\bin\System.Web.WebPages.dll
@@ -244,8 +244,17 @@ C:\Users\administrador.CONSORCIOLP\source\repos\ProyectosZec_MVC_bien\ProyectosZ
 C:\Users\administrador.CONSORCIOLP\source\repos\ProyectosZec_MVC_bien\ProyectosZec\ProyectosZec.Web\bin\System.Web.WebPages.xml
 C:\Users\administrador.CONSORCIOLP\source\repos\ProyectosZec_MVC_bien\ProyectosZec\ProyectosZec.Web\bin\System.Web.WebPages.Deployment.xml
 C:\Users\administrador.CONSORCIOLP\source\repos\ProyectosZec_MVC_bien\ProyectosZec\ProyectosZec.Web\bin\System.Web.WebPages.Razor.xml
+C:\Users\administrador.CONSORCIOLP\source\repos\ProyectosZec_MVC_bien\ProyectosZec\ProyectosZec.Web\obj\Debug\ProyectosZec.Web.csproj.AssemblyReference.cache
 C:\Users\administrador.CONSORCIOLP\source\repos\ProyectosZec_MVC_bien\ProyectosZec\ProyectosZec.Web\obj\Debug\ProyectosZec.Web.csproj.CoreCompileInputs.cache
 C:\Users\administrador.CONSORCIOLP\source\repos\ProyectosZec_MVC_bien\ProyectosZec\ProyectosZec.Web\obj\Debug\ProyectosZec.Web.csproj.CopyComplete
 C:\Users\administrador.CONSORCIOLP\source\repos\ProyectosZec_MVC_bien\ProyectosZec\ProyectosZec.Web\obj\Debug\ProyectosZec.Web.dll
 C:\Users\administrador.CONSORCIOLP\source\repos\ProyectosZec_MVC_bien\ProyectosZec\ProyectosZec.Web\obj\Debug\ProyectosZec.Web.pdb
-C:\Users\administrador.CONSORCIOLP\source\repos\ProyectosZec_MVC_bien\ProyectosZec\ProyectosZec.Web\obj\Debug\ProyectosZec.Web.csproj.AssemblyReference.cache
+C:\Users\administrador.CONSORCIOLP\source\repos\ProyectosZec_MVC_bien\ProyectosZec\ProyectosZec.Web\bin\System.Net.Http.Formatting.dll
+C:\Users\administrador.CONSORCIOLP\source\repos\ProyectosZec_MVC_bien\ProyectosZec\ProyectosZec.Web\bin\System.Web.Http.dll
+C:\Users\administrador.CONSORCIOLP\source\repos\ProyectosZec_MVC_bien\ProyectosZec\ProyectosZec.Web\bin\System.Web.Http.WebHost.dll
+C:\Users\administrador.CONSORCIOLP\source\repos\ProyectosZec_MVC_bien\ProyectosZec\ProyectosZec.Web\bin\System.Net.Http.Formatting.xml
+C:\Users\administrador.CONSORCIOLP\source\repos\ProyectosZec_MVC_bien\ProyectosZec\ProyectosZec.Web\bin\System.Web.Http.xml
+C:\Users\administrador.CONSORCIOLP\source\repos\ProyectosZec_MVC_bien\ProyectosZec\ProyectosZec.Web\bin\System.Web.Http.WebHost.xml
+C:\Users\administrador.CONSORCIOLP\source\repos\ProyectosZec_MVC_bien\ProyectosZec\ProyectosZec.Web\bin\es\System.Net.Http.Formatting.resources.dll
+C:\Users\administrador.CONSORCIOLP\source\repos\ProyectosZec_MVC_bien\ProyectosZec\ProyectosZec.Web\bin\es\System.Web.Http.resources.dll
+C:\Users\administrador.CONSORCIOLP\source\repos\ProyectosZec_MVC_bien\ProyectosZec\ProyectosZec.Web\bin\es\System.Web.Http.WebHost.resources.dll
