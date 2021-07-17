@@ -67,7 +67,7 @@ namespace ProyectosZec.Nuevo_Roezec.Entities
             set { Fields.EmpresaFormaJuridicaId[this] = value; }
         }
 
-        [DisplayName("Empresa N Expediente"), Expression("jEmpresa.[N_Expediente]")]
+        [DisplayName("Empresa N Expediente"), Expression("jEmpresa.[Expediente]")]
         public String EmpresaNExpediente
         {
             get { return Fields.EmpresaNExpediente[this]; }
