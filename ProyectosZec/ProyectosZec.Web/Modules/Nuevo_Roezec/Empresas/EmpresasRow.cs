@@ -443,6 +443,7 @@ namespace ProyectosZec.Nuevo_Roezec.Entities
             get { return Fields.NacesList[this]; }
             set { Fields.NacesList[this] = value; }
         }
+        [MasterDetailRelation(foreignKey: "EmpresaId",IncludeColumns ="Procedimiento")]
         [DisplayName("Procedimientos")]
         public List<HistorialEmpresasRow> HistorialList
         {
